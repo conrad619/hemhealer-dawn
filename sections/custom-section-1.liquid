@@ -1,0 +1,93 @@
+<div class='color-{{ section.settings.color_scheme }} gradient twcss-mt-[120px]'>
+  <div class='video-section isolate{% unless section.settings.full_width %} page-width{% endunless %} section-{{ section.id }}-padding'>
+    <div
+      {% if section.settings.full_width %}
+        class='page-width'
+      {% endif %}
+    >
+      <div class='twcss-flex twcss-gap-[40px] twcss-flex-col'>
+        <h1 class='twcss-text-[100px] twcss-leading-[100px] twcss-font-medium twcss-text-center'>
+          The Hemorrhoid Relief You Deserve
+        </h1>
+        <h2 class='twcss-text-[70px] twcss-leading-[70px] twcss-font-medium twcss-text-center'>
+          Scientifically formulated, fast-acting relief in an easy-to-take capsule
+        </h2>
+        <div class='twcss-border-t twcss-border-[#3d8124] twcss-w-1/2 twcss-mx-auto twcss-leading-[0] twcss-py-[15px]'>
+          &nbsp;
+        </div>
+        <p class='twcss-text-[18px] text-center'>
+          Unlike conventional hemorrhoid treatments like&nbsp;<strong
+            >messy creams and uncomfortable suppositories</strong
+          >,&nbsp;<strong>Hem Healer&reg;</strong>&nbsp;offers a simple, effective solution in easy-to-take&nbsp;<strong
+            >capsules</strong
+          >. Our powerful, science-backed formulas work&nbsp;<strong>from the inside out</strong>, strengthening veins,
+          reducing inflammation, and promoting lasting relief&mdash;<strong>without the hassle.</strong>
+        </p>
+        <ul class='twcss-flex twcss-flex-wrap twcss-mx-auto twcss-font-["Barlow_Condensed"] twcss-text-[30px]'>
+          <li class='twcss-flex twcss-items-center twcss-gap-[10px] twcss-justify-center twcss-px-[25px] twcss-border-r-2 twcss-border-[#3D8124]'>
+            <div class=''>
+              <svg
+                aria-hidden='true'
+                class='twcss-fill-[#3D8124] twcss-w-[20px] twcss-h-[20px]'
+                viewBox='0 0 576 512'
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <path d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z"></path>
+              </svg>
+            </div>
+            <span>Fast Acting Relief</span>
+          </li>
+          <li class='twcss-flex twcss-items-center twcss-gap-[10px] twcss-justify-center twcss-px-[25px] twcss-border-r-2 twcss-border-[#3D8124]'>
+            <div class=''>
+              <svg
+                aria-hidden='true'
+                class='twcss-fill-[#3D8124] twcss-w-[20px] twcss-h-[20px]'
+                viewBox='0 0 576 512'
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <path d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z"></path>
+              </svg>
+            </div>
+            <span>Support Healthy Circulation</span>
+          </li>
+          <li class='twcss-flex twcss-items-center twcss-gap-[10px] twcss-justify-center twcss-px-[25px] '>
+            <div class=''>
+              <svg
+                aria-hidden='true'
+                class='twcss-fill-[#3D8124] twcss-w-[20px] twcss-h-[20px]'
+                viewBox='0 0 576 512'
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <path d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z"></path>
+              </svg>
+            </div>
+            <span>Strengthen Veins & Capillaries</span>
+          </li>
+        </ul>
+        <img
+          class='twcss-w-full -twcss-mt-[140px] -twcss-z-[1]'
+          src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hem-healer-science-png-e1739598403939.png?v=1740991434'
+          alt='hem healer bottles'
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "custom section I",
+  "settings": [
+    // {
+    //   "type": "text",
+    //   "label": "Video URL",
+    //   "id": "video"
+    // }
+  ],
+  "presets": [
+    {
+      "name": "custom section I"
+    }
+  ]
+}
+{% endschema %}

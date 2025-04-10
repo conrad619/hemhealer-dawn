@@ -1,0 +1,42 @@
+<div class='color-{{ section.settings.color_scheme }} gradient'>
+  <div class='video-section isolate{% unless section.settings.full_width %} page-width{% endunless %} section-{{ section.id }}-padding'>
+    <div
+      {% if section.settings.full_width %}
+        class='page-width'
+      {% endif %}
+    >
+      <video
+        data-type='mp4'
+        preload='metadata'
+        loop=''
+        playsinline=''
+        muted
+        autoplay
+        controls
+        id='video'
+        class='twcss-w-full'
+      >
+        <source src='{{ section.settings.video }}' type='video/mp4'>
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "custom video",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Video URL",
+      "id": "video"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Video"
+    }
+  ]
+}
+{% endschema %}
