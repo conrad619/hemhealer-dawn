@@ -1,0 +1,100 @@
+<div class='color-{{ section.settings.color_scheme }} twcss-relative twcss-pt-[15rem] twcss-pb-[20rem]'>
+  <div
+    class='twcss-left-0 twcss-overflow-hidden twcss-absolute twcss-w-full twcss-leading-none twcss-top-0 twcss-rotate-180'
+  >
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      viewBox='0 0 1000 100'
+      preserveAspectRatio='none'
+      class='twcss-w-[calc(142%+1.3px)] twcss-h-[17.8rem] twcss-relative twcss-left-1/2 -twcss-translate-x-1/2 twcss-fill-[--accent-color-3]'
+    >
+      <path class="elementor-shape-fill" d="M790.5,93.1c-59.3-5.3-116.8-18-192.6-50c-29.6-12.7-76.9-31-100.5-35.9c-23.6-4.9-52.6-7.8-75.5-5.3
+      c-10.2,1.1-22.6,1.4-50.1,7.4c-27.2,6.3-58.2,16.6-79.4,24.7c-41.3,15.9-94.9,21.9-134,22.6C72,58.2,0,25.8,0,25.8V100h1000V65.3
+      c0,0-51.5,19.4-106.2,25.7C839.5,97,814.1,95.2,790.5,93.1z"></path>
+    </svg>
+  </div>
+  <div class='custom-section isolate{% unless section.settings.full_width %} page-width{% endunless %} section-{{ section.id }}-padding'>
+    <div
+      {% if section.settings.full_width %}
+        class='page-width'
+      {% endif %}
+    >
+      <div class='twcss-flex twcss-gap-[4rem]'>
+        <div class='twcss-flex twcss-gap-[2rem] twcss-flex-col twcss-w-1/2'>
+          <h2 class='twcss-text-[7rem] twcss-font-medium twcss-leading-none'>About</h2>
+          <h3 class='twcss-text-[4.5rem] twcss-font-medium twcss-text-[--secondary-color] twcss-leading-[5.4rem]'>
+            We Understand Your Pain – Because We’ve Been There
+          </h3>
+          <p class='twcss-text-[1.8rem]'>
+            At Hem Healer&trade;, we know firsthand how frustrating, painful, and even embarrassing hemorrhoids can
+            be&mdash;because our founder has experienced it too. After struggling with chronic hemorrhoids and feeling
+            let down by ineffective treatments, he set out to create a real, lasting solution using natural,
+            science-backed ingredients.
+          </p>
+          <p class='twcss-text-[1.8rem] twcss-mb-[1.4rem]'>
+            Now, Hem Healer&trade; is helping thousands find the relief he once searched for. You don&rsquo;t have to
+            suffer in silence&mdash;we&rsquo;re here to help.
+          </p>
+          <div class='twcss-mt-[2rem]'>
+            <a
+              href='#'
+              class='twcss-text-[--accent-color] twcss-inline-flex twcss-font-semibold twcss-items-center twcss-text-[2rem] twcss-font-[family-name:--font-heading-family] twcss-border-b twcss-border-[--accent-color]'
+              >OUR STORY<span class='material-symbols-outlined twcss-w-[2rem] twcss-h-[2rem] twcss-ml-[1rem]'>
+                fast_forward
+              </span></a
+            >
+          </div>
+          <div>
+            <a
+              href='#'
+              class='twcss-text-[--accent-color] twcss-inline-flex twcss-font-semibold twcss-items-center twcss-text-[2rem] twcss-font-[family-name:--font-heading-family] twcss-border-b twcss-border-[--accent-color]'
+              >WHERE ARE HEM HEALER® PRODUCTS MANUFACTURED?<span class='material-symbols-outlined twcss-w-[2rem] twcss-h-[2rem] twcss-ml-[1rem]'>
+                fast_forward
+              </span></a
+            >
+          </div>
+        </div>
+        <div class='twcss-w-1/2'>
+          <img
+            src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/placeholder.png?v=1741006214'
+            alt='about'
+            width='auto'
+            height='auto'
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class='twcss-left-0 twcss-overflow-hidden twcss-absolute twcss-w-full twcss-leading-none twcss-bottom-0 twcss-z-[-1] twcss-rotate-180'
+  >
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      viewBox='0 0 1000 100'
+      preserveAspectRatio='none'
+      class='twcss-w-[calc(100%+1.3px)] twcss-h-[18.9rem] twcss-relative twcss-left-1/2 -twcss-translate-x-1/2 twcss-fill-[#C6E1231F]'
+    >
+      <path class="elementor-shape-fill" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7
+      c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4
+      c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"></path>
+    </svg>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "custom section IV",
+  "settings": [
+    // {
+    //   "type": "text",
+    //   "label": "Video URL",
+    //   "id": "video"
+    // }
+  ],
+  "presets": [
+    {
+      "name": "custom section IV"
+    }
+  ]
+}
+{% endschema %}

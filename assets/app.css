@@ -696,12 +696,24 @@ video {
   margin-bottom: 2rem;
 }
 
+.twcss-ml-\[1rem\] {
+  margin-left: 1rem;
+}
+
 .twcss-block {
   display: block;
 }
 
+.twcss-inline-block {
+  display: inline-block;
+}
+
 .twcss-flex {
   display: flex;
+}
+
+.twcss-inline-flex {
+  display: inline-flex;
 }
 
 .twcss-grid {
@@ -730,6 +742,10 @@ video {
 
 .twcss-h-\[18\.9rem\] {
   height: 18.9rem;
+}
+
+.twcss-h-\[17\.8rem\] {
+  height: 17.8rem;
 }
 
 .twcss-w-1\/2 {
@@ -762,6 +778,14 @@ video {
 
 .twcss-w-\[30\%\] {
   width: 30%;
+}
+
+.twcss-w-\[calc\(142\%\+1\.3px\)\] {
+  width: calc(142% + 1.3px);
+}
+
+.twcss-w-\[calc\(100\%\+1\.3px\)\] {
+  width: calc(100% + 1.3px);
 }
 
 .twcss-flex-shrink-0 {
@@ -834,12 +858,20 @@ video {
   border-radius: 0.3rem;
 }
 
+.twcss-border {
+  border-width: 1px;
+}
+
 .twcss-border-r-2 {
   border-right-width: 2px;
 }
 
 .twcss-border-t {
   border-top-width: 1px;
+}
+
+.twcss-border-b {
+  border-bottom-width: 1px;
 }
 
 .twcss-border-\[\#3D8124\] {
@@ -905,6 +937,10 @@ video {
   fill: #c6e1231f;
 }
 
+.twcss-fill-\[--accent-color-3\] {
+  fill: var(--accent-color-3);
+}
+
 .twcss-p-\[1rem\] {
   padding: 1rem;
 }
@@ -966,6 +1002,14 @@ video {
   padding-top: 4rem;
 }
 
+.twcss-pt-\[20rem\] {
+  padding-top: 20rem;
+}
+
+.twcss-pb-\[20rem\] {
+  padding-bottom: 20rem;
+}
+
 .twcss-text-center {
   text-align: center;
 }
@@ -976,6 +1020,10 @@ video {
 
 .twcss-font-\[\"Barlow\"\] {
   font-family: 'Barlow';
+}
+
+.twcss-font-\[family-name\:--font-heading-family\] {
+  font-family: var(--font-heading-family);
 }
 
 .twcss-text-\[100px\] {
@@ -1043,6 +1091,10 @@ video {
   font-weight: 600;
 }
 
+.twcss-font-\[--font-heading-family\] {
+  font-weight: var(--font-heading-family);
+}
+
 .twcss-leading-\[0\] {
   line-height: 0;
 }
@@ -1082,6 +1134,10 @@ video {
 .twcss-text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.twcss-text-\[--font-heading-family\] {
+  color: var(--font-heading-family);
 }
 
 .twcss-shadow {
