@@ -607,7 +607,35 @@ video {
   --tw-backdrop-sepia: ;
 }
 
+.twcss-absolute {
+  position: absolute;
+}
+
+.twcss-relative {
+  position: relative;
+}
+
+.twcss-left-0 {
+  left: 0px;
+}
+
+.twcss-top-0 {
+  top: 0px;
+}
+
+.twcss-left-1\/2 {
+  left: 50%;
+}
+
+.twcss-bottom-0 {
+  bottom: 0px;
+}
+
 .-twcss-z-\[1\] {
+  z-index: -1;
+}
+
+.twcss-z-\[-1\] {
   z-index: -1;
 }
 
@@ -660,6 +688,18 @@ video {
   margin-bottom: auto;
 }
 
+.twcss-mb-\[1\.4rem\] {
+  margin-bottom: 1.4rem;
+}
+
+.twcss-mb-\[2rem\] {
+  margin-bottom: 2rem;
+}
+
+.twcss-block {
+  display: block;
+}
+
 .twcss-flex {
   display: flex;
 }
@@ -684,6 +724,14 @@ video {
   height: 2rem;
 }
 
+.twcss-h-\[13\.1rem\] {
+  height: 13.1rem;
+}
+
+.twcss-h-\[18\.9rem\] {
+  height: 18.9rem;
+}
+
 .twcss-w-1\/2 {
   width: 50%;
 }
@@ -706,6 +754,32 @@ video {
 
 .twcss-w-\[2rem\] {
   width: 2rem;
+}
+
+.twcss-w-\[calc\(132\%\+1\.3px\)\] {
+  width: calc(132% + 1.3px);
+}
+
+.twcss-w-\[30\%\] {
+  width: 30%;
+}
+
+.twcss-flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+.-twcss-translate-x-1\/2 {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.twcss-rotate-180 {
+  --tw-rotate: 180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .twcss-grid-cols-3 {
@@ -752,6 +826,10 @@ video {
   gap: 1rem;
 }
 
+.twcss-overflow-hidden {
+  overflow: hidden;
+}
+
 .twcss-rounded-\[\.3rem\] {
   border-radius: 0.3rem;
 }
@@ -786,6 +864,31 @@ video {
   background-color: var(--accent-color-2);
 }
 
+.twcss-bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.twcss-bg-\[--accent-color-3\] {
+  background-color: var(--accent-color-3);
+}
+
+.twcss-bg-\[url\(https\:\/\/cdn\.shopify\.com\/s\/files\/1\/0550\/1560\/4383\/files\/hemhealer-leaves-bg-png_2\.png\?v\=1742323161\)\] {
+  background-image: url(https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hemhealer-leaves-bg-png_2.png?v=1742323161);
+}
+
+.twcss-bg-contain {
+  background-size: contain;
+}
+
+.twcss-bg-\[top_center\] {
+  background-position: top center;
+}
+
+.twcss-bg-no-repeat {
+  background-repeat: no-repeat;
+}
+
 .twcss-fill-\[\#3D8124\] {
   fill: #3d8124;
 }
@@ -794,8 +897,20 @@ video {
   fill: var(--accent-color);
 }
 
+.twcss-fill-white {
+  fill: #fff;
+}
+
+.twcss-fill-\[\#C6E1231F\] {
+  fill: #c6e1231f;
+}
+
 .twcss-p-\[1rem\] {
   padding: 1rem;
+}
+
+.twcss-p-\[4rem\] {
+  padding: 4rem;
 }
 
 .twcss-px-\[25px\] {
@@ -838,8 +953,17 @@ video {
   padding-bottom: 1.2rem;
 }
 
+.twcss-py-\[1rem\] {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .twcss-pt-\[15rem\] {
   padding-top: 15rem;
+}
+
+.twcss-pt-\[4rem\] {
+  padding-top: 4rem;
 }
 
 .twcss-text-center {
@@ -958,6 +1082,21 @@ video {
 .twcss-text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.twcss-shadow {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),
+    0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.twcss-shadow-\[0px_0px_10px_0px_rgba\(0\,0\,0\,0\.5\)\] {
+  --tw-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  --tw-shadow-colored: 0px 0px 10px 0px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .twcss-transition-all {
