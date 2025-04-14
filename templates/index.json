@@ -58,6 +58,10 @@
     "custom_section_blogs_amfAXP": {
       "type": "custom-section-blogs",
       "settings": {}
+    },
+    "custom_section_subscribe_AkAVbH": {
+      "type": "custom-section-subscribe",
+      "settings": {}
     }
   },
   "order": [
@@ -72,6 +76,7 @@
     "custom_section_8_KrBjy8",
     "custom_section_9_fdAUEr",
     "custom_section_contact_kpPMTb",
-    "custom_section_blogs_amfAXP"
+    "custom_section_blogs_amfAXP",
+    "custom_section_subscribe_AkAVbH"
   ]
 }
