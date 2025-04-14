@@ -644,6 +644,11 @@ video {
   margin-right: auto;
 }
 
+.twcss-my-\[1\.8rem\] {
+  margin-top: 1.8rem;
+  margin-bottom: 1.8rem;
+}
+
 .-twcss-mt-\[14rem\] {
   margin-top: -14rem;
 }
@@ -690,6 +695,10 @@ video {
 
 .twcss-mr-\[1\.5rem\] {
   margin-right: 1.5rem;
+}
+
+.twcss-mt-\[3\.8rem\] {
+  margin-top: 3.8rem;
 }
 
 .twcss-block {
@@ -950,6 +959,26 @@ video {
   padding-bottom: 5rem;
 }
 
+.twcss-px-\[\.6rem\] {
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+}
+
+.twcss-py-\[2rem\] {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.twcss-px-\[2rem\] {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.twcss-py-\[\.6rem\] {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
 .twcss-pb-\[10rem\] {
   padding-bottom: 10rem;
 }
@@ -984,6 +1013,10 @@ video {
 
 .twcss-pb-\[5rem\] {
   padding-bottom: 5rem;
+}
+
+.twcss-pb-\[6rem\] {
+  padding-bottom: 6rem;
 }
 
 .twcss-text-center {
@@ -1099,6 +1132,15 @@ video {
 .twcss-text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.twcss-text-\[--accent-color-2\] {
+  color: var(--accent-color-2);
+}
+
+.twcss-underline {
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 
 .twcss-shadow-\[0px_0px_10px_0px_rgba\(0\,0\,0\,0\.5\)\] {
