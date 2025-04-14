@@ -705,6 +705,10 @@ video {
   margin-top: 4rem;
 }
 
+.twcss-ml-\[\.5rem\] {
+  margin-left: 0.5rem;
+}
+
 .twcss-block {
   display: block;
 }
@@ -751,6 +755,10 @@ video {
 
 .twcss-h-full {
   height: 100%;
+}
+
+.twcss-h-\[4rem\] {
+  height: 4rem;
 }
 
 .twcss-min-h-\[4rem\] {
@@ -811,6 +819,10 @@ video {
 
 .twcss-w-full {
   width: 100%;
+}
+
+.twcss-w-\[4rem\] {
+  width: 4rem;
 }
 
 .twcss-flex-shrink-0 {
@@ -877,6 +889,10 @@ video {
 
 .twcss-rounded-\[\.3rem\] {
   border-radius: 0.3rem;
+}
+
+.twcss-rounded-full {
+  border-radius: 9999px;
 }
 
 .twcss-border {
@@ -1022,6 +1038,16 @@ video {
 .twcss-py-\[5rem\] {
   padding-top: 5rem;
   padding-bottom: 5rem;
+}
+
+.twcss-py-\[1\.3rem\] {
+  padding-top: 1.3rem;
+  padding-bottom: 1.3rem;
+}
+
+.twcss-py-\[2rem\] {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .twcss-pb-\[10rem\] {
@@ -1264,4 +1290,8 @@ video {
 .hover\:twcss-text-black:hover {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.hover\:twcss-text-\[--accent-color\]:hover {
+  color: var(--accent-color);
 }
