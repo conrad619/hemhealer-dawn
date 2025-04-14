@@ -42,6 +42,14 @@
     "custom_section_7_M93Vkb": {
       "type": "custom-section-7",
       "settings": {}
+    },
+    "custom_section_8_KrBjy8": {
+      "type": "custom-section-8",
+      "settings": {}
+    },
+    "custom_section_9_fdAUEr": {
+      "type": "custom-section-9",
+      "settings": {}
     }
   },
   "order": [
@@ -52,6 +60,8 @@
     "custom_section_4_6XUhkJ",
     "custom_section_5_RT6iVd",
     "custom_section_6_WfgFFF",
-    "custom_section_7_M93Vkb"
+    "custom_section_7_M93Vkb",
+    "custom_section_8_KrBjy8",
+    "custom_section_9_fdAUEr"
   ]
 }
