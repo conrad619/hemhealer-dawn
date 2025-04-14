@@ -11,6 +11,14 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "custom_section_footer_T877Bf": {
+      "type": "custom-section-footer",
+      "settings": {}
+    },
+    "custom_section_copyright_XYHCyT": {
+      "type": "custom-section-copyright",
+      "settings": {}
+    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -67,6 +75,8 @@
     }
   },
   "order": [
+    "custom_section_footer_T877Bf",
+    "custom_section_copyright_XYHCyT",
     "footer"
   ]
 }
