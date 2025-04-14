@@ -615,20 +615,20 @@ video {
   position: relative;
 }
 
-.twcss-left-0 {
-  left: 0px;
+.twcss-bottom-0 {
+  bottom: 0px;
 }
 
-.twcss-top-0 {
-  top: 0px;
+.twcss-left-0 {
+  left: 0px;
 }
 
 .twcss-left-1\/2 {
   left: 50%;
 }
 
-.twcss-bottom-0 {
-  bottom: 0px;
+.twcss-top-0 {
+  top: 0px;
 }
 
 .-twcss-z-\[1\] {
@@ -644,48 +644,12 @@ video {
   margin-right: auto;
 }
 
-.-twcss-mt-\[140px\] {
-  margin-top: -140px;
-}
-
-.twcss-mt-\[120px\] {
-  margin-top: 120px;
-}
-
-.twcss-mb-4 {
-  margin-bottom: 1rem;
-}
-
-.twcss-mt-2 {
-  margin-top: 0.5rem;
-}
-
-.twcss-mr-\[1rem\] {
-  margin-right: 1rem;
-}
-
-.twcss-mt-\[1\.2rem\] {
-  margin-top: 1.2rem;
-}
-
-.twcss-mt-\[12rem\] {
-  margin-top: 12rem;
-}
-
 .-twcss-mt-\[14rem\] {
   margin-top: -14rem;
 }
 
-.twcss-mt-\[2rem\] {
-  margin-top: 2rem;
-}
-
-.twcss-mt-\[4rem\] {
-  margin-top: 4rem;
-}
-
-.twcss-mb-auto {
-  margin-bottom: auto;
+.twcss-mb-4 {
+  margin-bottom: 1rem;
 }
 
 .twcss-mb-\[1\.4rem\] {
@@ -696,8 +660,36 @@ video {
   margin-bottom: 2rem;
 }
 
+.twcss-mb-auto {
+  margin-bottom: auto;
+}
+
 .twcss-ml-\[1rem\] {
   margin-left: 1rem;
+}
+
+.twcss-mr-\[1rem\] {
+  margin-right: 1rem;
+}
+
+.twcss-mt-2 {
+  margin-top: 0.5rem;
+}
+
+.twcss-mt-\[12rem\] {
+  margin-top: 12rem;
+}
+
+.twcss-mt-\[2rem\] {
+  margin-top: 2rem;
+}
+
+.twcss-mt-\[4rem\] {
+  margin-top: 4rem;
+}
+
+.twcss-mr-\[1\.5rem\] {
+  margin-right: 1.5rem;
 }
 
 .twcss-block {
@@ -720,72 +712,64 @@ video {
   display: grid;
 }
 
-.twcss-h-\[20px\] {
-  height: 20px;
-}
-
-.twcss-h-5 {
-  height: 1.25rem;
-}
-
-.twcss-h-8 {
-  height: 2rem;
-}
-
-.twcss-h-\[2rem\] {
-  height: 2rem;
-}
-
 .twcss-h-\[13\.1rem\] {
   height: 13.1rem;
-}
-
-.twcss-h-\[18\.9rem\] {
-  height: 18.9rem;
 }
 
 .twcss-h-\[17\.8rem\] {
   height: 17.8rem;
 }
 
+.twcss-h-\[18\.9rem\] {
+  height: 18.9rem;
+}
+
+.twcss-h-\[2rem\] {
+  height: 2rem;
+}
+
+.twcss-h-\[2\.4rem\] {
+  height: 2.4rem;
+}
+
 .twcss-w-1\/2 {
   width: 50%;
-}
-
-.twcss-w-\[20px\] {
-  width: 20px;
-}
-
-.twcss-w-full {
-  width: 100%;
-}
-
-.twcss-w-5 {
-  width: 1.25rem;
-}
-
-.twcss-w-8 {
-  width: 2rem;
 }
 
 .twcss-w-\[2rem\] {
   width: 2rem;
 }
 
-.twcss-w-\[calc\(132\%\+1\.3px\)\] {
-  width: calc(132% + 1.3px);
-}
-
 .twcss-w-\[30\%\] {
   width: 30%;
+}
+
+.twcss-w-\[40\%\] {
+  width: 40%;
+}
+
+.twcss-w-\[60\%\] {
+  width: 60%;
+}
+
+.twcss-w-\[calc\(100\%\+1\.3px\)\] {
+  width: calc(100% + 1.3px);
+}
+
+.twcss-w-\[calc\(132\%\+1\.3px\)\] {
+  width: calc(132% + 1.3px);
 }
 
 .twcss-w-\[calc\(142\%\+1\.3px\)\] {
   width: calc(142% + 1.3px);
 }
 
-.twcss-w-\[calc\(100\%\+1\.3px\)\] {
-  width: calc(100% + 1.3px);
+.twcss-w-full {
+  width: 100%;
+}
+
+.twcss-w-\[2\.4rem\] {
+  width: 2.4rem;
 }
 
 .twcss-flex-shrink-0 {
@@ -804,6 +788,14 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y))
     rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
     scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.twcss-list-decimal {
+  list-style-type: decimal;
+}
+
+.twcss-grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .twcss-grid-cols-3 {
@@ -826,16 +818,8 @@ video {
   justify-content: center;
 }
 
-.twcss-gap-\[10px\] {
-  gap: 10px;
-}
-
-.twcss-gap-\[40px\] {
-  gap: 40px;
-}
-
-.twcss-gap-\[20px\] {
-  gap: 20px;
+.twcss-gap-\[1rem\] {
+  gap: 1rem;
 }
 
 .twcss-gap-\[2rem\] {
@@ -844,10 +828,6 @@ video {
 
 .twcss-gap-\[4rem\] {
   gap: 4rem;
-}
-
-.twcss-gap-\[1rem\] {
-  gap: 1rem;
 }
 
 .twcss-overflow-hidden {
@@ -862,6 +842,10 @@ video {
   border-width: 1px;
 }
 
+.twcss-border-b {
+  border-bottom-width: 1px;
+}
+
 .twcss-border-r-2 {
   border-right-width: 2px;
 }
@@ -870,39 +854,25 @@ video {
   border-top-width: 1px;
 }
 
-.twcss-border-b {
-  border-bottom-width: 1px;
-}
-
-.twcss-border-\[\#3D8124\] {
-  --tw-border-opacity: 1;
-  border-color: rgb(61 129 36 / var(--tw-border-opacity));
-}
-
-.twcss-border-\[\#3d8124\] {
-  --tw-border-opacity: 1;
-  border-color: rgb(61 129 36 / var(--tw-border-opacity));
-}
-
 .twcss-border-\[--accent-color\] {
   border-color: var(--accent-color);
-}
-
-.twcss-bg-\[--accent-color\] {
-  background-color: var(--accent-color);
 }
 
 .twcss-bg-\[--accent-color-2\] {
   background-color: var(--accent-color-2);
 }
 
+.twcss-bg-\[--accent-color-3\] {
+  background-color: var(--accent-color-3);
+}
+
+.twcss-bg-\[--accent-color\] {
+  background-color: var(--accent-color);
+}
+
 .twcss-bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.twcss-bg-\[--accent-color-3\] {
-  background-color: var(--accent-color-3);
 }
 
 .twcss-bg-\[url\(https\:\/\/cdn\.shopify\.com\/s\/files\/1\/0550\/1560\/4383\/files\/hemhealer-leaves-bg-png_2\.png\?v\=1742323161\)\] {
@@ -921,8 +891,12 @@ video {
   background-repeat: no-repeat;
 }
 
-.twcss-fill-\[\#3D8124\] {
-  fill: #3d8124;
+.twcss-fill-\[\#C6E1231F\] {
+  fill: #c6e1231f;
+}
+
+.twcss-fill-\[--accent-color-3\] {
+  fill: var(--accent-color-3);
 }
 
 .twcss-fill-\[--accent-color\] {
@@ -933,14 +907,6 @@ video {
   fill: #fff;
 }
 
-.twcss-fill-\[\#C6E1231F\] {
-  fill: #c6e1231f;
-}
-
-.twcss-fill-\[--accent-color-3\] {
-  fill: var(--accent-color-3);
-}
-
 .twcss-p-\[1rem\] {
   padding: 1rem;
 }
@@ -949,14 +915,9 @@ video {
   padding: 4rem;
 }
 
-.twcss-px-\[25px\] {
-  padding-left: 25px;
-  padding-right: 25px;
-}
-
-.twcss-py-\[15px\] {
-  padding-top: 15px;
-  padding-bottom: 15px;
+.twcss-px-\[2\.4rem\] {
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
 }
 
 .twcss-px-\[2\.5rem\] {
@@ -964,24 +925,9 @@ video {
   padding-right: 2.5rem;
 }
 
-.twcss-py-\[1\.5rem\] {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
-.twcss-px-\[1\.2rem\] {
-  padding-left: 1.2rem;
-  padding-right: 1.2rem;
-}
-
-.twcss-py-\[2\.4rem\] {
-  padding-top: 2.4rem;
-  padding-bottom: 2.4rem;
-}
-
-.twcss-px-\[2\.4rem\] {
-  padding-left: 2.4rem;
-  padding-right: 2.4rem;
+.twcss-px-\[4rem\] {
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 .twcss-py-\[1\.2rem\] {
@@ -989,9 +935,43 @@ video {
   padding-bottom: 1.2rem;
 }
 
+.twcss-py-\[1\.5rem\] {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
 .twcss-py-\[1rem\] {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.twcss-py-\[5rem\] {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.twcss-pb-\[10rem\] {
+  padding-bottom: 10rem;
+}
+
+.twcss-pb-\[15rem\] {
+  padding-bottom: 15rem;
+}
+
+.twcss-pb-\[20rem\] {
+  padding-bottom: 20rem;
+}
+
+.twcss-pb-\[4rem\] {
+  padding-bottom: 4rem;
+}
+
+.twcss-pb-\[8rem\] {
+  padding-bottom: 8rem;
+}
+
+.twcss-pt-\[10rem\] {
+  padding-top: 10rem;
 }
 
 .twcss-pt-\[15rem\] {
@@ -1002,69 +982,28 @@ video {
   padding-top: 4rem;
 }
 
-.twcss-pt-\[20rem\] {
-  padding-top: 20rem;
-}
-
-.twcss-pb-\[20rem\] {
-  padding-bottom: 20rem;
+.twcss-pb-\[5rem\] {
+  padding-bottom: 5rem;
 }
 
 .twcss-text-center {
   text-align: center;
 }
 
-.twcss-font-\[\"Barlow_Condensed\"\] {
-  font-family: 'Barlow Condensed';
-}
-
-.twcss-font-\[\"Barlow\"\] {
-  font-family: 'Barlow';
-}
-
 .twcss-font-\[family-name\:--font-heading-family\] {
   font-family: var(--font-heading-family);
 }
 
-.twcss-text-\[100px\] {
-  font-size: 100px;
+.twcss-font-\[family-name\:--font-body-family\] {
+  font-family: var(--font-body-family);
 }
 
-.twcss-text-\[18px\] {
-  font-size: 18px;
+.twcss-font-\[family-name\:--font-family-body\] {
+  font-family: var(--font-family-body);
 }
 
-.twcss-text-\[30px\] {
-  font-size: 30px;
-}
-
-.twcss-text-\[70px\] {
-  font-size: 70px;
-}
-
-.twcss-text-\[45px\] {
-  font-size: 45px;
-}
-
-.twcss-text-\[28px\] {
-  font-size: 28px;
-}
-
-.twcss-text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-.twcss-text-\[2\.8rem\] {
-  font-size: 2.8rem;
-}
-
-.twcss-text-\[4\.5rem\] {
-  font-size: 4.5rem;
-}
-
-.twcss-text-\[7rem\] {
-  font-size: 7rem;
+.twcss-text-\[1\.5rem\] {
+  font-size: 1.5rem;
 }
 
 .twcss-text-\[1\.8rem\] {
@@ -1075,12 +1014,41 @@ video {
   font-size: 10rem;
 }
 
-.twcss-text-\[3rem\] {
-  font-size: 3rem;
+.twcss-text-\[2\.2rem\] {
+  font-size: 2.2rem;
+}
+
+.twcss-text-\[2\.6rem\] {
+  font-size: 2.6rem;
+}
+
+.twcss-text-\[2\.8rem\] {
+  font-size: 2.8rem;
 }
 
 .twcss-text-\[2rem\] {
   font-size: 2rem;
+}
+
+.twcss-text-\[3rem\] {
+  font-size: 3rem;
+}
+
+.twcss-text-\[4\.5rem\] {
+  font-size: 4.5rem;
+}
+
+.twcss-text-\[7rem\] {
+  font-size: 7rem;
+}
+
+.twcss-text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.twcss-font-bold {
+  font-weight: 700;
 }
 
 .twcss-font-medium {
@@ -1091,44 +1059,36 @@ video {
   font-weight: 600;
 }
 
-.twcss-font-\[--font-heading-family\] {
-  font-weight: var(--font-heading-family);
+.twcss-italic {
+  font-style: italic;
 }
 
 .twcss-leading-\[0\] {
   line-height: 0;
 }
 
-.twcss-leading-\[100px\] {
-  line-height: 100px;
-}
-
-.twcss-leading-\[70px\] {
-  line-height: 70px;
-}
-
-.twcss-leading-\[54px\] {
-  line-height: 54px;
-}
-
-.twcss-leading-none {
-  line-height: 1;
+.twcss-leading-\[2\.7rem\] {
+  line-height: 2.7rem;
 }
 
 .twcss-leading-\[5\.4rem\] {
   line-height: 5.4rem;
 }
 
-.twcss-leading-\[2\.7rem\] {
-  line-height: 2.7rem;
+.twcss-leading-none {
+  line-height: 1;
 }
 
-.twcss-text-\[--secondary-color\] {
-  color: var(--secondary-color);
+.twcss-tracking-normal {
+  letter-spacing: 0em;
 }
 
 .twcss-text-\[--accent-color\] {
   color: var(--accent-color);
+}
+
+.twcss-text-\[--secondary-color\] {
+  color: var(--secondary-color);
 }
 
 .twcss-text-white {
@@ -1136,16 +1096,9 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.twcss-text-\[--font-heading-family\] {
-  color: var(--font-heading-family);
-}
-
-.twcss-shadow {
-  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),
-    0 1px 2px -1px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+.twcss-text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .twcss-shadow-\[0px_0px_10px_0px_rgba\(0\,0\,0\,0\.5\)\] {
@@ -1171,10 +1124,6 @@ video {
 
 .\*\:twcss-items-start > * {
   align-items: flex-start;
-}
-
-.\*\:twcss-items-center > * {
-  align-items: center;
 }
 
 .\*\:twcss-text-\[1\.8rem\] > * {

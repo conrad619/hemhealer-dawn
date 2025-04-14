@@ -1,0 +1,113 @@
+<div class='color-{{ section.settings.color_scheme }} twcss-relative twcss-bg-[--accent-color-3]'>
+  <div class='custom-section isolate{% unless section.settings.full_width %} page-width{% endunless %} section-{{ section.id }}-padding'>
+    <div
+      {% if section.settings.full_width %}
+        class='page-width'
+      {% endif %}
+    >
+      <h2 class='twcss-font-[family-name:--font-heading-family] twcss-text-[7rem] twcss-font-medium twcss-text-center'>
+        Backed by Research, Trusted for Relief
+      </h2>
+      <h3 class='twcss-font-[family-name:--font-heading-family] twcss-text-[4.5rem] twcss-font-medium twcss-text-center'>
+        The Science of Diosmin – A Clinically Proven Solution
+      </h3>
+      <div class='twcss-flex twcss-pt-[4rem] twcss-gap-[4rem] twcss-pb-[15rem]'>
+        <div class='twcss-flex twcss-gap-[2rem] twcss-text-black twcss-flex-col twcss-w-[40%] twcss-bg-white twcss-px-[4rem] twcss-pt-[4rem] twcss-pb-[8rem] twcss-border-[--accent-color] twcss-border twcss-p-[1rem]'>
+          <p class='twcss-text-[2.2rem] twcss-font-bold twcss-text-center twcss-tracking-normal'>
+            Efficacy of Diosmin Therapy in Reducing Pain & Bleeding in Patients Suffering From Hemorrhoids
+          </p>
+          <img
+            src='https://www.hemhealer.com/cdn/shop/files/diosmin-science-chart-600x668.png?v=1741073976'
+            alt='diosmin science chart'
+            width='auto'
+            height='auto'
+          >
+          <ol class='twcss-text-[1.5rem] twcss-italic twcss-list-decimal'>
+            <li>
+              <p>
+                Diana G, Catanzaro M, Ferrara A, et al. Activity of purified diosmin in the treatment of hemorrhoids.
+                Clin Ter. 2000;151(5):341-4.
+              </p>
+            </li>
+          </ol>
+        </div>
+        <div class='twcss-flex twcss-gap-[2rem] twcss-flex-col twcss-w-[60%] twcss-p-[1rem] twcss-justify-center'>
+          <h4 class='twcss-text-[2.2rem] twcss-font-[family-name:--font-body-family] twcss-font-bold'>
+            Key Research Findings
+          </h4>
+          <ul class='twcss-flex twcss-gap-[2rem] twcss-flex-col'>
+            <li class='twcss-flex'>
+              <span class='material-symbols-outlined twcss-w-[2.4rem] twcss-h-[2.4rem] twcss-mr-[1.5rem] twcss-text-[--accent-color]'>
+                check_circle
+              </span>
+              <div>
+                <h5 class='twcss-text-[2.6rem] twcss-font-[family-name:--font-heading-family] twcss-font-medium'>
+                  Reduces swelling & pain
+                </h5>
+                <p class='twcss-text-[1.8rem]'>by strengthening veins</p>
+              </div>
+            </li>
+
+            <li class='twcss-flex'>
+              <span class='material-symbols-outlined twcss-w-[2.4rem] twcss-h-[2.4rem] twcss-mr-[1.5rem] twcss-text-[--accent-color]'>
+                check_circle
+              </span>
+              <div>
+                <h5 class='twcss-text-[2.6rem] twcss-font-[family-name:--font-heading-family] twcss-font-medium'>
+                  Improves circulation
+                </h5>
+                <p class='twcss-text-[1.8rem]'>to prevent future flare-ups</p>
+              </div>
+            </li>
+
+            <li class='twcss-flex'>
+              <span class='material-symbols-outlined twcss-w-[2.4rem] twcss-h-[2.4rem] twcss-mr-[1.5rem] twcss-text-[--accent-color]'>
+                check_circle
+              </span>
+              <div>
+                <h5 class='twcss-text-[2.6rem] twcss-font-[family-name:--font-heading-family] twcss-font-medium'>
+                  Clinically proven
+                </h5>
+                <p class='twcss-text-[1.8rem]'>to relieve hemorrhoid symptoms</p>
+              </div>
+            </li>
+          </ul>
+          <p class='twcss-text-[1.8rem]'>
+            Diosmin is a powerful bioflavonoid that improves vein health, reduces inflammation, and promotes long-term
+            relief.
+          </p>
+
+          <p class='twcss-text-[1.8rem]'>
+            The use of diosmin to treat hemorrhoids was substantiated in a group of 66 patients suffering from primitive
+            hemorrhoids of grade 1-4. The results1 demonstrated the efficacy of purified diosmin in reducing both pain
+            and bleeding; reduction rates of 79% and 67%, respectively, were achieved in the first week of treatment,
+            and 98% and 86%, respectively, in the second week of treatment.
+          </p>
+          <a
+            href='#'
+            class='twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-duration-100 twcss-font-[family-name:--font-heading-family] twcss-leading-none twcss-rounded-[.3rem] twcss-mt-[4rem] twcss-py-[1.2rem] twcss-px-[2.4rem] twcss-text-[2rem] twcss-text-white twcss-bg-[--accent-color] twcss-font-semibold twcss-w-full twcss-text-center'
+            >SHOP OUR DIOSMIN SOLUTIONS NOW!</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "custom section V",
+  "settings": [
+    // {
+    //   "type": "text",
+    //   "label": "Video URL",
+    //   "id": "video"
+    // }
+  ],
+  "presets": [
+    {
+      "name": "custom section V"
+    }
+  ]
+}
+{% endschema %}
