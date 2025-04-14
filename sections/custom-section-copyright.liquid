@@ -1,0 +1,40 @@
+<div class='color-{{ section.settings.color_scheme }} twcss-text-white twcss-text-[1.8rem] twcss-text-center twcss-py-[2rem] twcss-relative twcss-bg-[--accent-color]'>
+  <div class='custom-section isolate{% unless section.settings.full_width %} page-width{% endunless %} section-{{ section.id }}-padding'>
+    <div
+      {% if section.settings.full_width %}
+        class='page-width'
+      {% endif %}
+    >
+      <p>
+        The statements made within this website have not been evaluated by the U.S. Food and Drug Administration. These
+        statements and the products of this company are not intended to diagnose, treat, cure or prevent any disease.
+      </p>
+      <br>
+      <p>
+        *Results will vary from person to person depending on the individual’s existing health condition, physical
+        lifestyle, and diet. Testimonials and results contained within may not be an implication of future results and
+        are based on the experiences of a few people and you may not have similar results.
+      </p>
+      <br>
+      <p>© 2025 Hem Healer™, LLC. All rights reserved.</p>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "custom section copyright",
+  "settings": [
+    // {
+    //   "type": "text",
+    //   "label": "Video URL",
+    //   "id": "video"
+    // }
+  ],
+  "presets": [
+    {
+      "name": "custom section copyright"
+    }
+  ]
+}
+{% endschema %}
