@@ -1,0 +1,72 @@
+<div class='color-{{ section.settings.color_scheme }} twcss-relative twcss-bg-no-repeat twcss-bg-contain twcss-bg-[top_center]'>
+  <div class='custom-section isolate{% unless section.settings.full_width %} page-width{% endunless %} section-{{ section.id }}-padding'>
+    <div
+      {% if section.settings.full_width %}
+        class='page-width'
+      {% endif %}
+    >
+      <div class='twcss-flex twcss-flex-col twcss-pt-[10rem] twcss-pb-[4rem]'>
+        <h2 class='twcss-text-[7rem] twcss-font-medium twcss-text-center'>Healthy Horizon Herald</h2>
+      </div>
+      {% assign blog_handle = 'news' %}
+      {% if blogs[blog_handle].articles.size > 0 %}
+        <div class='blog-posts twcss-gap-[2rem] twcss-pb-[10rem] twcss-grid twcss-grid-cols-3 twcss-text-black'>
+          {% for article in blogs[blog_handle].articles limit: 3 %}
+            <div class='blog-post twcss-flex twcss-flex-col twcss-gap-[4rem] twcss-shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)]'>
+              {% comment %} <p class='blog-date'>{{ article.published_at | date: '%B %d, %Y' }}</p> {% endcomment %}
+              <a href='{{ article.url }}' class='twcss-block twcss-pb-[calc(0.66*100%)] twcss-relative'>
+                <img
+                  src='{{ article.image | image_url: width: 450 }}'
+                  alt='{{ article.title }}'
+                  class='twcss-w-full twcss-absolute top-0 twcss-left-0 twcss-h-full twcss-object-cover'
+                  width='auto'
+                  height='auto'
+                >
+              </a>
+              <div class='twcss-px-[2rem]  twcss-pb-[4rem]'>
+                <h3 class=' twcss-text-[2.8rem] twcss-leading-none twcss-font-medium twcss-text-[--second-color] twcss-mb-[2rem]'>
+                  <a href='{{ article.url }}'>{{ article.title }}</a>
+                </h3>
+                <a
+                  href='{{ article.url }}'
+                  class='hover:twcss-text-black twcss-flex twcss-items-center twcss-font-[family-name:--font-heading-family] twcss-text-[2rem] twcss-font-semibold twcss-text-[--accent-color]'
+                >
+                  READ MORE
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    height='20px'
+                    viewBox='0 -960 960 960'
+                    width='20px'
+                    fill='#3D8124'
+                  >
+                    <path d="m242-200 200-280-200-280h98l200 280-200 280h-98Zm238 0 200-280-200-280h98l200 280-200 280h-98Z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p>No blog posts found.</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "custom section blogs",
+  "settings": [
+    // {
+    //   "type": "text",
+    //   "label": "Video URL",
+    //   "id": "video"
+    // }
+  ],
+  "presets": [
+    {
+      "name": "custom section blogs"
+    }
+  ]
+}
+{% endschema %}
