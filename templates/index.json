@@ -50,6 +50,14 @@
     "custom_section_9_fdAUEr": {
       "type": "custom-section-9",
       "settings": {}
+    },
+    "custom_section_contact_kpPMTb": {
+      "type": "custom-section-contact",
+      "settings": {}
+    },
+    "custom_section_blogs_amfAXP": {
+      "type": "custom-section-blogs",
+      "settings": {}
     }
   },
   "order": [
@@ -62,6 +70,8 @@
     "custom_section_6_WfgFFF",
     "custom_section_7_M93Vkb",
     "custom_section_8_KrBjy8",
-    "custom_section_9_fdAUEr"
+    "custom_section_9_fdAUEr",
+    "custom_section_contact_kpPMTb",
+    "custom_section_blogs_amfAXP"
   ]
 }
