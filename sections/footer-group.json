@@ -11,6 +11,11 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "custom_section_subscribe_re8Kjr": {
+      "type": "custom-section-subscribe",
+      "name": "custom section subscribe",
+      "settings": {}
+    },
     "custom_section_footer_T877Bf": {
       "type": "custom-section-footer",
       "settings": {}
@@ -76,6 +81,7 @@
     }
   },
   "order": [
+    "custom_section_subscribe_re8Kjr",
     "custom_section_footer_T877Bf",
     "custom_section_copyright_XYHCyT",
     "footer"
