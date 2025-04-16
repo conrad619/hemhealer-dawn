@@ -17,7 +17,7 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Free US Shipping on Orders Over $79.99 | International Shipping is Available via DHL | Express International Shipping Available",
+            "text": "Free US Shipping on Orders Over $79.99 | Express International Shipping Available",
             "link": ""
           }
         }
