@@ -35,13 +35,22 @@
         "enable_language_selector": false
       }
     },
+    "header_bar_JbVeqU": {
+      "type": "header-bar",
+      "name": "header bar",
+      "settings": {
+        "phone_number": "+1-863-302-8006",
+        "email": "support@hemhealer.com",
+        "show_social": true
+      }
+    },
     "header": {
       "type": "header",
       "settings": {
         "logo_position": "middle-left",
         "menu": "dev-menu-only",
         "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
+        "sticky_header_type": "none",
         "show_line_separator": true,
         "color_scheme": "scheme-1",
         "menu_color_scheme": "",
@@ -52,15 +61,6 @@
         "margin_bottom": 0,
         "padding_top": 20,
         "padding_bottom": 20
-      }
-    },
-    "header_bar_JbVeqU": {
-      "type": "header-bar",
-      "name": "header bar",
-      "settings": {
-        "phone_number": "+1-863-302-8006",
-        "email": "support@hemhealer.com",
-        "show_social": true
       }
     }
   },
