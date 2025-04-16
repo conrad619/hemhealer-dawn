@@ -1,15 +1,23 @@
 <div
-  class='color-{{ section.settings.color_scheme }} twcss-relative twcss-py-[5rem] '
+  class='color-{{ section.settings.color_scheme }} twcss-relative lg:twcss-py-[5rem] twcss-py-[2.5rem]'
   style='background-image:linear-gradient(90deg, #C6E123 0%, #3D8124 100%) !important'
 >
+  <style>
+    @media (min-width: 990px) {
+      .bg-image {
+        background-image: url(https://cdn.shopify.com/s/files/1/0550/1560/4383/files/leave-bottle-png.png?v=1741800037);
+        background-position: 314px -65px;
+        background-repeat: no-repeat;
+        background-size: 30% auto;
+      }
+    }
+    .bg-image {
+      background-position: -67px 29px;
+      background-size: 371px auto;
+    }
+  </style>
   <div
-    class='twcss-absolute twcss-top-0 twcss-left-0 twcss-w-full twcss-h-full'
-    style='
-      background-image: url(https://hemhealer.co/wp-content/uploads/2025/02/leave-bottle-png.avif);
-      background-position: 314px -65px;
-      background-repeat: no-repeat;
-      background-size: 30% auto;
-    '
+    class='bg-image twcss-absolute twcss-top-0 twcss-left-0 twcss-w-full twcss-h-full'
   >
     &nbsp;
   </div>
@@ -21,29 +29,21 @@
         class='page-width'
       {% endif %}
     >
-      <div class='twcss-flex twcss-p-[1rem]'>
+      <div class='twcss-flex lg:twcss-flex-row twcss-flex-col twcss-p-[1rem]'>
         <div
-          class='twcss-p-[1rem] twcss-w-3/5'
+          class='lg:twcss-w-3/5'
         >
-          {% comment %}
-            <img
-              src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/leave-bottle-png.png?v=1741800037'
-              alt='hem healer customer support'
-              width='auto'
-              height='auto'
-            >
-          {% endcomment %}
-          <h2 class='twcss-text-[7rem] twcss-text-white twcss-font-medium twcss-leading-none twcss-mb-[1.6rem]'>
+          <h2 class='lg:twcss-text-[7rem] twcss-text-[4.5rem] twcss-text-white twcss-font-medium twcss-leading-none twcss-mb-[1.6rem]'>
             Subscribe & Save
           </h2>
-          <p class='twcss-text-[1.8rem] twcss-mb-[1.6rem] twcss-text-white'>
+          <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-mb-[1.6rem] twcss-text-white'>
             Sign up for our newsletter and receive an exclusive 10% discount on your first purchase!
           </p>
-          <p class='twcss-text-[1.8rem] twcss-mb-[1.6rem] twcss-text-white'>
+          <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-mb-[1.6rem] twcss-text-white'>
             Stay updated on special offers, health tips, and product news.
           </p>
         </div>
-        <div class='twcss-flex twcss-gap-[2rem] twcss-flex-col twcss-w-2/5 twcss-justify-center'>
+        <div class='twcss-flex twcss-gap-[2rem] twcss-flex-col lg:twcss-w-2/5 twcss-justify-center'>
           {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter' -%}
             {%- if form.posted_successfully? -%}
               <h2 class='form-status form-status-list form__message' tabindex='-1' autofocus>
@@ -66,10 +66,10 @@
                 </li>
               </ul>
             {%- endif -%}
-            <div class='contact__fields twcss-flex twcss-gap-[2rem] twcss-mb-[2rem]'>
-              <div class='field twcss-border-0 after:twcss-shadow-none twcss-shadow-none twcss-w-1/3'>
+            <div class='contact__fields twcss-flex lg:twcss-flex-row twcss-flex-col twcss-gap-[2rem] twcss-mb-[2rem]'>
+              <div class='field twcss-border-0 after:twcss-shadow-none twcss-shadow-none lg:twcss-w-1/3'>
                 <input
-                  class='field__input twcss-text-[1.8rem] twcss-border-0 twcss-text-black twcss-leading-[1.4] twcss-min-h-[4rem] twcss-rounded-[.3rem] twcss-bg-white twcss-px-[1.6rem] twcss-py-[.8rem]'
+                  class='field__input lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-border-0 twcss-text-black twcss-leading-[1.4] twcss-min-h-[4rem] twcss-rounded-[.3rem] twcss-bg-white twcss-px-[1.6rem] twcss-py-[.8rem]'
                   autocomplete='name'
                   type='text'
                   id='ContactForm-name'
@@ -79,12 +79,12 @@
                 >
                 <label class='field__label' for='ContactForm-name'>{{ 'templates.contact.form.name' | t }}</label>
               </div>
-              <div class='field field--with-error twcss-border-0 after:twcss-shadow-none twcss-shadow-none twcss-w-2/3'>
+              <div class='field field--with-error twcss-border-0 after:twcss-shadow-none twcss-shadow-none lg:twcss-w-2/3'>
                 <input
                   autocomplete='email'
                   type='email'
                   id='ContactForm-email'
-                  class='field__input twcss-text-[1.8rem] twcss-border-0 twcss-text-black twcss-leading-[1.4] twcss-min-h-[4rem] twcss-rounded-[.3rem] twcss-bg-white twcss-px-[1.6rem] twcss-py-[.8rem]'
+                  class='field__input lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-border-0 twcss-text-black twcss-leading-[1.4] twcss-min-h-[4rem] twcss-rounded-[.3rem] twcss-bg-white twcss-px-[1.6rem] twcss-py-[.8rem]'
                   name='contact[email]'
                   spellcheck='false'
                   autocapitalize='off'
@@ -119,7 +119,7 @@
                 type='submit'
                 name='commit'
                 id='Subscribe'
-                class='button twcss-w-full twcss-uppercase twcss-font-heading twcss-text-[2rem] twcss-leading-[2rem] twcss-rounded-[.3rem] twcss-text-white twcss-text-center twcss-font-semibold twcss-px-[2.4rem] twcss-bg-[--accent-color-2] hover:twcss-scale-[.9] twcss-transition-all twcss-border-0 twcss-shadow-none after:twcss-shadow-none'
+                class='button twcss-w-full twcss-uppercase twcss-font-heading lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-leading-[2rem] twcss-rounded-[.3rem] twcss-text-white twcss-text-center twcss-font-semibold twcss-px-[2.4rem] twcss-bg-[--accent-color-2] hover:twcss-scale-[.9] twcss-transition-all twcss-border-0 twcss-shadow-none after:twcss-shadow-none'
               >
                 Get 10% Discount Code Now!
               </button>

@@ -5,8 +5,8 @@
         class='page-width'
       {% endif %}
     >
-      <div class='twcss-flex'>
-        <div class='twcss-w-[40%] twcss-flex twcss-flex-col twcss-gap-[4rem] twcss-p-[1rem]'>
+      <div class='twcss-flex lg:twcss-flex-row twcss-flex-col twcss-gap-[2rem]'>
+        <div class='lg:twcss-w-[40%] twcss-flex twcss-flex-col lg:twcss-gap-[4rem] twcss-gap-[2rem] twcss-p-[1rem]'>
           <a href='/' class='twcss-w-1/2'>
             <img
               src='https://www.hemhealer.com/cdn/shop/files/hem-healer-logo-png-600x433.png?v=1740988255'
@@ -15,7 +15,7 @@
               height='auto'
             >
           </a>
-          <ul class='*:twcss-flex *:twcss-text-[1.8rem] twcss-flex twcss-flex-col twcss-gap-[1rem]'>
+          <ul class='*:twcss-flex *:lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-flex twcss-flex-col twcss-gap-[1rem]'>
             <li>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -52,7 +52,10 @@
               >
                 <path d="M436 160c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-20V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h320c26.5 0 48-21.5 48-48v-48h20c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-20v-64h20c6.6 0 12-5.4 12-12v-40c0-6.6-5.4-12-12-12h-20v-64h20zm-68 304H48V48h320v416zM208 256c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64zm-89.6 128h179.2c12.4 0 22.4-8.6 22.4-19.2v-19.2c0-31.8-30.1-57.6-67.2-57.6-10.8 0-18.7 8-44.8 8-26.9 0-33.4-8-44.8-8-37.1 0-67.2 25.8-67.2 57.6v19.2c0 10.6 10 19.2 22.4 19.2z"></path>
               </svg>
-              <span class='twcss-ml-[.5rem]'>502 E Main St. Lakeland, Florida 33801 USA</span>
+              <span class='twcss-ml-[.5rem]'
+                >502 E Main St. Lakeland, <br>
+                Florida 33801 USA</span
+              >
             </li>
           </ul>
           <ul class='twcss-flex twcss-gap-[1rem]'>
@@ -128,8 +131,10 @@
             </li>
           </ul>
         </div>
-        <div class='twcss-w-[30%] twcss-flex twcss-flex-col twcss-gap-[2rem]'>
-          <h2 class='twcss-font-body twcss-text-[1.8rem] twcss-font-bold twcss-mb-[1.4rem]'>Our Policies</h2>
+        <div class='lg:twcss-w-[30%] twcss-flex twcss-flex-col lg:twcss-gap-[2rem]'>
+          <h2 class='twcss-font-body lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-font-bold twcss-mb-[1.4rem]'>
+            Our Policies
+          </h2>
           <ul class='twcss-text-black'>
             {% assign menu_handle = 'policies' %}
             {% if linklists[menu_handle] %}
@@ -138,7 +143,7 @@
                   <li>
                     <a
                       href='{{ link.url }}'
-                      class='twcss-block twcss-px-[2rem] twcss-text-[1.8rem] twcss-py-[1.3rem] hover:twcss-text-[--accent-color]'
+                      class='twcss-block lg:twcss-px-[2rem] twcss-px-[1rem] lg:twcss-text-[1.8rem] twcss-text-[1.5rem] lg:twcss-py-[1.3rem] twcss-py-[1rem] hover:twcss-text-[--accent-color]'
                     >
                       {{- link.title -}}
                     </a>
@@ -148,8 +153,10 @@
             {% endif %}
           </ul>
         </div>
-        <div class='twcss-w-[30%]'>
-          <h2 class='twcss-font-body twcss-text-[1.8rem] twcss-font-bold twcss-mb-[1.4rem]'>Our Policies</h2>
+        <div class='lg:twcss-w-[30%] lg:twcss-gap-[2rem]'>
+          <h2 class='twcss-font-body lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-font-bold twcss-mb-[1.4rem]'>
+            Our Products
+          </h2>
           <ul class='twcss-text-black'>
             {% assign menu_handle = 'products' %}
             {% if linklists[menu_handle] %}
@@ -158,7 +165,7 @@
                   <li>
                     <a
                       href='{{ link.url }}'
-                      class='twcss-block twcss-px-[2rem] twcss-text-[1.8rem] twcss-py-[1.3rem] hover:twcss-text-[--accent-color]'
+                      class='twcss-block lg:twcss-px-[2rem] twcss-px-[1rem] lg:twcss-text-[1.8rem] twcss-text-[1.5rem] lg:twcss-py-[1.3rem] twcss-py-[1rem] hover:twcss-text-[--accent-color]'
                     >
                       {{- link.title -}}
                     </a>

@@ -5,12 +5,14 @@
         class='page-width'
       {% endif %}
     >
-      <div class='twcss-flex twcss-flex-col twcss-pt-[10rem] twcss-pb-[4rem]'>
-        <h2 class='twcss-text-[7rem] twcss-font-medium twcss-text-center'>Healthy Horizon Herald</h2>
+      <div class='twcss-flex twcss-flex-col lg:twcss-pt-[10rem] twcss-pt-[5rem] twcss-pb-[4rem]'>
+        <h2 class='lg:twcss-text-[7rem] twcss-text-[4.5rem] twcss-font-medium twcss-text-center'>
+          Healthy Horizon Herald
+        </h2>
       </div>
       {% assign blog_handle = 'news' %}
       {% if blogs[blog_handle].articles.size > 0 %}
-        <div class='blog-posts twcss-gap-[2rem] twcss-pb-[10rem] twcss-grid twcss-grid-cols-3 twcss-text-black'>
+        <div class='blog-posts twcss-gap-[2rem] lg:twcss-pb-[10rem] twcss-pb-[5rem] twcss-grid lg:twcss-grid-cols-3 twcss-text-black'>
           {% for article in blogs[blog_handle].articles limit: 3 %}
             <div class='blog-post twcss-flex twcss-flex-col twcss-gap-[4rem] twcss-shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)]'>
               {% comment %} <p class='blog-date'>{{ article.published_at | date: '%B %d, %Y' }}</p> {% endcomment %}

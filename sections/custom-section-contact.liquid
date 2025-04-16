@@ -6,7 +6,7 @@
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 1000 100'
       preserveAspectRatio='none'
-      class='twcss-w-[calc(100%+1.3px)] twcss-relative twcss-left-1/2 -twcss-translate-x-1/2 twcss-fill-[--accent-color] twcss-rotate-180'
+      class='lg:twcss-w-[calc(100%+1.3px)] twcss-w-[calc(175%+1.3px)] lg:twcss-h-auto twcss-h-[5.2rem] twcss-relative twcss-left-1/2 -twcss-translate-x-1/2 twcss-fill-[--accent-color] twcss-rotate-180'
     >
       <path class="elementor-shape-fill" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7
       c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4
@@ -19,12 +19,12 @@
         class='page-width'
       {% endif %}
     >
-      <div class='twcss-flex twcss-p-[1rem]'>
-        <div class='twcss-flex twcss-gap-[2rem] twcss-flex-col twcss-w-1/2 twcss-justify-center'>
-          <h2 class='twcss-text-[4.5rem] twcss-text-[--secondary-color] twcss-font-medium twcss-leading-none twcss-mb-[1.6rem]'>
+      <div class='twcss-flex lg:twcss-flex-row twcss-flex-col twcss-p-[1rem] lg:twcss-pt-[1rem] twcss-pt-[5rem]'>
+        <div class='twcss-flex twcss-gap-[2rem] twcss-flex-col lg:twcss-w-1/2 twcss-w-full twcss-justify-center'>
+          <h2 class='lg:twcss-text-[4.5rem] twcss-text-[2.5rem] twcss-text-[--secondary-color] twcss-font-medium twcss-leading-none twcss-mb-[1.6rem]'>
             Still Unsure? We Can Help!
           </h2>
-          <p class='twcss-text-[1.8rem] twcss-mb-[1.6rem]'>
+          <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-mb-[1.6rem] twcss-text-black'>
             If you’re not sure which product is right for you, reach out to our team for personalized recommendation.
           </p>
           <div class=''>
@@ -50,10 +50,10 @@
                   </li>
                 </ul>
               {%- endif -%}
-              <div class='contact__fields twcss-flex twcss-gap-[1rem] twcss-mb-[1rem]'>
-                <div class='field twcss-border-0 after:twcss-shadow-none twcss-shadow-none twcss-w-1/3'>
+              <div class='contact__fields twcss-flex lg:twcss-flex-row  twcss-flex-col twcss-gap-[1rem] twcss-mb-[1rem]'>
+                <div class='field twcss-border-0 after:twcss-shadow-none twcss-shadow-none lg:twcss-w-1/3'>
                   <input
-                    class='field__input twcss-text-[1.8rem] twcss-border-0 twcss-text-black twcss-leading-[1.4] twcss-min-h-[4rem] twcss-rounded-[.3rem] twcss-bg-[#C6E1238C] twcss-px-[1.6rem] twcss-py-[.8rem]'
+                    class='field__input lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-border-0 twcss-text-black twcss-leading-[1.4] twcss-min-h-[4rem] twcss-rounded-[.3rem] twcss-bg-[#C6E1238C] twcss-px-[1.6rem] twcss-py-[.8rem]'
                     autocomplete='name'
                     type='text'
                     id='ContactForm-name'
@@ -63,12 +63,12 @@
                   >
                   <label class='field__label' for='ContactForm-name'>{{ 'templates.contact.form.name' | t }}</label>
                 </div>
-                <div class='field field--with-error twcss-border-0 after:twcss-shadow-none twcss-shadow-none twcss-w-2/3'>
+                <div class='field field--with-error twcss-border-0 after:twcss-shadow-none twcss-shadow-none lg:twcss-w-2/3'>
                   <input
                     autocomplete='email'
                     type='email'
                     id='ContactForm-email'
-                    class='field__input twcss-text-[1.8rem] twcss-border-0 twcss-text-black twcss-leading-[1.4] twcss-min-h-[4rem] twcss-rounded-[.3rem] twcss-bg-[#C6E1238C] twcss-px-[1.6rem] twcss-py-[.8rem]'
+                    class='field__input lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-border-0 twcss-text-black twcss-leading-[1.4] twcss-min-h-[4rem] twcss-rounded-[.3rem] twcss-bg-[#C6E1238C] twcss-px-[1.6rem] twcss-py-[.8rem]'
                     name='contact[email]'
                     spellcheck='false'
                     autocapitalize='off'
@@ -103,7 +103,7 @@
                   rows='10'
                   id='ContactForm-body'
                   class='
-                    text-area field__input twcss-text-[1.8rem]
+                    text-area field__input lg:twcss-text-[1.8rem] twcss-text-[1.5rem]
                     twcss-border-0
                     twcss-rounded-[.3rem] twcss-bg-[#C6E1238C]
                   '
@@ -125,7 +125,7 @@
             {%- endform -%}
           </div>
         </div>
-        <div class='twcss-p-[1rem] twcss-w-1/2'>
+        <div class='twcss-p-[1rem] lg:twcss-w-1/2 twcss-w-full'>
           <img
             src='https://www.hemhealer.com/cdn/shop/files/hem-healer-customer-support-png.png?v=1741788592'
             alt='hem healer customer support'
