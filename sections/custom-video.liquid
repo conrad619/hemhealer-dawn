@@ -5,7 +5,7 @@
         class='page-width'
       {% endif %}
     >
-      <div id='youtube-wrapper' style='pointer-events: none;'>
+      <div id='youtube-wrapper'>
         <div id='youtube-player'></div>
       </div>
     </div>
@@ -37,7 +37,7 @@
   iframe.width = '100%';
   iframe.height = 'auto';
   iframe.style = 'aspect-ratio:16/9';
-  iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}`; // 'mute=1' is required for autoplay in most browsers
+  iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=1&loop=1&playlist=${videoId}`; // 'mute=1' is required for autoplay in most browsers
   iframe.frameBorder = '0';
   iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
   iframe.allowFullscreen = true;
