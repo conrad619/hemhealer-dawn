@@ -5,20 +5,9 @@
         class='page-width'
       {% endif %}
     >
-      <video
-        data-type='mp4'
-        preload='metadata'
-        loop=''
-        playsinline=''
-        muted
-        autoplay
-        controls
-        id='video'
-        class='twcss-w-full'
-      >
-        <source src='{{ section.settings.video }}' type='video/mp4'>
-        Your browser does not support the video tag.
-      </video>
+      <div id='youtube-wrapper' style='pointer-events: none;'>
+        <div id='youtube-player'></div>
+      </div>
     </div>
   </div>
 </div>
@@ -40,3 +29,19 @@
   ]
 }
 {% endschema %}
+
+<script>
+  const videoId = '1LysFbJwHCg'; // Replace with your actual video ID
+  const iframe = document.createElement('iframe');
+
+  iframe.width = '100%';
+  iframe.height = 'auto';
+  iframe.style = 'aspect-ratio:16/9';
+  iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}`; // 'mute=1' is required for autoplay in most browsers
+  iframe.frameBorder = '0';
+  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+  iframe.allowFullscreen = true;
+  title = 'Where Hem Healer is manufactured!🇺🇸 #hemorrhoids #hemorrhoidtreatment  #naturalmedicine  #piles';
+
+  document.getElementById('youtube-player').appendChild(iframe);
+</script>
