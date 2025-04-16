@@ -45,27 +45,6 @@
         </div>
         <div class='twcss-flex twcss-gap-[2rem] twcss-flex-col lg:twcss-w-2/5 twcss-justify-center'>
           {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter' -%}
-            {%- if form.posted_successfully? -%}
-              <h2 class='form-status form-status-list form__message' tabindex='-1' autofocus>
-                {{- 'icon-success.svg' | inline_asset_content -}}
-                {{ 'templates.contact.form.post_success' | t }}
-              </h2>
-            {%- elsif form.errors -%}
-              <div class='form__message'>
-                <h2 class='form-status caption-large text-body' role='alert' tabindex='-1' autofocus>
-                  {{- 'icon-error.svg' | inline_asset_content -}}
-                  {{ 'templates.contact.form.error_heading' | t }}
-                </h2>
-              </div>
-              <ul class='form-status-list caption-large' role='list'>
-                <li>
-                  <a href='#ContactForm-email' class='link'>
-                    {{ form.errors.translated_fields.email | capitalize }}
-                    {{ form.errors.messages.email }}
-                  </a>
-                </li>
-              </ul>
-            {%- endif -%}
             <div class='contact__fields twcss-flex lg:twcss-flex-row twcss-flex-col twcss-gap-[2rem] twcss-mb-[2rem]'>
               <div class='field twcss-border-0 after:twcss-shadow-none twcss-shadow-none lg:twcss-w-1/3'>
                 <input
