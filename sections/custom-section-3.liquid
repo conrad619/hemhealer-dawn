@@ -67,12 +67,60 @@
           </div>
         </div>
       </div>
-      <div class='twcss-pt-[4rem] twcss-py-[1rem]'>
+      {% comment %} <div class='twcss-pt-[4rem] twcss-py-[1rem]'>
         <a
           href='/cart/add?id=44552662122709&quantity=1'
           class='twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-mt-[2rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-white twcss-bg-[--accent-color] twcss-font-semibold twcss-w-full twcss-text-center'
           >EXPERIENCE DOCTOR-APPROVED RELIEF TODAY</a
         >
+      </div> {% endcomment %}
+      <div class='twcss-pt-[4rem] twcss-py-[1rem]'>
+      {{ 'quick-add.css' | asset_url | stylesheet_tag }}
+      <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+      {% assign card_product = all_products['hem-healer'] %}
+      {% assign section_id = section.id %}
+      {% assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id %}
+      
+      <div class="quick-add no-js-hidden">
+        <modal-opener data-modal="#QuickAdd-{{ card_product.id }}">
+          <button
+            id="{{ product_form_id }}-submit"
+            type="submit"
+            name="add"
+            class="twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-mt-[2rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-white twcss-bg-[--accent-color] twcss-font-semibold twcss-w-full twcss-text-center"
+            aria-haspopup="dialog"
+            aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
+            data-product-url="{{ card_product.url }}"
+          >
+          EXPERIENCE DOCTOR-APPROVED RELIEF TODAY
+            {%- if horizontal_quick_add -%}
+              <span class="icon-wrap">
+                {{- 'icon-arrow.svg' | inline_asset_content -}}
+              </span>
+            {%- endif -%}
+            {%- render 'loading-spinner' -%}
+          </button>
+        </modal-opener>
+        <quick-add-modal id="QuickAdd-{{ card_product.id }}" class="quick-add-modal">
+          <div
+            role="dialog"
+            aria-label="{{ 'products.product.choose_product_options' | t: product_name: card_product.title | escape }}"
+            aria-modal="true"
+            class="quick-add-modal__content global-settings-popup"
+            tabindex="-1"
+          >
+            <button
+              id="ModalClose-{{ card_product.id }}"
+              type="button"
+              class="quick-add-modal__toggle"
+              aria-label="{{ 'accessibility.close' | t }}"
+            >
+              {{- 'icon-close.svg' | inline_asset_content -}}
+            </button>
+            <div id="QuickAddInfo-{{ card_product.id }}" class="quick-add-modal__content-info"></div>
+          </div>
+        </quick-add-modal>
       </div>
     </div>
   </div>
