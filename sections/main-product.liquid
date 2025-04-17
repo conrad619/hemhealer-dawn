@@ -99,6 +99,13 @@
                 >
                   {{- block.settings.text -}}
                 </p>
+              {%- when 'multiline_text' -%}
+                <div
+                  class='product__text twcss-italic twcss-text-[1.4rem] inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}'
+                  {{ block.shopify_attributes }}
+                >
+                  {{- block.settings.multiline_text -}}
+                </div>
               {%- when 'title' -%}
                 <div class='product__title' {{ block.shopify_attributes }}>
                   <h1 class='lg:twcss-text-[4rem] twcss-text-[3rem] twcss-font-bold'>{{ product.title | escape }}</h1>
@@ -673,7 +680,7 @@
       </div>
     </div>
 
-    <h2 class='twcss-mt-[2rem] twcss-px-[2rem] twcss-py-[1rem] twcss-text-center twcss-text-[5rem] twcss-bg-[#f3f3f3] twcss-text-black twcss-font-bold twcss-rounded-[.8rem]'>
+    <h2 class='twcss-mt-[2rem] twcss-px-[2rem] twcss-py-[1rem] twcss-text-center lg:twcss-text-[5rem] twcss-text-[3rem] twcss-bg-[--accent-color-2] twcss-text-black twcss-font-semibold twcss-rounded-[.8rem]'>
       Diosmin · Hesperidin · Horse Chestnut Extract
     </h2>
     {% render 'product-media-modal', variant_images: variant_images %}
@@ -746,6 +753,38 @@
         {
           "type": "inline_richtext",
           "id": "text",
+          "default": "t:sections.main-product.blocks.text.settings.text.default",
+          "label": "t:sections.main-product.blocks.text.settings.text.label"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "options": [
+            {
+              "value": "body",
+              "label": "t:sections.main-product.blocks.text.settings.text_style.options__1.label"
+            },
+            {
+              "value": "subtitle",
+              "label": "t:sections.main-product.blocks.text.settings.text_style.options__2.label"
+            },
+            {
+              "value": "uppercase",
+              "label": "t:sections.main-product.blocks.text.settings.text_style.options__3.label"
+            }
+          ],
+          "default": "body",
+          "label": "t:sections.main-product.blocks.text.settings.text_style.label"
+        }
+      ]
+    },
+    {
+      "type": "multiline_text",
+      "name": "Multiline Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "multiline_text",
           "default": "t:sections.main-product.blocks.text.settings.text.default",
           "label": "t:sections.main-product.blocks.text.settings.text.label"
         },
