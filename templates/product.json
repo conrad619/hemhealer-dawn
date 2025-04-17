@@ -53,7 +53,7 @@
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
+            "show_gift_card_recipient": false
           }
         },
         "collapsible-row-0": {
@@ -72,7 +72,7 @@
           "settings": {
             "heading": "Shipping & Returns",
             "icon": "truck",
-            "content": "",
+            "content": "<p>90-DAY MONEY BACK GUARANTEE</p><p>FREE USA SHIPPING ON ORDERS $79.99+</p>",
             "page": ""
           }
         },
