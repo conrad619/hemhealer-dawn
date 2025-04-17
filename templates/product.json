@@ -23,6 +23,13 @@
           "type": "title",
           "settings": {}
         },
+        "text_GdTaFQ": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.testimonial_quote.value }}",
+            "text_style": "body"
+          }
+        },
         "price": {
           "type": "price",
           "settings": {}
@@ -107,6 +114,7 @@
       "block_order": [
         "vendor",
         "title",
+        "text_GdTaFQ",
         "price",
         "caption",
         "variant_picker",
