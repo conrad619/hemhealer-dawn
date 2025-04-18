@@ -34,6 +34,10 @@
           "type": "price",
           "settings": {}
         },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
         "caption": {
           "type": "text",
           "settings": {
@@ -50,10 +54,6 @@
         },
         "quantity_selector": {
           "type": "quantity_selector",
-          "settings": {}
-        },
-        "description": {
-          "type": "description",
           "settings": {}
         },
         "buy_buttons": {
@@ -116,10 +116,10 @@
         "title",
         "multiline_text_KUTF9N",
         "price",
+        "description",
         "caption",
         "variant_picker",
         "quantity_selector",
-        "description",
         "buy_buttons",
         "collapsible-row-0",
         "collapsible-row-1",
@@ -131,7 +131,7 @@
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "",
-        "media_size": "medium",
+        "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
         "gallery_layout": "thumbnail_slider",
