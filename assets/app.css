@@ -721,6 +721,10 @@ video {
   margin-top: 5rem;
 }
 
+.-twcss-ml-\[1rem\] {
+  margin-left: -1rem;
+}
+
 .twcss-block {
   display: block;
 }
@@ -793,6 +797,10 @@ video {
   height: 100%;
 }
 
+.twcss-h-\[5rem\] {
+  height: 5rem;
+}
+
 .twcss-min-h-\[4rem\] {
   min-height: 4rem;
 }
@@ -855,6 +863,10 @@ video {
 
 .twcss-w-full {
   width: 100%;
+}
+
+.twcss-w-\[5rem\] {
+  width: 5rem;
 }
 
 .twcss-flex-shrink-0 {
@@ -931,12 +943,12 @@ video {
   border-radius: 0.3rem;
 }
 
-.twcss-rounded-full {
-  border-radius: 9999px;
-}
-
 .twcss-rounded-\[\.8rem\] {
   border-radius: 0.8rem;
+}
+
+.twcss-rounded-full {
+  border-radius: 9999px;
 }
 
 .twcss-border {
@@ -996,16 +1008,6 @@ video {
 .twcss-bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.twcss-bg-amber-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(251 191 36 / var(--tw-bg-opacity));
-}
-
-.twcss-bg-\[\#f3f3f3\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 243 243 / var(--tw-bg-opacity));
 }
 
 .twcss-bg-\[url\(https\:\/\/cdn\.shopify\.com\/s\/files\/1\/0550\/1560\/4383\/files\/hemhealer-leaves-bg-png_2\.png\?v\=1742323161\)\] {
@@ -1214,6 +1216,10 @@ video {
   font-size: 2rem;
 }
 
+.twcss-text-\[3rem\] {
+  font-size: 3rem;
+}
+
 .twcss-text-\[4\.5rem\] {
   font-size: 4.5rem;
 }
@@ -1229,14 +1235,6 @@ video {
 .twcss-text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
-}
-
-.twcss-text-\[3rem\] {
-  font-size: 3rem;
-}
-
-.twcss-text-\[7rem\] {
-  font-size: 7rem;
 }
 
 .twcss-font-bold {
@@ -1667,16 +1665,16 @@ video {
     font-size: 4.5rem;
   }
 
-  .lg\:twcss-text-\[7rem\] {
-    font-size: 7rem;
-  }
-
   .lg\:twcss-text-\[4rem\] {
     font-size: 4rem;
   }
 
   .lg\:twcss-text-\[5rem\] {
     font-size: 5rem;
+  }
+
+  .lg\:twcss-text-\[7rem\] {
+    font-size: 7rem;
   }
 
   .lg\:twcss-leading-\[5\.4rem\] {
