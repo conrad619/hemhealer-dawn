@@ -23,10 +23,10 @@
           "type": "title",
           "settings": {}
         },
-        "text_GdTaFQ": {
-          "type": "text",
+        "multiline_text_KUTF9N": {
+          "type": "multiline_text",
           "settings": {
-            "text": "{{ product.metafields.custom.testimonial_quote.value }}",
+            "multiline_text": "<p>{{ product.metafields.custom.product_highlight_review | metafield_tag }}</p>",
             "text_style": "body"
           }
         },
@@ -114,7 +114,7 @@
       "block_order": [
         "vendor",
         "title",
-        "text_GdTaFQ",
+        "multiline_text_KUTF9N",
         "price",
         "caption",
         "variant_picker",
