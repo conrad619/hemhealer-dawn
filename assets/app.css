@@ -725,6 +725,18 @@ video {
   margin-left: -1rem;
 }
 
+.twcss-mb-\[4rem\] {
+  margin-bottom: 4rem;
+}
+
+.twcss-mb-\[3rem\] {
+  margin-bottom: 3rem;
+}
+
+.twcss-ml-\[2rem\] {
+  margin-left: 2rem;
+}
+
 .twcss-block {
   display: block;
 }
@@ -747,6 +759,10 @@ video {
 
 .twcss-hidden {
   display: none;
+}
+
+.twcss-aspect-video {
+  aspect-ratio: 16 / 9;
 }
 
 .twcss-h-\[1\.8rem\] {
@@ -799,6 +815,10 @@ video {
 
 .twcss-h-\[5rem\] {
   height: 5rem;
+}
+
+.twcss-h-auto {
+  height: auto;
 }
 
 .twcss-min-h-\[4rem\] {
@@ -869,6 +889,18 @@ video {
   width: 5rem;
 }
 
+.twcss-max-w-\[40rem\] {
+  max-width: 40rem;
+}
+
+.twcss-max-w-\[90rem\] {
+  max-width: 90rem;
+}
+
+.twcss-max-w-\[80rem\] {
+  max-width: 80rem;
+}
+
 .twcss-flex-shrink-0 {
   flex-shrink: 0;
 }
@@ -889,6 +921,14 @@ video {
 
 .twcss-list-decimal {
   list-style-type: decimal;
+}
+
+.twcss-list-\[\"\"\] {
+  list-style-type: '';
+}
+
+.twcss-list-\[\"\2714\"\] {
+  list-style-type: '✔';
 }
 
 .twcss-grid-cols-1 {
@@ -1128,6 +1168,16 @@ video {
   padding-bottom: 5rem;
 }
 
+.twcss-py-\[3rem\] {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.twcss-px-\[1\.5rem\] {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .twcss-pb-\[10rem\] {
   padding-bottom: 10rem;
 }
@@ -1166,6 +1216,10 @@ video {
 
 .twcss-pt-\[5rem\] {
   padding-top: 5rem;
+}
+
+.twcss-pl-\[1rem\] {
+  padding-left: 1rem;
 }
 
 .twcss-text-center {
@@ -1237,6 +1291,10 @@ video {
   line-height: 1.75rem;
 }
 
+.twcss-text-\[2\.4rem\] {
+  font-size: 2.4rem;
+}
+
 .twcss-font-bold {
   font-weight: 700;
 }
@@ -1281,6 +1339,10 @@ video {
   line-height: 1;
 }
 
+.twcss-leading-normal {
+  line-height: 1.5;
+}
+
 .twcss-tracking-normal {
   letter-spacing: 0em;
 }
@@ -1316,6 +1378,11 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.twcss-text-red-600 {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
+}
+
 .twcss-underline {
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
@@ -1348,6 +1415,14 @@ video {
 
 .twcss-duration-100 {
   transition-duration: 100ms;
+}
+
+.\*\:twcss-mb-\[3rem\] > * {
+  margin-bottom: 3rem;
+}
+
+.\*\:twcss-mr-\[1rem\] > * {
+  margin-right: 1rem;
 }
 
 .\*\:twcss-flex > * {

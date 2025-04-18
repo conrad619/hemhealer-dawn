@@ -393,14 +393,13 @@
       <script src='{{ 'cart-drawer.js' | asset_url }}' defer='defer'></script>
     {%- endif -%}
     <script src='https://unpkg.com/aos@2.3.1/dist/aos.js' defer></script>
-    <script>
-      AOS.init();
-    </script>
     <script src='https://unpkg.com/@popperjs/core@2' defer></script>
     <script src='https://unpkg.com/tippy.js@6' defer></script>
     <script>
       let tip;
       document.addEventListener('DOMContentLoaded', function () {
+        AOS.init();
+
         let longVersion = ` ✅ Buy with Prime – What It Means for You<br>
         If you're a Prime member, you can now shop on our site with the same speed, convenience, and confidence you get from Amazon.<br>
         <br>
@@ -424,7 +423,64 @@
         document.querySelector('#buy-with-prime').addEventListener('click', (event) => {
           tip[0].setContent(longVersion);
         });
+        let fast_acting_relief = `Hem Hero® uses a clinical-strength blend of Diosmin, Hesperidin, and Horse Chestnut to reduce swelling and discomfort quickly. These ingredients help calm inflamed veins and improve circulation, providing noticeable relief within days.*
+        <br>
+        <br>
+        Study Link:
+        <br>
+        <a href="#">
+          Diosmin & Hesperidin: Effects on Hemorrhoidal Disease (PubMed)
+        </a>
+        `;
+        let support_healthy_circulation = `Diosmin and Hesperidin are citrus bioflavonoids proven to improve blood vessel tone and circulation. Better circulation helps reduce pressure in the veins and supports long-term healing from the inside out.*
+        <br>
+        <br>
+        Study Link:
+        <br>
+        <a href="#">
+          Micronized Flavonoids for Venous Disorders (NCBI)
+        </a>
+        `;
+        let strengthen_veins_and_capillaries = `Horse Chestnut Extract and Diosmin strengthen the walls of veins and capillaries, reducing fragility and helping prevent flare-ups from recurring. This improves vein resilience over time.*
+        <br>
+        <br>
+        Study Link:
+        <br>
+        <a href="#">
+        Horse Chestnut for Chronic Venous Insufficiency (Cochrane Review)
+        </a>`;
+        let settings = {
+          allowHTML: true,
+          placement: 'bottom',
+          arrow: true,
+          hideOnClick: false,
+          interactive: true,
+        };
+        tippy('#fast_acting_relief', {
+          content: fast_acting_relief,
+          ...settings,
+        });
+        tippy('#support_healthy_circulation', {
+          content: support_healthy_circulation,
+          ...settings,
+        });
+        tippy('#strengthen_veins_and_capillaries', {
+          content: strengthen_veins_and_capillaries,
+          ...settings,
+        });
       });
     </script>
+    <style>
+      .tippy-content {
+        background: #fff;
+        color: #000;
+        font-family: var(--font-body-family);
+        border: 1px solid #000;
+      }
+      .tippy-content a {
+        color: var(--accent-color);
+        text-decoration: underline;
+      }
+    </style>
   </body>
 </html>
