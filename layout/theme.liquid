@@ -392,9 +392,39 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src='{{ 'cart-drawer.js' | asset_url }}' defer='defer'></script>
     {%- endif -%}
-    <script src='https://unpkg.com/aos@2.3.1/dist/aos.js'></script>
+    <script src='https://unpkg.com/aos@2.3.1/dist/aos.js' defer></script>
     <script>
       AOS.init();
+    </script>
+    <script src='https://unpkg.com/@popperjs/core@2' defer></script>
+    <script src='https://unpkg.com/tippy.js@6' defer></script>
+    <script>
+      let tip;
+      document.addEventListener('DOMContentLoaded', function () {
+        let longVersion = ` ✅ Buy with Prime – What It Means for You<br>
+        If you're a Prime member, you can now shop on our site with the same speed, convenience, and confidence you get from Amazon.<br>
+        <br>
+        When you use Buy with Prime:<br>
+        <ul>
+          <li>✅ Fast, FREE Shipping with your Prime membership</li>
+          <li>✅ Amazon’s secure checkout experience</li>
+          <li>✅ Seamless order tracking via your Amazon account</li>
+          <li>✅ Easy returns backed by Amazon’s customer support</li>
+        </ul>
+        <br>
+        Look for the Buy with Prime button on eligible products and enjoy a trusted shopping experience—directly from our site.
+        `;
+        tip = tippy('#buy-with-prime', {
+          content: `Buy with Prime<br>Fast, free shipping + Amazon checkout for Prime members.`,
+          allowHTML: true,
+          placement: 'bottom',
+          arrow: true,
+          hideOnClick: false,
+        });
+        document.querySelector('#buy-with-prime').addEventListener('click', (event) => {
+          tip[0].setContent(longVersion);
+        });
+      });
     </script>
   </body>
 </html>
