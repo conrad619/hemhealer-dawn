@@ -315,7 +315,7 @@
           >
         </div>
 
-        <div class='twcss-pt-[5rem]'>
+        <div class='twcss-pt-[5rem] twcss-mb-[5rem]'>
           <h2 class='lg:twcss-text-[4.5rem] twcss-text-[2.5rem] twcss-font-bold twcss-text-center'>
             Simply take 1 capsule in the morning
           </h2>
@@ -330,6 +330,56 @@
             height='auto'
           >
         </div>
+        <style>
+          .accordion-header {
+            padding: 2rem 2rem 2.4rem 4rem;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            font-weight: bold;
+            border-bottom: 1px solid #000;
+            transition: background 0.3s;
+            font-size: 1.8rem;
+            color: #000;
+            position: relative;
+          }
+
+          .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+          }
+
+          .accordion-inner {
+            padding: 2rem 0 2rem 4rem;
+          }
+
+          .accordion-header:after {
+            content: '+';
+            font-size: 2.4rem;
+            position: absolute;
+            left: 1rem;
+            line-height: 2.6rem;
+          }
+          .accordion-header.active:after {
+            content: '-';
+          }
+          @media (max-width: 990px) {
+            .accordion-header {
+              font-size: 1.5rem;
+            }
+            .accordion-header:after {
+              content: '+';
+              font-size: 2.4rem;
+              left: 1rem;
+              line-height: 2.6rem;
+              top: 1.7rem;
+            }
+          }
+        </style>
+        <!--  -->
+        <div class='accordion' id='accordion'></div>
+        <!--  -->
 
         <div class='twcss-pt-[5rem]'>
           <h2 class='lg:twcss-text-[4.5rem] twcss-text-[2.5rem] twcss-font-bold twcss-text-center'>
@@ -400,3 +450,105 @@
   ]
 }
 {% endschema %}
+
+<script>
+  let accordionData = {
+    'HOW DOES HEM HERO™ EXTRA STRENGTH WORK?': `
+    <p>A hemorrhoid is caused by inflamed veins and blood vessels. The 100% natural ingredients are proven to naturally reduce inflammation and also strengthen the blood vessel walls.</p>
+
+    <p>Unlike greasy, messy creams, Hem Hero™ Extra Strength goes right to the cause of your hemorrhoids, not just the symptoms.</p>
+
+    <p>The two main ingredients are simple extracts from the bitter orange. There are no chemicals in Hem Hero™ Extra Strength, period!</p>
+
+    <p>Hemorrhoid sufferers that have tried the Hem Hero™ Extra Strength usually keep ordering it as it is one of a kind!</p>`,
+
+    'HOW LONG DOES HEM HERO™ EXTRA STRENGTH TAKE TO ALLEVIATE HEMORRHOID SYMPTOMS?': `<p>Everyone is different, but most people start feeling a difference in just a few days. Depending on the severity of your hemorrhoids, it may take a little longer to get relief.</p>
+
+    <p>Please refer to the severity chart below to determine how many Hem Hero™ Extra Strength you may require.</p>
+    <p><em><strong>Severity Chart:</strong></em>
+    <br><strong>Mild</strong>&nbsp;(suffering less than one month):&nbsp;<em>1-3 Bottles</em><br>
+    <strong>Medium</strong>&nbsp;(suffering one month to one year):&nbsp;<em>3-5 Bottles</em><br>
+    <strong>Chronic</strong>&nbsp;(suffering more than one year):&nbsp;<em>5 Bottles</em></p>
+
+    <p>Each bottle contains a 2-week supply of Hem Hero™ Extra Strength.</p>`,
+
+    'IS HEM HERO™ EXTRA STRENGTH SAFE?': `<p>Every ingredient in Hem Hero™ Extra Strength is 100% natural. The two main components, Diosmin and Hesperidin, are extracted from orange peels. The third ingredient, Horse Chestnut Seed Extract, comes from trees found in Asia and Europe. All three elements have incredible benefits and can even help with varicose veins!</p>
+
+    <p>If you are on heart medication, consult your doctor before use.</p>`,
+
+    'DOES HEM HERO™ EXTRA STRENGTH WORK ON BOTH INTERNAL AND EXTERNAL HEMORRHOIDS?': `Yes! Hem Hero™ Extra Strength has been proven effective on both internal and external hemorrhoids!`,
+
+    'WHAT ARE THE INGREDIENTS?': `<p>Hem Hero™ Extra Strength contains three powerful ingredients. The ingredients both reduce inflammation and strengthen your veins, attacking the source of the problem, not just the symptoms.</p>
+    <p><strong>Horse Chestnut Seed Extract</strong></p>
+    <p>Horse chestnut is a tree native to parts of southeastern Europe. Its fruits contain seeds that resemble sweet chestnuts but have a bitter taste. Horse Chestnut Extract has antioxidant effects on the body and is known to have anti-inflammatory activity in the blood vessels.</p>
+    <p><strong>Diosmin</strong></p>
+    <p>Diosmin is a naturally occurring chemical found mainly in citrus fruits. It's believed to help reduce inflammation and restore normal blood flow in people with hemorrhoids. In a review of 24 studies in over 2,300 people, plant flavonoids like diosmin decreased hemorrhoid-related itchiness, bleeding, discharge, and other hemorrhoid symptoms.<br></p>
+    <p><strong>Hesperidin</strong></p>
+    <p>Hesperidin is a flavanone glycoside found in citrus fruits. Hesperidin may help blood vessels function better while reducing inflammation, a major cause of hemorrhoids.</p>
+    `,
+
+    'HOW MANY BOTTLES DO I NEED?': `<p>Hem Hero™ Extra Strength gets to work fast but may require more product, depending on the severity of your hemorrhoids.</p>
+    <p>Each bottle contains a 2-week supply of Hem Hero™ Extra Strength.</p>
+    <p><em><strong>Severity Chart:</strong></em><br>
+    <strong>Mild</strong>&nbsp;(suffering less than one month):&nbsp;<em>1-3 Bottles</em><br>
+    <strong>Medium</strong>&nbsp;(suffering one month to one year):&nbsp;<em>3-5 Bottles</em><br>
+    <strong>Chronic</strong>&nbsp;(suffering more than one year):&nbsp;<em>5 Bottles</em></p>
+    `,
+
+    'WHEN WILL MY ORDER SHIP?': `<p>We ship all orders in discreet packaging, typically within one business day. You'll receive a USPS tracking number sent directly to your email.</p>
+    <p>Depending on location and circumstances, the delivery time is typically 3-7 business days.</p>
+    `,
+
+    'WHY HAVE I NEVER HEARD OF A CAPSULE TO RELIEVE HEMORRHOIDS?': `
+      <p>Most people have only heard of creams, which major pharmaceutical companies push. Pharmaceutical companies love making their money on repeat customers, so they deal with the symptoms and not the actual cause of the hemorrhoids. These companies spend millions of dollars advertising cheap products designed for you to buy them repeatedly because they believe the money is in the care, not the cure.</p>
+      <p>For years, these big companies have buried little guys like us who have a solution to your hemorrhoid problem. Thanks to the Internet and social media, we can compete and get our message out. Our message is simple: creams don't work! Relive hemorrhoids from the inside out if you want them gone!</p>
+    `,
+
+    'WHERE IS HEM HERO™ EXTRA STRENGTH MADE?': `<p>Hem Hero™ is produced in an FDA Registered facility located in Atlanta, Georgia. We strictly adhere to Current Good Manufacturing Practice (CGMP) regulations, which are enforced by the FDA. CGMPs provide for systems that assure proper design, monitoring, and control of manufacturing processes and facilities. Additionally, our manufacturing facility is certified USDA Organic.</p>
+      <p>Our headquarters are located in sunny Lakeland, Florida.</p>
+    `,
+
+    'WHY SHOULD I SUBSCRIBE?': `<p>There are two reasons to subscribe: to save money and, most importantly, to prevent your hemorrhoids from returning.</p>
+    <p>After you've alleviated your hemorrhoids, prevent them from returning by continuing to take Hem Hero™ Extra Strength.</p>
+    <p>We'll deliver Hem Hero™ Extra Strength monthly, so you never run out. Shipping is always free, and your price will never increase, even when the cost of Hem Hero increases. There's no obligation, and you can cancel or modify your subscription anytime.</p>
+    `,
+
+    'CAN I TALK TO A REAL PERSON?': `<p>Yes, we'd love to talk! Call us at 888-202-1802 or email us at Ian@hemhealer.com. We work seven days a week, so give us a call and let's talk about your hemorrhoids!</p>`,
+  };
+
+  const accordionContainer = document.getElementById('accordion');
+
+  Object.entries(accordionData).forEach(([title, content]) => {
+    const item = document.createElement('div');
+    item.className = 'accordion-item';
+
+    item.innerHTML = `
+    <button class="accordion-header" aria-expanded="false">${title}</button>
+    <div class="accordion-content">
+      <div class="accordion-inner">${content}</div>
+    </div>
+  `;
+
+    accordionContainer.appendChild(item);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('accordion-header')) {
+      const header = e.target;
+      const content = header.nextElementSibling;
+      const isOpen = header.classList.contains('active');
+
+      // Close all
+      document.querySelectorAll('.accordion-header').forEach((h) => h.classList.remove('active'));
+      document.querySelectorAll('.accordion-content').forEach((c) => {
+        c.style.maxHeight = null;
+      });
+
+      if (!isOpen) {
+        header.classList.add('active');
+        const scrollHeight = content.querySelector('.accordion-inner').scrollHeight;
+        content.style.maxHeight = scrollHeight + 'px';
+      }
+    }
+  });
+</script>
