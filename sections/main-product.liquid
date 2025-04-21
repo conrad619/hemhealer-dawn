@@ -693,6 +693,10 @@
         width='auto'
         height='auto'
       >
+      {% render 'custom-section-hem-hero' %}
+    {% endif %}
+    {% if product.handle contains 'easy-flow-fiber' %}
+      {% render 'custom-section-hem-easy' %}
     {% endif %}
     {% render 'product-media-modal', variant_images: variant_images %}
 
