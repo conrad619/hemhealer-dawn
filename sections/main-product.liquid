@@ -698,6 +698,9 @@
     {% if product.handle contains 'easy-flow-fiber' %}
       {% render 'custom-section-hem-easy' %}
     {% endif %}
+    {% if product.handle contains 'hem-rescue™' %}
+      {% render 'custom-section-hem-rescue' %}
+    {% endif %}
     {% render 'product-media-modal', variant_images: variant_images %}
 
     {% assign popups = section.blocks | where: 'type', 'popup' %}

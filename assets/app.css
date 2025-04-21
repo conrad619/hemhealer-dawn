@@ -661,6 +661,11 @@ video {
   margin-bottom: 1.8rem;
 }
 
+.twcss-my-\[5rem\] {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
 .-twcss-ml-\[1rem\] {
   margin-left: -1rem;
 }
@@ -739,6 +744,10 @@ video {
 
 .twcss-mb-\[5rem\] {
   margin-bottom: 5rem;
+}
+
+.twcss-mb-\[1\.5rem\] {
+  margin-bottom: 1.5rem;
 }
 
 .twcss-block {
