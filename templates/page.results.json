@@ -11,13 +11,19 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "custom_section_hem_hero_GaGcgD": {
+      "type": "custom-section-hem-hero",
+      "settings": {}
     }
   },
   "order": [
-    "main"
+    "main",
+    "custom_section_hem_hero_GaGcgD"
   ]
 }
