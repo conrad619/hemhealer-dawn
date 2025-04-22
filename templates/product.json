@@ -243,17 +243,12 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "custom_section_hem_hero_6Kn6ka": {
-      "type": "custom-section-hem-hero",
-      "settings": {}
     }
   },
   "order": [
     "main",
     "image-with-text",
     "multicolumn",
-    "custom_section_hem_hero_6Kn6ka",
     "related-products"
   ]
 }
