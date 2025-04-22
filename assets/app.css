@@ -754,6 +754,10 @@ video {
   margin-top: 1.2rem;
 }
 
+.twcss-mt-\[1\.4rem\] {
+  margin-top: 1.4rem;
+}
+
 .twcss-block {
   display: block;
 }
@@ -850,6 +854,10 @@ video {
   min-height: 4rem;
 }
 
+.twcss-min-h-\[74rem\] {
+  min-height: 74rem;
+}
+
 .twcss-w-1\/2 {
   width: 50%;
 }
@@ -918,6 +926,10 @@ video {
   width: 20rem;
 }
 
+.twcss-w-1\/3 {
+  width: 33.333333%;
+}
+
 .twcss-max-w-\[40rem\] {
   max-width: 40rem;
 }
@@ -962,6 +974,10 @@ video {
 
 .twcss-grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.twcss-grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .twcss-flex-col {
@@ -1052,6 +1068,10 @@ video {
   border-color: var(--accent-color);
 }
 
+.twcss-border-\[--accent-color-2\] {
+  border-color: var(--accent-color-2);
+}
+
 .twcss-bg-\[\#2486bb1c\] {
   background-color: #2486bb1c;
 }
@@ -1094,6 +1114,10 @@ video {
 
 .twcss-bg-\[url\(https\:\/\/cdn\.shopify\.com\/s\/files\/1\/0550\/1560\/4383\/files\/hemhealer-leaves-bg-png_2\.png\?v\=1742323161\)\] {
   background-image: url(https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hemhealer-leaves-bg-png_2.png?v=1742323161);
+}
+
+.twcss-bg-\[url\(https\:\/\/cdn\.shopify\.com\/s\/files\/1\/0550\/1560\/4383\/files\/hem-hero-hero-image-w-bottle3-png\.png\?v\=1742722703\)\] {
+  background-image: url(https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hem-hero-hero-image-w-bottle3-png.png?v=1742722703);
 }
 
 .twcss-bg-\[77\.6rem_auto\] {
@@ -1227,6 +1251,11 @@ video {
   padding-bottom: 10rem;
 }
 
+.twcss-py-\[\.5rem\] {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 .twcss-pb-\[10rem\] {
   padding-bottom: 10rem;
 }
@@ -1281,6 +1310,10 @@ video {
 
 .twcss-pl-\[2rem\] {
   padding-left: 2rem;
+}
+
+.twcss-pl-\[3rem\] {
+  padding-left: 3rem;
 }
 
 .twcss-text-center {
@@ -1499,6 +1532,14 @@ video {
   transition-duration: 100ms;
 }
 
+.\[text_shadow\:0rem_0rem_1rem_\#000000\] {
+  text_shadow: 0rem 0rem 1rem #000000;
+}
+
+.\[text-shadow\:0rem_0rem_1rem_\#000000\] {
+  text-shadow: 0rem 0rem 1rem #000000;
+}
+
 .\*\:twcss-mb-\[1\.2rem\] > * {
   margin-bottom: 1.2rem;
 }
@@ -1600,6 +1641,18 @@ video {
 
   .lg\:twcss-block {
     display: block;
+  }
+
+  .lg\:twcss-flex {
+    display: flex;
+  }
+
+  .lg\:twcss-grid {
+    display: grid;
+  }
+
+  .lg\:twcss-hidden {
+    display: none;
   }
 
   .lg\:twcss-h-\[13\.1rem\] {
@@ -1715,6 +1768,11 @@ video {
     background-color: rgb(101 201 255 / var(--tw-bg-opacity));
   }
 
+  .lg\:twcss-bg-white {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  }
+
   .lg\:twcss-bg-contain {
     background-size: contain;
   }
@@ -1821,6 +1879,10 @@ video {
 
   .lg\:twcss-pt-\[4rem\] {
     padding-top: 4rem;
+  }
+
+  .lg\:twcss-text-left {
+    text-align: left;
   }
 
   .lg\:twcss-text-center {
