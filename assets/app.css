@@ -738,6 +738,10 @@ video {
   margin-top: 0.5rem;
 }
 
+.twcss-mt-\[1\.2rem\] {
+  margin-top: 1.2rem;
+}
+
 .twcss-mt-\[2rem\] {
   margin-top: 2rem;
 }
@@ -748,14 +752,6 @@ video {
 
 .twcss-mt-\[5rem\] {
   margin-top: 5rem;
-}
-
-.twcss-mt-\[1\.2rem\] {
-  margin-top: 1.2rem;
-}
-
-.twcss-mt-\[1\.4rem\] {
-  margin-top: 1.4rem;
 }
 
 .twcss-block {
@@ -790,8 +786,16 @@ video {
   height: 1.8rem;
 }
 
+.twcss-h-\[11\.6rem\] {
+  height: 11.6rem;
+}
+
 .twcss-h-\[2\.4rem\] {
   height: 2.4rem;
+}
+
+.twcss-h-\[20rem\] {
+  height: 20rem;
 }
 
 .twcss-h-\[21\.2rem\] {
@@ -842,14 +846,6 @@ video {
   height: 100%;
 }
 
-.twcss-h-\[11\.6rem\] {
-  height: 11.6rem;
-}
-
-.twcss-h-\[20rem\] {
-  height: 20rem;
-}
-
 .twcss-min-h-\[4rem\] {
   min-height: 4rem;
 }
@@ -872,6 +868,10 @@ video {
 
 .twcss-w-\[2\.5rem\] {
   width: 2.5rem;
+}
+
+.twcss-w-\[20rem\] {
+  width: 20rem;
 }
 
 .twcss-w-\[2rem\] {
@@ -922,14 +922,6 @@ video {
   width: 100%;
 }
 
-.twcss-w-\[20rem\] {
-  width: 20rem;
-}
-
-.twcss-w-1\/3 {
-  width: 33.333333%;
-}
-
 .twcss-max-w-\[40rem\] {
   max-width: 40rem;
 }
@@ -974,10 +966,6 @@ video {
 
 .twcss-grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-
-.twcss-grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .twcss-flex-col {
@@ -1064,12 +1052,12 @@ video {
   border-top-width: 1px;
 }
 
-.twcss-border-\[--accent-color\] {
-  border-color: var(--accent-color);
-}
-
 .twcss-border-\[--accent-color-2\] {
   border-color: var(--accent-color-2);
+}
+
+.twcss-border-\[--accent-color\] {
+  border-color: var(--accent-color);
 }
 
 .twcss-bg-\[\#2486bb1c\] {
@@ -1112,12 +1100,12 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.twcss-bg-\[url\(https\:\/\/cdn\.shopify\.com\/s\/files\/1\/0550\/1560\/4383\/files\/hemhealer-leaves-bg-png_2\.png\?v\=1742323161\)\] {
-  background-image: url(https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hemhealer-leaves-bg-png_2.png?v=1742323161);
-}
-
 .twcss-bg-\[url\(https\:\/\/cdn\.shopify\.com\/s\/files\/1\/0550\/1560\/4383\/files\/hem-hero-hero-image-w-bottle3-png\.png\?v\=1742722703\)\] {
   background-image: url(https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hem-hero-hero-image-w-bottle3-png.png?v=1742722703);
+}
+
+.twcss-bg-\[url\(https\:\/\/cdn\.shopify\.com\/s\/files\/1\/0550\/1560\/4383\/files\/hemhealer-leaves-bg-png_2\.png\?v\=1742323161\)\] {
+  background-image: url(https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hemhealer-leaves-bg-png_2.png?v=1742323161);
 }
 
 .twcss-bg-\[77\.6rem_auto\] {
@@ -1177,10 +1165,6 @@ video {
   padding: 2rem;
 }
 
-.twcss-p-\[5rem\] {
-  padding: 5rem;
-}
-
 .twcss-px-\[\.5rem\] {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1204,6 +1188,11 @@ video {
 .twcss-px-\[2rem\] {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.twcss-py-\[\.5rem\] {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .twcss-py-\[\.6rem\] {
@@ -1246,16 +1235,6 @@ video {
   padding-bottom: 5rem;
 }
 
-.twcss-py-\[10rem\] {
-  padding-top: 10rem;
-  padding-bottom: 10rem;
-}
-
-.twcss-py-\[\.5rem\] {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
 .twcss-pb-\[10rem\] {
   padding-bottom: 10rem;
 }
@@ -1284,6 +1263,14 @@ video {
   padding-left: 1rem;
 }
 
+.twcss-pl-\[2rem\] {
+  padding-left: 2rem;
+}
+
+.twcss-pl-\[3rem\] {
+  padding-left: 3rem;
+}
+
 .twcss-pl-\[4rem\] {
   padding-left: 4rem;
 }
@@ -1302,18 +1289,6 @@ video {
 
 .twcss-pt-\[5rem\] {
   padding-top: 5rem;
-}
-
-.twcss-pb-\[2rem\] {
-  padding-bottom: 2rem;
-}
-
-.twcss-pl-\[2rem\] {
-  padding-left: 2rem;
-}
-
-.twcss-pl-\[3rem\] {
-  padding-left: 3rem;
 }
 
 .twcss-text-center {
@@ -1348,6 +1323,10 @@ video {
   font-size: 1.8rem;
 }
 
+.twcss-text-\[10rem\] {
+  font-size: 10rem;
+}
+
 .twcss-text-\[2\.2rem\] {
   font-size: 2.2rem;
 }
@@ -1376,6 +1355,10 @@ video {
   font-size: 3.5rem;
 }
 
+.twcss-text-\[30rem\] {
+  font-size: 30rem;
+}
+
 .twcss-text-\[3rem\] {
   font-size: 3rem;
 }
@@ -1395,18 +1378,6 @@ video {
 .twcss-text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
-}
-
-.twcss-text-\[10rem\] {
-  font-size: 10rem;
-}
-
-.twcss-text-\[6rem\] {
-  font-size: 6rem;
-}
-
-.twcss-text-\[30rem\] {
-  font-size: 30rem;
 }
 
 .twcss-font-bold {
@@ -1462,6 +1433,11 @@ video {
   color: rgb(1 33 97 / var(--tw-text-opacity));
 }
 
+.twcss-text-\[\#65C9FF\] {
+  --tw-text-opacity: 1;
+  color: rgb(101 201 255 / var(--tw-text-opacity));
+}
+
 .twcss-text-\[--accent-color-2\] {
   color: var(--accent-color-2);
 }
@@ -1491,11 +1467,6 @@ video {
 .twcss-text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.twcss-text-\[\#65C9FF\] {
-  --tw-text-opacity: 1;
-  color: rgb(101 201 255 / var(--tw-text-opacity));
 }
 
 .twcss-underline {
@@ -1532,16 +1503,16 @@ video {
   transition-duration: 100ms;
 }
 
-.\[text_shadow\:0rem_0rem_1rem_\#000000\] {
-  text_shadow: 0rem 0rem 1rem #000000;
-}
-
 .\[text-shadow\:0rem_0rem_1rem_\#000000\] {
   text-shadow: 0rem 0rem 1rem #000000;
 }
 
 .\*\:twcss-mb-\[1\.2rem\] > * {
   margin-bottom: 1.2rem;
+}
+
+.\*\:twcss-mb-\[1\.4rem\] > * {
+  margin-bottom: 1.4rem;
 }
 
 .\*\:twcss-mb-\[1\.6rem\] > * {
@@ -1554,10 +1525,6 @@ video {
 
 .\*\:twcss-mr-\[1rem\] > * {
   margin-right: 1rem;
-}
-
-.\*\:twcss-mb-\[1\.4rem\] > * {
-  margin-bottom: 1.4rem;
 }
 
 .\*\:twcss-flex > * {
@@ -1627,6 +1594,10 @@ video {
     margin-bottom: 1rem;
   }
 
+  .lg\:twcss-mb-\[4rem\] {
+    margin-bottom: 4rem;
+  }
+
   .lg\:twcss-mt-\[12rem\] {
     margin-top: 12rem;
   }
@@ -1635,20 +1606,12 @@ video {
     margin-top: 4rem;
   }
 
-  .lg\:twcss-mb-\[4rem\] {
-    margin-bottom: 4rem;
-  }
-
   .lg\:twcss-block {
     display: block;
   }
 
   .lg\:twcss-flex {
     display: flex;
-  }
-
-  .lg\:twcss-grid {
-    display: grid;
   }
 
   .lg\:twcss-hidden {
@@ -1827,14 +1790,14 @@ video {
     padding-bottom: 1.3rem;
   }
 
-  .lg\:twcss-py-\[5rem\] {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-
   .lg\:twcss-py-\[10rem\] {
     padding-top: 10rem;
     padding-bottom: 10rem;
+  }
+
+  .lg\:twcss-py-\[5rem\] {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 
   .lg\:twcss-pb-0 {
@@ -1937,12 +1900,12 @@ video {
     font-size: 5rem;
   }
 
-  .lg\:twcss-text-\[7rem\] {
-    font-size: 7rem;
-  }
-
   .lg\:twcss-text-\[6rem\] {
     font-size: 6rem;
+  }
+
+  .lg\:twcss-text-\[7rem\] {
+    font-size: 7rem;
   }
 
   .lg\:twcss-leading-\[5\.4rem\] {

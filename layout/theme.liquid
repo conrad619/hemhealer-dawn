@@ -468,6 +468,25 @@
           content: strengthen_veins_and_capillaries,
           ...settings,
         });
+        settings = {
+          allowHTML: true,
+          placement: 'bottom',
+          arrow: true,
+          hideOnClick: false,
+          interactive: true,
+          followCursor: true,
+          offset: [0, 20],
+        };
+        let product_upsell = `Get your order picked, packed, and shipped first — your package jumps to the front of the line for priority fulfillment and faster delivery.`;
+        tippy('[data-product-handle="product-upsell"]', {
+          content: product_upsell,
+          ...settings,
+        });
+        let stord_shipment_protection = `Worried about lost or damaged packages? Stord Shipment Protection covers your order with full insurance, so if anything goes wrong in transit, you're backed up with fast replacements or refunds — no hassle`;
+        tippy('[data-product-handle="stord-shipment-protection"]', {
+          content: stord_shipment_protection,
+          ...settings,
+        });
       });
     </script>
     <style>
