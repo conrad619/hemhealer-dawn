@@ -39,7 +39,7 @@
       "type": "header-bar",
       "name": "header bar",
       "settings": {
-        "phone_number": "+1-863-302-8006",
+        "phone_number": "863-302-8006",
         "email": "support@hemhealer.com",
         "show_social": true
       }
