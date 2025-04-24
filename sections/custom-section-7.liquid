@@ -1,3 +1,33 @@
+{% style %}
+  .zoom-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  .zoom-content {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 80%;
+  }
+
+  .zoom-modal .close {
+    position: absolute;
+    top: 30px;
+    right: 45px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+{% endstyle %}
 <div class='color-{{ section.settings.color_scheme }} twcss-relative twcss-bg-[--accent-color-3] twcss-bg-[top_center]'>
   <div class='custom-section isolate{% unless section.settings.full_width %} page-width{% endunless %} section-{{ section.id }}-padding'>
     <div
@@ -18,7 +48,7 @@
             alt='results'
             width='auto'
             height='auto'
-            class=' twcss-shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)]'
+            class=' twcss-shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] zoomable twcss-cursor-zoom-in'
             data-aos='fade-right'
           >
           <img
@@ -26,7 +56,7 @@
             alt='results'
             width='auto'
             height='auto'
-            class=' twcss-shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)]'
+            class=' twcss-shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] zoomable twcss-cursor-zoom-in'
             data-aos='fade-left'
           >
           <img
@@ -34,7 +64,7 @@
             alt='results'
             width='auto'
             height='auto'
-            class=' twcss-shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)]'
+            class=' twcss-shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] zoomable twcss-cursor-zoom-in'
             data-aos='fade-right'
           >
           <img
@@ -42,7 +72,23 @@
             alt='results'
             width='auto'
             height='auto'
-            class=' twcss-shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)]'
+            class=' twcss-shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] zoomable twcss-cursor-zoom-in'
+            data-aos='fade-left'
+          >
+          <img
+            src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Amazon_Review_22.png?v=1745334439'
+            alt='results'
+            width='auto'
+            height='auto'
+            class=' twcss-shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] zoomable twcss-cursor-zoom-in'
+            data-aos='fade-right'
+          >
+          <img
+            src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Amazon_Review_21_108caf60-b17c-4edb-8e23-bdc920920dcc.png?v=1745334439'
+            alt='results'
+            width='auto'
+            height='auto'
+            class=' twcss-shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] zoomable twcss-cursor-zoom-in'
             data-aos='fade-left'
           >
         </div>
@@ -60,7 +106,10 @@
     </div>
   </div>
 </div>
-
+<div id='zoomModal' class='zoom-modal'>
+  <span class='close'>&times;</span>
+  <img class='zoom-content' id='zoomedImage'>
+</div>
 {% schema %}
 {
   "name": "custom section VII",
@@ -78,3 +127,26 @@
   ]
 }
 {% endschema %}
+<script>
+  const modal = document.getElementById('zoomModal');
+  const modalImg = document.getElementById('zoomedImage');
+  const images = document.querySelectorAll('.zoomable');
+  const close = document.querySelector('.zoom-modal .close');
+
+  images.forEach((img) => {
+    img.addEventListener('click', () => {
+      modal.style.display = 'flex';
+      modalImg.src = img.src;
+    });
+  });
+
+  close.onclick = function () {
+    modal.style.display = 'none';
+  };
+
+  modal.onclick = function (event) {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  };
+</script>
