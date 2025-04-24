@@ -278,7 +278,8 @@ details[open]>.header__menu-item{
           class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}"
           rel="nofollow"
         >
-          {%- if section.settings.enable_customer_avatar -%}
+        <span class="twcss-mr-[2rem]">Login / Manage Subscription</span>
+          {% comment %} {%- if section.settings.enable_customer_avatar -%}
             <account-icon>
               {%- if customer and customer.has_avatar? -%}
                 {{ customer | avatar }}
@@ -288,8 +289,8 @@ details[open]>.header__menu-item{
             </account-icon>
           {%- else -%}
             <span class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
-          {%- endif -%}
-          <span class="visually-hidden">
+          {%- endif -%} {% endcomment %}
+          {% comment %} <span class="visually-hidden">
             {%- liquid
               if customer
                 echo 'customer.account_fallback' | t
@@ -297,7 +298,7 @@ details[open]>.header__menu-item{
                 echo 'customer.log_in' | t
               endif
             -%}
-          </span>
+          </span> {% endcomment %}
         </a>
       {%- endif -%}
 

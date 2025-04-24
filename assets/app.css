@@ -767,6 +767,10 @@ video {
   margin-top: 5rem;
 }
 
+.twcss-mr-\[2rem\] {
+  margin-right: 2rem;
+}
+
 .twcss-block {
   display: block;
 }
