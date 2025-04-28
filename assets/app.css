@@ -643,12 +643,32 @@ video {
   top: 0.2rem;
 }
 
+.twcss-left-\[28\%\] {
+  left: 28%;
+}
+
+.twcss-top-\[14\%\] {
+  top: 14%;
+}
+
+.twcss-top-\[1\%\] {
+  top: 1%;
+}
+
+.twcss-top-\[67\%\] {
+  top: 67%;
+}
+
 .-twcss-z-\[1\] {
   z-index: -1;
 }
 
 .twcss-z-\[-1\] {
   z-index: -1;
+}
+
+.twcss-z-50 {
+  z-index: 50;
 }
 
 .twcss-mx-\[1rem\] {
@@ -879,6 +899,26 @@ video {
   height: 1px;
 }
 
+.twcss-h-1\/2 {
+  height: 50%;
+}
+
+.twcss-h-\[166\%\] {
+  height: 166%;
+}
+
+.twcss-h-\[33\%\] {
+  height: 33%;
+}
+
+.twcss-h-\[26\%\] {
+  height: 26%;
+}
+
+.twcss-h-\[80\%\] {
+  height: 80%;
+}
+
 .twcss-min-h-\[4rem\] {
   min-height: 4rem;
 }
@@ -957,6 +997,14 @@ video {
 
 .twcss-w-full {
   width: 100%;
+}
+
+.twcss-w-\[66\%\] {
+  width: 66%;
+}
+
+.twcss-w-\[33\%\] {
+  width: 33%;
 }
 
 .twcss-max-w-\[40rem\] {
@@ -1124,6 +1172,11 @@ video {
   border-color: var(--accent-color);
 }
 
+.twcss-border-red-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+
 .twcss-bg-\[\#2486bb1c\] {
   background-color: #2486bb1c;
 }
@@ -1166,6 +1219,31 @@ video {
 .twcss-bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.twcss-bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+
+.twcss-bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
+.twcss-bg-pink-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 72 153 / var(--tw-bg-opacity));
+}
+
+.twcss-bg-yellow-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 179 8 / var(--tw-bg-opacity));
+}
+
+.twcss-bg-orange-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 115 22 / var(--tw-bg-opacity));
 }
 
 .twcss-bg-\[url\(https\:\/\/cdn\.shopify\.com\/s\/files\/1\/0550\/1560\/4383\/files\/hem-hero-hero-image-w-bottle3-png\.png\?v\=1742722703\)\] {
@@ -1309,6 +1387,11 @@ video {
 .twcss-py-\[5rem\] {
   padding-top: 5rem;
   padding-bottom: 5rem;
+}
+
+.twcss-px-\[2\.5rem\] {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 .twcss-pb-\[10rem\] {
@@ -1563,6 +1646,10 @@ video {
   text-decoration-line: none;
 }
 
+.twcss-opacity-50 {
+  opacity: 0.5;
+}
+
 .twcss-shadow-\[0px_0px_10px_0px_rgba\(0\,0\,0\,0\.5\)\] {
   --tw-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
   --tw-shadow-colored: 0px 0px 10px 0px var(--tw-shadow-color);
@@ -1613,6 +1700,10 @@ video {
 
 .\*\:twcss-flex > * {
   display: flex;
+}
+
+.\*\:twcss-h-\[20\.7\%\] > * {
+  height: 20.7%;
 }
 
 .\*\:twcss-items-start > * {
