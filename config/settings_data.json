@@ -153,6 +153,23 @@
           "cards_background": "#FFFFFF",
           "cards_border_color": "rgba(0,0,0,0)"
         }
+      },
+      "17312514163804441323": {
+        "type": "shopify://apps/stord/blocks/header-block/dc46ead6-f20b-4a93-a4db-54fb67ef081f",
+        "disabled": false,
+        "settings": {}
+      },
+      "11753626725791430220": {
+        "type": "shopify://apps/one-click-upsell/blocks/cart-drawer/bfe6e378-b73a-4871-b8d3-7d6ede22678e",
+        "disabled": false,
+        "settings": {}
+      },
+      "3667842014806057753": {
+        "type": "shopify://apps/one-click-upsell/blocks/app-embed/bfe6e378-b73a-4871-b8d3-7d6ede22678e",
+        "disabled": false,
+        "settings": {
+          "allowed_templates": ""
+        }
       }
     },
     "color_schemes": {
