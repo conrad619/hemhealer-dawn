@@ -42,55 +42,12 @@
         <h3 class='lg:twcss-text-[7rem] twcss-text-[4.5rem] twcss-font-medium twcss-leading-none twcss-text-center'>
           Real Relief, Real Results
         </h3>
-        <div class='twcss-grid lg:twcss-grid-cols-2 twcss-mt-[4rem] twcss-gap-[2rem] lg:twcss-pb-[5rem]'>
-          <img
-            src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Amazon_Review_21v2.png?v=1745511706'
-            alt='results'
-            width='auto'
-            height='auto'
-            class=' twcss-shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] zoomable twcss-cursor-zoom-in'
-            data-aos='fade-right'
-          >
-          <img
-            src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/amazon_review_new_1.jpg?v=1746019732'
-            alt='results'
-            width='auto'
-            height='auto'
-            class=' twcss-shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] zoomable twcss-cursor-zoom-in'
-            data-aos='fade-left'
-          >
-          <img
-            src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/rev1.png?v=1744829151'
-            alt='results'
-            width='auto'
-            height='auto'
-            class=' twcss-shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] zoomable twcss-cursor-zoom-in'
-            data-aos='fade-right'
-          >
-          <img
-            src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/rev2.png?v=1744829151'
-            alt='results'
-            width='auto'
-            height='auto'
-            class=' twcss-shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] zoomable twcss-cursor-zoom-in'
-            data-aos='fade-left'
-          >
-          <img
-            src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/rev3.png?v=1744829151'
-            alt='results'
-            width='auto'
-            height='auto'
-            class=' twcss-shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] zoomable twcss-cursor-zoom-in'
-            data-aos='fade-right'
-          >
-          <img
-            src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/rev4.png?v=1744829150'
-            alt='results'
-            width='auto'
-            height='auto'
-            class=' twcss-shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] zoomable twcss-cursor-zoom-in'
-            data-aos='fade-left'
-          >
+        <div
+          id='amazon-reviews'
+          class='twcss-grid lg:twcss-grid-cols-2 twcss-mt-[4rem] twcss-gap-[2rem] lg:twcss-pb-[5rem]'
+        >
+          <div class='amazon-reviews-left'></div>
+          <div class='amazon-reviews-right'></div>
         </div>
 
         <div class='twcss-mx-auto twcss-leading-[0] twcss-py-[2rem] twcss-w-full'>
@@ -149,4 +106,40 @@
       modal.style.display = 'none';
     }
   };
+
+  let amazon_reviews = [
+    'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/amazon_review_new_1.jpg?v=1746019732',
+    'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/rev5.png?v=1746196672',
+    'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/rev6.png?v=1746196672',
+    'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/rev7.png?v=1746196672',
+    'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/rev2.png?v=1744829151',
+    'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/rev13.png?v=1746196672',
+    'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/rev8.png?v=1746196672',
+    'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/rev3.png?v=1744829151',
+    'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/rev4.png?v=1744829150',
+    'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/rev12.png?v=1746196672',
+    'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/rev9.png?v=1746196673',
+  ];
+
+  // let amazon_reviews_container = document.querySelector('#amazon-reviews');
+  let amazon_reviews_container_left = document.querySelector('.amazon-reviews-left');
+  let amazon_reviews_container_right = document.querySelector('.amazon-reviews-right');
+
+  amazon_reviews.forEach((url, i) => {
+    const img = document.createElement('img');
+    img.src = url.trim(); // Trim any accidental whitespace
+    img.alt = 'Amazon Reviews';
+    img.setAttribute(
+      'class',
+      'twcss-shadow-[0px_0px_10px_0px_rgba(0,0,0,0.5)] zoomable twcss-cursor-zoom-in twcss-mb-[2rem]',
+    );
+
+    if (i % 2 == 0) {
+      amazon_reviews_container_left.appendChild(img);
+      img.setAttribute('data-aos', 'fade-right');
+    } else {
+      amazon_reviews_container_right.appendChild(img);
+      img.setAttribute('data-aos', 'fade-left');
+    }
+  });
 </script>
