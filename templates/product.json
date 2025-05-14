@@ -30,6 +30,13 @@
             "text_style": "body"
           }
         },
+        "ryviu_reviews_qa_ryviu_total_k8dghb": {
+          "type": "shopify://apps/ryviu-reviews-qa/blocks/ryviu-total/807ad6ed-1a6a-4559-abea-ed062858d9da",
+          "settings": {
+            "show_when_no_reviews": true,
+            "show_average_rating": false
+          }
+        },
         "price": {
           "type": "price",
           "settings": {}
@@ -43,6 +50,12 @@
           "settings": {
             "text": "{{ product.metafields.descriptors.subtitle.value }}",
             "text_style": "subtitle"
+          }
+        },
+        "recharge_subscriptions_subscription_widget_bEXGEi": {
+          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget/371eed76-0b44-4869-9813-730372ea378e",
+          "settings": {
+            "product": "{{product}}"
           }
         },
         "variant_picker": {
@@ -115,9 +128,11 @@
         "vendor",
         "title",
         "multiline_text_KUTF9N",
+        "ryviu_reviews_qa_ryviu_total_k8dghb",
         "price",
         "description",
         "caption",
+        "recharge_subscriptions_subscription_widget_bEXGEi",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
@@ -142,6 +157,28 @@
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
+      }
+    },
+    "17471470562890e878": {
+      "type": "apps",
+      "blocks": {
+        "ryviu_reviews_qa_ryviu_widget_EMqrmh": {
+          "type": "shopify://apps/ryviu-reviews-qa/blocks/ryviu-widget/807ad6ed-1a6a-4559-abea-ed062858d9da",
+          "settings": {
+            "r_wapper_class": "",
+            "r_max_width": 1920,
+            "r_padding_block": 0,
+            "hide_when_no_reviews": false,
+            "one_col_on_mobile": false,
+            "hide_title_image_form": false
+          }
+        }
+      },
+      "block_order": [
+        "ryviu_reviews_qa_ryviu_widget_EMqrmh"
+      ],
+      "settings": {
+        "include_margins": true
       }
     },
     "image-with-text": {
@@ -247,6 +284,7 @@
   },
   "order": [
     "main",
+    "17471470562890e878",
     "image-with-text",
     "multicolumn",
     "related-products"
