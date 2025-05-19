@@ -1698,7 +1698,8 @@ video {
   text-shadow: 0rem 0rem 1rem #000000;
 }
 
-button.needsclick.go300628013.kl-private-reset-css-Xuajs1 {
+[data-testid='klaviyo-form-SRJ4KC']
+  button.needsclick.go300628013.kl-private-reset-css-Xuajs1 {
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
   transform: scale(1);
   -webkit-animation: pulse 1.5s infinite;
