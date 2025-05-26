@@ -12,8 +12,15 @@
         class='page-width'
       {% endif %}
     >
-      <div id='youtube-wrapper'>
-        <div id='youtube-player'></div>
+      <script src='https://www.youtube.com/iframe_api' id='iframe-demo'></script>
+      <div id='youtube-wrapper' class='twcss-aspect-video twcss-bg-[--accent-color-3]'>
+        {% comment %} <div id='youtube-player'></div> {% endcomment %}
+        <lite-youtube
+          id='youtube-player'
+          videoid='1LysFbJwHCg'
+          autoload
+          params='autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&playsinline=1&rel=0&enablejsapi=1'
+        ></lite-youtube>
       </div>
     </div>
   </div>
@@ -45,7 +52,7 @@
 {% endschema %}
 
 <script>
-  const videoId = '1LysFbJwHCg'; // Replace with your actual video ID
+  /*const videoId = '1LysFbJwHCg'; 
   const iframe = document.createElement('iframe');
 
   iframe.width = '100%';
@@ -57,5 +64,30 @@
   iframe.allowFullscreen = true;
   title = 'Where Hem Healer is manufactured!🇺🇸 #hemorrhoids #hemorrhoidtreatment  #naturalmedicine  #piles';
 
-  document.getElementById('youtube-player').appendChild(iframe);
+  document.getElementById('youtube-player').appendChild(iframe);*/
+  let player;
+
+  function setupYT() {
+    player = new YT.Player(document.querySelector('#youtube-player').shadowRoot.querySelector('iframe'), {
+      events: {
+        onReady: onPlayerReady,
+      },
+    });
+  }
+
+  function onPlayerReady() {
+    player.playVideo();
+  }
+
+  document.addEventListener(
+    'liteYoutubeIframeLoaded',
+    () => {
+      try {
+        setupYT();
+      } catch (e) {
+        setTimeout(setupYT, 100);
+      }
+    },
+    false,
+  );
 </script>
