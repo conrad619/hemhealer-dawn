@@ -321,7 +321,7 @@
     </script>
 
     <link href='https://unpkg.com/aos@2.3.1/dist/aos.css' rel='stylesheet'>
-  </head>
+  {% include 'pagefly-app-header' %}</head>
 
   <body class='gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}'>
     <a class='skip-to-content-link button visually-hidden' href='#MainContent'>
