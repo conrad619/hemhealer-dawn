@@ -23,7 +23,7 @@
 {% endif %}
 
 <div
-  class='utility-bar header-bar twcss-bg-[#2486bb1c] twcss-p-[1rem] lg:twcss-block twcss-hidden'
+  class='utility-bar header-bar twcss-bg-[#2486bb1c] twcss-p-[1rem] lg:twcss-block {% if template.name=='product' %}twcss-hidden{% endif %}'
   {{ block.shopify_attributes }}
 >
   <div class='page-width twcss-flex lg:twcss-flex-row twcss-flex-col  {% if section.settings.show_social %} twcss-justify-between {% else %} twcss-justify-end {% endif %}'>
