@@ -932,6 +932,14 @@ video {
   width: 50%;
 }
 
+.twcss-w-1\/3 {
+  width: 33.333333%;
+}
+
+.twcss-w-2\/3 {
+  width: 66.666667%;
+}
+
 .twcss-w-\[1\.8rem\] {
   width: 1.8rem;
 }
@@ -1069,6 +1077,10 @@ video {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
+.twcss-flex-row {
+  flex-direction: row;
+}
+
 .twcss-flex-col {
   flex-direction: column;
 }
@@ -1186,6 +1198,11 @@ video {
 .twcss-bg-\[\#65c9ff\] {
   --tw-bg-opacity: 1;
   background-color: rgb(101 201 255 / var(--tw-bg-opacity));
+}
+
+.twcss-bg-\[\#73c15d\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(115 193 93 / var(--tw-bg-opacity));
 }
 
 .twcss-bg-\[\#C6E1238C\] {
@@ -1478,6 +1495,10 @@ video {
   font-family: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
 }
 
+.twcss-text-\[1\.2rem\] {
+  font-size: 1.2rem;
+}
+
 .twcss-text-\[1\.4rem\] {
   font-size: 1.4rem;
 }
@@ -1704,6 +1725,72 @@ video {
   transform: scale(1);
   -webkit-animation: pulse 1.5s infinite;
   animation: pulse 1.5s infinite;
+}
+
+#provesrc-widget-area {
+  display: none;
+}
+
+#chat-input,
+#chat-button {
+  display: none;
+}
+
+.product__tax.caption {
+  display: none;
+}
+
+#shopify-installments {
+  display: none;
+}
+
+.subscription-radio .rc-radio__label:after {
+  content: 'No Commitment. Change or Cancel Anytime. ';
+  font-size: 12px;
+  clear: both;
+  display: block;
+  font-weight: 400;
+}
+
+.onetime-radio {
+  border-radius: 8px;
+}
+
+.subscription-radio {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.rc-selling-plans {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.rc-selling-plans-dropdown__select {
+  padding: 0.5em !important;
+  border-radius: 0.3em;
+}
+
+.rc-radio__label {
+  margin-left: 0 !important;
+  line-height: 1.8 !important;
+  font-weight: 600;
+}
+
+.rc-selling-plans {
+  padding-bottom: 12px !important;
+}
+
+#shopify-buyer-consent {
+  display: none !important;
+}
+
+.button--secondary:after {
+  box-shadow: none;
+}
+
+shop-pay-wallet-button {
+  display: none;
 }
 
 @-webkit-keyframes pulse {

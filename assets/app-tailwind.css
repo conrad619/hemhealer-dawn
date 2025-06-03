@@ -9,6 +9,59 @@
   animation: pulse 1.5s infinite;
 }
 
+#provesrc-widget-area {
+  display: none;
+}
+#chat-input,
+#chat-button {
+  display: none;
+}
+.product__tax.caption {
+  display: none;
+}
+#shopify-installments {
+  display: none;
+}
+.subscription-radio .rc-radio__label:after {
+  content: 'No Commitment. Change or Cancel Anytime. ';
+  font-size: 12px;
+  clear: both;
+  display: block;
+  font-weight: 400;
+}
+.onetime-radio {
+  border-radius: 8px;
+}
+.subscription-radio {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.rc-selling-plans {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.rc-selling-plans-dropdown__select {
+  padding: 0.5em !important;
+  border-radius: 0.3em;
+}
+.rc-radio__label {
+  margin-left: 0 !important;
+  line-height: 1.8 !important;
+  font-weight: 600;
+}
+.rc-selling-plans {
+  padding-bottom: 12px !important;
+}
+#shopify-buyer-consent {
+  display: none !important;
+}
+.button--secondary:after {
+  box-shadow: none;
+}
+shop-pay-wallet-button {
+  display: none;
+}
 @keyframes pulse {
   0% {
     transform: scale(0.85);
