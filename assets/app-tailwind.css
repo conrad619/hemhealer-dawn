@@ -19,7 +19,8 @@
 .product__tax.caption {
   display: none;
 }
-#shopify-installments {
+#shopify-installments,
+shopify-payment-terms {
   display: none;
 }
 .subscription-radio .rc-radio__label:after {
