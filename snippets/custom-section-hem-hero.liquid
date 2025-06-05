@@ -60,6 +60,82 @@
           </div>
         </div>
 
+        <div class='twcss-py-[5rem]'>
+          <div>
+            <h2 class='lg:twcss-text-[7rem] twcss-text-[3rem] twcss-font-medium twcss-text-center twcss-mb-[4rem]'>
+              How Hem Hero® Works
+            </h2>
+            <div class='twcss-flex twcss-flex-row twcss-flex-wrap twcss-justify-center twcss-gap-y-[2rem]'>
+              <div class='lg:twcss-w-1/3 twcss-w-full'>
+                <img
+                  src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/How_HH_Works_1.png?v=1749134587'
+                  alt='How Hem Hero Works Step 1'
+                  width='autp'
+                  height='auto'
+                  class='w-full'
+                >
+              </div>
+              <div class='lg:twcss-w-1/3 twcss-w-full'>
+                <img
+                  src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/How_HH_Works_2.png?v=1749134586'
+                  alt='How Hem Hero Works Step 2'
+                  width='autp'
+                  height='auto'
+                  class='w-full'
+                >
+              </div>
+              <div class='lg:twcss-w-1/3 twcss-w-full'>
+                <img
+                  src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/How_HH_Works_3.png?v=1749134587'
+                  alt='How Hem Hero Works Step 3'
+                  width='autp'
+                  height='auto'
+                  class='w-full'
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- table start -->
+
+        <div class='twcss-pt-[5rem]'>
+          <div>
+            <h2 class='lg:twcss-text-[7rem] twcss-text-[3rem] twcss-font-medium twcss-text-center'>
+              Hem Hero® vs. Hemorrhoid Creams
+            </h2>
+            <p class=' twcss-mb-[4rem] twcss-text-center twcss-text-[1.8rem]'>
+              We believe in treating the root cause of hemorrhoids-not just masking symptoms. Here's how Hem Hero®
+              stacks up:
+            </p>
+            <!--
+              row
+                col
+                col
+                col
+              row
+            -->
+
+            <div
+              class='twcss-w-full lg:twcss-px-[4rem] twcss-bg-[--accent-color-3] twcss-rounded-3xl twcss-max-w-[110rem] twcss-mx-auto'
+              id='comparison'
+            >
+              <div class='twcss-flex twcss-flex-row'>
+                <div class='twcss-border-b twcss-border-black twcss-flex-grow lg:twcss-py-[4rem] twcss-py-[2rem] twcss-px-[2rem]'>
+                  &nbsp;
+                </div>
+                <div class='twcss-flex twcss-justify-center twcss-items-center twcss-border-b twcss-border-black twcss-w-[23%] lg:twcss-py-[4rem] lg:twcss-px-[2rem] twcss-p-[.5rem] twcss-font-bold twcss-text-center lg:twcss-text-[2rem] twcss-bg-[--accent-color] twcss-text-white  twcss-rounded-t-3xl'>
+                  Hem Hero®
+                </div>
+                <div class='twcss-flex twcss-justify-center twcss-items-center twcss-border-b twcss-border-black twcss-w-[23%] lg:twcss-py-[4rem] lg:twcss-px-[2rem] twcss-p-[.5rem] twcss-font-bold twcss-text-center lg:twcss-text-[2rem] twcss-text-[1.2rem]'>
+                  Creams & Ointments
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- table end -->
+
         <div class='twcss-pt-[5rem]'>
           <div>
             <h2 class='lg:twcss-text-[4.5rem] twcss-text-[2.5rem] twcss-font-medium twcss-text-center'>
@@ -540,4 +616,60 @@
       }
     }
   });
+
+  // comparison
+  let comparisonData = [
+    'Works from the inside out',
+    'Targets root cause (swollen blood vessels)',
+    'Strengthens blood vessel walls',
+    'Easy to take (just a capsulte)',
+    'Long-term relief',
+    'No touching the affected area',
+    'No order or residue',
+    'Travel-friendly',
+  ];
+  const comparisonContainer = document.getElementById('comparison');
+
+  comparisonData.forEach((content, i) => {
+    const item = document.createElement('div');
+    item.className = 'twcss-flex twcss-flex-row';
+    console.log('testset');
+    console.log(i);
+    item.innerHTML = `
+        <div class='${
+          comparisonData.length - 1 == i ? '' : 'twcss-border-b'
+        } twcss-border-gray-400 twcss-flex-grow lg:twcss-py-[1rem] lg:twcss-px-[2rem] twcss-p-[.5rem] twcss-font-bold lg:twcss-text-[1.8rem] twcss-text-[1.2rem]'>
+          ${content}
+        </div>
+        <div class='twcss-flex-shrink-0 twcss-border-gray-400 twcss-w-[23%] twcss-bg-[--accent-color] lg:twcss-py-[1rem] lg:twcss-px-[2rem] twcss-p-[.5rem] twcss-flex twcss-justify-center ${
+          comparisonData.length - 1 == i ? 'twcss-rounded-b-3xl' : 'twcss-border-b'
+        }'>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            height='24px'
+            viewBox='0 -960 960 960'
+            width='24px'
+            fill='#C6E123'
+          >
+            <path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/>
+          </svg>
+        </div>
+        <div class='${
+          comparisonData.length - 1 == i ? '' : 'twcss-border-b'
+        } twcss-flex-shrink-0 twcss-border-gray-400 twcss-w-[23%] lg:twcss-py-[1rem] lg:twcss-px-[2rem] twcss-p-[.5rem] twcss-flex twcss-justify-center'>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            height='24px'
+            viewBox='0 -960 960 960'
+            width='24px'
+            fill='#434343'
+          >
+            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+          </svg>
+        </div>
+  `;
+
+    comparisonContainer.appendChild(item);
+  });
+  // end comparison
 </script>
