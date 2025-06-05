@@ -800,6 +800,10 @@ video {
   margin-top: 2rem;
 }
 
+.twcss-mt-\[3rem\] {
+  margin-top: 3rem;
+}
+
 .twcss-mt-\[4rem\] {
   margin-top: 4rem;
 }
@@ -956,6 +960,10 @@ video {
   width: 20rem;
 }
 
+.twcss-w-\[23\%\] {
+  width: 23%;
+}
+
 .twcss-w-\[2rem\] {
   width: 2rem;
 }
@@ -1016,8 +1024,24 @@ video {
   width: 100%;
 }
 
+.twcss-max-w-\[100rem\] {
+  max-width: 100rem;
+}
+
+.twcss-max-w-\[110rem\] {
+  max-width: 110rem;
+}
+
+.twcss-max-w-\[30rem\] {
+  max-width: 30rem;
+}
+
 .twcss-max-w-\[40rem\] {
   max-width: 40rem;
+}
+
+.twcss-max-w-\[50rem\] {
+  max-width: 50rem;
 }
 
 .twcss-max-w-\[80rem\] {
@@ -1030,6 +1054,10 @@ video {
 
 .twcss-flex-shrink-0 {
   flex-shrink: 0;
+}
+
+.twcss-flex-grow {
+  flex-grow: 1;
 }
 
 .twcss-grow {
@@ -1125,8 +1153,24 @@ video {
   gap: 4rem;
 }
 
+.twcss-gap-y-\[2rem\] {
+  row-gap: 2rem;
+}
+
 .twcss-overflow-hidden {
   overflow: hidden;
+}
+
+.twcss-break-words {
+  overflow-wrap: break-word;
+}
+
+.twcss-break-all {
+  word-break: break-all;
+}
+
+.twcss-rounded-3xl {
+  border-radius: 1.5rem;
 }
 
 .twcss-rounded-\[\.3rem\] {
@@ -1139,6 +1183,16 @@ video {
 
 .twcss-rounded-full {
   border-radius: 9999px;
+}
+
+.twcss-rounded-b-3xl {
+  border-bottom-right-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+}
+
+.twcss-rounded-t-3xl {
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
 }
 
 .twcss-border {
@@ -1179,6 +1233,16 @@ video {
 
 .twcss-border-\[--accent-color\] {
   border-color: var(--accent-color);
+}
+
+.twcss-border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
+.twcss-border-gray-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(156 163 175 / var(--tw-border-opacity));
 }
 
 .twcss-border-red-500 {
@@ -1307,6 +1371,10 @@ video {
 
 .twcss-p-0 {
   padding: 0px;
+}
+
+.twcss-p-\[\.5rem\] {
+  padding: 0.5rem;
 }
 
 .twcss-p-\[1rem\] {
@@ -1740,7 +1808,8 @@ video {
   display: none;
 }
 
-#shopify-installments {
+#shopify-installments,
+shopify-payment-terms {
   display: none;
 }
 
@@ -2179,6 +2248,11 @@ shop-pay-wallet-button {
   .lg\:twcss-py-\[10rem\] {
     padding-top: 10rem;
     padding-bottom: 10rem;
+  }
+
+  .lg\:twcss-py-\[1rem\] {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   .lg\:twcss-py-\[4rem\] {

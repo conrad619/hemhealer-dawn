@@ -131,6 +131,15 @@
                   Creams & Ointments
                 </div>
               </div>
+
+              <div class='twcss-flex-row twcss-hidden'>
+                <div
+                  class='twcss-border-gray-400 twcss-flex-grow lg:twcss-py-[1rem] lg:twcss-px-[2rem] twcss-p-[.5rem] twcss-font-bold lg:twcss-text-[1.8rem] twcss-text-[1.2rem]'
+                ></div>
+                <div
+                  class='twcss-flex-shrink-0 twcss-border-gray-400 twcss-w-[23%] twcss-bg-[--accent-color] lg:twcss-py-[1rem] lg:twcss-px-[2rem] twcss-p-[.5rem] twcss-flex twcss-justify-center '
+                ></div>
+              </div>
             </div>
           </div>
         </div>
@@ -705,8 +714,6 @@
   comparisonData.forEach((content, i) => {
     const item = document.createElement('div');
     item.className = 'twcss-flex twcss-flex-row';
-    console.log('testset');
-    console.log(i);
     item.innerHTML = `
         <div class='${
           comparisonData.length - 1 == i ? '' : 'twcss-border-b'
