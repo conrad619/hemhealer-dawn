@@ -76,6 +76,10 @@
             "show_gift_card_recipient": false
           }
         },
+        "guaranteed_APzr3b": {
+          "type": "guaranteed",
+          "settings": {}
+        },
         "collapsible-row-0": {
           "type": "collapsible_tab",
           "disabled": true,
@@ -136,6 +140,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "guaranteed_APzr3b",
         "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
