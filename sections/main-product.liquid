@@ -104,7 +104,7 @@
                 </p>
               {%- when 'multiline_text' -%}
                 <div
-                  class='product__text twcss-italic twcss-text-[1.4rem] inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}'
+                  class='product__text twcss-italic twcss-text-[1.8rem] inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}'
                   {{ block.shopify_attributes }}
                 >
                   {{- block.settings.multiline_text -}}
@@ -211,7 +211,7 @@
                   </div>
                 {%- endif -%}
               {%- when 'guaranteed' -%}
-                <div class='twcss-flex twcss-flex-row  twcss-gap-[2rem]'>
+                <div class='twcss-flex twcss-flex-row  twcss-gap-[1rem]'>
                   <div class='twcss-w-1/3'>
                     <img
                       src='https://www.hemhealer.com/cdn/shop/files/imgpsh_fullsize_anim_250x.png?v=1704395061'
@@ -222,10 +222,10 @@
                     >
                   </div>
                   <div class='twcss-w-2/3 twcss-flex twcss-flex-col twcss-justify-center'>
-                    <p class='twcss-text-[1.2rem]'>
+                    <p class='twcss-text-[1.6rem]'>
+                      <span class='twcss-font-bold twcss-mb-2 twcss-block'>Full Money Back Guarantee</span>
                       <span class='twcss-font-bold twcss-text-red-600'>IMPORTANT!</span> If you are not 100% satisfied
-                      FOR ANY REASON, simply call us, text, or email and we will immediately give you a full refund no
-                      questions asked.
+                      we’ll give you a full refund.
                     </p>
                   </div>
                 </div>
