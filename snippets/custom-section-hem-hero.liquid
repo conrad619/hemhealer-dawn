@@ -14,48 +14,33 @@
           height='auto'
         >
         <div class='twcss-pt-[5rem]'>
-          <h2 class='lg:twcss-text-[4.5rem] twcss-text-[2.5rem] twcss-font-medium twcss-text-center'>
-            DOES HEM HERO™ REALLY WORK?
+          <h2 class='lg:twcss-text-[4.5rem] twcss-text-[3rem] twcss-font-medium twcss-text-center'>
+            Hem Hero® Just Works
           </h2>
-          <h3 class='lg:twcss-text-[7rem] twcss-text-[3rem] twcss-font-medium twcss-text-center twcss-mb-[4rem]'>
-            Real Stories From Real Users
+          <h3 class='lg:twcss-text-[7rem] twcss-text-[2.5rem] twcss-font-medium twcss-text-center twcss-mb-[4rem]'>
+            See for yourself 👇
           </h3>
-          <div class='twcss-mb-[2rem]'>
-            <iframe
-              class='video-testimonial-iframe twcss-aspect-video twcss-h-auto'
-              src='https://player.vimeo.com/video/714032857?h=c455811032&amp;title=0&amp;byline=0&amp;portrait=0'
-              width='100%'
-              height='700px'
-              frameborder='0'
-              allow='autoplay; fullscreen; picture-in-picture'
-              allowfullscreen=''
-            ></iframe>
-          </div>
-
-          <div class='twcss-flex lg:twcss-flex-row twcss-flex-col twcss-gap-[2rem]'>
-            <div class='lg:twcss-w-1/2 w-full'>
-              <iframe
-                class='video-testimonial-iframe twcss-aspect-video twcss-h-auto'
-                src='https://player.vimeo.com/video/812083970?h=8c39fd2b9e&amp;title=0&amp;byline=0&amp;portrait=0'
-                width='100%'
-                height='360px'
-              ></iframe>
-              <p class='twcss-text-[2.4rem] twcss-italic twcss-text-center twcss-pt-[2rem]'>
-                "It has greatly improved my well-being, and my mental health." <br>
-                – Joanna
-              </p>
+          <!-- Trigger Buttons -->
+          <div class='twcss-flex twcss-flex-row lg:twcss-gap-[2rem] twcss-gap-[1rem]'>
+            <div class='twcss-w-1/2 lg:twcss-aspect-video twcss-aspect-[9/16] twcss-bg-cover twcss-bg-center twcss-bg-[url(https://cdn.shopify.com/s/files/1/0550/1560/4383/files/testimonial_1.jpg?v=1749484733)]'>
+              <button
+                onclick="openVideoModal('https://player.vimeo.com/video/714032857?h=c455811032&title=0&byline=0&portrait=0')"
+                class='twcss-relative twcss-w-full lg:twcss-aspect-video twcss-aspect-[9/16]  twcss-text-white twcss-flex twcss-items-center twcss-justify-center twcss-cursor-pointer'
+              >
+                <span class='lg:twcss-text-[8rem] twcss-text-[5rem] twcss-pl-[1rem] twcss-bg-[--accent-color-2]  twcss-rounded-full lg:twcss-w-[11rem] lg:twcss-h-[11rem] twcss-w-[7rem] twcss-h-[7rem] lg:twcss-leading-[10rem] twcss-leading-[6.5rem]'
+                  >▶</span
+                >
+              </button>
             </div>
-            <div class='lg:twcss-w-1/2 w-full'>
-              <iframe
-                class='video-testimonial-iframe twcss-aspect-video twcss-h-auto'
-                src='https://player.vimeo.com/video/621266399?h=c4c04b295a&amp;title=0&amp;byline=0&amp;portrait=0'
-                width='100%'
-                height='360px'
-              ></iframe>
-              <p class='twcss-text-[2.4rem] twcss-italic twcss-text-center twcss-pt-[2rem]'>
-                "It's the most amazing thing that I've ever taken, because it actually works!"<br>
-                - Marc
-              </p>
+            <div class='twcss-w-1/2 lg:twcss-aspect-video twcss-aspect-[9/16] twcss-bg-cover twcss-bg-right twcss-bg-[url(https://cdn.shopify.com/s/files/1/0550/1560/4383/files/testimonial_2.jpg?v=1749484733)]'>
+              <button
+                onclick="openVideoModal('https://player.vimeo.com/video/812083970?h=8c39fd2b9e&title=0&byline=0&portrait=0')"
+                class='twcss-relative twcss-w-full lg:twcss-aspect-video twcss-aspect-[9/16]   twcss-object-cover  twcss-text-white twcss-flex twcss-items-center twcss-justify-center twcss-cursor-pointer'
+              >
+                <span class='lg:twcss-text-[8rem] twcss-text-[5rem] twcss-pl-[1rem] twcss-bg-[--accent-color-2]  twcss-rounded-full lg:twcss-w-[11rem] lg:twcss-h-[11rem] twcss-w-[7rem] twcss-h-[7rem] lg:twcss-leading-[10rem] twcss-leading-[6.5rem]'
+                  >▶</span
+                >
+              </button>
             </div>
           </div>
         </div>
@@ -596,6 +581,29 @@
     </div>
   </div>
 </div>
+<!-- Modal -->
+<div
+  id='videoModal'
+  class='twcss-fixed twcss-inset-0 twcss-bg-black/80 twcss-z-50 twcss-items-center twcss-justify-center twcss-hidden twcss-flex'
+  onclick='closeVideoModal()'
+>
+  <div class='twcss-relative twcss-w-full twcss-max-w-[120rem] twcss-aspect-video twcss-bg-black'>
+    <iframe
+      id='videoIframe'
+      class='twcss-w-full twcss-h-full'
+      src=''
+      frameborder='0'
+      allow='autoplay; fullscreen'
+      allowfullscreen
+    ></iframe>
+    <button
+      onclick='closeVideoModal()'
+      class='twcss-absolute twcss-top-2 twcss-right-2 twcss-text-black twcss-bg-white twcss-rounded-full twcss-w-8 twcss-h-8 twcss-flex twcss-items-center twcss-justify-center'
+    >
+      ✕
+    </button>
+  </div>
+</div>
 
 <script>
   let accordionData = {
@@ -750,5 +758,19 @@
 
     comparisonContainer.appendChild(item);
   });
+
+  function openVideoModal(videoUrl) {
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('videoIframe');
+    iframe.src = videoUrl + '&autoplay=1';
+    modal.classList.remove('twcss-hidden');
+  }
+
+  function closeVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('videoIframe');
+    iframe.src = '';
+    modal.classList.add('twcss-hidden');
+  }
   // end comparison
 </script>

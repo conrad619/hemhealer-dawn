@@ -607,12 +607,20 @@ video {
   --tw-backdrop-sepia: ;
 }
 
+.twcss-fixed {
+  position: fixed;
+}
+
 .twcss-absolute {
   position: absolute;
 }
 
 .twcss-relative {
   position: relative;
+}
+
+.twcss-inset-0 {
+  inset: 0px;
 }
 
 .-twcss-left-\[3rem\] {
@@ -661,6 +669,14 @@ video {
 
 .twcss-top-\[83\%\] {
   top: 83%;
+}
+
+.twcss-right-2 {
+  right: 0.5rem;
+}
+
+.twcss-top-2 {
+  top: 0.5rem;
 }
 
 .-twcss-z-\[1\] {
@@ -812,6 +828,10 @@ video {
   margin-top: 5rem;
 }
 
+.twcss-mb-2 {
+  margin-bottom: 0.5rem;
+}
+
 .twcss-block {
   display: block;
 }
@@ -838,6 +858,10 @@ video {
 
 .twcss-aspect-video {
   aspect-ratio: 16 / 9;
+}
+
+.twcss-aspect-\[9\/16\] {
+  aspect-ratio: 9/16;
 }
 
 .twcss-h-\[1\.8rem\] {
@@ -922,6 +946,18 @@ video {
 
 .twcss-h-px {
   height: 1px;
+}
+
+.twcss-h-8 {
+  height: 2rem;
+}
+
+.twcss-h-\[16rem\] {
+  height: 16rem;
+}
+
+.twcss-h-\[7rem\] {
+  height: 7rem;
 }
 
 .twcss-min-h-\[4rem\] {
@@ -1024,6 +1060,18 @@ video {
   width: 100%;
 }
 
+.twcss-w-8 {
+  width: 2rem;
+}
+
+.twcss-w-\[16rem\] {
+  width: 16rem;
+}
+
+.twcss-w-\[7rem\] {
+  width: 7rem;
+}
+
 .twcss-max-w-\[100rem\] {
   max-width: 100rem;
 }
@@ -1050,6 +1098,14 @@ video {
 
 .twcss-max-w-\[90rem\] {
   max-width: 90rem;
+}
+
+.twcss-max-w-3xl {
+  max-width: 48rem;
+}
+
+.twcss-max-w-\[120rem\] {
+  max-width: 120rem;
 }
 
 .twcss-flex-shrink-0 {
@@ -1087,6 +1143,10 @@ video {
 
 .twcss-cursor-zoom-in {
   cursor: zoom-in;
+}
+
+.twcss-cursor-pointer {
+  cursor: pointer;
 }
 
 .twcss-list-\[\"\2714\"\] {
@@ -1303,12 +1363,29 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.twcss-bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.twcss-bg-black\/80 {
+  background-color: rgb(0 0 0 / 0.8);
+}
+
 .twcss-bg-\[url\(https\:\/\/cdn\.shopify\.com\/s\/files\/1\/0550\/1560\/4383\/files\/hem-hero-hero-image-w-bottle3-png\.png\?v\=1742722703\)\] {
   background-image: url(https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hem-hero-hero-image-w-bottle3-png.png?v=1742722703);
 }
 
 .twcss-bg-\[url\(https\:\/\/cdn\.shopify\.com\/s\/files\/1\/0550\/1560\/4383\/files\/hemhealer-leaves-bg-png_2\.png\?v\=1742323161\)\] {
   background-image: url(https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hemhealer-leaves-bg-png_2.png?v=1742323161);
+}
+
+.twcss-bg-\[url\(https\:\/\/cdn\.shopify\.com\/s\/files\/1\/0550\/1560\/4383\/files\/testimonial_1\.jpg\?v\=1749484733\)\] {
+  background-image: url(https://cdn.shopify.com/s/files/1/0550/1560/4383/files/testimonial_1.jpg?v=1749484733);
+}
+
+.twcss-bg-\[url\(https\:\/\/cdn\.shopify\.com\/s\/files\/1\/0550\/1560\/4383\/files\/testimonial_2\.jpg\?v\=1749484733\)\] {
+  background-image: url(https://cdn.shopify.com/s/files/1/0550/1560/4383/files/testimonial_2.jpg?v=1749484733);
 }
 
 .twcss-bg-\[77\.6rem_auto\] {
@@ -1319,8 +1396,24 @@ video {
   background-size: contain;
 }
 
+.twcss-bg-cover {
+  background-size: cover;
+}
+
 .twcss-bg-\[top_center\] {
   background-position: top center;
+}
+
+.twcss-bg-center {
+  background-position: center;
+}
+
+.twcss-bg-right {
+  background-position: right;
+}
+
+.twcss-bg-left {
+  background-position: left;
 }
 
 .twcss-bg-no-repeat {
@@ -1644,6 +1737,35 @@ video {
   line-height: 1.75rem;
 }
 
+.twcss-text-\[2\.3rem\] {
+  font-size: 2.3rem;
+}
+
+.twcss-text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.twcss-text-\[36rem\] {
+  font-size: 36rem;
+}
+
+.twcss-text-\[26rem\] {
+  font-size: 26rem;
+}
+
+.twcss-text-\[20rem\] {
+  font-size: 20rem;
+}
+
+.twcss-text-\[16rem\] {
+  font-size: 16rem;
+}
+
+.twcss-text-\[8rem\] {
+  font-size: 8rem;
+}
+
 .twcss-font-bold {
   font-weight: 700;
 }
@@ -1690,6 +1812,10 @@ video {
 
 .twcss-leading-normal {
   line-height: 1.5;
+}
+
+.twcss-leading-\[6\.5rem\] {
+  line-height: 6.5rem;
 }
 
 .twcss-tracking-normal {
@@ -2036,6 +2162,10 @@ shop-pay-wallet-button {
     display: none;
   }
 
+  .lg\:twcss-aspect-video {
+    aspect-ratio: 16 / 9;
+  }
+
   .lg\:twcss-h-0 {
     height: 0px;
   }
@@ -2074,6 +2204,10 @@ shop-pay-wallet-button {
 
   .lg\:twcss-h-auto {
     height: auto;
+  }
+
+  .lg\:twcss-h-\[11rem\] {
+    height: 11rem;
   }
 
   .lg\:twcss-w-1\/2 {
@@ -2134,6 +2268,10 @@ shop-pay-wallet-button {
 
   .lg\:twcss-w-\[calc\(216\%\+1\.3px\)\] {
     width: calc(216% + 1.3px);
+  }
+
+  .lg\:twcss-w-\[11rem\] {
+    width: 11rem;
   }
 
   .lg\:twcss-grid-cols-2 {
@@ -2397,8 +2535,24 @@ shop-pay-wallet-button {
     font-size: 9rem;
   }
 
+  .lg\:twcss-text-\[16rem\] {
+    font-size: 16rem;
+  }
+
+  .lg\:twcss-text-\[8rem\] {
+    font-size: 8rem;
+  }
+
   .lg\:twcss-leading-\[5\.4rem\] {
     line-height: 5.4rem;
+  }
+
+  .lg\:twcss-leading-\[7rem\] {
+    line-height: 7rem;
+  }
+
+  .lg\:twcss-leading-\[10rem\] {
+    line-height: 10rem;
   }
 
   .\*\:lg\:twcss-text-\[1\.8rem\] > * {
