@@ -651,12 +651,20 @@ video {
   left: auto;
 }
 
+.twcss-right-2 {
+  right: 0.5rem;
+}
+
 .twcss-right-\[-\.6rem\] {
   right: -0.6rem;
 }
 
 .twcss-top-0 {
   top: 0px;
+}
+
+.twcss-top-2 {
+  top: 0.5rem;
 }
 
 .twcss-top-\[\.2rem\] {
@@ -669,14 +677,6 @@ video {
 
 .twcss-top-\[83\%\] {
   top: 83%;
-}
-
-.twcss-right-2 {
-  right: 0.5rem;
-}
-
-.twcss-top-2 {
-  top: 0.5rem;
 }
 
 .-twcss-z-\[1\] {
@@ -732,6 +732,10 @@ video {
   margin-top: -1px;
 }
 
+.twcss-mb-2 {
+  margin-bottom: 0.5rem;
+}
+
 .twcss-mb-4 {
   margin-bottom: 1rem;
 }
@@ -754,6 +758,10 @@ video {
 
 .twcss-mb-\[1rem\] {
   margin-bottom: 1rem;
+}
+
+.twcss-mb-\[2\.4rem\] {
+  margin-bottom: 2.4rem;
 }
 
 .twcss-mb-\[2rem\] {
@@ -832,14 +840,6 @@ video {
   margin-top: 5rem;
 }
 
-.twcss-mb-2 {
-  margin-bottom: 0.5rem;
-}
-
-.twcss-mb-\[2\.4rem\] {
-  margin-bottom: 2.4rem;
-}
-
 .twcss-block {
   display: block;
 }
@@ -864,24 +864,20 @@ video {
   display: none;
 }
 
-.twcss-aspect-video {
-  aspect-ratio: 16 / 9;
+.twcss-aspect-\[9\/12\] {
+  aspect-ratio: 9/12;
 }
 
 .twcss-aspect-\[9\/16\] {
   aspect-ratio: 9/16;
 }
 
-.twcss-aspect-square {
-  aspect-ratio: 1 / 1;
+.twcss-aspect-video {
+  aspect-ratio: 16 / 9;
 }
 
-.twcss-aspect-\[14\/9\] {
-  aspect-ratio: 14/9;
-}
-
-.twcss-aspect-\[9\/12\] {
-  aspect-ratio: 9/12;
+.twcss-h-8 {
+  height: 2rem;
 }
 
 .twcss-h-\[1\.8rem\] {
@@ -916,6 +912,10 @@ video {
   height: 34.7rem;
 }
 
+.twcss-h-\[3rem\] {
+  height: 3rem;
+}
+
 .twcss-h-\[4\.4rem\] {
   height: 4.4rem;
 }
@@ -948,6 +948,10 @@ video {
   height: 7.7rem;
 }
 
+.twcss-h-\[7rem\] {
+  height: 7rem;
+}
+
 .twcss-h-\[80\%\] {
   height: 80%;
 }
@@ -968,22 +972,6 @@ video {
   height: 1px;
 }
 
-.twcss-h-8 {
-  height: 2rem;
-}
-
-.twcss-h-\[16rem\] {
-  height: 16rem;
-}
-
-.twcss-h-\[7rem\] {
-  height: 7rem;
-}
-
-.twcss-h-\[3rem\] {
-  height: 3rem;
-}
-
 .twcss-min-h-\[4rem\] {
   min-height: 4rem;
 }
@@ -1002,6 +990,10 @@ video {
 
 .twcss-w-2\/3 {
   width: 66.666667%;
+}
+
+.twcss-w-8 {
+  width: 2rem;
 }
 
 .twcss-w-\[1\.8rem\] {
@@ -1044,6 +1036,10 @@ video {
   width: 70%;
 }
 
+.twcss-w-\[7rem\] {
+  width: 7rem;
+}
+
 .twcss-w-\[calc\(100\%\+1\.3px\)\] {
   width: calc(100% + 1.3px);
 }
@@ -1084,24 +1080,16 @@ video {
   width: 100%;
 }
 
-.twcss-w-8 {
-  width: 2rem;
-}
-
-.twcss-w-\[16rem\] {
-  width: 16rem;
-}
-
-.twcss-w-\[7rem\] {
-  width: 7rem;
-}
-
 .twcss-max-w-\[100rem\] {
   max-width: 100rem;
 }
 
 .twcss-max-w-\[110rem\] {
   max-width: 110rem;
+}
+
+.twcss-max-w-\[120rem\] {
+  max-width: 120rem;
 }
 
 .twcss-max-w-\[30rem\] {
@@ -1116,28 +1104,16 @@ video {
   max-width: 50rem;
 }
 
+.twcss-max-w-\[70rem\] {
+  max-width: 70rem;
+}
+
 .twcss-max-w-\[80rem\] {
   max-width: 80rem;
 }
 
 .twcss-max-w-\[90rem\] {
   max-width: 90rem;
-}
-
-.twcss-max-w-3xl {
-  max-width: 48rem;
-}
-
-.twcss-max-w-\[120rem\] {
-  max-width: 120rem;
-}
-
-.twcss-max-w-\[106rem\] {
-  max-width: 106rem;
-}
-
-.twcss-max-w-\[70rem\] {
-  max-width: 70rem;
 }
 
 .twcss-flex-shrink-0 {
@@ -1173,12 +1149,12 @@ video {
     scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.twcss-cursor-zoom-in {
-  cursor: zoom-in;
-}
-
 .twcss-cursor-pointer {
   cursor: pointer;
+}
+
+.twcss-cursor-zoom-in {
+  cursor: zoom-in;
 }
 
 .twcss-list-\[\"\2714\"\] {
@@ -1229,6 +1205,10 @@ video {
   gap: 0.5rem;
 }
 
+.twcss-gap-\[\.8rem\] {
+  gap: 0.8rem;
+}
+
 .twcss-gap-\[1rem\] {
   gap: 1rem;
 }
@@ -1243,22 +1223,6 @@ video {
 
 .twcss-gap-\[4rem\] {
   gap: 4rem;
-}
-
-.twcss-gap-\[8rem\] {
-  gap: 8rem;
-}
-
-.twcss-gap-\[9rem\] {
-  gap: 9rem;
-}
-
-.twcss-gap-\[7rem\] {
-  gap: 7rem;
-}
-
-.twcss-gap-\[\.8rem\] {
-  gap: 0.8rem;
 }
 
 .twcss-gap-y-\[2rem\] {
@@ -1377,6 +1341,10 @@ video {
   background-color: rgb(115 193 93 / var(--tw-bg-opacity));
 }
 
+.twcss-bg-\[\#C6E12380\] {
+  background-color: #c6e12380;
+}
+
 .twcss-bg-\[\#C6E1238C\] {
   background-color: #c6e1238c;
 }
@@ -1397,6 +1365,15 @@ video {
   background-color: var(--accent-color);
 }
 
+.twcss-bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.twcss-bg-black\/80 {
+  background-color: rgb(0 0 0 / 0.8);
+}
+
 .twcss-bg-red-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(220 38 38 / var(--tw-bg-opacity));
@@ -1409,19 +1386,6 @@ video {
 .twcss-bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.twcss-bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-
-.twcss-bg-black\/80 {
-  background-color: rgb(0 0 0 / 0.8);
-}
-
-.twcss-bg-\[\#C6E12380\] {
-  background-color: #c6e12380;
 }
 
 .twcss-bg-\[url\(https\:\/\/cdn\.shopify\.com\/s\/files\/1\/0550\/1560\/4383\/files\/hem-hero-hero-image-w-bottle3-png\.png\?v\=1742722703\)\] {
@@ -1462,10 +1426,6 @@ video {
 
 .twcss-bg-right {
   background-position: right;
-}
-
-.twcss-bg-left {
-  background-position: left;
 }
 
 .twcss-bg-no-repeat {
@@ -1615,14 +1575,14 @@ video {
   padding-bottom: 3rem;
 }
 
-.twcss-py-\[5rem\] {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
 .twcss-py-\[4rem\] {
   padding-top: 4rem;
   padding-bottom: 4rem;
+}
+
+.twcss-py-\[5rem\] {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .twcss-pb-\[10rem\] {
@@ -1794,35 +1754,6 @@ video {
   line-height: 1.75rem;
 }
 
-.twcss-text-\[2\.3rem\] {
-  font-size: 2.3rem;
-}
-
-.twcss-text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
-.twcss-text-\[36rem\] {
-  font-size: 36rem;
-}
-
-.twcss-text-\[26rem\] {
-  font-size: 26rem;
-}
-
-.twcss-text-\[20rem\] {
-  font-size: 20rem;
-}
-
-.twcss-text-\[16rem\] {
-  font-size: 16rem;
-}
-
-.twcss-text-\[8rem\] {
-  font-size: 8rem;
-}
-
 .twcss-font-bold {
   font-weight: 700;
 }
@@ -1863,20 +1794,16 @@ video {
   line-height: 5.4rem;
 }
 
+.twcss-leading-\[6\.5rem\] {
+  line-height: 6.5rem;
+}
+
 .twcss-leading-none {
   line-height: 1;
 }
 
 .twcss-leading-normal {
   line-height: 1.5;
-}
-
-.twcss-leading-\[6\.5rem\] {
-  line-height: 6.5rem;
-}
-
-.twcss-leading-10 {
-  line-height: 2.5rem;
 }
 
 .twcss-tracking-normal {
@@ -2231,6 +2158,10 @@ shop-pay-wallet-button {
     height: 0px;
   }
 
+  .lg\:twcss-h-\[11rem\] {
+    height: 11rem;
+  }
+
   .lg\:twcss-h-\[12\.5rem\] {
     height: 12.5rem;
   }
@@ -2267,10 +2198,6 @@ shop-pay-wallet-button {
     height: auto;
   }
 
-  .lg\:twcss-h-\[11rem\] {
-    height: 11rem;
-  }
-
   .lg\:twcss-w-1\/2 {
     width: 50%;
   }
@@ -2289,6 +2216,10 @@ shop-pay-wallet-button {
 
   .lg\:twcss-w-3\/5 {
     width: 60%;
+  }
+
+  .lg\:twcss-w-\[11rem\] {
+    width: 11rem;
   }
 
   .lg\:twcss-w-\[2rem\] {
@@ -2329,10 +2260,6 @@ shop-pay-wallet-button {
 
   .lg\:twcss-w-\[calc\(216\%\+1\.3px\)\] {
     width: calc(216% + 1.3px);
-  }
-
-  .lg\:twcss-w-\[11rem\] {
-    width: 11rem;
   }
 
   .lg\:twcss-grid-cols-2 {
@@ -2596,28 +2523,20 @@ shop-pay-wallet-button {
     font-size: 7rem;
   }
 
-  .lg\:twcss-text-\[9rem\] {
-    font-size: 9rem;
-  }
-
-  .lg\:twcss-text-\[16rem\] {
-    font-size: 16rem;
-  }
-
   .lg\:twcss-text-\[8rem\] {
     font-size: 8rem;
   }
 
-  .lg\:twcss-leading-\[5\.4rem\] {
-    line-height: 5.4rem;
-  }
-
-  .lg\:twcss-leading-\[7rem\] {
-    line-height: 7rem;
+  .lg\:twcss-text-\[9rem\] {
+    font-size: 9rem;
   }
 
   .lg\:twcss-leading-\[10rem\] {
     line-height: 10rem;
+  }
+
+  .lg\:twcss-leading-\[5\.4rem\] {
+    line-height: 5.4rem;
   }
 
   .\*\:lg\:twcss-text-\[1\.8rem\] > * {
