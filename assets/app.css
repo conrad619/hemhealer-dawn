@@ -860,10 +860,6 @@ video {
   display: none;
 }
 
-.twcss-aspect-\[9\/12\] {
-  aspect-ratio: 9/12;
-}
-
 .twcss-aspect-\[9\/16\] {
   aspect-ratio: 9/16;
 }
@@ -990,10 +986,6 @@ video {
 
 .twcss-w-8 {
   width: 2rem;
-}
-
-.twcss-w-80 {
-  width: 20rem;
 }
 
 .twcss-w-\[1\.8rem\] {
