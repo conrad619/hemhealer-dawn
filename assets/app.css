@@ -1911,7 +1911,8 @@ video {
 }
 
 #shopify-installments,
-shopify-payment-terms {
+shopify-payment-terms,
+more-payment-options-link {
   display: none;
 }
 
