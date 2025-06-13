@@ -75,6 +75,49 @@
     >
   {%- endif -%}
 
+  <style>
+    .faq-container {
+      max-width: 600px;
+      margin: 10px auto;
+      font-family: Arial, sans-serif;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #ccc;
+    }
+
+    .faq-question {
+      background: #f5f5f5;
+      padding: 10px;
+      cursor: pointer;
+      font-weight: medium;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-answer {
+      overflow: hidden;
+      height: 0;
+      padding: 0 10px;
+      background: #fff;
+      transition: height 0.3s ease, padding 0.3s ease;
+    }
+
+    .faq-answer.open {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .chevron {
+      transition: transform 0.3s ease;
+    }
+
+    .chevron.rotate {
+      transform: rotate(180deg);
+    }
+  </style>
+
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <div class='page-width'>
     <div class='product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}'>
@@ -210,6 +253,10 @@
                     {{ product.description }}
                   </div>
                 {%- endif -%}
+              {%- when 'faqs' -%}
+                {% if product.handle contains 'hem-hero' %}
+                  <div class='faq-container' id='faq'></div>
+                {% endif %}
               {%- when 'guaranteed' -%}
                 <div class='twcss-flex twcss-flex-row  twcss-gap-[1rem]'>
                   <div class='twcss-w-1/3'>
@@ -1002,6 +1049,11 @@
     {
       "type": "description",
       "name": "t:sections.main-product.blocks.description.name",
+      "limit": 1
+    },
+    {
+      "type": "faqs",
+      "name": "faqs",
       "limit": 1
     },
     {
@@ -2347,3 +2399,68 @@
   ]
 }
 {% endschema %}
+
+<script>
+  const faqData = {
+    '1. How does Hem Hero® work?':
+      'Hem Hero® Extra Strength is a capsule that works from the inside out. It helps shrink swollen veins and improve blood flow, which relieves pain, itching, and bleeding—giving your body the chance to heal and get rid of hemorrhoids for good.',
+
+    '2. How long does it take?':
+      'Most people feel relief within 3 to 5 days, and full results typically come in 2 to 4 weeks. If you’ve had hemorrhoids for a long time, you may see early improvements, but it could take longer for them to fully clear up. Our support team is here to help you every step of the way—call or text us at 863-302-8006 for personalized guidance.',
+
+    '3. How many bottles do I need?': `
+        It depends on how bad your hemorrhoids are.<br><br>
+        <strong>No pain or early signs:</strong> 1–2 bottles<br>
+        <strong>Mild pain:</strong> 2–3 bottles<br>
+        <strong>Moderate pain:</strong> 3–4 bottles<br>
+        <strong>Severe pain:</strong> 4–5 bottles<br>
+        <strong>Very severe or long-term cases:</strong> 5 bottles or more<br><br>
+        For the best results, start with the amount that matches your pain level—and remember, our team is here to help if you’re not sure. Call or text us at 863-302-8006.
+      `,
+
+    '4. What if it doesn’t work for me?':
+      'If Hem Hero® doesn’t work for you, we recommend reaching out to our support team for a personalized assessment and possible refund or alternative solution. Your satisfaction is our priority—call or text 863-302-8006.',
+  };
+
+  let html = '';
+
+  for (const question in faqData) {
+    html += `
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>${question}</span>
+            <svg class="chevron" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#000000">
+              <path d="M480-333 240-573l51-51 189 189 189-189 51 51-240 240Z"/>
+            </svg>
+          </div>
+          <div class="faq-answer">${faqData[question]}</div>
+        </div>
+      `;
+  }
+
+  document.getElementById('faq').innerHTML = html;
+
+  // Add toggle functionality
+  document.querySelectorAll('.faq-question').forEach((questionEl, index) => {
+    questionEl.addEventListener('click', () => {
+      const answer = questionEl.nextElementSibling;
+      const chevron = questionEl.querySelector('.chevron');
+      const isOpen = answer.classList.contains('open');
+
+      // Close all first (accordion behavior)
+      document.querySelectorAll('.faq-answer').forEach((el) => {
+        el.style.height = 0;
+        el.classList.remove('open');
+      });
+      document.querySelectorAll('.chevron').forEach((el) => {
+        el.classList.remove('rotate');
+      });
+
+      if (!isOpen) {
+        answer.classList.add('open');
+        answer.style.height = answer.scrollHeight + 20 + 'px';
+        chevron.classList.add('rotate');
+      }
+    });
+  });
+</script>
