@@ -1104,6 +1104,14 @@ video {
   max-width: 90rem;
 }
 
+.twcss-max-w-\[50rem\] {
+  max-width: 50rem;
+}
+
+.twcss-max-w-\[60rem\] {
+  max-width: 60rem;
+}
+
 .twcss-flex-shrink-0 {
   flex-shrink: 0;
 }
@@ -1740,6 +1748,10 @@ video {
 .twcss-text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.twcss-text-\[20rem\] {
+  font-size: 20rem;
 }
 
 .twcss-font-bold {
