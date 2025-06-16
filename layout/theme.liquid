@@ -1,6 +1,13 @@
 <!doctype html>
 <html class='js' lang='{{ request.locale.iso_code }}'>
   <head>
+    <script>
+var head = document.head;
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = "https://211261.t.hyros.com/v1/lst/universal-script?ph=e2000046ed5d217bf056c79bb4c8f07d48dd3ac450eed371b8f70c1f50870073&tag=!clicked&origin=SHOPIFY&ref_url=" + encodeURI(document.URL) ;
+head.appendChild(script);
+</script>
     {% render 'shogun-optimizer' %}
 
     <meta charset='utf-8'>
