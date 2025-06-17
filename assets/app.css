@@ -1645,6 +1645,10 @@ video {
   padding-top: 8rem;
 }
 
+.twcss-pt-\[1rem\] {
+  padding-top: 1rem;
+}
+
 .twcss-text-center {
   text-align: center;
 }
