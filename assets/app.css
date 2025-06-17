@@ -884,6 +884,10 @@ video {
   height: 11.6rem;
 }
 
+.twcss-h-\[15\%\] {
+  height: 15%;
+}
+
 .twcss-h-\[2\.4rem\] {
   height: 2.4rem;
 }
@@ -1362,9 +1366,24 @@ video {
   background-color: rgb(0 0 0 / 0.8);
 }
 
+.twcss-bg-blue-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 64 175 / var(--tw-bg-opacity));
+}
+
+.twcss-bg-pink-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(219 39 119 / var(--tw-bg-opacity));
+}
+
 .twcss-bg-red-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+}
+
+.twcss-bg-red-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(153 27 27 / var(--tw-bg-opacity));
 }
 
 .twcss-bg-transparent {
@@ -1374,6 +1393,10 @@ video {
 .twcss-bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.twcss-bg-opacity-50 {
+  --tw-bg-opacity: 0.5;
 }
 
 .twcss-bg-\[url\(https\:\/\/cdn\.shopify\.com\/s\/files\/1\/0550\/1560\/4383\/files\/hem-hero-hero-image-w-bottle3-png\.png\?v\=1742722703\)\] {
@@ -1645,10 +1668,6 @@ video {
   padding-top: 8rem;
 }
 
-.twcss-pt-\[1rem\] {
-  padding-top: 1rem;
-}
-
 .twcss-text-center {
   text-align: center;
 }
@@ -1863,6 +1882,10 @@ video {
 .twcss-no-underline {
   -webkit-text-decoration-line: none;
   text-decoration-line: none;
+}
+
+.twcss-opacity-50 {
+  opacity: 0.5;
 }
 
 .twcss-shadow-\[0px_0px_10px_0px_rgba\(0\,0\,0\,0\.5\)\] {
@@ -2090,6 +2113,10 @@ shop-pay-wallet-button {
     right: 1.4rem;
   }
 
+  .lg\:twcss-right-\[7\.5\%\] {
+    right: 7.5%;
+  }
+
   .lg\:twcss-top-\[\.7rem\] {
     top: 0.7rem;
   }
@@ -2225,6 +2252,10 @@ shop-pay-wallet-button {
 
   .lg\:twcss-w-\[40\%\] {
     width: 40%;
+  }
+
+  .lg\:twcss-w-\[51\%\] {
+    width: 51%;
   }
 
   .lg\:twcss-w-\[60\%\] {
