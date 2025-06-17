@@ -97,16 +97,18 @@
             </span>
           </a>
 
-          {% if forloop.last %}
-            <img
-              id='buy-with-prime'
-              class='twcss-w-[5rem] twcss-h-[5rem] -twcss-ml-[1rem]'
-              src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/buy-with-prime.png?v=1744985804'
-              alt='Buy with prime'
-              width='auto'
-              height='auto'
-            >
-          {% endif %}
+          {% comment %}
+            {% if forloop.last %}
+              <img
+                id='buy-with-prime'
+                class='twcss-w-[5rem] twcss-h-[5rem] -twcss-ml-[1rem]'
+                src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/buy-with-prime.png?v=1744985804'
+                alt='Buy with prime'
+                width='auto'
+                height='auto'
+              >
+            {% endif %}
+          {% endcomment %}
         {%- endif -%}
       </li>
     {%- endfor -%}
