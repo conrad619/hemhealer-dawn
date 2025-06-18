@@ -1906,12 +1906,12 @@ video {
 }
 
 #provesrc-widget-area {
-  display: none;
+  /* display: none; */
 }
 
 #chat-input,
 #chat-button {
-  display: none;
+  /* display: none; */
 }
 
 .product__tax.caption {
