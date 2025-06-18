@@ -1914,6 +1914,10 @@ video {
   /* display: none; */
 }
 
+#chat-button {
+  bottom: 80px !important;
+}
+
 .product__tax.caption {
   display: none;
 }
