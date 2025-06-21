@@ -1,0 +1,151 @@
+{% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+{{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  @media screen and (max-width: 749px) {
+    .collection-hero--with-image .collection-hero__inner {
+      padding-bottom: calc({{settings.media_shadow_vertical_offset | at_least: 0}}px + 2rem);
+    }
+  }
+{%- endstyle -%}
+
+<div class='twcss-relative twcss-bg-[#2F5D4E] collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient'>
+  <div class='collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}'>
+    <div class='collection-hero__text-wrapper'>
+      {% comment %}
+        <h1 class='collection-hero__title lg:twcss-text-[5rem] twcss-text-[3rem] twcss-font-medium'>
+          <span class='visually-hidden'>{{ 'sections.collection_template.title' | t }}: </span>
+          {{- collection.title | escape -}}
+        </h1>
+
+        {%- if section.settings.show_collection_description -%}
+          <div class='collection-hero__description rte'>{{ collection.description }}</div>
+        {%- endif -%}
+      {% endcomment %}
+      <div class='twcss-flex twcss-flex-wrap twcss-text-white lg:twcss-pt-[4rem] lg:twcss-pb-[3.5rem] twcss-pt-[3rem] twcss-pb-[2.5rem] twcss-max-w-[120rem] twcss-mx-auto'>
+        <div class='lg:twcss-w-1/4 twcss-w-1/2 twcss-flex twcss-gap-[1.6rem] lg:twcss-px-[.8rem] lg:twcss-py-0 twcss-p-[.8rem]'>
+          <div class='twcss-h-[5rem] twcss-w-[5rem]'>
+            <img
+              src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/leaf.svg?v=1750520902'
+              alt='leaf'
+              width='50'
+              height='50'
+            >
+          </div>
+          <p class='lg:twcss-text-[2.6rem] twcss-text-[1.4rem] twcss-font-bold twcss-leading-none twcss-tracking-normal twcss-font-heading'>
+            100% Natural Ingredients
+          </p>
+        </div>
+        <div class='lg:twcss-w-1/4 twcss-w-1/2 twcss-flex twcss-gap-[1.6rem] lg:twcss-px-[.8rem] lg:twcss-py-0 twcss-p-[.8rem]'>
+          <div class='twcss-h-[5rem] twcss-w-[5rem]'>
+            <img
+              src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/shield.svg?v=1750520902'
+              alt='shield'
+              width='50'
+              height='50'
+            >
+          </div>
+          <p class='lg:twcss-text-[2.6rem] twcss-text-[1.4rem] twcss-font-bold twcss-leading-none twcss-tracking-normal twcss-font-heading'>
+            Trusted by 100,000+ Customers
+          </p>
+        </div>
+        <div class='lg:twcss-w-1/4 twcss-w-1/2 twcss-flex twcss-gap-[1.6rem] lg:twcss-px-[.8rem] lg:twcss-py-0 twcss-p-[.8rem]'>
+          <div class='twcss-h-[5rem] twcss-w-[5rem]'>
+            <img
+              src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/blood.svg?v=1750520902'
+              alt='blood'
+              width='50'
+              height='50'
+            >
+          </div>
+          <p class='lg:twcss-text-[2.6rem] twcss-text-[1.4rem] twcss-font-bold twcss-leading-none twcss-tracking-normal twcss-font-heading'>
+            Supports Vein & Blood Flow
+          </p>
+        </div>
+        <div class='lg:twcss-w-1/4 twcss-w-1/2 twcss-flex twcss-gap-[1.6rem] lg:twcss-px-[.8rem] lg:twcss-py-0 twcss-p-[.8rem]'>
+          <div class='twcss-h-[5rem] twcss-w-[5rem]'>
+            <img
+              src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/truck.svg?v=1750520902'
+              alt='truck'
+              width='50'
+              height='50'
+            >
+          </div>
+          <p class='lg:twcss-text-[2.6rem] twcss-text-[1.4rem] twcss-font-bold twcss-leading-none twcss-tracking-normal twcss-font-heading'>
+            Free Shipping on $79.99+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {%- if section.settings.show_collection_image and collection.image -%}
+      <div class='collection-hero__image-container media gradient'>
+        <img
+          srcset='
+            {%- if collection.image.width >= 165 -%}{{ collection.image | image_url: width: 165 }} 165w,{%- endif -%}
+            {%- if collection.image.width >= 360 -%}{{ collection.image | image_url: width: 360 }} 360w,{%- endif -%}
+            {%- if collection.image.width >= 535 -%}{{ collection.image | image_url: width: 535 }} 535w,{%- endif -%}
+            {%- if collection.image.width >= 750 -%}{{ collection.image | image_url: width: 750 }} 750w,{%- endif -%}
+            {%- if collection.image.width >= 1070 -%}{{ collection.image | image_url: width: 1070 }} 1070w,{%- endif -%}
+            {%- if collection.image.width >= 1500 -%}{{ collection.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+            {{ collection.image | image_url }} {{ collection.image.width }}w
+          '
+          src='{{ collection.image | image_url: width: 750 }}'
+          sizes='(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc(50vw - 130px), calc(50vw - 55px)'
+          alt='{{ collection.image.alt | escape }}'
+          width='{{ collection.image.width }}'
+          height='{{ collection.image.height }}'
+        >
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class='twcss-left-0 twcss-overflow-hidden twcss-absolute twcss-w-full twcss-leading-none twcss-top-[100%] twcss-z-[100] twcss-h-[1rem]'>
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      viewBox='0 0 1000 100'
+      preserveAspectRatio='none'
+      class='twcss-w-[calc(100%+1.3px)] twcss-relative twcss-left-1/2 -twcss-translate-x-1/2 twcss-fill-[#2F5D4E] twcss-h-[1rem]'
+    >
+      <path class="elementor-shape-fill" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7
+      c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4
+      c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"></path>
+    </svg>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "custom collection banner",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.main-collection-banner.settings.paragraph.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_description",
+      "default": true,
+      "label": "t:sections.main-collection-banner.settings.show_collection_description.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_image",
+      "default": false,
+      "label": "t:sections.main-collection-banner.settings.show_collection_image.label",
+      "info": "t:sections.main-collection-banner.settings.show_collection_image.info"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "custom collection banner"
+    }
+  ]
+}
+{% endschema %}
