@@ -37,6 +37,7 @@
     },
     "header_bar_JbVeqU": {
       "type": "header-bar",
+      "disabled": true,
       "name": "header bar",
       "settings": {
         "phone_number": "863-302-8006",

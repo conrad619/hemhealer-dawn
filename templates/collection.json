@@ -11,10 +11,20 @@
   "sections": {
     "banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "settings": {
         "show_collection_description": true,
         "show_collection_image": false,
         "color_scheme": "scheme-1"
+      }
+    },
+    "custom_collection_banner_LatGic": {
+      "type": "custom-collection-banner",
+      "name": "custom collection banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": ""
       }
     },
     "product-grid": {
@@ -40,6 +50,7 @@
   },
   "order": [
     "banner",
+    "custom_collection_banner_LatGic",
     "product-grid"
   ]
 }
