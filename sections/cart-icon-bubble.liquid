@@ -5,7 +5,7 @@
     <span class='svg-wrapper'>{{ 'icon-cart.svg' | inline_asset_content }}</span>
   {% endif %}
 {% endcomment %}
-<span class='twcss-font-heading lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-white twcss-font-medium twcss-mr-[.54rem] lg:twcss-block twcss-hidden'>
+<span class='twcss-font-heading lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-white twcss-font-medium twcss-mr-[.54rem] lg:twcss-block !twcss-hidden'>
   {{- cart.total_price | money -}}
 </span>
 <span class='twcss-w-[2.5rem] twcss-h-[2rem]'>
