@@ -844,6 +844,10 @@ video {
   margin-top: 5rem;
 }
 
+.twcss-mb-\[1re\] {
+  margin-bottom: 1re;
+}
+
 .twcss-block {
   display: block;
 }
@@ -864,12 +868,12 @@ video {
   display: grid;
 }
 
-.twcss-hidden {
-  display: none;
-}
-
 .\!twcss-hidden {
   display: none !important;
+}
+
+.twcss-hidden {
+  display: none;
 }
 
 .twcss-aspect-\[9\/16\] {
@@ -1124,6 +1128,14 @@ video {
   max-width: 90rem;
 }
 
+.twcss-max-w-\[111rem\] {
+  max-width: 111rem;
+}
+
+.twcss-max-w-\[30rem\] {
+  max-width: 30rem;
+}
+
 .twcss-flex-shrink-0 {
   flex-shrink: 0;
 }
@@ -1307,6 +1319,11 @@ video {
   border-top-width: 1px;
 }
 
+.twcss-border-\[\#eaecf0\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(234 236 240 / var(--tw-border-opacity));
+}
+
 .twcss-border-\[--accent-color-2\] {
   border-color: var(--accent-color-2);
 }
@@ -1332,15 +1349,6 @@ video {
 .twcss-border-red-500 {
   --tw-border-opacity: 1;
   border-color: rgb(239 68 68 / var(--tw-border-opacity));
-}
-
-.twcss-border-\[1px_solid_\#eaecf0\] {
-  border-color: 1px solid #eaecf0;
-}
-
-.twcss-border-\[\#eaecf0\] {
-  --tw-border-opacity: 1;
-  border-color: rgb(234 236 240 / var(--tw-border-opacity));
 }
 
 .twcss-bg-\[\#2486bb1c\] {
@@ -1520,16 +1528,16 @@ video {
   padding: 0.8rem;
 }
 
+.twcss-p-\[1\.6rem\] {
+  padding: 1.6rem;
+}
+
 .twcss-p-\[1rem\] {
   padding: 1rem;
 }
 
 .twcss-p-\[2rem\] {
   padding: 2rem;
-}
-
-.twcss-p-\[1\.6rem\] {
-  padding: 1.6rem;
 }
 
 .twcss-px-\[\.5rem\] {
@@ -1735,6 +1743,10 @@ video {
   font-size: 1.6rem;
 }
 
+.twcss-text-\[1\.7rem\] {
+  font-size: 1.7rem;
+}
+
 .twcss-text-\[1\.8rem\] {
   font-size: 1.8rem;
 }
@@ -1798,10 +1810,6 @@ video {
 .twcss-text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
-}
-
-.twcss-text-\[1\.7rem\] {
-  font-size: 1.7rem;
 }
 
 .twcss-font-bold {
@@ -1923,6 +1931,13 @@ video {
   text-decoration-line: none;
 }
 
+.twcss-shadow-\[0_1px_2px_0_\#0000000d\] {
+  --tw-shadow: 0 1px 2px 0 #0000000d;
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .twcss-shadow-\[0px_0px_10px_0px_rgba\(0\,0\,0\,0\.5\)\] {
   --tw-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
   --tw-shadow-colored: 0px 0px 10px 0px var(--tw-shadow-color);
@@ -1933,13 +1948,6 @@ video {
 .twcss-shadow-none {
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.twcss-shadow-\[0_1px_2px_0_\#0000000d\] {
-  --tw-shadow: 0 1px 2px 0 #0000000d;
-  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
@@ -2477,6 +2485,11 @@ shop-pay-wallet-button {
   .lg\:twcss-py-\[5rem\] {
     padding-top: 5rem;
     padding-bottom: 5rem;
+  }
+
+  .lg\:twcss-py-\[2rem\] {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   .lg\:twcss-pb-0 {
