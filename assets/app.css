@@ -699,6 +699,14 @@ video {
   z-index: 100;
 }
 
+.twcss-order-1 {
+  order: 1;
+}
+
+.twcss-order-2 {
+  order: 2;
+}
+
 .twcss-m-auto {
   margin: auto;
 }
@@ -1828,6 +1836,10 @@ video {
   font-size: 3.8rem;
 }
 
+.twcss-text-\[3\.2rem\] {
+  font-size: 3.2rem;
+}
+
 .twcss-font-bold {
   font-weight: 700;
 }
@@ -2189,6 +2201,14 @@ shop-pay-wallet-button {
 
   .lg\:twcss-top-\[\.7rem\] {
     top: 0.7rem;
+  }
+
+  .lg\:twcss-order-1 {
+    order: 1;
+  }
+
+  .lg\:twcss-order-2 {
+    order: 2;
   }
 
   .lg\:twcss-mx-0 {
