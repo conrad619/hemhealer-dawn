@@ -1,4 +1,4 @@
-<div class='color-{{ section.settings.color_scheme }} twcss-overflow-hidden twcss-relative lg:twcss-pt-[15rem] twcss-pt-[5rem] twcss-bg-[--accent-color-3]'>
+<div class='color-{{ section.settings.color_scheme }} twcss-overflow-hidden twcss-relative lg:twcss-pt-[10rem] twcss-pt-[5rem] twcss-bg-[--accent-color-3]'>
   <div class='custom-section isolate{% unless section.settings.full_width %} page-width{% endunless %} section-{{ section.id }}-padding'>
     <div
       {% if section.settings.full_width %}
@@ -119,7 +119,7 @@
           >
         </div>
       {% endcomment %}
-      <div class='twcss-pt-[4rem] twcss-py-[1rem]'>
+      <div class='lg:twcss-pt-[4rem] twcss-py-[1rem]'>
         {{ 'quick-add.css' | asset_url | stylesheet_tag }}
         <script src='{{ 'quick-add.js' | asset_url }}' defer='defer'></script>
         <script src='{{ 'product-form.js' | asset_url }}' defer='defer'></script>
