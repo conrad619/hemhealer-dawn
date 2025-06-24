@@ -111,6 +111,16 @@
         {%- endif -%}
         <div class='card__content'>
           <div class='card__information'>
+            <!-- RYVIU APP :: COLLECTION-WIDGET-TOTAL -->
+            <div class='ryviu-collection'>
+              <ryviu-widget-total
+                collection='1'
+                reviews_data='{{ card_product.metafields.ryviu.product_reviews_info  | escape  }}'
+                product_id='{{ card_product.id }}'
+                handle='{{ card_product.handle }}'
+              ></ryviu-widget-total>
+            </div>
+            <!-- RYVIU APP -->
             <h3
               class='card__heading'
               {% if card_product.featured_media == null and settings.card_style == 'standard' %}
@@ -148,6 +158,16 @@
       </div>
       <div class='card__content'>
         <div class='card__information'>
+          <!-- RYVIU APP :: COLLECTION-WIDGET-TOTAL -->
+          <div class='ryviu-collection'>
+            <ryviu-widget-total
+              collection='1'
+              reviews_data='{{ card_product.metafields.ryviu.product_reviews_info  | escape  }}'
+              product_id='{{ card_product.id }}'
+              handle='{{ card_product.handle }}'
+            ></ryviu-widget-total>
+          </div>
+          <!-- RYVIU APP -->
           <h3
             class='card__heading twcss-text-[2.5rem] twcss-font-semibold {% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %} '
             {% if card_product.featured_media or settings.card_style == 'card' %}
@@ -611,6 +631,16 @@
       </div>
       <div class='card__content'>
         <div class='card__information'>
+          <!-- RYVIU APP :: COLLECTION-WIDGET-TOTAL -->
+          <div class='ryviu-collection'>
+            <ryviu-widget-total
+              collection='1'
+              reviews_data='{{ card_product.metafields.ryviu.product_reviews_info  | escape  }}'
+              product_id='{{ card_product.id}}'
+              handle='{{ card_product.handle}}'
+            ></ryviu-widget-total>
+          </div>
+          <!-- RYVIU APP -->
           <h3 class='card__heading card__heading--placeholder{% if settings.card_style == 'standard' %} h5{% endif %}'>
             <a role='link' aria-disabled='true' class='full-unstyled-link'>
               {{ 'onboarding.product_title' | t }}
