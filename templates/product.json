@@ -130,6 +130,13 @@
           "settings": {
             "share_label": "Share"
           }
+        },
+        "ryviu_reviews_qa_ryviu_total_dkDizb": {
+          "type": "shopify://apps/ryviu-reviews-qa/blocks/ryviu-total/807ad6ed-1a6a-4559-abea-ed062858d9da",
+          "settings": {
+            "show_when_no_reviews": true,
+            "show_average_rating": false
+          }
         }
       },
       "block_order": [
@@ -150,7 +157,8 @@
         "collapsible-row-1",
         "collapsible-row-2",
         "collapsible-row-3",
-        "share"
+        "share",
+        "ryviu_reviews_qa_ryviu_total_dkDizb"
       ],
       "custom_css": [],
       "settings": {
