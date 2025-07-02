@@ -49,6 +49,7 @@
     },
     "custom_section_9_fdAUEr": {
       "type": "custom-section-9",
+      "disabled": true,
       "settings": {}
     },
     "custom_section_contact_kpPMTb": {
@@ -57,6 +58,7 @@
     },
     "custom_section_blogs_amfAXP": {
       "type": "custom-section-blogs",
+      "disabled": true,
       "settings": {}
     }
   },
