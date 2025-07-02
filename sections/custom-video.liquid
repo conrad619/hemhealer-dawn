@@ -29,19 +29,25 @@
           >
         </div>
       </div>
-      <script src='https://www.youtube.com/iframe_api' id='iframe-demo'></script>
-      <div id='youtube-wrapper' class='twcss-aspect-video twcss-bg-[--accent-color-3]'>
+      <div id='youtube-wrapper' class='lg:twcss-aspect-video twcss-bg-[--accent-color-3]'>
         {% comment %} <div id='youtube-player'></div> {% endcomment %}
-        <lite-youtube
-          id='youtube-player'
-          videoid='1LysFbJwHCg'
-          autoload
-          params='autoplay=1&mute=1&loop=1&controls=1&modestbranding=1&playsinline=1&rel=0&enablejsapi=1'
-        >
-          <a class='lite-youtube-fallback' href='https://www.youtube.com/watch?v=1LysFbJwHCg'
-            >Where Hem Healer is manufactured!</a
-          >
-        </lite-youtube>
+        <div class='lg:twcss-block twcss-hidden' style='padding-bottom: 56.25%; max-width: 100%; position: relative;'>
+          <iframe
+            src='https://player.vimeo.com/video/1093229959'
+            width='800px'
+            height='450px'
+            style='position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;'
+            frameborder='0'
+          ></iframe>
+        </div>
+        <div class='lg:twcss-hidden twcss-block ' style='padding-bottom: 177.77%; max-width: 100%; position: relative;'>
+          <iframe
+            src='https://player.vimeo.com/video/1094683543'
+            width='800px'
+            style='position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;'
+            frameborder='0'
+          ></iframe>
+        </div>
       </div>
     </div>
   </div>
@@ -86,29 +92,29 @@
   title = 'Where Hem Healer is manufactured!🇺🇸 #hemorrhoids #hemorrhoidtreatment  #naturalmedicine  #piles';
 
   document.getElementById('youtube-player').appendChild(iframe);*/
-  let player;
+  // let player;
 
-  function setupYT() {
-    player = new YT.Player(document.querySelector('#youtube-player').shadowRoot.querySelector('iframe'), {
-      events: {
-        onReady: onPlayerReady,
-      },
-    });
-  }
+  // function setupYT() {
+  //   player = new YT.Player(document.querySelector('#youtube-player').shadowRoot.querySelector('iframe'), {
+  //     events: {
+  //       onReady: onPlayerReady,
+  //     },
+  //   });
+  // }
 
-  function onPlayerReady() {
-    player.playVideo();
-  }
+  // function onPlayerReady() {
+  //   player.playVideo();
+  // }
 
-  document.addEventListener(
-    'liteYoutubeIframeLoaded',
-    () => {
-      try {
-        setupYT();
-      } catch (e) {
-        setTimeout(setupYT, 100);
-      }
-    },
-    false,
-  );
+  // document.addEventListener(
+  //   'liteYoutubeIframeLoaded',
+  //   () => {
+  //     try {
+  //       setupYT();
+  //     } catch (e) {
+  //       setTimeout(setupYT, 100);
+  //     }
+  //   },
+  //   false,
+  // );
 </script>

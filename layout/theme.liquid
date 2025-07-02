@@ -2,12 +2,14 @@
 <html class='js' lang='{{ request.locale.iso_code }}'>
   <head>
     <script>
-var head = document.head;
-var script = document.createElement('script');
-script.type = 'text/javascript';
-script.src = "https://211261.t.hyros.com/v1/lst/universal-script?ph=e2000046ed5d217bf056c79bb4c8f07d48dd3ac450eed371b8f70c1f50870073&tag=!clicked&origin=SHOPIFY&ref_url=" + encodeURI(document.URL) ;
-head.appendChild(script);
-</script>
+      var head = document.head;
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src =
+        'https://211261.t.hyros.com/v1/lst/universal-script?ph=e2000046ed5d217bf056c79bb4c8f07d48dd3ac450eed371b8f70c1f50870073&tag=!clicked&origin=SHOPIFY&ref_url=' +
+        encodeURI(document.URL);
+      head.appendChild(script);
+    </script>
     {% render 'shogun-optimizer' %}
 
     <meta charset='utf-8'>
@@ -328,7 +330,8 @@ head.appendChild(script);
     </script>
 
     <link href='https://unpkg.com/aos@2.3.1/dist/aos.css' rel='stylesheet'>
-  {% include 'pagefly-app-header' %}</head>
+    {% include 'pagefly-app-header' %}
+  </head>
 
   <body class='gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}'>
     <a class='skip-to-content-link button visually-hidden' href='#MainContent'>
@@ -432,9 +435,9 @@ head.appendChild(script);
           arrow: true,
           hideOnClick: false,
         });
-        document.querySelector('#buy-with-prime').addEventListener('click', (event) => {
-          tip[0].setContent(longVersion);
-        });
+        // document.querySelector('#buy-with-prime').addEventListener('click', (event) => {
+        //   tip[0].setContent(longVersion);
+        // });
         let fast_acting_relief = `Hem Hero® uses a clinical-strength blend of Diosmin, Hesperidin, and Horse Chestnut to reduce swelling and discomfort quickly. These ingredients help calm inflamed veins and improve circulation, providing noticeable relief within days.*
         
         `;
@@ -496,6 +499,6 @@ head.appendChild(script);
       }
     </style>
     <script src='https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js' defer></script>
-    <script type='module' src='{{ 'lite-youtube.min.js' | asset_url }}'></script>
+    {% comment %} <script type='module' src='{{ 'lite-youtube.min.js' | asset_url }}'></script> {% endcomment %}
   </body>
 </html>
