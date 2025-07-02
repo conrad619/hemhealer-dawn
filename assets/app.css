@@ -832,16 +832,16 @@ video {
   margin-right: 1.5rem;
 }
 
-.twcss-mr-\[1rem\] {
-  margin-right: 1rem;
-}
-
 .twcss-mr-\[2rem\] {
   margin-right: 2rem;
 }
 
 .twcss-mt-2 {
   margin-top: 0.5rem;
+}
+
+.twcss-mt-\[\.6rem\] {
+  margin-top: 0.6rem;
 }
 
 .twcss-mt-\[1\.2rem\] {
@@ -858,14 +858,6 @@ video {
 
 .twcss-mt-\[5rem\] {
   margin-top: 5rem;
-}
-
-.twcss-mt-\[\.7rem\] {
-  margin-top: 0.7rem;
-}
-
-.twcss-mt-\[\.6rem\] {
-  margin-top: 0.6rem;
 }
 
 .twcss-block {
@@ -902,6 +894,10 @@ video {
 
 .twcss-aspect-video {
   aspect-ratio: 16 / 9;
+}
+
+.twcss-aspect-square {
+  aspect-ratio: 1 / 1;
 }
 
 .twcss-h-8 {
@@ -1207,6 +1203,10 @@ video {
 
 .twcss-grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.twcss-grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .twcss-flex-row {
@@ -1711,6 +1711,10 @@ video {
   padding-top: 8rem;
 }
 
+.twcss-pb-\[177\%\] {
+  padding-bottom: 177%;
+}
+
 .twcss-text-center {
   text-align: center;
 }
@@ -2192,6 +2196,11 @@ shop-pay-wallet-button {
     margin-right: 0px;
   }
 
+  .lg\:twcss-my-0 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
   .lg\:-twcss-mt-\[14rem\] {
     margin-top: -14rem;
   }
@@ -2356,6 +2365,10 @@ shop-pay-wallet-button {
     width: calc(216% + 1.3px);
   }
 
+  .lg\:twcss-w-full {
+    width: 100%;
+  }
+
   .lg\:twcss-grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2398,6 +2411,15 @@ shop-pay-wallet-button {
 
   .lg\:twcss-gap-\[7rem\] {
     gap: 7rem;
+  }
+
+  .lg\:twcss-gap-x-\[5rem\] {
+    -moz-column-gap: 5rem;
+    column-gap: 5rem;
+  }
+
+  .lg\:twcss-gap-y-\[3rem\] {
+    row-gap: 3rem;
   }
 
   .lg\:twcss-border-r-2 {
