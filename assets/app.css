@@ -860,6 +860,10 @@ video {
   margin-top: 5rem;
 }
 
+.twcss-mt-\[2\.4rem\] {
+  margin-top: 2.4rem;
+}
+
 .twcss-block {
   display: block;
 }
@@ -892,12 +896,12 @@ video {
   aspect-ratio: 9/16;
 }
 
-.twcss-aspect-video {
-  aspect-ratio: 16 / 9;
-}
-
 .twcss-aspect-square {
   aspect-ratio: 1 / 1;
+}
+
+.twcss-aspect-video {
+  aspect-ratio: 16 / 9;
 }
 
 .twcss-h-8 {
@@ -1709,10 +1713,6 @@ video {
 
 .twcss-pt-\[8rem\] {
   padding-top: 8rem;
-}
-
-.twcss-pb-\[177\%\] {
-  padding-bottom: 177%;
 }
 
 .twcss-text-center {
