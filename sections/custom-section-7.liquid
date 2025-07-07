@@ -307,8 +307,13 @@
           </svg>
         </div>
         <p class='lg:twcss-text-[3rem] twcss-text-[2rem] twcss-font-bold twcss-uppercase twcss-mb-[2.4rem] twcss-leading-none'>
-          ${quote}<br><br>
-          <span class='twcss-text-[2rem] twcss-font-medium'>${author}</span>
+          ${quote}<br>
+          <div class='lg:twcss-text-[2.2rem] twcss-text-[2rem] twcss-flex twcss-justify-center twcss-items-center twcss-gap-[.8rem]'>
+                <span class='twcss-font-semibold twcss-uppercase'>${author}</span>
+                <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'>
+                  <path fill="#42A5F5" d="m12.0001 1 2.25 2.50012L17.5 2.5l.75 3.25012 3.2501.75L20.5 9.75006l2.5001 2.25004-2.5001 2.25L21.5001 17.5l-3.2501.75-.75 3.2501L14.2501 20.5l-2.25 2.5001L9.75006 20.5l-3.24994 1.0001-.75-3.2501L2.5 17.5l1.00012-3.2499L1 12.0001l2.50012-2.25004L2.5 6.50012l3.25012-.75.75-3.25012 3.24994 1.00012L12.0001 1Z"></path><path fill="#E3F2FD" d="m17.2999 7.30005-6.8001 6.80005-2.79993-2.7999L6.2998 12.7l4.2 4.2 8.1999-8.19989-1.3998-1.40006Z"></path>
+                </svg>
+              </div>
         </p>
       </div>`;
       dv.innerHTML = testimonial_html;
