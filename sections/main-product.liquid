@@ -255,7 +255,11 @@
                 {%- endif -%}
               {%- when 'faqs' -%}
                 {% if product.handle contains 'hem-hero' %}
-                  <div class='faq-container' id='faq'></div>
+                  <div class='faq-container' id='faq-hem-hero'></div>
+                {% endif %}
+
+                {% if product.handle contains 'hem-rescue' %}
+                  <div class='faq-container' id='faq-hem-rescue'></div>
                 {% endif %}
               {%- when 'guaranteed' -%}
                 <div class='twcss-flex twcss-flex-row  twcss-gap-[1rem]'>
@@ -766,7 +770,7 @@
     {% if product.handle contains 'easy-flow-fiber' %}
       {% render 'custom-section-hem-easy' %}
     {% endif %}
-    {% if product.handle contains 'hem-rescue™' %}
+    {% if product.handle contains 'hem-rescue' %}
       {% render 'custom-section-hem-rescue' %}
     {% endif %}
     {% render 'product-media-modal', variant_images: variant_images %}
@@ -2401,7 +2405,7 @@
 {% endschema %}
 
 <script>
-  const faqData = {
+  const faqHemHeroData = {
     '1. How does Hem Hero® work?':
       'Hem Hero® Extra Strength is a capsule that works from the inside out. It helps shrink swollen veins and improve blood flow, which relieves pain, itching, and bleeding—giving your body the chance to heal and get rid of hemorrhoids for good.',
 
@@ -2422,23 +2426,58 @@
       'If Hem Hero® doesn’t work for you, we recommend reaching out to our support team for a personalized assessment and possible refund or alternative solution. Your satisfaction is our priority—call or text 863-302-8006.',
   };
 
-  let html = '';
+  const faqHemRescueData = {
+    '1. Is Hem Rescue™ safe if I have high blood pressure or take blood thinners?':
+      'Hem Rescue™ was specifically formulated with these individuals in mind. Unlike some supplements that may impact blood pressure or interact with medications, Hem Rescue™ contains heart-friendly ingredients like Witch Hazel, Butcher’s Broom, and Vitamin C — which support healthy circulation without affecting blood pressure.',
 
-  for (const question in faqData) {
-    html += `
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>${question}</span>
-            <svg class="chevron" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#000000">
-              <path d="M480-333 240-573l51-51 189 189 189-189 51 51-240 240Z"/>
-            </svg>
+    '2. How is Hem Rescue™ different from Hem Hero®?': `Both products provide powerful hemorrhoid relief — but they’re designed for different needs:
+      <ul>
+        <li><b>Hem Rescue™</b> is a <b>heart-friendly formula</b>, designed for those on blood thinners or with high blood pressure.</li>
+        <li><b>Hem Hero®</b> is our extra-strength formula and may not be suitable for people with certain cardiovascular conditions.</li>
+      </ul>
+      They work differently, but both reduce inflammation, support vein health, and help prevent flare-ups.`,
+    '3. How does Hem Rescue™ work?': `
+        Hem Rescue™ works from the inside out to address the root causes of hemorrhoids — not just the symptoms.
+
+        Its ingredients help:
+        <ul>
+          <li>Reduce inflammation</li>
+          <li>Strengthen blood vessels</li>
+          <li>Improve circulation</li>
+        </ul>
+        This makes flare-ups less frequent, less painful, and easier to manage long-term
+
+      `,
+    '4. How long does it take to see results?':
+      'Most people report noticeable relief within a few days to two weeks. Results vary based on severity, lifestyle, and consistency — but taking Hem Rescue™ as directed (1 capsule in the morning, 2 at night with water) provides the best outcomes.',
+    '5. What if it doesn’t work for me?':
+      'No problem — we stand behind our product with a 90-day money-back guarantee. If you don’t feel a noticeable difference, contact us and we’ll refund your full purchase. No questions asked.',
+  };
+
+  function insertFaq(HTMLcontainer, faqData) {
+    if (HTMLcontainer == undefined) return;
+
+    let html = '';
+
+    for (const question in faqData) {
+      html += `
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>${question}</span>
+              <svg class="chevron" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#000000">
+                <path d="M480-333 240-573l51-51 189 189 189-189 51 51-240 240Z"/>
+              </svg>
+            </div>
+            <div class="faq-answer">${faqData[question]}</div>
           </div>
-          <div class="faq-answer">${faqData[question]}</div>
-        </div>
-      `;
+        `;
+    }
+    HTMLcontainer.innerHTML = html;
   }
 
-  document.getElementById('faq').innerHTML = html;
+  insertFaq(document.getElementById('faq-hem-hero'), faqHemHeroData);
+
+  insertFaq(document.getElementById('faq-hem-rescue'), faqHemRescueData);
 
   // Add toggle functionality
   document.querySelectorAll('.faq-question').forEach((questionEl, index) => {
