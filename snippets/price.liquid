@@ -183,7 +183,7 @@
           if (updatedPriceWrapper) {
             updateSavings(updatedPriceWrapper);
           }
-        }, 100); // Slight delay to allow DOM to update
+        }, 500); // Slight delay to allow DOM to update
       }
     });
   });
@@ -253,10 +253,10 @@
       }
     }
 
-    function handleRechargeV3() {
+    function handleRechargeV3(callback = null) {
       console.log('vcharge');
       const radioButtons = document.querySelectorAll('[name="purchaseOption"]');
-      if (!radioButtons.length) return;
+      if (!radioButtons.length) return false;
 
       radioButtons.forEach((radio) => {
         radio.addEventListener('change', () => {
@@ -269,18 +269,53 @@
           updateDisplayedPrice({ isSubscription: true });
         }
       });
-    }
-    setTimeout(() => {
-      // Run on page load
-      handleRechargeV3();
 
-      document.addEventListener('change', function (e) {
-        if (e.target.closest('variant-selects') || e.target.closest('.product-form')) {
-          setTimeout(() => {
-            handleRechargeV3();
-          }, 100); // Slight delay to allow DOM to update
+      if (callback != null) {
+        callback();
+      }
+
+      return true;
+    }
+    // setTimeout(() => {
+    //   // Run on page load
+    //   handleRechargeV3(function(){
+    //     document.addEventListener('change', function (e) {
+    //       if (e.target.closest('variant-selects') || e.target.closest('.product-form')) {
+    //         setTimeout(() => {
+    //           handleRechargeV3();
+    //         }, 300); // Slight delay to allow DOM to update
+    //       }
+    //     });
+    //   });
+
+    // }, 1000);
+
+    let attempts = 0;
+    const maxAttempts = 10;
+    const intervalTime = 500; // milliseconds
+
+    const intervalId = setInterval(() => {
+      const element = handleRechargeV3(function () {
+        document.addEventListener('change', function (e) {
+          if (e.target.closest('variant-selects') || e.target.closest('.product-form')) {
+            setTimeout(() => {
+              handleRechargeV3();
+            }, 500); // Slight delay to allow DOM to update
+          }
+        });
+      }); // Replace with your actual selector
+
+      if (element) {
+        console.log('Element found:', element);
+
+        clearInterval(intervalId); // Stop further attempts
+      } else {
+        attempts++;
+        if (attempts >= maxAttempts) {
+          console.warn('Element not found after max attempts.');
+          clearInterval(intervalId); // Stop after 10 tries
         }
-      });
-    }, 1000);
+      }
+    }, intervalTime);
   });
 </script>
