@@ -251,6 +251,13 @@
           savingsEl.style.display = 'none';
         }
       }
+
+      //add subscribe class
+      if (isSubscription) {
+        document.querySelector('.product').classList.add('subscribe');
+      } else {
+        document.querySelector('.product').classList.remove('subscribe');
+      }
     }
 
     function handleRechargeV3(callback = null) {
@@ -306,13 +313,13 @@
       }); // Replace with your actual selector
 
       if (element) {
-        console.log('Element found:', element);
+        // console.log('Element found:', element);
 
         clearInterval(intervalId); // Stop further attempts
       } else {
         attempts++;
         if (attempts >= maxAttempts) {
-          console.warn('Element not found after max attempts.');
+          // console.warn('Element not found after max attempts.');
           clearInterval(intervalId); // Stop after 10 tries
         }
       }

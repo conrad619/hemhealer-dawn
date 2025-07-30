@@ -76,6 +76,39 @@
   {%- endif -%}
 
   <style>
+    {% for variant in product.variants %}
+      {% assign compare_at = variant.compare_at_price %}
+      {% assign price = variant.price %}
+      {% if compare_at > price %}
+        {% assign discount = compare_at | minus: price %}
+        {% assign percent_off = discount | times: 100 | divided_by: compare_at | round %}
+      {% else %}
+        {% assign percent_off = 0 %}
+      {% endif %}
+
+      {% if percent_off == 0 %}
+        {% assign percent_text = "Full price" %}
+      {% else %}
+        {% assign percent_text = percent_off |  prepend: 'Save ' |  append: '%'  %}
+      {% endif %}
+
+      label:nth-of-type({{ forloop.index }}) .variant-discount:after {
+        content: "{{percent_text}}";
+      }
+
+      {% assign percent_off = percent_off | plus: 10 %}
+      {% if percent_off == 0 %}
+        {% assign percent_text = "Full price" %}
+      {% else %}
+        {% assign percent_text = percent_off |  prepend: 'Save ' |  append: '%'  %}
+      {% endif %}
+
+      .subscribe label:nth-of-type({{ forloop.index }}) .variant-discount:after {
+        content: "{{percent_text}}";
+      }
+    {% endfor %}
+  </style>
+  <style>
     .faq-container {
       max-width: 600px;
       margin: 10px auto;
@@ -122,11 +155,127 @@
     .chevron.rotate {
       transform: rotate(180deg);
     }
+    fieldset.product-form__input {
+      display: flex;
+    }
+    .product-form__input--pill input[type='radio']:checked + label {
+      /* background-color: #73c15d; */
+      background-color: white;
+      opacity: 1;
+      color: #000;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    .product-form__input--pill input[type='radio'] + label:hover {
+      border-color: #73c15d;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    .product-form__input--pill input[type='radio'] + label {
+      transition: box-shadow 0.3s;
+      background: white;
+      opacity: 0.7;
+      border-radius: 25px;
+      line-height: 1.3;
+      padding: 33px 16px 7px;
+      width: 33%;
+      align-items: center;
+      display: flex;
+      font-weight: bold;
+      border-color: #73c15d;
+      font-size: 1.6rem;
+      letter-spacing: normal;
+    }
+
+    .product-form__input--pill input[type='radio'] + label:not(:last-child) {
+      margin-right: 3rem;
+    }
+    .product-form__buttons {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .product-form__submit {
+      border-radius: 8px;
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
+    :is(.product-form__input--pill, .product-form__input--swatch) .form__label {
+      margin-bottom: 3rem;
+      font-weight: 600;
+    }
+    .bubble:before {
+      content: '';
+      font-weight: 600;
+      position: absolute;
+      right: 0px;
+      color: black;
+      top: 0px;
+      width: 5.5rem;
+      height: 5.5rem;
+      z-index: 100;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      transform: translate(57%, -66%);
+      font-size: 1rem;
+      background: white;
+      letter-spacing: normal;
+      border-radius: 50%;
+      border: 1px solid green;
+      align-items: center;
+      display: none;
+    }
+    .variant-discount:after {
+      content: 'Full price';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      font-size: 1.4rem;
+      font-weight: bold;
+      background: #73c15d;
+      padding: 0.5rem;
+      border-top-left-radius: 2.5rem;
+      border-top-right-radius: 2.5rem;
+      color: #fff;
+    }
+    /* @media screen and (min-width: 768px) {
+      .product--large:not(.product--no-media) .product__info-wrapper {
+        width: 45%;
+        max-width: 45%;
+      }
+      .product--large:not(.product--no-media) .product__media-wrapper {
+        width: 55%;
+        max-width: 55%;
+      }
+    } */
+    @media screen and (max-width: 768px) {
+      .product-form__input--pill input[type='radio'] + label {
+        width: 33%;
+      }
+      fieldset.product-form__input {
+        flex-direction: row;
+      }
+      .bubble:before {
+        font-size: 0.7rem;
+        width: 4.5rem;
+        height: 4.5rem;
+      }
+      .product-form__input--pill input[type='radio'] + label:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+  </style>
+  <!-- set bubbles -->
+  <style>
+    label:nth-of-type(1) .bubble:before {
+      content: 'Best Value';
+      display: flex;
+    }
   </style>
 
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <div class='page-width'>
-    <div class='product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}'>
+    <div class='product {{product.handle}} product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}'>
       <div class='grid__item product__media-wrapper'>
         {% render 'product-media-gallery', variant_images: variant_images %}
       </div>
