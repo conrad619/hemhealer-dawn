@@ -96,7 +96,13 @@
         content: "{{percent_text}}";
       }
 
-      {% assign percent_off = percent_off | plus: 10 %}
+
+      {% if compare_at > price %}
+        {% assign subscription_discount = price | times: 0.1 | plus:discount %}
+        {% assign percent_off = subscription_discount | times: 100 | divided_by: compare_at | round %}
+      {% else %}
+        {% assign percent_off = 10 %}
+      {% endif %}
       {% if percent_off == 0 %}
         {% assign percent_text = "Full price" %}
       {% else %}
@@ -258,11 +264,12 @@
       }
       .bubble:before {
         font-size: 0.7rem;
-        width: 4.5rem;
-        height: 4.5rem;
+        width: 4rem;
+        height: 4rem;
+        transform: translate(47%, -62%);
       }
       .product-form__input--pill input[type='radio'] + label:not(:last-child) {
-        margin-right: 2rem;
+        margin-right: 1.2rem;
       }
     }
   </style>
