@@ -302,7 +302,7 @@
     const intervalTime = 500; // milliseconds
 
     const intervalId = setInterval(() => {
-      const element = handleRechargeV3(function () {
+      const elementExist = handleRechargeV3(function () {
         document.addEventListener('change', function (e) {
           if (e.target.closest('variant-selects') || e.target.closest('.product-form')) {
             setTimeout(() => {
@@ -312,7 +312,7 @@
         });
       }); // Replace with your actual selector
 
-      if (element) {
+      if (elementExist) {
         // console.log('Element found:', element);
 
         clearInterval(intervalId); // Stop further attempts

@@ -1108,6 +1108,10 @@ video {
   width: calc(268% + 1.3px);
 }
 
+.twcss-w-auto {
+  width: auto;
+}
+
 .twcss-w-full {
   width: 100%;
 }
@@ -2001,13 +2005,13 @@ more-payment-options-link {
   display: none;
 }
 
-.subscription-radio .rc-radio__label:after {
+/* .subscription-radio .rc-radio__label:after {
   content: 'No Commitment. Change or Cancel Anytime. ';
   font-size: 12px;
   clear: both;
   display: block;
   font-weight: 400;
-}
+} */
 
 .onetime-radio {
   border-radius: 8px;

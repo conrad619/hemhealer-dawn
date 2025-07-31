@@ -255,6 +255,90 @@
         max-width: 55%;
       }
     } */
+
+    .subscription_description {
+      padding-bottom: var(--rc-spacer-2);
+      padding-right: var(--rc-spacer-3);
+    }
+    .subscription_description ul li {
+      list-style-type: none; /* Removes the default bullet points */
+      position: relative; /* So we can position the pseudo-element */
+      padding-left: 35px; /* Space for the check circle */
+      margin-bottom: 10px;
+    }
+    .subscription_description ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+    }
+
+    .subscription_description ul li::before {
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%2373c15d'%3E%3Cpath d='m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z'/%3E%3C/svg%3E");
+    }
+
+    .rc-radio__label {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .rc-radio__label span.rc-radio__price {
+      background: #80808017;
+      padding: 0 5px;
+      border-radius: 10px;
+    }
+    .rc-radio.rc-radio--active,
+    .rc-radio.rc-radio--active ~ .rc-selling-plans {
+      background: #fff !important;
+    }
+    .rc-radio.rc-radio--active .rc-radio__input {
+      accent-color: green;
+    }
+    .rc-template__radio {
+      border: 1px solid #00000061;
+      border-radius: 20px;
+      overflow: hidden;
+      padding: 10px;
+    }
+    .rc-radio:first-child {
+      border-bottom: 1px solid #00000061;
+      border-radius: 0;
+    }
+    .rc-radio.rc-radio--active {
+      color: var(--rc-active-text-color);
+      background-color: none !important;
+    }
+    .rc-selling-plans-dropdown__select {
+      -webkit-appearance: none; /* Chrome, Safari */
+      -moz-appearance: none; /* Firefox */
+      appearance: none; /* Standard syntax */
+      padding-right: 30px; /* Space for the custom arrow */
+      background-color: #fff; /* Optional: set the background color */
+      font-size: 16px; /* Optional: adjust font size */
+      padding: 0.8rem 1.5rem !important;
+    }
+
+    /* Add custom SVG arrow */
+    .rc-selling-plans-dropdown__select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23000'%3E%3Cpath d='M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center; /* Position the arrow */
+      background-size: 18px; /* Set the size of the arrow */
+      border-radius: 30px;
+    }
+
+    /* Optional: style the select box */
+    .rc-selling-plans-dropdown__select:focus {
+      border-color: #73c15d; /* Optional: highlight border on focus */
+      outline: none; /* Remove outline on focus */
+    }
+    .rc-selling-plans-dropdown {
+      border-radius: 30px;
+      border: 1px solid #000; /* Optional: set a border style */
+    }
     @media screen and (max-width: 768px) {
       .product-form__input--pill input[type='radio'] + label {
         width: 33%;
@@ -2665,4 +2749,92 @@
       }
     });
   });
+  function insertSubscriptionDescription() {
+    let subscription_description = document.createElement('div');
+    let subscription_description_html = `
+      <div class="subscription_description">
+        <ul>
+          <li>10% of all orders</li>
+          <li>Cancel or change anytime</li>
+          <li>Free shipping on all orders</li>
+        </ul>
+      </div>
+    `;
+    subscription_description.innerHTML = subscription_description_html;
+    document.querySelector('.rc-selling-plans').prepend(subscription_description);
+  }
+
+  //start adding span for rc label
+  function insertSpanLabel() {
+    // Find the element with the price text (assuming it has the class 'rc-radio__label')
+    var labelElement = document.querySelector('.rc-radio__label');
+
+    // Get the text content of the element
+    var labelText = labelElement.textContent;
+
+    // Use a regular expression to match the price (e.g., "$199.99")
+    var priceRegex = /\$\d+(\.\d{2})?/;
+
+    // Find the price in the text
+    var priceMatch = labelText.match(priceRegex);
+
+    // If a price is found, surround it with a span
+    if (priceMatch) {
+      var price = priceMatch[0]; // Extract the matched price
+
+      // Create a new span element to wrap the price
+      var priceSpan = document.createElement('span');
+      priceSpan.classList.add('rc-radio__price');
+      priceSpan.textContent = price;
+
+      // Replace the price in the original text with the span-wrapped price
+      labelElement.innerHTML = labelText.replace(price, priceSpan.outerHTML);
+    }
+  }
+
+  //end adding span for rc label end
+  function handleRechargeV3(callback = null) {
+    console.log('vcharge');
+    const radioButtons = document.querySelectorAll('[name="purchaseOption"]');
+    if (!radioButtons.length) return false;
+
+    radioButtons.forEach((radio) => {
+      radio.addEventListener('change', () => {
+        const isSubscription = radio.value === 'subscription' && radio.checked;
+        insertSubscriptionDescription();
+        insertSpanLabel();
+      });
+
+      // Initial check on load
+      if (radio.checked && radio.value === 'subscription') {
+        insertSubscriptionDescription();
+        insertSpanLabel();
+      }
+    });
+
+    if (callback != null) {
+      callback();
+    }
+
+    return true;
+  }
+
+  let attempts = 0;
+  const maxAttempts = 10;
+  const intervalTime = 500; // milliseconds
+
+  const intervalId = setInterval(() => {
+    const elementExist = handleRechargeV3();
+
+    if (elementExist) {
+      // console.log('Element found:', element);
+      clearInterval(intervalId); // Stop further attempts
+    } else {
+      attempts++;
+      if (attempts >= maxAttempts) {
+        // console.warn('Element not found after max attempts.');
+        clearInterval(intervalId); // Stop after 10 tries
+      }
+    }
+  }, intervalTime);
 </script>
