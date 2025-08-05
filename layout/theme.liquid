@@ -332,75 +332,19 @@
     <link href='https://unpkg.com/aos@2.3.1/dist/aos.css' rel='stylesheet'>
     {% include 'pagefly-app-header' %}
   
-* !function(w,d){
-* 		    if(!w.rdt){
-* 		        var p=w.rdt=function(){
-* 		        p.sendEvent ? p.sendEvent.apply(p,arguments) : p.callQueue.push(arguments)
-* 		        };
-* 		        p.callQueue=[];
-* 		        var t=d.createElement("script");
-* 		        t.src="https://www.redditstatic.com/ads/pixel.js",t.async=!0;
-* 		        var s=d.getElementsByTagName("script")[0];
-* 		        s.parentNode.insertBefore(t,s)
-* 		    }
-* 		}(window,document);
-* 		
-* 		rdt('init','a2_fvv2tn6ksw27', {
-* 		    "optOut": false,
-* 		    "useDecimalCurrencyValues":true
-* 		});
-* 		
-* 		analytics.subscribe("page_viewed", (event) => {
-* 		    rdt('track', 'PageVisit', {
-* 		        conversionId: event.id
-* 		    });
-* 		});
-* 		
-* 		analytics.subscribe("product_viewed", (event) => {
-* 		    rdt('track', 'ViewContent', {
-* 		        conversionId: event.id,
-* 		        products: {
-* 		        id:  event.data.productVariant.sku,
-* 		        category:  event.data.productVariant.product.type,
-* 		        name:  event.data.productVariant.product.title
-* 		        }
-* 		    });
-* 		});
-* 		
-* 		analytics.subscribe("product_added_to_cart", (event) => {
-* 		    const cartLine = event.data.cartLine;
-* 		    rdt('track', 'AddToCart', {
-* 		        conversionId: event.id,
-* 		        currency: cartLine.merchandise.price.currencyCode,
-* 		        value: cartLine.cost.totalAmount.amount,
-* 		        itemCount: cartLine.quantity,
-* 		        products: {
-* 		        id:  cartLine.merchandise.sku,
-* 		        category:  cartLine.merchandise.product.type,
-* 		        name:  cartLine.merchandise.product.title
-* 		        }
-* 		    });
-* 		});
-* 		
-* 		analytics.subscribe("checkout_completed", (event) => {
-* 		    const checkout = event.data.checkout;
-* 		    rdt('track', 'Purchase', {
-* 		        //customer match keys
-* 		        email: checkout.email,
-* 		        phoneNumber: checkout.phone,
-* 		
-* 		        //event metadata
-* 		        currency: checkout.currencyCode,
-* 		        value: checkout.totalPrice.amount,
-* 		        itemCount: checkout.lineItems.reduce((total, item) => total + item.quantity, 0),
-* 		        conversionId: checkout.order.id,
-* 		        products: checkout.lineItems.map(item => ({
-* 		        id: item.variant.sku,
-* 		        category: item.variant.product.type,
-* 		        name: item.title
-* 		        }))
-* 		    });
-* 		}); 
+ <!-- Reddit Pixel -->
+<script>
+!function(w,d){w.rdt=w.rdt||function(){(w.rdt.q=w.rdt.q||[]).push(arguments)};
+var s=d.createElement("script");
+s.src="https://www.redditstatic.com/ads/pixel.js";
+s.async = true;
+var r=d.getElementsByTagName("script")[0];
+r.parentNode.insertBefore(s,r);
+}(window,document);
+rdt('init', 'a2_hfl9ndp47bjq');
+rdt('track', 'PageVisit');
+</script>
+<!-- End Reddit Pixel -->
 
   </head>
 
