@@ -279,16 +279,22 @@
     .subscription_description ul li::before {
       content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%2373c15d'%3E%3Cpath d='m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z'/%3E%3C/svg%3E");
     }
-
-    .rc-radio__label {
+    .onetime-radio .rc-radio__label {
+      display: none;
+    }
+    .rc-radio__label,
+    .rc-radio__label-clone {
       display: flex;
       justify-content: space-between;
       width: 100%;
+      font-weight: 600;
     }
-    .rc-radio__label span.rc-radio__price {
+    .rc-radio__label span.rc-radio__price,
+    .rc-radio__label-clone span.rc-radio__price {
       background: #80808017;
       padding: 0 5px;
       border-radius: 10px;
+      font-weight: 600;
     }
     .rc-radio.rc-radio--active,
     .rc-radio.rc-radio--active ~ .rc-selling-plans {
@@ -356,9 +362,6 @@
         margin-right: 1.2rem;
       }
     }
-  </style>
-  <!-- set bubbles -->
-  <style>
     label:nth-of-type(1) .bubble:before {
       content: 'Best Value';
       display: flex;
@@ -2761,16 +2764,28 @@
       </div>
     `;
     subscription_description.innerHTML = subscription_description_html;
-    document.querySelector('.rc-selling-plans').prepend(subscription_description);
+    if (document.querySelector('.rc-selling-plans'))
+      document.querySelector('.rc-selling-plans').prepend(subscription_description);
   }
 
   //start adding span for rc label
   function insertSpanLabel() {
     // Find the element with the price text (assuming it has the class 'rc-radio__label')
-    var labelElement = document.querySelector('.rc-radio__label');
+    var labelOriginal = document.querySelector('.rc-radio__label');
+    var labelElement = null;
+    var labelText = null;
+    if (!document.querySelector('.rc-radio__label-clone')) {
+      labelElement = labelOriginal.cloneNode(true);
+      // document.querySelector('.rc-radio__label').style.display = 'none';
+      labelElement.classList.remove('rc-radio__label');
+      labelElement.classList.add('rc-radio__label-clone');
+      // Get the text content of the element
+      labelText = labelElement.textContent;
+    } else {
+      labelElement = document.querySelector('.rc-radio__label-clone');
 
-    // Get the text content of the element
-    var labelText = labelElement.textContent;
+      labelText = labelOriginal.textContent;
+    }
 
     // Use a regular expression to match the price (e.g., "$199.99")
     var priceRegex = /\$\d+(\.\d{2})?/;
@@ -2783,12 +2798,16 @@
       var price = priceMatch[0]; // Extract the matched price
 
       // Create a new span element to wrap the price
-      var priceSpan = document.createElement('span');
-      priceSpan.classList.add('rc-radio__price');
-      priceSpan.textContent = price;
-
-      // Replace the price in the original text with the span-wrapped price
-      labelElement.innerHTML = labelText.replace(price, priceSpan.outerHTML);
+      if (!document.querySelector('.rc-radio__label-clone')) {
+        var priceSpan = document.createElement('span');
+        priceSpan.classList.add('rc-radio__price');
+        priceSpan.textContent = price;
+        // Replace the price in the original text with the span-wrapped price
+        labelElement.innerHTML = labelText.replace(price, priceSpan.outerHTML);
+        labelOriginal.insertAdjacentElement('afterend', labelElement);
+      } else if (document.querySelector('.rc-radio__price')) {
+        document.querySelector('.rc-radio__price').textContent = price;
+      }
     }
   }
 
@@ -2812,6 +2831,14 @@
       }
     });
 
+    document.addEventListener('change', function (e) {
+      if (e.target.closest('variant-selects') || e.target.closest('.product-form')) {
+        setTimeout(() => {
+          insertSpanLabel();
+        }, 100); // Slight delay to allow DOM to update
+      }
+    });
+
     if (callback != null) {
       callback();
     }
@@ -2819,22 +2846,24 @@
     return true;
   }
 
-  let attempts = 0;
-  const maxAttempts = 10;
-  const intervalTime = 500; // milliseconds
+  function elementExist(element, maxAttempts = 10, intervalTime = 500) {
+    let attempts = 0;
 
-  const intervalId = setInterval(() => {
-    const elementExist = handleRechargeV3();
+    const intervalId = setInterval(() => {
+      const elementExist = element();
 
-    if (elementExist) {
-      // console.log('Element found:', element);
-      clearInterval(intervalId); // Stop further attempts
-    } else {
-      attempts++;
-      if (attempts >= maxAttempts) {
-        // console.warn('Element not found after max attempts.');
-        clearInterval(intervalId); // Stop after 10 tries
+      if (elementExist) {
+        // console.log('Element found:', element);
+        clearInterval(intervalId); // Stop further attempts
+      } else {
+        attempts++;
+        if (attempts >= maxAttempts) {
+          // console.warn('Element not found after max attempts.');
+          clearInterval(intervalId); // Stop after 10 tries
+        }
       }
-    }
-  }, intervalTime);
+    }, intervalTime);
+  }
+
+  elementExist(handleRechargeV3, 30);
 </script>
