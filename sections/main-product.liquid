@@ -345,6 +345,11 @@
       border-radius: 30px;
       border: 1px solid #000; /* Optional: set a border style */
     }
+    .trustpilot-img {
+      max-width: 400px;
+      margin: auto;
+      width: 100%;
+    }
     @media screen and (max-width: 768px) {
       .product-form__input--pill input[type='radio'] + label {
         width: 33%;
@@ -2866,4 +2871,16 @@
   }
 
   elementExist(handleRechargeV3, 30);
+
+  function insertTrustPilotAfterAddToCart() {
+    let trustpilot = document.createElement('div');
+    let trustpilot_img = document.createElement('img');
+    trustpilot_img.classList.add('trustpilot-img');
+    trustpilot_img.src =
+      'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Trustpilot_Hem_Healer_Site.png?v=1754417603';
+    trustpilot.appendChild(trustpilot_img);
+    document.querySelector('.product-form__submit').insertAdjacentElement('afterend', trustpilot);
+    return document.querySelector('.product-form__submit');
+  }
+  elementExist(insertTrustPilotAfterAddToCart, 30);
 </script>
