@@ -331,21 +331,25 @@
 
     <link href='https://unpkg.com/aos@2.3.1/dist/aos.css' rel='stylesheet'>
     {% include 'pagefly-app-header' %}
-  
- <!-- Reddit Pixel -->
-<script>
-!function(w,d){w.rdt=w.rdt||function(){(w.rdt.q=w.rdt.q||[]).push(arguments)};
-var s=d.createElement("script");
-s.src="https://www.redditstatic.com/ads/pixel.js";
-s.async = true;
-var r=d.getElementsByTagName("script")[0];
-r.parentNode.insertBefore(s,r);
-}(window,document);
-rdt('init', 'a2_hfl9ndp47bjq');
-rdt('track', 'PageVisit');
-</script>
-<!-- End Reddit Pixel -->
 
+    <!-- Reddit Pixel -->
+    <script>
+      !(function (w, d) {
+        w.rdt =
+          w.rdt ||
+          function () {
+            (w.rdt.q = w.rdt.q || []).push(arguments);
+          };
+        var s = d.createElement('script');
+        s.src = 'https://www.redditstatic.com/ads/pixel.js';
+        s.async = true;
+        var r = d.getElementsByTagName('script')[0];
+        r.parentNode.insertBefore(s, r);
+      })(window, document);
+      rdt('init', 'a2_hfl9ndp47bjq');
+      rdt('track', 'PageVisit');
+    </script>
+    <!-- End Reddit Pixel -->
   </head>
 
   <body class='gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}'>
@@ -515,5 +519,6 @@ rdt('track', 'PageVisit');
     </style>
     <script src='https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js' defer></script>
     {% comment %} <script type='module' src='{{ 'lite-youtube.min.js' | asset_url }}'></script> {% endcomment %}
+    {% comment %} <script type='module' src='{{ 'custom.js' | asset_url }}'></script> {% endcomment %}
   </body>
 </html>

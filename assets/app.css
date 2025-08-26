@@ -1136,6 +1136,10 @@ video {
   max-width: 40rem;
 }
 
+.twcss-max-w-\[50rem\] {
+  max-width: 50rem;
+}
+
 .twcss-max-w-\[60rem\] {
   max-width: 60rem;
 }
@@ -1150,14 +1154,6 @@ video {
 
 .twcss-max-w-\[90rem\] {
   max-width: 90rem;
-}
-
-.twcss-max-w-\[500px\] {
-  max-width: 500px;
-}
-
-.twcss-max-w-\[50rem\] {
-  max-width: 50rem;
 }
 
 .twcss-flex-shrink-0 {
@@ -2042,12 +2038,12 @@ more-payment-options-link {
 
 .rc-radio__label {
   margin-left: 0 !important;
-  line-height: 1.8 !important;
+  line-height: 2rem !important;
   font-weight: 600;
 }
 
 .rc-selling-plans {
-  padding-bottom: 12px !important;
+  padding-bottom: 1.8rem !important;
 }
 
 #shopify-buyer-consent {
@@ -2209,11 +2205,6 @@ shop-pay-wallet-button {
     margin-bottom: 0px;
   }
 
-  .lg\:twcss-my-\[5rem\] {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-  }
-
   .lg\:-twcss-mt-\[14rem\] {
     margin-top: -14rem;
   }
@@ -2224,6 +2215,10 @@ shop-pay-wallet-button {
 
   .lg\:twcss-mb-4 {
     margin-bottom: 1rem;
+  }
+
+  .lg\:twcss-mb-\[3rem\] {
+    margin-bottom: 3rem;
   }
 
   .lg\:twcss-mb-\[4rem\] {
@@ -2238,32 +2233,16 @@ shop-pay-wallet-button {
     margin-top: 0.8rem;
   }
 
+  .lg\:twcss-mt-\[1rem\] {
+    margin-top: 1rem;
+  }
+
   .lg\:twcss-mt-\[4rem\] {
     margin-top: 4rem;
   }
 
   .lg\:twcss-mt-\[5rem\] {
     margin-top: 5rem;
-  }
-
-  .lg\:twcss-mb-\[5rem\] {
-    margin-bottom: 5rem;
-  }
-
-  .lg\:twcss-mt-\[3rem\] {
-    margin-top: 3rem;
-  }
-
-  .lg\:twcss-mt-\[2rem\] {
-    margin-top: 2rem;
-  }
-
-  .lg\:twcss-mb-\[3rem\] {
-    margin-bottom: 3rem;
-  }
-
-  .lg\:twcss-mt-\[1rem\] {
-    margin-top: 1rem;
   }
 
   .lg\:twcss-block {
