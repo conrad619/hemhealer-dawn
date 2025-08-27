@@ -487,6 +487,10 @@
       .product-form__input--pill input[type='radio'] + label:not(:last-child) {
         margin-right: 1.2rem;
       }
+      .rc-selling-plans-dropdown {
+        flex-direction: column !important;
+        align-items: start !important;
+      }
     }
     label:nth-of-type(1) .bubble:before {
       content: 'Best Value';
@@ -2897,7 +2901,7 @@
     let subscription_free_bottle_html = `
     <div class="free-bottle">
       <div>FREE Bottle of Easy-Flow Fiber ($54 Value!)<br>
-      <span style="font-size: 1.2rem;opacity: .6;">Added after the order is processed.</span></div>
+      <span style="font-size: 1.2rem;opacity: .6;">Free bottle ships automatically after order is placed.</span></div>
       <img src="https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Easy_Flow_Fiber_1.png?v=1755726280" width="50"/>
     </div>
     `;
