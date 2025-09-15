@@ -352,6 +352,10 @@
       rdt('track', 'PageVisit');
     </script>
     <!-- End Reddit Pixel -->
+  
+  <!-- Disable Shopify Best-Sellers Sales Shield code start -->
+  {% include 'sales_shield_best_selling_product_sorting_disabler' %}
+  <!-- Disable Shopify Best-Sellers Sales Shield code End -->
   </head>
 
   <body class='gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}'>
