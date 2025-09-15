@@ -215,6 +215,11 @@
         "type": "shopify://apps/nofraud-fraud-protection/blocks/nf_device/5c2706cf-d458-49c5-a6fa-4fb6b79ce2b4",
         "disabled": false,
         "settings": {}
+      },
+      "15445754650112992936": {
+        "type": "shopify://apps/sales-shield/blocks/app-embed-block/4a7b4aad-fb04-4e82-bd92-c640d33d71b2",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
