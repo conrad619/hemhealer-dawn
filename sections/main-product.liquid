@@ -350,6 +350,7 @@
       justify-content: center;
       position: relative;
       padding-left: 0 !important;
+      text-align: center;
     }
     .rc-selling-plans select,
     .rc-selling-plans ::picker(select) {
@@ -472,6 +473,17 @@
       margin-bottom: -1.4rem;
       width: 9rem;
     }
+    .button-subtext {
+      font-size: 14px;
+      display: block;
+      text-align: center;
+      font-weight: 400;
+    }
+    @media screen and (max-width: 870px) {
+      .rc-selling-plans-dropdown {
+        flex-wrap: wrap;
+      }
+    }
     @media screen and (max-width: 768px) {
       .product-form__input--pill input[type='radio'] + label {
         width: 33%;
@@ -508,6 +520,12 @@
     label:nth-of-type(1) .bubble:before {
       content: 'Best Value';
       display: flex;
+    }
+
+    @media screen and (max-width: 749px) {
+      .rc-selling-plans-dropdown {
+        flex-wrap: nowrap;
+      }
     }
   </style>
 
