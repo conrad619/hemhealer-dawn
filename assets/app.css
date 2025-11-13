@@ -780,6 +780,10 @@ video {
   margin-bottom: 1.6rem;
 }
 
+.twcss-mb-\[14rem\] {
+  margin-bottom: 14rem;
+}
+
 .twcss-mb-\[1rem\] {
   margin-bottom: 1rem;
 }
@@ -794,6 +798,10 @@ video {
 
 .twcss-mb-\[3rem\] {
   margin-bottom: 3rem;
+}
+
+.twcss-mb-\[4\.5rem\] {
+  margin-bottom: 4.5rem;
 }
 
 .twcss-mb-\[4rem\] {
@@ -828,12 +836,20 @@ video {
   margin-right: 0.54rem;
 }
 
+.twcss-mr-\[\.6rem\] {
+  margin-right: 0.6rem;
+}
+
 .twcss-mr-\[1\.5rem\] {
   margin-right: 1.5rem;
 }
 
 .twcss-mr-\[2rem\] {
   margin-right: 2rem;
+}
+
+.twcss-mt-0 {
+  margin-top: 0px;
 }
 
 .twcss-mt-2 {
@@ -858,6 +874,18 @@ video {
 
 .twcss-mt-\[5rem\] {
   margin-top: 5rem;
+}
+
+.twcss-mb-\[8rem\] {
+  margin-bottom: 8rem;
+}
+
+.twcss-mt-\[\.3rem\] {
+  margin-top: 0.3rem;
+}
+
+.twcss-mb-\[2\.5rem\] {
+  margin-bottom: 2.5rem;
 }
 
 .twcss-block {
@@ -902,6 +930,10 @@ video {
 
 .twcss-h-8 {
   height: 2rem;
+}
+
+.twcss-h-\[1\.6rem\] {
+  height: 1.6rem;
 }
 
 .twcss-h-\[1\.8rem\] {
@@ -1028,8 +1060,16 @@ video {
   width: 2rem;
 }
 
+.twcss-w-\[1\.6rem\] {
+  width: 1.6rem;
+}
+
 .twcss-w-\[1\.8rem\] {
   width: 1.8rem;
+}
+
+.twcss-w-\[14rem\] {
+  width: 14rem;
 }
 
 .twcss-w-\[2\.4rem\] {
@@ -1132,6 +1172,10 @@ video {
   max-width: 120rem;
 }
 
+.twcss-max-w-\[130rem\] {
+  max-width: 130rem;
+}
+
 .twcss-max-w-\[40rem\] {
   max-width: 40rem;
 }
@@ -1158,6 +1202,14 @@ video {
 
 .twcss-flex-shrink-0 {
   flex-shrink: 0;
+}
+
+.twcss-shrink-0 {
+  flex-shrink: 0;
+}
+
+.twcss-shrink-\[\.3rem\] {
+  flex-shrink: 0.3rem;
 }
 
 .twcss-flex-grow {
@@ -1251,6 +1303,10 @@ video {
 
 .twcss-gap-\[\.8rem\] {
   gap: 0.8rem;
+}
+
+.twcss-gap-\[1\.4rem\] {
+  gap: 1.4rem;
 }
 
 .twcss-gap-\[1\.6rem\] {
@@ -1536,10 +1592,6 @@ video {
   object-fit: cover;
 }
 
-.twcss-p-0 {
-  padding: 0px;
-}
-
 .twcss-p-\[\.5rem\] {
   padding: 0.5rem;
 }
@@ -1723,6 +1775,10 @@ video {
   text-align: center;
 }
 
+.twcss-align-top {
+  vertical-align: top;
+}
+
 .twcss-font-body {
   font-family: var(--font-body-family);
 }
@@ -1876,8 +1932,16 @@ video {
   line-height: 1.5;
 }
 
+.twcss-leading-tight {
+  line-height: 1.25;
+}
+
 .twcss-tracking-normal {
   letter-spacing: 0em;
+}
+
+.twcss-tracking-tighter {
+  letter-spacing: -0.05em;
 }
 
 .twcss-tracking-wider {
@@ -2038,7 +2102,7 @@ more-payment-options-link {
 
 .rc-radio__label {
   margin-left: 0 !important;
-  line-height: 2rem !important;
+  line-height: 1.8 !important;
   font-weight: 600;
 }
 
@@ -2217,6 +2281,14 @@ shop-pay-wallet-button {
     margin-bottom: 1rem;
   }
 
+  .lg\:twcss-mb-\[1\.2rem\] {
+    margin-bottom: 1.2rem;
+  }
+
+  .lg\:twcss-mb-\[2rem\] {
+    margin-bottom: 2rem;
+  }
+
   .lg\:twcss-mb-\[3rem\] {
     margin-bottom: 3rem;
   }
@@ -2225,8 +2297,24 @@ shop-pay-wallet-button {
     margin-bottom: 4rem;
   }
 
+  .lg\:twcss-mb-\[6rem\] {
+    margin-bottom: 6rem;
+  }
+
+  .lg\:twcss-mb-\[8rem\] {
+    margin-bottom: 8rem;
+  }
+
+  .lg\:twcss-mr-\[1\.4rem\] {
+    margin-right: 1.4rem;
+  }
+
   .lg\:twcss-mr-\[1\.5rem\] {
     margin-right: 1.5rem;
+  }
+
+  .lg\:twcss-mt-\[\.5rem\] {
+    margin-top: 0.5rem;
   }
 
   .lg\:twcss-mt-\[\.8rem\] {
@@ -2243,6 +2331,14 @@ shop-pay-wallet-button {
 
   .lg\:twcss-mt-\[5rem\] {
     margin-top: 5rem;
+  }
+
+  .lg\:twcss-mb-\[14rem\] {
+    margin-bottom: 14rem;
+  }
+
+  .lg\:twcss-mb-\[4\.5rem\] {
+    margin-bottom: 4.5rem;
   }
 
   .lg\:twcss-block {
@@ -2301,6 +2397,10 @@ shop-pay-wallet-button {
     height: 2rem;
   }
 
+  .lg\:twcss-h-\[4rem\] {
+    height: 4rem;
+  }
+
   .lg\:twcss-h-auto {
     height: auto;
   }
@@ -2315,6 +2415,10 @@ shop-pay-wallet-button {
 
   .lg\:twcss-w-1\/4 {
     width: 25%;
+  }
+
+  .lg\:twcss-w-1\/5 {
+    width: 20%;
   }
 
   .lg\:twcss-w-2\/3 {
@@ -2341,8 +2445,16 @@ shop-pay-wallet-button {
     width: 30%;
   }
 
+  .lg\:twcss-w-\[38rem\] {
+    width: 38rem;
+  }
+
   .lg\:twcss-w-\[40\%\] {
     width: 40%;
+  }
+
+  .lg\:twcss-w-\[4rem\] {
+    width: 4rem;
   }
 
   .lg\:twcss-w-\[51\%\] {
@@ -2417,6 +2529,10 @@ shop-pay-wallet-button {
     gap: 4rem;
   }
 
+  .lg\:twcss-gap-\[5rem\] {
+    gap: 5rem;
+  }
+
   .lg\:twcss-gap-\[6rem\] {
     gap: 6rem;
   }
@@ -2460,10 +2576,6 @@ shop-pay-wallet-button {
     padding: 1rem;
   }
 
-  .lg\:twcss-p-\[2rem\] {
-    padding: 2rem;
-  }
-
   .lg\:twcss-p-\[4rem\] {
     padding: 4rem;
   }
@@ -2495,6 +2607,11 @@ shop-pay-wallet-button {
   .lg\:twcss-px-\[2rem\] {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .lg\:twcss-px-\[3rem\] {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
   .lg\:twcss-px-\[4rem\] {
