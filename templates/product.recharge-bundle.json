@@ -9,6 +9,10 @@
  */
 {
   "sections": {
+    "zp-product-header-content": {
+      "type": "product-header-content-zipifypages",
+      "settings": {}
+    },
     "recharge-bundles-widget": {
       "type": "apps",
       "blocks": {
@@ -25,9 +29,15 @@
       "settings": {
         "include_margins": false
       }
+    },
+    "zp-product-footer-content": {
+      "type": "product-footer-content-zipifypages",
+      "settings": {}
     }
   },
   "order": [
-    "recharge-bundles-widget"
+    "zp-product-header-content",
+    "recharge-bundles-widget",
+    "zp-product-footer-content"
   ]
 }
