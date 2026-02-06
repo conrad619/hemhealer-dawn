@@ -220,6 +220,11 @@
         "type": "shopify://apps/sales-shield/blocks/app-embed-block/4a7b4aad-fb04-4e82-bd92-c640d33d71b2",
         "disabled": false,
         "settings": {}
+      },
+      "8037605124156046748": {
+        "type": "shopify://apps/zipify-pages-builder/blocks/theme-helper/d7b69cdc-95f1-4a0b-8f02-416acb4f0b1c",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
