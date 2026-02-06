@@ -683,6 +683,10 @@ video {
   top: 83%;
 }
 
+.twcss-top-\[37\.5\%\] {
+  top: 37.5%;
+}
+
 .-twcss-z-\[1\] {
   z-index: -1;
 }
@@ -780,10 +784,6 @@ video {
   margin-bottom: 1.6rem;
 }
 
-.twcss-mb-\[14rem\] {
-  margin-bottom: 14rem;
-}
-
 .twcss-mb-\[1rem\] {
   margin-bottom: 1rem;
 }
@@ -792,16 +792,16 @@ video {
   margin-bottom: 2.4rem;
 }
 
+.twcss-mb-\[2\.5rem\] {
+  margin-bottom: 2.5rem;
+}
+
 .twcss-mb-\[2rem\] {
   margin-bottom: 2rem;
 }
 
 .twcss-mb-\[3rem\] {
   margin-bottom: 3rem;
-}
-
-.twcss-mb-\[4\.5rem\] {
-  margin-bottom: 4.5rem;
 }
 
 .twcss-mb-\[4rem\] {
@@ -848,12 +848,12 @@ video {
   margin-right: 2rem;
 }
 
-.twcss-mt-0 {
-  margin-top: 0px;
-}
-
 .twcss-mt-2 {
   margin-top: 0.5rem;
+}
+
+.twcss-mt-\[\.3rem\] {
+  margin-top: 0.3rem;
 }
 
 .twcss-mt-\[\.6rem\] {
@@ -874,18 +874,6 @@ video {
 
 .twcss-mt-\[5rem\] {
   margin-top: 5rem;
-}
-
-.twcss-mb-\[8rem\] {
-  margin-bottom: 8rem;
-}
-
-.twcss-mt-\[\.3rem\] {
-  margin-top: 0.3rem;
-}
-
-.twcss-mb-\[2\.5rem\] {
-  margin-bottom: 2.5rem;
 }
 
 .twcss-block {
@@ -1036,6 +1024,10 @@ video {
   height: 1px;
 }
 
+.twcss-h-\[27\.5\%\] {
+  height: 27.5%;
+}
+
 .twcss-min-h-\[4rem\] {
   min-height: 4rem;
 }
@@ -1156,6 +1148,10 @@ video {
   width: 100%;
 }
 
+.twcss-w-\[100\%\] {
+  width: 100%;
+}
+
 .twcss-max-w-\[100rem\] {
   max-width: 100rem;
 }
@@ -1206,10 +1202,6 @@ video {
 
 .twcss-shrink-0 {
   flex-shrink: 0;
-}
-
-.twcss-shrink-\[\.3rem\] {
-  flex-shrink: 0.3rem;
 }
 
 .twcss-flex-grow {
@@ -2184,6 +2176,10 @@ shop-pay-wallet-button {
   height: 20.7%;
 }
 
+.\*\:twcss-h-\[20\%\] > * {
+  height: 20%;
+}
+
 .\*\:twcss-items-start > * {
   align-items: flex-start;
 }
@@ -2285,12 +2281,20 @@ shop-pay-wallet-button {
     margin-bottom: 1.2rem;
   }
 
+  .lg\:twcss-mb-\[14rem\] {
+    margin-bottom: 14rem;
+  }
+
   .lg\:twcss-mb-\[2rem\] {
     margin-bottom: 2rem;
   }
 
   .lg\:twcss-mb-\[3rem\] {
     margin-bottom: 3rem;
+  }
+
+  .lg\:twcss-mb-\[4\.5rem\] {
+    margin-bottom: 4.5rem;
   }
 
   .lg\:twcss-mb-\[4rem\] {
@@ -2331,14 +2335,6 @@ shop-pay-wallet-button {
 
   .lg\:twcss-mt-\[5rem\] {
     margin-top: 5rem;
-  }
-
-  .lg\:twcss-mb-\[14rem\] {
-    margin-bottom: 14rem;
-  }
-
-  .lg\:twcss-mb-\[4\.5rem\] {
-    margin-bottom: 4.5rem;
   }
 
   .lg\:twcss-block {
