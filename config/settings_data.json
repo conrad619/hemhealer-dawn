@@ -225,6 +225,11 @@
         "type": "shopify://apps/zipify-pages-builder/blocks/theme-helper/d7b69cdc-95f1-4a0b-8f02-416acb4f0b1c",
         "disabled": false,
         "settings": {}
+      },
+      "1248957848723945065": {
+        "type": "shopify://apps/mntn/blocks/tracking-pixel/d40b5b2f-bf84-4a06-b576-832ad24a8652",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
