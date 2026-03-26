@@ -52,18 +52,18 @@
                   class='field__input lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-border-0 twcss-text-black twcss-leading-[1.4] twcss-min-h-[4rem] twcss-rounded-[.3rem] twcss-bg-white twcss-px-[1.6rem] twcss-py-[.8rem]'
                   autocomplete='name'
                   type='text'
-                  id='ContactForm-name'
+                  id='Subscribe-name'
                   name='contact[{{ 'templates.contact.form.name' | t }}]'
                   value='{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}'
                   placeholder='{{ 'templates.contact.form.name' | t }}'
                 >
-                <label class='field__label' for='ContactForm-name'>{{ 'templates.contact.form.name' | t }}</label>
+                <label class='field__label' for='Subscribe-name'>{{ 'templates.contact.form.name' | t }}</label>
               </div>
               <div class='field field--with-error twcss-border-0 after:twcss-shadow-none twcss-shadow-none lg:twcss-w-2/3'>
                 <input
                   autocomplete='email'
                   type='email'
-                  id='ContactForm-email'
+                  id='Subscribe-email'
                   class='field__input lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-border-0 twcss-text-black twcss-leading-[1.4] twcss-min-h-[4rem] twcss-rounded-[.3rem] twcss-bg-white twcss-px-[1.6rem] twcss-py-[.8rem]'
                   name='contact[email]'
                   spellcheck='false'
@@ -72,16 +72,16 @@
                   aria-required='true'
                   {% if form.errors contains 'email' %}
                     aria-invalid='true'
-                    aria-describedby='ContactForm-email-error'
+                    aria-describedby='Subscribe-email-error'
                   {% endif %}
                   placeholder='{{ 'templates.contact.form.email' | t }}'
                 >
-                <label class='field__label' for='ContactForm-email'>
+                <label class='field__label' for='Subscribe-email'>
                   {{- 'templates.contact.form.email' | t }}
                   <span aria-hidden='true'>*</span></label
                 >
                 {%- if form.errors contains 'email' -%}
-                  <small class='contact__field-error' id='ContactForm-email-error'>
+                  <small class='contact__field-error' id='Subscribe-email-error'>
                     <span class='visually-hidden'>{{ 'accessibility.error' | t }}</span>
                     <span class='form__message'>
                       <span class='svg-wrapper'>

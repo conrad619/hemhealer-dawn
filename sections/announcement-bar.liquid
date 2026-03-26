@@ -40,7 +40,7 @@
               class='announcement-bar__link link link--text focus-inset animate-arrow'
             >
           {%- endif -%}
-          <p class='announcement-bar__message twcss-font-body twcss-text-white'>
+          <p class='announcement-bar__message twcss-font-body twcss-text-[#1c1c1c]'>
             <span>{{ section.blocks.first.settings.text | escape }}</span>
             {%- if section.blocks.first.settings.link != blank -%}
               {{- 'icon-arrow.svg' | inline_asset_content -}}
