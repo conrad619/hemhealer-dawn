@@ -123,7 +123,7 @@
         {{ 'quick-add.css' | asset_url | stylesheet_tag }}
         <script src='{{ 'quick-add.js' | asset_url }}' defer='defer'></script>
         <script src='{{ 'product-form.js' | asset_url }}' defer='defer'></script>
-        {% assign card_product = all_products['hem-healer'] %}
+        {% assign card_product = all_products['hem-hero'] %}
         {% assign section_id = section.id %}
         {% assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id %}
 
