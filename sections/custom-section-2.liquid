@@ -22,10 +22,10 @@
     >
       <div class='twcss-flex twcss-flex-col twcss-text-center'>
         <h2 class='lg:twcss-text-[4.5rem] twcss-text-[2.5rem] twcss-font-medium lg:twcss-text-center twcss-text-[--secondary-color] twcss-mb-[2rem]  twcss-leading-normal'>
-          {{ 'sections.custom-section-2.heading_1' | t }}
+          {{ 'sections.custom-section-2.heading_1_html' | t }}
         </h2>
         <h3 class='lg:twcss-text-[7rem] twcss-text-[4.5rem] twcss-font-medium twcss-leading-none lg:twcss-text-center'>
-          {{ 'sections.custom-section-2.heading_2' | t }}
+          {{ 'sections.custom-section-2.heading_2_html' | t }}
         </h3>
       </div>
       <div class='twcss-gap-[4rem] lg:twcss-mt-[4rem] twcss-mt-[2rem] twcss-grid lg:twcss-grid-cols-3 twcss-grid-cols-1'>
@@ -38,7 +38,7 @@
             class='twcss-w-full'
           >
           <h4 class='twcss-mt-2 lg:twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[3.2rem] twcss-leading-none twcss-text-[--secondary-color] twcss-font-semibold'>
-            HEM HERO®
+            {{ 'sections.custom-section-2.title_1_html' | t }}
           </h4>
           {% comment %}
             <h5 class='twcss-mt-2 twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[2rem] twcss-leading-none twcss-font-medium'>
@@ -47,26 +47,26 @@
           {% endcomment %}
           <ul class='twcss-text-lg twcss-flex twcss-mb-auto twcss-gap-[1rem] twcss-flex-col *:twcss-flex *:twcss-items-start lg:*:twcss-text-[1.8rem] *:twcss-text-[1.5rem] *:twcss-text-black'>
             <li>
-              <span class='twcss-leading-[2.2rem]'>{{ 'sections.custom-section-2.list_1_1' | t }}</span>
+              <span class='twcss-leading-[2.2rem]'>{% if section.settings.list_1_1 contains 'sections.custom-section-2.' %}{{ section.settings.list_1_1 | t }}{% else %}{{ section.settings.list_1_1 }}{% endif %}</span>
             </li>
             <li>
-              <span class='twcss-leading-[2.2rem]'>{{ 'sections.custom-section-2.list_1_2' | t }}</span>
+              <span class='twcss-leading-[2.2rem]'>{% if section.settings.list_1_2 contains 'sections.custom-section-2.' %}{{ section.settings.list_1_2 | t }}{% else %}{{ section.settings.list_1_2 }}{% endif %}</span>
             </li>
             <li>
-              <span class='twcss-leading-[2.2rem]'>{{ 'sections.custom-section-2.list_1_3' | t }}</span>
+              <span class='twcss-leading-[2.2rem]'>{% if section.settings.list_1_3 contains 'sections.custom-section-2.' %}{{ section.settings.list_1_3 | t }}{% else %}{{ section.settings.list_1_3 }}{% endif %}</span>
             </li>
             <li>
-              <span class='twcss-leading-[2.2rem]'>{{ 'sections.custom-section-2.list_1_4' | t }}</span>
+              <span class='twcss-leading-[2.2rem]'>{% if section.settings.list_1_4 contains 'sections.custom-section-2.' %}{{ section.settings.list_1_4 | t }}{% else %}{{ section.settings.list_1_4 }}{% endif %}</span>
             </li>
             <li>
-              <span class='twcss-leading-[2.2rem]'>{{ 'sections.custom-section-2.list_1_5' | t }}</span>
+              <span class='twcss-leading-[2.2rem]'>{% if section.settings.list_1_5 contains 'sections.custom-section-2.' %}{{ section.settings.list_1_5 | t }}{% else %}{{ section.settings.list_1_5 }}{% endif %}</span>
             </li>
             <li>
-              <span class='twcss-leading-[2.2rem]'>{{ 'sections.custom-section-2.list_1_6' | t }}</span>
+              <span class='twcss-leading-[2.2rem]'>{% if section.settings.list_1_6 contains 'sections.custom-section-2.' %}{{ section.settings.list_1_6 | t }}{% else %}{{ section.settings.list_1_6 }}{% endif %}</span>
             </li>
           </ul>
           <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black'>
-            {{ 'sections.custom-section-2.best_for_1' | t }}
+            {{ 'sections.custom-section-2.best_for_1_html' | t }}
           </p>
 
           {% comment %}
@@ -80,7 +80,7 @@
             href='/products/hem-healer'
             class='twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-[#333] twcss-bg-[--accent-color-2] twcss-font-semibold twcss-w-full twcss-text-center'
           >
-            {{- 'sections.custom-section-2.buy_now' | t -}}
+            {{- 'sections.custom-section-2.buy_now_hero_html' | t -}}
           </a>
         </div>
         <div class='twcss-flex twcss-flex-col lg:twcss-gap-[2rem] twcss-gap-[1rem] lg:twcss-p-[1rem]'>
@@ -92,7 +92,7 @@
             class='twcss-w-full'
           >
           <h4 class='twcss-mt-2 lg:twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[2.2rem] twcss-leading-none twcss-text-[--secondary-color] twcss-font-semibold'>
-            HEM EASY-FLOW FIBER™
+            {{ 'sections.custom-section-2.title_2_html' | t }}
           </h4>
           {% comment %}
             <h5 class='twcss-mt-2 twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[2.2rem] twcss-leading-none twcss-font-medium'>
@@ -101,27 +101,26 @@
           {% endcomment %}
           <ul class='twcss-text-lg twcss-flex twcss-mb-auto twcss-gap-[1rem] twcss-flex-col *:twcss-flex *:twcss-items-start *:twcss-text-[1.8rem] *:twcss-text-black'>
             <li>
-              <span class='twcss-leading-[2.2rem]'> 🚽 Makes Pooping Less Painful </span>
+              <span class='twcss-leading-[2.2rem]'>{% if section.settings.list_fiber_1 contains 'sections.custom-section-2.' %}{{ section.settings.list_fiber_1 | t }}{% else %}{{ section.settings.list_fiber_1 }}{% endif %}</span>
             </li>
             <li>
-              <span class='twcss-leading-[2.2rem]'>🌾 Relieves Constipation </span>
+              <span class='twcss-leading-[2.2rem]'>{% if section.settings.list_fiber_2 contains 'sections.custom-section-2.' %}{{ section.settings.list_fiber_2 | t }}{% else %}{{ section.settings.list_fiber_2 }}{% endif %}</span>
             </li>
             <li>
-              <span class='twcss-leading-[2.2rem]'>💨 Reduces Straining That Can Trigger Hemorrhoids </span>
+              <span class='twcss-leading-[2.2rem]'>{% if section.settings.list_fiber_3 contains 'sections.custom-section-2.' %}{{ section.settings.list_fiber_3 | t }}{% else %}{{ section.settings.list_fiber_3 }}{% endif %}</span>
             </li>
             <li>
-              <span class='twcss-leading-[2.2rem]'>💊 Easy-to-Take Capsules </span>
+              <span class='twcss-leading-[2.2rem]'>{% if section.settings.list_fiber_4 contains 'sections.custom-section-2.' %}{{ section.settings.list_fiber_4 | t }}{% else %}{{ section.settings.list_fiber_4 }}{% endif %}</span>
             </li>
             <li>
-              <span class='twcss-leading-[2.2rem]'>💰 Full Money-Back Guarantee </span>
+              <span class='twcss-leading-[2.2rem]'>{% if section.settings.list_fiber_5 contains 'sections.custom-section-2.' %}{{ section.settings.list_fiber_5 | t }}{% else %}{{ section.settings.list_fiber_5 }}{% endif %}</span>
             </li>
             <li>
-              <span class='twcss-leading-[2.2rem]'>🇺🇸 Proudly Made in Atlanta, Georgia </span>
+              <span class='twcss-leading-[2.2rem]'>{% if section.settings.list_fiber_6 contains 'sections.custom-section-2.' %}{{ section.settings.list_fiber_6 | t }}{% else %}{{ section.settings.list_fiber_6 }}{% endif %}</span>
             </li>
           </ul>
           <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black lg:twcss-mb-0 twcss-mb-[1.6rem]'>
-            <strong>Best For</strong>: Anyone struggling with constipation or irregularity—especially those managing
-            active hemorrhoid symptoms.
+            {{ 'sections.custom-section-2.best_for_fiber_html' | t }}
           </p>
           {% comment %}
             <a
@@ -133,7 +132,7 @@
           <a
             href='/products/easy-flow-fiber'
             class='twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-[#333] twcss-bg-[--accent-color-2] twcss-font-semibold twcss-w-full twcss-text-center'
-            >BUY NOW</a
+            >{{ 'sections.custom-section-2.buy_now_fiber_html' | t }}</a
           >
         </div>
         <div class='twcss-flex twcss-flex-col lg:twcss-gap-[2rem] twcss-gap-[1rem] lg:twcss-p-[1rem]'>
@@ -145,7 +144,7 @@
             class='twcss-w-full'
           >
           <h4 class='twcss-mt-2 lg:twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[2.2rem] twcss-leading-none twcss-text-[--secondary-color] twcss-font-semibold'>
-            HEM RESCUE® – Heart-Friendly Formula
+            {{ 'sections.custom-section-2.title_3_html' | t }}
           </h4>
           {% comment %}
             <h5 class='twcss-mt-2 twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[2.2rem] twcss-leading-none twcss-font-medium'>
@@ -154,26 +153,26 @@
           {% endcomment %}
           <ul class='twcss-text-lg twcss-flex twcss-mb-auto twcss-gap-[1rem] twcss-flex-col *:twcss-flex *:twcss-items-start *:twcss-text-[1.8rem] *:twcss-text-black'>
             <li>
-              <span class='twcss-leading-[2.2rem]'>{{ 'sections.custom-section-2.list_2_1' | t }}</span>
+              <span class='twcss-leading-[2.2rem]'>{% if section.settings.list_2_1 contains 'sections.custom-section-2.' %}{{ section.settings.list_2_1 | t }}{% else %}{{ section.settings.list_2_1 }}{% endif %}</span>
             </li>
             <li>
-              <span class='twcss-leading-[2.2rem]'>{{ 'sections.custom-section-2.list_2_2' | t }}</span>
+              <span class='twcss-leading-[2.2rem]'>{% if section.settings.list_2_2 contains 'sections.custom-section-2.' %}{{ section.settings.list_2_2 | t }}{% else %}{{ section.settings.list_2_2 }}{% endif %}</span>
             </li>
             <li>
-              <span class='twcss-leading-[2.2rem]'>{{ 'sections.custom-section-2.list_2_3' | t }}</span>
+              <span class='twcss-leading-[2.2rem]'>{% if section.settings.list_2_3 contains 'sections.custom-section-2.' %}{{ section.settings.list_2_3 | t }}{% else %}{{ section.settings.list_2_3 }}{% endif %}</span>
             </li>
             <li>
-              <span class='twcss-leading-[2.2rem]'>{{ 'sections.custom-section-2.list_2_4' | t }}</span>
+              <span class='twcss-leading-[2.2rem]'>{% if section.settings.list_2_4 contains 'sections.custom-section-2.' %}{{ section.settings.list_2_4 | t }}{% else %}{{ section.settings.list_2_4 }}{% endif %}</span>
             </li>
             <li>
-              <span class='twcss-leading-[2.2rem]'>{{ 'sections.custom-section-2.list_2_5' | t }}</span>
+              <span class='twcss-leading-[2.2rem]'>{% if section.settings.list_2_5 contains 'sections.custom-section-2.' %}{{ section.settings.list_2_5 | t }}{% else %}{{ section.settings.list_2_5 }}{% endif %}</span>
             </li>
             <li>
-              <span class='twcss-leading-[2.2rem]'>{{ 'sections.custom-section-2.list_2_6' | t }}</span>
+              <span class='twcss-leading-[2.2rem]'>{% if section.settings.list_2_6 contains 'sections.custom-section-2.' %}{{ section.settings.list_2_6 | t }}{% else %}{{ section.settings.list_2_6 }}{% endif %}</span>
             </li>
           </ul>
           <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black'>
-            {{ 'sections.custom-section-2.best_for_2' | t }}
+            {{ 'sections.custom-section-2.best_for_2_html' | t }}
           </p>
           {% comment %}
             <a
@@ -186,7 +185,7 @@
             href='/products/hem-rescue'
             class='twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-[#333] twcss-bg-[--accent-color-2] twcss-font-semibold twcss-w-full twcss-text-center'
           >
-            {{- 'sections.custom-section-2.buy_now' | t -}}
+            {{- 'sections.custom-section-2.buy_now_rescue_html' | t -}}
           </a>
         </div>
       </div>
@@ -212,7 +211,110 @@
 {% schema %}
 {
   "name": "custom section II",
-  "settings": [],
+  "settings": [
+    {
+      "type": "text",
+      "id": "list_1_1",
+      "label": "List 1 Item 1",
+      "default": "sections.custom-section-2.list_1_1_html"
+    },
+    {
+      "type": "text",
+      "id": "list_1_2",
+      "label": "List 1 Item 2",
+      "default": "sections.custom-section-2.list_1_2_html"
+    },
+    {
+      "type": "text",
+      "id": "list_1_3",
+      "label": "List 1 Item 3",
+      "default": "sections.custom-section-2.list_1_3_html"
+    },
+    {
+      "type": "text",
+      "id": "list_1_4",
+      "label": "List 1 Item 4",
+      "default": "sections.custom-section-2.list_1_4_html"
+    },
+    {
+      "type": "text",
+      "id": "list_1_5",
+      "label": "List 1 Item 5",
+      "default": "sections.custom-section-2.list_1_5_html"
+    },
+    {
+      "type": "text",
+      "id": "list_1_6",
+      "label": "List 1 Item 6",
+      "default": "sections.custom-section-2.list_1_6_html"
+    },
+    {
+      "type": "text",
+      "id": "list_2_1",
+      "label": "List 2 Item 1",
+      "default": "sections.custom-section-2.list_2_1_html"
+    },
+    {
+      "type": "text",
+      "id": "list_2_2",
+      "label": "List 2 Item 2",
+      "default": "sections.custom-section-2.list_2_2_html"
+    },
+    {
+      "type": "text",
+      "id": "list_2_3",
+      "label": "List 2 Item 3",
+      "default": "sections.custom-section-2.list_2_3_html"
+    },
+    {
+      "type": "text",
+      "id": "list_2_4",
+      "label": "List 2 Item 4",
+      "default": "sections.custom-section-2.list_2_4_html"
+    },
+    {
+      "type": "text",
+      "id": "list_2_5",
+      "label": "List 2 Item 5",
+      "default": "sections.custom-section-2.list_2_5_html"
+    },
+    {
+      "type": "text",
+      "id": "list_fiber_1",
+      "label": "Fiber List Item 1",
+      "default": "sections.custom-section-2.list_fiber_1_html"
+    },
+    {
+      "type": "text",
+      "id": "list_fiber_2",
+      "label": "Fiber List Item 2",
+      "default": "sections.custom-section-2.list_fiber_2_html"
+    },
+    {
+      "type": "text",
+      "id": "list_fiber_3",
+      "label": "Fiber List Item 3",
+      "default": "sections.custom-section-2.list_fiber_3_html"
+    },
+    {
+      "type": "text",
+      "id": "list_fiber_4",
+      "label": "Fiber List Item 4",
+      "default": "sections.custom-section-2.list_fiber_4_html"
+    },
+    {
+      "type": "text",
+      "id": "list_fiber_5",
+      "label": "Fiber List Item 5",
+      "default": "sections.custom-section-2.list_fiber_5_html"
+    },
+    {
+      "type": "text",
+      "id": "list_fiber_6",
+      "label": "Fiber List Item 6",
+      "default": "sections.custom-section-2.list_fiber_6_html"
+    }
+  ],
   "presets": [
     {
       "name": "custom section II"
