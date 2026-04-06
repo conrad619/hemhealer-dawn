@@ -17,7 +17,14 @@
     },
     "custom_section_1_EjyaKg": {
       "type": "custom-section-1",
-      "settings": {}
+      "settings": {
+        "column_1": "Fast Acting Relief",
+        "column_2": "Support Healthy Circulation",
+        "column_3": "Strengthen Veins & Capillaries",
+        "column_1_tooltip": "Hem Heros® uses a clinical-strength blend of Diosmin, Hesperidin, and Horse Chestnut to reduce swelling and discomfort quickly...",
+        "column_2_tooltip": "Diosmin and Hesperidin are citrus bioflavonoids proven to improve blood vessel tone and circulation...",
+        "column_3_tooltip": "Horse Chestnut Extract and Diosmin strengthen the walls of veins and capillaries..."
+      }
     },
     "custom_section_2_tikBLM": {
       "type": "custom-section-2",
