@@ -86,7 +86,36 @@
     </div>
   </div>
 </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    let fast_acting_relief = `{{ section.settings.column_1_tooltip | escape }}`;
+    let support_healthy_circulation = `{{ section.settings.column_2_tooltip | escape }}`;
+    let strengthen_veins_and_capillaries = `{{ section.settings.column_3_tooltip | escape }}`;
 
+    let settings = {
+      allowHTML: true,
+      placement: 'bottom',
+      arrow: true,
+      hideOnClick: false,
+      interactive: true,
+    };
+
+    tippy('#fast_acting_relief', {
+      content: fast_acting_relief,
+      ...settings,
+    });
+
+    tippy('#support_healthy_circulation', {
+      content: support_healthy_circulation,
+      ...settings,
+    });
+
+    tippy('#strengthen_veins_and_capillaries', {
+      content: strengthen_veins_and_capillaries,
+      ...settings,
+    });
+  });
+</script>
 {% schema %}
 {
   "name": "custom section I",
@@ -108,6 +137,24 @@
       "id": "column_3",
       "label": "Column 3",
       "default": "Strengthen Veins & Capillaries"
+    },
+    {
+      "type": "textarea",
+      "id": "column_1_tooltip",
+      "label": "Column 1 Tooltip",
+      "default": "Hem Hero® uses a clinical-strength blend of Diosmin, Hesperidin, and Horse Chestnut to reduce swelling and discomfort quickly..."
+    },
+    {
+      "type": "textarea",
+      "id": "column_2_tooltip",
+      "label": "Column 2 Tooltip",
+      "default": "Diosmin and Hesperidin are citrus bioflavonoids proven to improve blood vessel tone and circulation..."
+    },
+    {
+      "type": "textarea",
+      "id": "column_3_tooltip",
+      "label": "Column 3 Tooltip",
+      "default": "Horse Chestnut Extract and Diosmin strengthen the walls of veins and capillaries..."
     }
   ],
   "presets": [
