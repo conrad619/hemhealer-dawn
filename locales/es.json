@@ -478,7 +478,23 @@
       "card_2_title": "Paquete de Energía de Prevención",
       "card_2_subtitle": "HEM RESCUE® – Fórmula Respetuosa para el Corazón + FIBRA™ DE FLUJO FÁCIL BAJO",
       "card_2_copy": "¿La mejor manera de tratar las hemorroides? ¡Deténganlos antes de que empiecen! Combinar la fórmula Hem Rescue® – Respetuosa para el Corazón con Hem Easy-Flow Fiber™ proporciona soporte diario para venas saludables y digestión, reduciendo el riesgo de futuros brotes.",
-      "card_2_cta": "COMPRA AHORA"
+      "card_2_cta": "COMPRA AHORA",
+      "card_1_title_html": "Pack de Combo Heroico",
+      "card_1_subtitle_html": "HEM HERO™ + HEM-FLOW EASY-FLOW FIBER™",
+      "card_1_copy_html": "Para un máximo alivio de las hemorroides y prevención a largo plazo, combinar Hem Hero™ con Hem Easy-Flow Fiber™ ofrece un potente soporte del revés para tus venas y digestión. ¡Combina estos dos para alivio y prevención integral de las hemorroides!",
+      "card_1_cta_html": "COMPRA AHORA",
+      "card_2_title_html": "Paquete de Energía de Prevención",
+      "card_2_subtitle_html": "HEM RESCUE® – Fórmula Respetuosa para el Corazón + FIBRA™ DE FLUJO FÁCIL BAJO",
+      "card_2_copy_html": "¿La mejor manera de tratar las hemorroides? ¡Deténganlos antes de que empiecen! Combinar la fórmula Hem Rescue® – Respetuosa para el Corazón con Hem Easy-Flow Fiber™ proporciona soporte diario para venas saludables y digestión, reduciendo el riesgo de futuros brotes.",
+      "card_2_cta_html": "COMPRA AHORA"
+    },
+    "custom-section-hem-hero": {
+      "heading_2_html": "Fuerza extra",
+      "heading_3_html": "Hem Hero® Extra Fuerza",
+      "button_1_html": "COMPRA HEM HERO® AHORA",
+      "guarantee_html": "Garantía de devolución de dinero de 30 días",
+      "heading_4_html": "Hem Hero® Extra Fuerza",
+      "button_2_html": "COMPRA HEM HERO® AHORA"
     }
   },
   "localization": {
