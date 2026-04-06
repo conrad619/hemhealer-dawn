@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "password_page": {
@@ -383,6 +392,93 @@
       "min_error": "Este artículo tiene un mínimo de {{ min }}.",
       "max_error": "Este artículo tiene un máximo de {{ max }}.",
       "step_error": "Solo puedes agregar este artículo en incrementos de {{ step }}"
+    },
+    "custom-section-1": {
+      "settings": {
+        "column_1": "Alivio de acción rápida",
+        "column_2": "Apoyar una circulación saludable",
+        "column_3": "Fortalecer venas y capilares",
+        "column_1_tooltip": "Hem Hero® utiliza una mezcla de concentración clínica de Diosmin, Hesperidin y castaño de Indias para reducir la hinchazón y las molestias rápidamente...",
+        "column_2_tooltip": "Diosmina y Hesperidina son bioflavonoides de los cítricos que han demostrado mejorar el tono y la circulación de los vasos sanguíneos...",
+        "column_3_tooltip": "El extracto de castaño de Indias y Diosmin refuerzan las paredes de las venas y capilares..."
+      }
+    },
+    "custom-section-2": {
+      "heading_1": "Suplementos naturales que ayudan a reducir el dolor, la inflamación y los brotes",
+      "heading_2": "Alivio real de las hemorroides sin el desorden ni los efectos secundarios",
+      "list_1_1": "🔁 Lo mejor para quienes sufren a plazo crónico",
+      "list_1_2": "🩸 Lucha contra el sangrado, el picor, el ardor y el dolor",
+      "list_1_3": "✅ Obras sobre hemorroides internas y externas",
+      "list_1_4": "💊 Cápsula fácil de tragar — Sin cremas desordenadas",
+      "list_1_5": "💰 Garantía de devolución total del dinero",
+      "list_1_6": "🇺🇸 Orgullosamente fabricado en Atlanta, Georgia",
+      "best_for_1": "<strong>Lo mejor para</strong>: Personas con pacientes de larga duración que necesitan apoyo diario máximo para recuperar comodidad y confianza.<br> ",
+      "list_2_1": "🔥 Apoyo antiinflamatorio",
+      "list_2_2": "🌿 Reduce la inflamación y reduce la irritación",
+      "list_2_3": "🌬️ Aprieta las venas para prevenir brotes",
+      "list_2_4": "🩸 Favorece una circulación saludable y la fuerza de las venas",
+      "list_2_5": "💰 Garantía de devolución total del dinero",
+      "list_2_6": "🇺🇸 Orgullosamente fabricado en Atlanta, Georgia",
+      "best_for_2": "<strong>Lo mejor para:</strong> Mantenerse libre de síntomas – proporciona protección a largo plazo para quienes están en remisión.<br> ",
+      "buy_now": "COMPRA AHORA"
+    },
+    "custom-section-3": {
+      "heading": "Ayuda respaldada por médicos en la que puedes confiar",
+      "description": "En <strong>Hem Healer®</strong>, creemos en soluciones respaldadas por la ciencia. Por eso nuestras fórmulas no solo están <strong>investigadas clínicamente</strong> , sino que también <strong>son recomendadas por profesionales de la salud</strong> que comprenden la importancia de <strong>un alivio seguro, eficaz y natural de las hemorroides</strong>.",
+      "quote_1": "Recomiendo encarecidamente Hem Healer's Hem Hero® a cualquiera que esté luchando contra las hemorroides",
+      "quote_2": "Recomiendo mucho Hem Hero® para tus hemorroides.",
+      "button": "EXPERIMENTA HOY UN ALIVIO APROBADO POR UN MÉDICO"
+    },
+    "custom-section-4": {
+      "heading": "Entendemos tu dolor, porque hemos estado ahí",
+      "description_1": "Tras 15 años de hemorroides dolorosas y recurrentes—y sin alivio duradero de cremas o supositorios—Ian creó Hem Healer® para corregir la causa raíz, no solo para enmascarar los síntomas.",
+      "description_2": "Hoy, Hem Healer® está ayudando a miles de personas a recuperar por fin un alivio duradero y recuperar su vida.",
+      "link_story": "NUESTRA HISTORIA",
+      "link_manufactured": "¿DÓNDE SE FABRICAN LOS PRODUCTOS SANADORES® DE DOBLADILLO?"
+    },
+    "custom-section-5": {
+      "heading": "Los estudios muestran que Diosmin reduce rápidamente el dolor y el sangrado de las hemorroides",
+      "research_heading": "Hallazgos clave de la investigación",
+      "point_1_title": "Reduce la hinchazón y el dolor",
+      "point_1_desc": "fortaleciendo las vetas",
+      "point_2_title": "Mejora la circulación",
+      "point_2_desc": "para prevenir futuros brotes",
+      "point_3_title": "Clínicamente probado",
+      "point_3_desc": "para aliviar los síntomas de las hemorroides",
+      "button": "¡COMPRA NUESTRAS SOLUCIONES DE DIOSMINA AHORA!"
+    },
+    "custom-section-6": {
+      "heading_1": "¿Por qué elegir a Hem Healer®?",
+      "heading_2": "Calidad en la que puedes confiar",
+      "description_1": "Cada producto Hem Healer® se fabrica en un centro limpio y seguro, inspeccionado y registrado ante la FDA, así que puedes confiar en lo que contiene.",
+      "description_2": "Los productos Hem Healer® se fabrican con orgullo en Atlanta, Georgia, utilizando ingredientes de alta calidad en los que puedes confiar.",
+      "description_3": "Si no estás satisfecho por cualquier motivo, simplemente contacta con nosotros para solicitar un reembolso completo."
+    },
+    "custom-section-7": {
+      "heading": "Lo que dicen nuestros clientes",
+      "subheading": "Alivio real, resultados reales",
+      "testimonial_text": "He sufrido durante 4 años y he probado MUCHAS cosas diferentes, estas son las únicas que han funcionado.",
+      "testimonial_1_quote": "\"Esto es lo único que me ha ayudado.",
+      "testimonial_2_quote": "\"Ha mejorado mucho mi bienestar y mi salud mental.",
+      "testimonial_3_quote": "\"Es lo más increíble que he tomado nunca, porque realmente funciona.",
+      "testimonial_4_quote": "\"Inmediatamente empezó a hacer efecto y a ayudar con los síntomas",
+      "testimonial_5_quote": "\"Sigo tomándolo, y estoy bien. Gracias a Dios, desde entonces he estado bien [taking Hem Hero®]!",
+      "cta": "AVERIGUA SI LOS PRODUCTOS HEALER® DE DOBLADILLO REALMENTE FUNCIONAN"
+    },
+    "custom-section-8": {
+      "heading": "Encuentra el producto sanador® de bajo adecuado para ti",
+      "description": "¿No estás seguro de qué producto es el mejor para tus necesidades? Utiliza nuestra guía rápida para elegir la solución Hem® Healer adecuada según tus síntomas."
+    },
+    "custom-section-9": {
+      "heading": "Agrupar y guardar",
+      "card_1_title": "Pack de Combo Heroico",
+      "card_1_subtitle": "HEM HERO™ + HEM-FLOW EASY-FLOW FIBER™",
+      "card_1_copy": "Para un máximo alivio de las hemorroides y prevención a largo plazo, combinar Hem Hero™ con Hem Easy-Flow Fiber™ ofrece un potente soporte del revés para tus venas y digestión. ¡Combina estos dos para alivio y prevención integral de las hemorroides!",
+      "card_1_cta": "COMPRA AHORA",
+      "card_2_title": "Paquete de Energía de Prevención",
+      "card_2_subtitle": "HEM RESCUE® – Fórmula Respetuosa para el Corazón + FIBRA™ DE FLUJO FÁCIL BAJO",
+      "card_2_copy": "¿La mejor manera de tratar las hemorroides? ¡Deténganlos antes de que empiecen! Combinar la fórmula Hem Rescue® – Respetuosa para el Corazón con Hem Easy-Flow Fiber™ proporciona soporte diario para venas saludables y digestión, reduciendo el riesgo de futuros brotes.",
+      "card_2_cta": "COMPRA AHORA"
     }
   },
   "localization": {
