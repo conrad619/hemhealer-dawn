@@ -22,7 +22,7 @@
       <div class='twcss-flex lg:twcss-flex-nowrap twcss-flex-wrap twcss-gap-[4rem]'>
         <div class='lg:twcss-text-left twcss-text-center lg:twcss-order-1 twcss-order-2 twcss-flex twcss-gap-[2rem] twcss-flex-col lg:twcss-w-1/2 twcss-w-full twcss-justify-center'>
           <h2 class='lg:twcss-block twcss-hidden lg:twcss-text-[7rem] twcss-text-[4.5rem] twcss-font-medium twcss-leading-none'>
-            We Understand Your Pain – Because We’ve Been There
+            {{ 'sections.custom-section-4.heading_html' | t }}
           </h2>
           {% comment %}
             <h3 class='lg:twcss-text-[4.5rem] twcss-text-[2.5rem] twcss-font-medium twcss-text-[--secondary-color] lg:twcss-leading-[5.4rem]'>
@@ -30,17 +30,16 @@
             </h3>
           {% endcomment %}
           <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem]'>
-            After 15 years of painful, recurring hemorrhoids—and no lasting relief from creams or suppositories—Ian
-            created Hem Healer® to fix the root cause, not just mask symptoms.
+            {{ 'sections.custom-section-4.description_1_html' | t }}
           </p>
           <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem]'>
-            Today, Hem Healer® is helping thousands finally get lasting relief and their life back.
+            {{ 'sections.custom-section-4.description_2_html' | t }}
           </p>
           <div class=''>
             <a
               href='/pages/about'
               class='twcss-text-[--accent-color] twcss-inline-flex twcss-font-semibold twcss-items-center lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-font-heading twcss-border-b twcss-border-[--accent-color]'
-              ><span>OUR STORY</span>
+              ><span>{{ 'sections.custom-section-4.link_story_html' | t }}</span>
               <svg
                 class='material-symbols-outlined twcss-w-[2rem] twcss-h-[2rem] twcss-ml-[1rem]'
                 xmlns='http://www.w3.org/2000/svg'
@@ -57,7 +56,7 @@
             <a
               href='/pages/about#where-is-made'
               class='twcss-text-[--accent-color] twcss-inline-flex twcss-font-semibold twcss-items-center lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-font-heading twcss-border-b twcss-border-[--accent-color]'
-              ><span>WHERE ARE HEM HEALER® PRODUCTS MANUFACTURED?</span>
+              ><span>{{ 'sections.custom-section-4.link_manufactured_html' | t }}</span>
               <svg
                 class='material-symbols-outlined twcss-w-[2rem] twcss-h-[2rem] twcss-ml-[1rem]'
                 xmlns='http://www.w3.org/2000/svg'
@@ -73,7 +72,7 @@
         </div>
         <div class='lg:twcss-w-1/2 twcss-w-full lg:twcss-order-2 twcss-order-1'>
           <h2 class='lg:twcss-hidden twcss-block twcss-text-center lg:twcss-text-[7rem] twcss-text-[4.5rem] twcss-font-medium twcss-leading-none  twcss-mb-[4rem]'>
-            We Understand Your Pain – Because We’ve Been There
+            {{ 'sections.custom-section-4.heading_html' | t }}
           </h2>
 
           <img
@@ -105,13 +104,7 @@
 {% schema %}
 {
   "name": "custom section IV",
-  "settings": [
-    // {
-    //   "type": "text",
-    //   "label": "Video URL",
-    //   "id": "video"
-    // }
-  ],
+  "settings": [],
   "presets": [
     {
       "name": "custom section IV"

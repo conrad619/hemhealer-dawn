@@ -31,11 +31,7 @@
                 <path d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z"></path>
               </svg>
             </div>
-            {% if section.settings.column_1 contains 'sections.custom-section-1.settings.' %}
-              <span>{{ section.settings.column_1 | t }}</span>
-            {% else %}
-              <span>{{ section.settings.column_1 }}</span>
-            {% endif %}
+            <span>{{ 'sections.custom-section-1.settings.column_1_html' | t }}</span>
           </li>
           <li
             id='support_healthy_circulation'
@@ -51,11 +47,7 @@
                 <path d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z"></path>
               </svg>
             </div>
-            {% if section.settings.column_2 contains 'sections.custom-section-1.settings.' %}
-              <span>{{ section.settings.column_2 | t }}</span>
-            {% else %}
-              <span>{{ section.settings.column_2 }}</span>
-            {% endif %}
+            <span>{{ 'sections.custom-section-1.settings.column_2_html' | t }}</span>
           </li>
           <li
             id='strengthen_veins_and_capillaries'
@@ -71,11 +63,7 @@
                 <path d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z"></path>
               </svg>
             </div>
-            {% if section.settings.column_3 contains 'sections.custom-section-1.settings.' %}
-              <span>{{ section.settings.column_3 | t }}</span>
-            {% else %}
-              <span>{{ section.settings.column_3 }}</span>
-            {% endif %}
+            <span>{{ 'sections.custom-section-1.settings.column_3_html' | t }}</span>
           </li>
         </ul>
         <div class='twcss-relative'>
@@ -100,21 +88,9 @@
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    {% if section.settings.column_1_tooltip contains 'sections.custom-section-1.settings.' %}
-      let fast_acting_relief = {{ section.settings.column_1_tooltip | t | json }};
-    {% else %}
-      let fast_acting_relief = {{ section.settings.column_1_tooltip | json }};
-    {% endif %}
-    {% if section.settings.column_2_tooltip contains 'sections.custom-section-1.settings.' %}
-      let support_healthy_circulation = {{ section.settings.column_2_tooltip | t | json }};
-    {% else %}
-      let support_healthy_circulation = {{ section.settings.column_2_tooltip | json }};
-    {% endif %}
-    {% if section.settings.column_3_tooltip contains 'sections.custom-section-1.settings.' %}
-      let strengthen_veins_and_capillaries = {{ section.settings.column_3_tooltip | t | json }};
-    {% else %}
-      let strengthen_veins_and_capillaries = {{ section.settings.column_3_tooltip | json }};
-    {% endif %}
+    let fast_acting_relief = {{ 'sections.custom-section-1.settings.column_1_tooltip_html' | t | json }};
+    let support_healthy_circulation = {{ 'sections.custom-section-1.settings.column_2_tooltip_html' | t | json }};
+    let strengthen_veins_and_capillaries = {{ 'sections.custom-section-1.settings.column_3_tooltip_html' | t | json }};
 
     let settings = {
       allowHTML: true,
@@ -143,44 +119,7 @@
 {% schema %}
 {
   "name": "custom section I",
-  "settings": [
-    {
-      "type": "text",
-      "id": "column_1",
-      "label": "Column 1",
-      "default": "sections.custom-section-1.settings.column_1_html"
-    },
-    {
-      "type": "text",
-      "id": "column_2",
-      "label": "Column 2",
-      "default": "sections.custom-section-1.settings.column_2_html"
-    },
-    {
-      "type": "text",
-      "id": "column_3",
-      "label": "Column 3",
-      "default": "sections.custom-section-1.settings.column_3_html"
-    },
-    {
-      "type": "textarea",
-      "id": "column_1_tooltip",
-      "label": "Column 1 Tooltip",
-      "default": "sections.custom-section-1.settings.column_1_tooltip_html"
-    },
-    {
-      "type": "textarea",
-      "id": "column_2_tooltip",
-      "label": "Column 2 Tooltip",
-      "default": "sections.custom-section-1.settings.column_2_tooltip_html"
-    },
-    {
-      "type": "textarea",
-      "id": "column_3_tooltip",
-      "label": "Column 3 Tooltip",
-      "default": "sections.custom-section-1.settings.column_3_tooltip_html"
-    }
-  ],
+  "settings": [],
   "presets": [
     {
       "name": "custom section I"

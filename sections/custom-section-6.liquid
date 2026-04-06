@@ -22,10 +22,10 @@
     >
       <div class='twcss-flex twcss-flex-col lg:twcss-pt-[10rem] lg:twcss-pb-[4rem]'>
         <h2 class='lg:twcss-text-[4.5rem] twcss-text-[2.5rem] twcss-font-medium twcss-text-center twcss-text-[--secondary-color] twcss-leading-[5.4rem]'>
-          Why Choose Hem Healer®?
+          {{ 'sections.custom-section-6.heading_1_html' | t }}
         </h2>
         <h3 class='lg:twcss-text-[7rem] twcss-text-[4.5rem] twcss-font-medium twcss-leading-none twcss-text-center'>
-          Quality You Can Trust
+          {{ 'sections.custom-section-6.heading_2_html' | t }}
         </h3>
       </div>
       <div class='lg:twcss-gap-[2rem] twcss-pb-[5rem] twcss-grid lg:twcss-grid-cols-3 twcss-text-black lg:twcss-text-left twcss-text-center'>
@@ -42,8 +42,7 @@
             Made in a GMP, FDA-Registered Facility
           </h4>
           <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-tracking-normal'>
-            Every Hem Healer® product is made in a clean, safe facility that’s inspected and registered with the FDA, so
-            you can trust what’s inside.
+            {{ 'sections.custom-section-6.description_1_html' | t }}
           </p>
         </div>
         <div class='twcss-flex twcss-flex-col twcss-p-[1rem]'>
@@ -59,7 +58,7 @@
             Proudly Manufactured in Atlanta, GA
           </h4>
           <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-tracking-normal'>
-            Hem Healer® products are proudly made in Atlanta, Georgia, using high-quality ingredients you can trust.
+            {{ 'sections.custom-section-6.description_2_html' | t }}
           </p>
         </div>
         <div class='twcss-flex twcss-flex-col twcss-p-[1rem]'>
@@ -75,7 +74,7 @@
             100% Money Back Guarantee
           </h4>
           <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-tracking-normal'>
-            If you are not satisfied for any reason, simply contact us for a full refund.
+            {{ 'sections.custom-section-6.description_3_html' | t }}
           </p>
         </div>
       </div>
@@ -101,13 +100,7 @@
 {% schema %}
 {
   "name": "custom section VI",
-  "settings": [
-    // {
-    //   "type": "text",
-    //   "label": "Video URL",
-    //   "id": "video"
-    // }
-  ],
+  "settings": [],
   "presets": [
     {
       "name": "custom section VI"

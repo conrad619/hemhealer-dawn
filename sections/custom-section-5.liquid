@@ -6,7 +6,7 @@
       {% endif %}
     >
       <h2 class='twcss-font-heading lg:twcss-text-[7rem] twcss-text-[3.8rem] twcss-font-medium twcss-text-center twcss-max-w-[100rem] twcss-mx-auto twcss-leading-none'>
-        Studies Show Diosmin Quickly Reduces Hemorrhoid Pain and Bleeding
+        {{ 'sections.custom-section-5.heading_html' | t }}
       </h2>
       <div class='twcss-flex lg:twcss-flex-nowrap twcss-flex-wrap twcss-justify-center twcss-pt-[4rem] lg:twcss-gap-[4rem] twcss-pb-[5rem]'>
         {% comment %}
@@ -47,7 +47,9 @@
               width='453'
             >
           </div>
-          <h3 class='twcss-text-[2.2rem] twcss-font-body twcss-font-bold twcss-mt-[4rem]'>Key Research Findings</h3>
+          <h3 class='twcss-text-[2.2rem] twcss-font-body twcss-font-bold twcss-mt-[4rem]'>
+            {{ 'sections.custom-section-5.research_heading_html' | t }}
+          </h3>
           <ul class='twcss-flex twcss-gap-[2rem] twcss-flex-col'>
             <li class='twcss-flex'>
               <svg
@@ -62,9 +64,11 @@
               </svg>
               <div>
                 <h4 class='twcss-text-[2.6rem] twcss-font-heading twcss-font-medium twcss-mb-[1rem]'>
-                  Reduces swelling & pain
+                  {{ 'sections.custom-section-5.point_1_title_html' | t }}
                 </h4>
-                <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem]'>by strengthening veins</p>
+                <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem]'>
+                  {{ 'sections.custom-section-5.point_1_desc_html' | t }}
+                </p>
               </div>
             </li>
 
@@ -81,9 +85,11 @@
               </svg>
               <div>
                 <h4 class='twcss-text-[2.6rem] twcss-font-heading twcss-font-medium twcss-mb-[1rem]'>
-                  Improves circulation
+                  {{ 'sections.custom-section-5.point_2_title_html' | t }}
                 </h4>
-                <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem]'>to prevent future flare-ups</p>
+                <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem]'>
+                  {{ 'sections.custom-section-5.point_2_desc_html' | t }}
+                </p>
               </div>
             </li>
 
@@ -100,9 +106,11 @@
               </svg>
               <div>
                 <h4 class='twcss-text-[2.6rem] twcss-font-heading twcss-font-medium twcss-mb-[1rem]'>
-                  Clinically proven
+                  {{ 'sections.custom-section-5.point_3_title_html' | t }}
                 </h4>
-                <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem]'>to relieve hemorrhoid symptoms</p>
+                <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem]'>
+                  {{ 'sections.custom-section-5.point_3_desc_html' | t }}
+                </p>
               </div>
             </li>
           </ul>
@@ -122,8 +130,9 @@
           <a
             href='https://www.hemhealer.com/cart/add/?id[]=40292763861151&quantity[]=1&id[]=45613637566677&quantity[]=1'
             class='twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-mb-[1.4rem] twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] lg:twcss-mt-[4rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-white twcss-bg-[--accent-color] twcss-font-semibold twcss-w-full twcss-text-center'
-            >SHOP OUR DIOSMIN SOLUTIONS NOW!</a
           >
+            {{- 'sections.custom-section-5.button_html' | t -}}
+          </a>
           <p
             href='#'
             class='twcss-text-center twcss-text-[2.2rem] twcss-font-medium'
@@ -143,13 +152,7 @@
 {% schema %}
 {
   "name": "custom section V",
-  "settings": [
-    // {
-    //   "type": "text",
-    //   "label": "Video URL",
-    //   "id": "video"
-    // }
-  ],
+  "settings": [],
   "presets": [
     {
       "name": "custom section V"
