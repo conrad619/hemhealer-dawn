@@ -31,7 +31,7 @@
                 <path d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z"></path>
               </svg>
             </div>
-            <span>Fast Acting Relief</span>
+            <span>{{ section.settings.column_1 }}</span>
           </li>
           <li
             id='support_healthy_circulation'
@@ -47,7 +47,7 @@
                 <path d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z"></path>
               </svg>
             </div>
-            <span>Support Healthy Circulation</span>
+            <span>{{ section.settings.column_2 }}</span>
           </li>
           <li
             id='strengthen_veins_and_capillaries'
@@ -63,7 +63,7 @@
                 <path d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z"></path>
               </svg>
             </div>
-            <span>Strengthen Veins & Capillaries</span>
+            <span>{{ section.settings.column_3 }}</span>
           </li>
         </ul>
         <div class='twcss-relative'>
@@ -91,11 +91,24 @@
 {
   "name": "custom section I",
   "settings": [
-    // {
-    //   "type": "text",
-    //   "label": "Video URL",
-    //   "id": "video"
-    // }
+    {
+      "type": "text",
+      "id": "column_1",
+      "label": "Column 1",
+      "default": "Fast Acting Relief"
+    },
+    {
+      "type": "text",
+      "id": "column_2",
+      "label": "Column 2",
+      "default": "Support Healthy Circulation"
+    },
+    {
+      "type": "text",
+      "id": "column_3",
+      "label": "Column 3",
+      "default": "Strengthen Veins & Capillaries"
+    }
   ],
   "presets": [
     {
