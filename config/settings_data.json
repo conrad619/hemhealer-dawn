@@ -235,6 +235,28 @@
         "type": "shopify://apps/blockify-fraud-filter/blocks/app_embed/2e3e0ba5-0e70-447a-9ec5-3bf76b5ef12e",
         "disabled": false,
         "settings": {}
+      },
+      "2720991090819015727": {
+        "type": "shopify://apps/lokalize/blocks/language_selector/250c1a82-6748-457d-a707-e25cb75f4dc7",
+        "disabled": false,
+        "settings": {
+          "show_native_names": true,
+          "always_show": true,
+          "show_only_language": false,
+          "show_only_flag": false,
+          "position": "fixed",
+          "fixed_position": "top_right",
+          "position_offset": "55,20,20,20",
+          "font_size": 14,
+          "text_color": "#333333",
+          "bg_color": "#ffffff",
+          "border_color": "#e1e5e9",
+          "border_width": 1,
+          "border_radius": 8,
+          "padding": 12,
+          "z_index": 50,
+          "mobile_display": "same"
+        }
       }
     },
     "color_schemes": {
