@@ -8,10 +8,10 @@
       <div class='twcss-w-full twcss-pb-[5rem]'>
         <div class='twcss-pt-[5rem]'>
           <h2 class='lg:twcss-text-[4.5rem] twcss-text-[2.5rem] twcss-font-bold twcss-text-center'>
-            DOES HEM HERO® REALLY WORK?
+            {{ 'sections.custom-section-hem-hero.heading_1_html' | t }}
           </h2>
           <h3 class='lg:twcss-text-[7rem] twcss-text-[3rem] twcss-text-center twcss-mb-[4rem]'>
-            Real Stories From Real Users
+            {{ 'sections.custom-section-hem-hero.heading_2_html' | t }}
           </h3>
           <div
             id='testimonial-container'
@@ -32,7 +32,7 @@
     >
       <div class='twcss-w-full twcss-py-[5rem]'>
         <h2 class='lg:twcss-text-[4.5rem] twcss-text-[2.5rem] twcss-text-center twcss-mb-[3rem] twcss-text-white twcss-font-body'>
-          Customer <span class='twcss-font-bold'>Testimonial</span>
+          {{ 'sections.custom-section-hem-hero.heading_3_html' | t }}
         </h2>
         <div
           id='testimonial-images'
@@ -56,9 +56,9 @@
               >
                 <path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM208-800h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Z"/>
               </svg>
-              <span class='twcss-font-bold'>Click Here to Buy Now</span>
+              <span class='twcss-font-bold'>{{ 'sections.custom-section-hem-hero.button_1_html' | t }}</span>
             </span>
-            <span class='twcss-text-[1.4rem]'>90 DAY MONEY BACK GUARANTEE</span>
+            <span class='twcss-text-[1.4rem]'>{{ 'sections.custom-section-hem-hero.guarantee_html' | t }}</span>
           </a>
         </div>
       </div>
@@ -74,7 +74,7 @@
     >
       <div class='twcss-w-full twcss-py-[5rem]'>
         <h2 class='lg:twcss-text-[4.5rem] twcss-text-[2.5rem] twcss-text-center twcss-mb-[3rem] twcss-text-white twcss-font-body'>
-          REVIEWS FROM <span class='twcss-font-bold'>AMAZON</span>
+          {{ 'sections.custom-section-hem-hero.heading_4_html' | t }}
         </h2>
         <div
           id='amazon-reviews'
@@ -95,9 +95,9 @@
               >
                 <path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM208-800h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Z"/>
               </svg>
-              <span class='twcss-font-bold'>Click Here to Buy Hem Hero®</span>
+              <span class='twcss-font-bold'>{{ 'sections.custom-section-hem-hero.button_2_html' | t }}</span>
             </span>
-            <span class='twcss-text-[1.4rem]'>90 DAY MONEY BACK GUARANTEE</span>
+            <span class='twcss-text-[1.4rem]'>{{ 'sections.custom-section-hem-hero.guarantee_html' | t }}</span>
           </a>
         </div>
       </div>
@@ -107,13 +107,7 @@
 {% schema %}
 {
   "name": "custom section hem hero",
-  "settings": [
-    // {
-    //   "type": "text",
-    //   "label": "Video URL",
-    //   "id": "video"
-    // }
-  ],
+  "settings": [],
   "presets": [
     {
       "name": "custom section hem hero"
