@@ -718,5 +718,37 @@
       "expanded": "Formulario del destinatario de la tarjeta de regalo expandido",
       "collapsed": "Formulario del destinatario de tarjeta de regalo contraído"
     }
+  },
+  "custom_section_hem_hero": {
+    "heading1": "Mira esto si tienes hemorroides 👇",
+    "subheading1": "Esta es la respuesta que estabas esperando",
+    "heading2": "Hem Hero® simplemente funciona",
+    "subheading2": "Compruébalo tú 👇 mismo",
+    "testimonials_heading": "Testimonios",
+    "testimonial1_text": "\"He sufrido durante 4 años y he probado MUCHAS cosas diferentes, esto es lo único que ha funcionado.\"",
+    "testimonial2_text": "\"Por favor, hazte un favor y compra esto.\"",
+    "how_it_works_heading": "Cómo funciona Hem Hero®",
+    "comparison_heading": "Hem Hero® vs. Cremas",
+    "comparison_description": "Creemos en tratar la causa raíz de las hemorroides, no solo en enmascarar los síntomas. Así es como se compara Hem Hero®:",
+    "comparison_creams": "Cremas y ungüentos",
+    "ingredients_heading": "Hem Hero®: Clínicamente probado para reducir los efectos de las hemorroides",
+    "alt_58_reduction": "Reducción del 58%",
+    "ingredients_desc1": "Los estudios clínicos muestran que la diosmina y la hesperidina reducen el dolor, el sangrado y el picor, y reducen la recurrencia en un 58%.",
+    "source": "Fuente",
+    "alt_4_days": "4 días",
+    "ingredients_desc2": "Los ensayos clínicos encontraron que la diosmina redujo la hinchazón y el sangrado de las hemorroides al cuarto día.",
+    "alt_94_less_bleeding": "94% menos de sangrado",
+    "ingredients_desc3": "Un estudio encontró que el extracto de castaño de indias redujo el sangrado hemorroide en un 94% en dos semanas.",
+    "alt_81_felt_better": "El 81% se sintió mejor en 6 días",
+    "ingredients_desc4": "El mismo estudio informó que el 81% de los pacientes presentaban menos dolor, hinchazón y sangrado en seis días.",
+    "doctor_recommended_heading": "Médico recomendado para el alivio de las hemorroides",
+    "doctor_quote": "\"Recomiendo mucho Hem Hero® para tus hemorroides.\"",
+    "alt_doctor": "Doctor",
+    "alt_fda_logos": "Logotipos de la FDA",
+    "alt_capsule": "cápsula",
+    "alt_testimonial_rafael": "Testimonio de Rafael",
+    "alt_how_it_works_step1": "Cómo funciona Hem Hero Paso 1",
+    "alt_how_it_works_step2": "Cómo funciona Hem Hero Paso 2",
+    "alt_how_it_works_step3": "Cómo funciona Hem Hero Paso 3"
   }
 }
