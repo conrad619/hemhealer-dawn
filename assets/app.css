@@ -1028,6 +1028,10 @@ video {
   height: 1px;
 }
 
+.twcss-max-h-\[30rem\] {
+  max-height: 30rem;
+}
+
 .twcss-min-h-\[4rem\] {
   min-height: 4rem;
 }
@@ -1243,10 +1247,6 @@ video {
 
 .twcss-list-\[\"\2714\"\] {
   list-style-type: '✔';
-}
-
-.twcss-list-decimal {
-  list-style-type: decimal;
 }
 
 .twcss-list-disc {
@@ -1949,6 +1949,11 @@ video {
   color: rgb(1 33 97 / var(--tw-text-opacity));
 }
 
+.twcss-text-\[\#1c1c1c\] {
+  --tw-text-opacity: 1;
+  color: rgb(28 28 28 / var(--tw-text-opacity));
+}
+
 .twcss-text-\[\#313131\] {
   --tw-text-opacity: 1;
   color: rgb(49 49 49 / var(--tw-text-opacity));
@@ -1997,11 +2002,6 @@ video {
 .twcss-text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.twcss-text-\[\#1c1c1c\] {
-  --tw-text-opacity: 1;
-  color: rgb(28 28 28 / var(--tw-text-opacity));
 }
 
 .twcss-underline {
@@ -2732,10 +2732,6 @@ shop-pay-wallet-button {
 
   .lg\:twcss-text-center {
     text-align: center;
-  }
-
-  .lg\:twcss-text-\[1\.5rem\] {
-    font-size: 1.5rem;
   }
 
   .lg\:twcss-text-\[1\.8rem\] {
