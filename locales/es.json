@@ -544,7 +544,10 @@
       "description": "¿No estás seguro de qué producto es el mejor para tus necesidades? Utiliza nuestra guía rápida para elegir la solución Hem® Healer adecuada según tus síntomas.",
       "heading_html": "Encuentra el producto sanador® de bajo adecuado para ti",
       "description_html": "¿No estás seguro de qué producto es el mejor para tus necesidades? Utiliza nuestra guía rápida para elegir la solución Hem® Healer adecuada según tus síntomas.",
-      "desktop_image_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Recommended_Products_e8d7a629-5264-40ab-82c1-8ea981957fee.png?v=1776203971"
+      "desktop_image_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Recommended_Products_e8d7a629-5264-40ab-82c1-8ea981957fee.png?v=1776203971",
+      "desktop_image_alt": "Encuentra los productos correctos para sanar el dobladillo",
+      "mobile_image_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Recommended_Products_Mobile_f83ab705-79a3-43bc-a7e4-c294819e2a65.png?v=1776204014",
+      "mobile_image_alt": "Encuentra los productos correctos para sanar el dobladillo"
     },
     "custom-section-9": {
       "heading": "Agrupar y guardar",
