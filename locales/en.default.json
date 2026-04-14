@@ -532,6 +532,16 @@
       "guarantee_html": "30-Day Money Back Guarantee",
       "heading_4_html": "Hem Hero® Extra Strength",
       "button_2_html": "BUY HEM HERO® NOW"
+    },
+    "custom-video": {
+      "heading_html": "Say \"Goodbye\" to Hemorrhoids",
+      "subheading_html": "An Oral Supplement Trusted by 100,000+ Customers to Help Ease the Itching, Burning, Bleeding, and Pain of Hemorrhoids.",
+      "buy_button_html": "Buy Now",
+      "video_title": "intro video banner",
+      "video_url_desktop": "https://player.vimeo.com/video/1093229959",
+      "video_url_mobile": "https://player.vimeo.com/video/1094683543",
+      "trustpilot_image_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Trustpilot_Hem_Healer_Site.png?v=1754417603",
+      "trustpilot_image_alt": "trustpilot"
     }
   },
   "localization": {
@@ -785,6 +795,26 @@
     "comparison_item_5": "Long-term relief",
     "comparison_item_6": "No touching the affected area",
     "comparison_item_7": "No odor or residue",
-    "comparison_item_8": "Travel-friendly"
+    "comparison_item_8": "Travel-friendly",
+    "logo_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/logo.png?v=1652179013",
+    "capsule_bottle_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/capsule_bottle_hero.png?v=1746103303",
+    "testimonial_rafael_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/rafael.jpg?v=1749673917",
+    "testimonial_semo_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Semo.jpg?v=1749673917",
+    "how_it_works_step1_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/How_Hem_Hero_Works_2.png?v=1749652319",
+    "how_it_works_step2_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/How_Hem_Hero_Works_3.png?v=1749652319",
+    "how_it_works_step3_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/How_Hem_Hero_Works_4_v2.png?v=1749847834",
+    "ingredients_1_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Hem_Hero_Ingredients_1_d19cfb32-8605-4a48-a996-72826802529b.png?v=1749565109",
+    "ingredients_2_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Hem_Hero_Ingredients_1_1.png?v=1749565606",
+    "ingredients_3_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Hem_Hero_Ingredients_3_60476e41-9b34-47ee-b4b0-e81859bbbdd2.png?v=1749565108",
+    "ingredients_4_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Hem_Hero_Ingredients_4.png?v=1749565109",
+    "severity_chart_desktop_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/severity_chart.png?v=1746103501",
+    "severity_chart_mobile_src": "//www.hemhealer.com/cdn/shop/files/Hem-Severity-Chart-Mobile_750x.png?v=1702983915",
+    "severity_chart_alt": "severity chart",
+    "no_temporary_solutions_src": "https://www.hemhealer.com/cdn/shop/files/imgpsh_fullsize_anim_18_500x.png?v=1706836924",
+    "alt_no_temporary_solutions": "hem hero",
+    "ingredients_desktop_src": "https://www.hemhealer.com/cdn/shop/files/imgpsh_fullsize_anim_19_1100x.png?v=1706836955",
+    "ingredients_mobile_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/imgpsh_fullsize_anim_adbae1e0-421b-4eda-878b-eefdb49072ff.png?v=1707223873",
+    "supplement_facts_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hem_hero_supplement_facts.png?v=1746111110",
+    "guaranteed_risk_free_src": "https://www.hemhealer.com/cdn/shop/files/imgpsh_fullsize_anim_250x.png?v=1704395061"
   }
 }
