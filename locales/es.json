@@ -406,7 +406,8 @@
         "column_3_html": "Fortalecer venas y capilares",
         "column_1_tooltip_html": "Hem Hero® utiliza una mezcla de concentración clínica de Diosmin, Hesperidin y castaño de Indias para reducir la hinchazón y las molestias rápidamente...",
         "column_2_tooltip_html": "Diosmina y Hesperidina son bioflavonoides de los cítricos que han demostrado mejorar el tono y la circulación de los vasos sanguíneos...",
-        "column_3_tooltip_html": "El extracto de castaño de Indias y Diosmin refuerzan las paredes de las venas y capilares..."
+        "column_3_tooltip_html": "El extracto de castaño de Indias y Diosmin refuerzan las paredes de las venas y capilares...",
+        "image_alt": "Botellas sanadoras de Hem"
       }
     },
     "custom-section-2": {
@@ -498,7 +499,8 @@
       "point_2_desc_html": "para prevenir futuros brotes",
       "point_3_title_html": "Clínicamente probado",
       "point_3_desc_html": "para aliviar los síntomas de las hemorroides",
-      "button_html": "¡COMPRA NUESTRAS SOLUCIONES DE DIOSMINA AHORA!"
+      "button_html": "¡COMPRA NUESTRAS SOLUCIONES DE DIOSMINA AHORA!",
+      "image_1_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Diosmin_1_3c4abc93-8af9-4e8d-9dda-3279219804b8.png?v=1776184113"
     },
     "custom-section-6": {
       "heading_1": "¿Por qué elegir a Hem Healer®?",
