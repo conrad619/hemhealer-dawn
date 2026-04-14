@@ -576,6 +576,12 @@
       "guarantee_html": "Garantía de devolución de dinero de 30 días",
       "heading_4_html": "Hem Hero® Extra Fuerza",
       "button_2_html": "COMPRA HEM HERO® AHORA"
+    },
+    "custom-video": {
+      "heading_html": "Di \"Adiós\" a las hemorroides",
+      "subheading_html": "Un suplemento oral en el que confian 100.000+ clientes para ayudar a aliviar el picor, el ardor, el sangrado y el dolor de las hemorroides.",
+      "buy_button_html": "Comprar ahora",
+      "video_title": "Banner del vídeo de introducción"
     }
   },
   "localization": {
