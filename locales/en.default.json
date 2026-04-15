@@ -818,5 +818,35 @@
     "ingredients_mobile_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/imgpsh_fullsize_anim_adbae1e0-421b-4eda-878b-eefdb49072ff.png?v=1707223873",
     "supplement_facts_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hem_hero_supplement_facts.png?v=1746111110",
     "guaranteed_risk_free_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/imgpsh_fullsize_anim_250xhh_en.png?v=1776261119"
+  },
+  "main_product": {
+    "subscription": {
+      "bullet_1": "10% of all orders",
+      "bullet_2": "Cancel or change anytime",
+      "bullet_3": "Free shipping on all orders",
+      "pay_full_price": "Pay full price."
+    },
+    "faq_hero": {
+      "question_1": "1. How does Hem Hero® work?",
+      "answer_1": "Hem Hero® Extra Strength is a capsule that works from the inside out. It helps shrink swollen veins and improve blood flow, which relieves pain, itching, and bleeding—giving your body the chance to heal and get rid of hemorrhoids for good.",
+      "question_2": "2. How long does it take?",
+      "answer_2": "Most people feel relief within 3 to 5 days, and full results typically come in 2 to 4 weeks. If you’ve had hemorrhoids for a long time, you may see early improvements, but it could take longer for them to fully clear up. Our support team is here to help you every step of the way—call or text us at 863-302-8006 for personalized guidance.",
+      "question_3": "3. How many bottles do I need?",
+      "answer_3": "It depends on how bad your hemorrhoids are.<br><br><strong>No pain or early signs:</strong> 1–2 bottles<br><strong>Mild pain:</strong> 2–3 bottles<br><strong>Moderate pain:</strong> 3–4 bottles<br><strong>Severe pain:</strong> 4–5 bottles<br><strong>Very severe or long-term cases:</strong> 5 bottles or more<br><br>For the best results, start with the amount that matches your pain level—and remember, our team is here to help if you’re not sure. Call or text us at 863-302-8006.",
+      "question_4": "4. What if it doesn’t work for me?",
+      "answer_4": "If Hem Hero® doesn’t work for you, we recommend reaching out to our support team for a personalized assessment and possible refund or alternative solution. Your satisfaction is our priority—call or text 863-302-8006."
+    },
+    "faq_rescue": {
+      "question_1": "1. Is Hem Rescue® safe if I have high blood pressure or take blood thinners?",
+      "answer_1": "Hem Rescue® was specifically formulated with these individuals in mind. Unlike some supplements that may impact blood pressure or interact with medications, Hem Rescue® contains heart-friendly ingredients like Witch Hazel, Butcher’s Broom, and Vitamin C — which support healthy circulation without affecting blood pressure.",
+      "question_2": "2. How is Hem Rescue® different from Hem Hero®?",
+      "answer_2": "Both products provide powerful hemorrhoid relief — but they’re designed for different needs:<ul><li><b>Hem Rescue®</b> is a <b>heart-friendly formula</b>, designed for those on blood thinners or with high blood pressure.</li><li><b>Hem Hero®</b> is our extra-strength formula and may not be suitable for people with certain cardiovascular conditions.</li></ul>They work differently, but both reduce inflammation, support vein health, and help prevent flare-ups.",
+      "question_3": "3. How does Hem Rescue® work?",
+      "answer_3": "Hem Rescue® works from the inside out to address the root causes of hemorrhoids — not just the symptoms.<br><br>Its ingredients help:<ul><li>Reduce inflammation</li><li>Strengthen blood vessels</li><li>Improve circulation</li></ul>This makes flare-ups less frequent, less painful, and easier to manage long-term.",
+      "question_4": "4. How long does it take to see results?",
+      "answer_4": "Most people report noticeable relief within a few days to two weeks. Results vary based on severity, lifestyle, and consistency — but taking Hem Rescue® as directed (1 capsule in the morning, 2 at night with water) provides the best outcomes.",
+      "question_5": "5. What if it doesn’t work for me?",
+      "answer_5": "No problem — we stand behind our product with a 90-day money-back guarantee. If you don’t feel a noticeable difference, contact us and we’ll refund your full purchase. No questions asked."
+    }
   }
 }
