@@ -844,6 +844,8 @@
     "comparison_item_7": "No hay olor ni residuos",
     "comparison_item_8": "Apta para viajar",
     "severity_chart_alt": "Tabla de severidad",
-    "alt_no_temporary_solutions": "Hem Hero"
+    "alt_no_temporary_solutions": "Hem Hero",
+    "no_temporary_solutions_heading": "¡NO MÁS SOLUCIONES TEMPORALES!",
+    "severity_heading": "¿CUÁNTAS BOTELLAS NECESITO?"
   }
 }
