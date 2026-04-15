@@ -455,7 +455,9 @@
       "list_2_5_html": "💰 Garantía de devolución total del dinero",
       "list_2_6_html": "🇺🇸 Orgullosamente fabricado en Atlanta, Georgia",
       "best_for_2_html": "<strong>Lo mejor para:</strong> Mantenerse libre de síntomas – proporciona protección a largo plazo para quienes están en remisión.<br> ",
-      "buy_now_rescue_html": "COMPRA AHORA"
+      "buy_now_rescue_html": "COMPRA AHORA",
+      "image_2_alt": "FIBRA DE FLUJO FÁCIL BAJO",
+      "image_3_alt": "SU RESCATE"
     },
     "custom-section-3": {
       "heading": "Ayuda respaldada por médicos en la que puedes confiar",
@@ -467,7 +469,12 @@
       "description_html": "En <strong>Hem Healer®</strong>, creemos en soluciones respaldadas por la ciencia. Por eso nuestras fórmulas no solo están <strong>investigadas clínicamente</strong> , sino que también <strong>son recomendadas por profesionales de la salud</strong> que comprenden la importancia de <strong>un alivio seguro, eficaz y natural de las hemorroides</strong>.",
       "quote_1_html": "Recomiendo encarecidamente Hem Healer's Hem Hero® a cualquiera que esté luchando contra las hemorroides",
       "quote_2_html": "Recomiendo mucho Hem Hero® para tus hemorroides.",
-      "button_html": "EXPERIMENTA HOY UN ALIVIO APROBADO POR UN MÉDICO"
+      "button_html": "EXPERIMENTA HOY UN ALIVIO APROBADO POR UN MÉDICO",
+      "image_1_alt": "Dra. Nicolette Natale, D.O.",
+      "image_2_alt": "Dra. Kim Langdon, M.D.",
+      "image_3_alt": "Doctor",
+      "image_4_src": "www.hemhealer.com/cdn/shop/files/langdon_600x.jpg?v=1653736319",
+      "image_4_alt": "Doctor"
     },
     "custom-section-4": {
       "heading": "Entendemos tu dolor, porque hemos estado ahí",
@@ -479,7 +486,8 @@
       "description_1_html": "Tras 15 años de hemorroides dolorosas y recurrentes—y sin alivio duradero de cremas o supositorios—Ian creó Hem Healer® para corregir la causa raíz, no solo para enmascarar los síntomas.",
       "description_2_html": "Hoy, Hem Healer® está ayudando a miles de personas a recuperar por fin un alivio duradero y recuperar su vida.",
       "link_story_html": "NUESTRA HISTORIA",
-      "link_manufactured_html": "¿DÓNDE SE FABRICAN LOS PRODUCTOS SANADORES® DE DOBLADILLO?"
+      "link_manufactured_html": "¿DÓNDE SE FABRICAN LOS PRODUCTOS SANADORES® DE DOBLADILLO?",
+      "image_alt": "Acerca de"
     },
     "custom-section-5": {
       "heading": "Los estudios muestran que Diosmin reduce rápidamente el dolor y el sangrado de las hemorroides",
@@ -503,7 +511,8 @@
       "image_1_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Diosmin_1_3c4abc93-8af9-4e8d-9dda-3279219804b8.png?v=1776184113",
       "image_1_alt": "Semana 1 dolor mejoró un 79%",
       "image_2_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Diosmin_2_bcae5ce7-3c34-4cda-9045-413f85313189.png?v=1776203844",
-      "image_2_alt": "Semana 2 98% mejor"
+      "image_2_alt": "Semana 2 98% mejor",
+      "chart_alt": "Gráfico de la ciencia diosmina"
     },
     "custom-section-6": {
       "heading_1": "¿Por qué elegir a Hem Healer®?",
@@ -517,7 +526,8 @@
       "description_2_html": "Los productos Hem Healer® se fabrican con orgullo en Atlanta, Georgia, utilizando ingredientes de alta calidad en los que puedes confiar.",
       "description_3_html": "Si no estás satisfecho por cualquier motivo, simplemente contacta con nosotros para solicitar un reembolso completo.",
       "image_3_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/imgpsh_fullsize_anim_250xhh.png?v=1776203921",
-      "image_3_alt": "Garantía de devolución del dinero"
+      "image_3_alt": "Garantía de devolución del dinero",
+      "image_2_alt": "Fabricado en Atlanta"
     },
     "custom-section-7": {
       "heading": "Lo que dicen nuestros clientes",
@@ -567,7 +577,9 @@
       "card_2_subtitle_html": "HEM RESCUE® – Fórmula Respetuosa para el Corazón + FIBRA™ DE FLUJO FÁCIL BAJO",
       "card_2_copy_html": "¿La mejor manera de tratar las hemorroides? ¡Deténganlos antes de que empiecen! Combinar la fórmula Hem Rescue® – Respetuosa para el Corazón con Hem Easy-Flow Fiber™ proporciona soporte diario para venas saludables y digestión, reduciendo el riesgo de futuros brotes.",
       "card_2_cta_html": "COMPRA AHORA",
-      "heading_html": "Agrupar y guardar"
+      "heading_html": "Agrupar y guardar",
+      "card_1_image_alt": "Hem Hero Easy Flow",
+      "card_2_image_alt": "Hem Hero Easy Flow"
     },
     "custom-section-hem-hero": {
       "heading_2_html": "Fuerza extra",
@@ -581,7 +593,8 @@
       "heading_html": "Di \"Adiós\" a las hemorroides",
       "subheading_html": "Un suplemento oral en el que confian 100.000+ clientes para ayudar a aliviar el picor, el ardor, el sangrado y el dolor de las hemorroides.",
       "buy_button_html": "Comprar ahora",
-      "video_title": "Banner del vídeo de introducción"
+      "video_title": "Banner del vídeo de introducción",
+      "trustpilot_image_alt": "Trustpilot"
     }
   },
   "localization": {
@@ -781,6 +794,56 @@
     "ingredients_desktop_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/imgpsh_fullsize_anim_19_1100x_20f1fb56-69c8-494e-a993-d718f0f0cf90.png?v=1776260770",
     "ingredients_mobile_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/imgpsh_fullsize_anim_4607c2d8-00c3-4052-8424-15e3ef143ab0.png?v=1776260855",
     "supplement_facts_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hem_hero_supplement_facts_9c4ba3f3-fbe5-41f2-b432-5e0f0483785d.png?v=1776260930",
-    "guaranteed_risk_free_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/imgpsh_fullsize_anim_250xhh_bc420376-6561-4ee0-b0bb-208ff54836b8.png?v=1776261108"
+    "guaranteed_risk_free_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/imgpsh_fullsize_anim_250xhh_bc420376-6561-4ee0-b0bb-208ff54836b8.png?v=1776261108",
+    "rating_text": "Valoración de 4,8 sobre 5,0",
+    "hero_one_thing_heading": "HEM HERO™ LO ÚNICO QUE FUNCIONA",
+    "hero_natural_heading": "HECHO CON INGREDIENTES 100% SEGUROS Y NATURALES",
+    "alt_ingredients": "Ingredientes",
+    "products_manufactured_heading": "¿Dónde se fabrican los productos sanadores® de dobladillo?",
+    "dosage_heading": "SIMPLEMENTE TOMA UNA CÁPSULA POR LA MAÑANA",
+    "dosage_subheading": "y a las 2 de la tarde con comida",
+    "alt_hem_hero_facts": "Datos de Hem Hero",
+    "trial_heading": "¡PRUEBA EL HERO™ RISK FREE!",
+    "trial_subheading": "GARANTÍA 100% DE DEVOLUCIÓN DEL DINERO A 90 DÍAS",
+    "alt_guaranteed_risk_free": "garantizado libre de riesgos",
+    "guarantee_label": "¡IMPORTANTE!",
+    "guarantee_text": "Si no estás 100% satisfecho POR CUALQUIER MOTIVO, simplemente llámanos, envía un mensaje o un correo electrónico y te devolveremos el dinero completo de inmediato sin preguntas.",
+    "buy_now_cta": "Haz clic aquí para comprar ahora",
+    "buy_now_support": "GARANTÍA DE DEVOLUCIÓN DE DINERO DE 90 DÍAS",
+    "accordion_title_1": "¿CÓMO FUNCIONA HEM HERO™ EXTRA STRENGTH?",
+    "accordion_content_1": "<p>Una hemorroide es causada por venas y vasos sanguíneos inflamados. Está demostrado que los ingredientes 100% naturales reducen la inflamación de forma natural y también fortalecen las paredes de los vasos sanguíneos.</p><p>A diferencia de las cremas grasientas y desordenadas, Hem Hero™ Extra Strength va directamente a la causa de tus hemorroides, no solo a los síntomas.</p><p>Los dos ingredientes principales son extractos sencillos de la naranja amarga. ¡No hay químicos en Hem Hero™ Extra Strength, punto!</p><p>Las personas con hemorroides que han probado el Hem Hero™ Extra Strength suelen seguir pidiéndolo porque es único.</p>",
+    "accordion_title_2": "¿CUÁNTO TARDA HEM HERO™ EXTRA STRENGTH EN ALIVIAR LOS SÍNTOMAS DE LAS HEMORROIDES?",
+    "accordion_content_2": "<p>Cada persona es diferente, pero la mayoría empieza a notar la diferencia en solo unos días. Dependiendo de la gravedad de tus hemorroides, puede que el alivio tarde un poco más.</p><p>Por favor, consulta la tabla de gravedad a continuación para determinar cuántos Hem Hero™ Extra Strength podrías necesitar.</p><p><em><strong>Tabla de gravedad:</strong></em><br><strong>Leves</strong> (sufrimiento menos de un mes): <em>1-3 botellas</em><br><strong>Mediano</strong> (sufrimiento de un mes a un año): <em>3-5 botellas</em><br><strong>Crónica</strong> (sufriendo más de un año): <em>5 botellas</em></p><p>Cada botella contiene un suministro de 2 semanas de Hem Hero™ Extra Strength.</p>",
+    "accordion_title_3": "¿ES SEGURO HEM HERO™ EXTRA FUERTE?",
+    "accordion_content_3": "<p>Cada ingrediente de Hem Hero™ Extra Strength es 100% natural. Los dos componentes principales, Diosmin y Hesperidin, se extraen de las cáscaras de naranja. El tercer ingrediente, extracto de semilla de castaño de Indias, proviene de árboles que se encuentran en Asia y Europa. Los tres elementos tienen beneficios increíbles e incluso pueden ayudar con las varices.</p><p>Si tomas medicación para el corazón, consulta con tu médico antes de usarla.</p>",
+    "accordion_title_4": "¿FUNCIONA HEM HERO™ EXTRA STRENGTH TANTO EN HEMORROIDES INTERNAS COMO EXTERNAS?",
+    "accordion_content_4": "¡Sí! ¡Hem Hero™ Extra Strength ha demostrado ser eficaz tanto en hemorroides internas como externas!",
+    "accordion_title_5": "¿CUÁLES SON LOS INGREDIENTES?",
+    "accordion_content_5_part1": "<p>Hem Hero™ Extra Strength contiene tres ingredientes potentes. Los ingredientes reducen la inflamación y fortalecen tus venas, atacando la fuente del problema, no solo los síntomas.</p>",
+    "accordion_content_5_part2": "<p><strong>Extracto de semilla de castaño de India</strong></p><p>El castaño de Indias es un árbol originario de partes del sureste de Europa. Sus frutos contienen semillas que se asemejan a castañas dulces pero tienen un sabor amargo. El extracto de castaño de indias tiene efectos antioxidantes en el cuerpo y se sabe que tiene actividad antiinflamatoria en los vasos sanguíneos.</p>",
+    "accordion_content_5_part3": "<p><strong>Diosmin</strong></p><p>La Diosmina es un compuesto químico natural que se encuentra principalmente en los cítricos. Se cree que ayuda a reducir la inflamación y a restaurar el flujo sanguíneo normal en personas con hemorroides. En una revisión de 24 estudios en más de 2.300 personas, los flavonoides vegetales como la diosmina disminuyeron el picor relacionado con las hemorroides, el sangrado, el flujo y otros síntomas relacionados con las hemorroides.</p>",
+    "accordion_content_5_part4": "<p><strong>Hesperidin</strong></p><p>La hesperidina es un glucósido flavanona que se encuentra en los cítricos. La hesperidina puede ayudar a que los vasos sanguíneos funcionen mejor mientras reduce la inflamación, una causa importante de las hemorroides.</p>",
+    "accordion_title_6": "¿CUÁNTAS BOTELLAS NECESITO?",
+    "accordion_content_6": "<p>Hem Hero™ Extra Strength actúa rápido, pero puede requerir más producto, dependiendo de la gravedad de tus hemorroides.</p><p>Cada botella contiene un suministro de 2 semanas de Hem Hero™ Extra Strength.</p><p><em><strong>Tabla de gravedad:</strong></em><br><strong>Leves</strong> (sufrimiento menos de un mes): <em>1-3 botellas</em><br><strong>Mediano</strong> (sufrimiento de un mes a un año): <em>3-5 botellas</em><br><strong>Crónica</strong> (sufriendo más de un año): <em>5 botellas</em></p>",
+    "accordion_title_7": "¿CUÁNDO SE ENVIARÁ MI PEDIDO?",
+    "accordion_content_7": "<p>Enviamos todos los pedidos en un embalaje discreto, normalmente en un día laborable. Recibirás un número de seguimiento de USPS enviado directamente a tu correo electrónico.</p><p>Dependiendo de la ubicación y las circunstancias, el tiempo de entrega suele ser de 3 a 7 días laborables.</p>",
+    "accordion_title_8": "¿POR QUÉ NUNCA HE OÍDO HABLAR DE UNA CÁPSULA PARA ALIVIAR LAS HEMORROIDES?",
+    "accordion_content_8": "<p>La mayoría de la gente solo ha oído hablar de las cremas, que las grandes farmacéuticas promuevan. A las farmacéuticas les encanta ganar dinero con clientes recurrentes, así que se encargan de los síntomas y no de la causa real de las hemorroides. Estas empresas gastan millones de dólares en publicidad de productos baratos diseñados para que los compres repetidamente porque creen que el dinero está en el cuidado, no en la cura.</p><p>Durante años, estas grandes empresas han enterrado a pequeños como nosotros que tenemos una solución para tu problema de hemorroides. Gracias a Internet y a las redes sociales, podemos competir y difundir nuestro mensaje. Nuestro mensaje es sencillo: ¡las cremas no funcionan! ¡Elimina las hemorroides de dentro hacia fuera si quieres que desaparezcan!</p>",
+    "accordion_title_9": "¿DÓNDE SE FABRICA HEM HERO™ EXTRA STRENGTH?",
+    "accordion_content_9": "<p>Hem Hero™ se produce en una instalación registrada por la FDA situada en Atlanta, Georgia. Cumplimos estrictamente con las normativas de Buenas Prácticas de Fabricación Actuales (CGMP), que son aplicadas por la FDA. Las CGMP proporcionan sistemas que garantizan un diseño, supervisión y control adecuados de los procesos e instalaciones de fabricación. Además, nuestra planta de fabricación está certificada como Orgánica por el USDA.</p><p>Nuestra sede está situada en la soleada Lakeland, Florida.</p>",
+    "accordion_title_10": "¿POR QUÉ DEBERÍA SUSCRIBIRME?",
+    "accordion_content_10": "<p>Hay dos razones para suscribirse: ahorrar dinero y, lo más importante, evitar que vuelvan las hemorroides.</p><p>Después de aliviar tus hemorroides, evita que vuelvan tomando Hem Hero™ Extra Strength.</p><p>Entregaremos Hem Hero™ Extra Strength mensualmente, para que nunca se te acabe. El envío siempre es gratuito y tu precio nunca aumentará, incluso cuando el coste de Hem Hero aumente. No hay obligación y puedes cancelar o modificar tu suscripción en cualquier momento.</p>",
+    "accordion_title_11": "¿PUEDO HABLAR CON UNA PERSONA REAL?",
+    "accordion_content_11": "<p>¡Sí, nos encantaría hablar! Llámanos al <a href=\"tel:863-302-8006\">863-302-8006</a> o envíanos un correo electrónico <a href=\"mailto:support@hemhealer.com\">al support@hemhealer.com</a>. Trabajamos todos los días excepto los domingos, así que llámanos y hablemos de tus hemorroides.</p>",
+    "comparison_item_1": "Funciona de dentro hacia afuera",
+    "comparison_item_2": "Objetivo causa raíz (vasos sanguíneos inflamados)",
+    "comparison_item_3": "Refuerza las paredes de los vasos sanguíneos",
+    "comparison_item_4": "Fácil de tomar (solo una cápsula)",
+    "comparison_item_5": "Alivio a largo plazo",
+    "comparison_item_6": "No tocar la zona afectada",
+    "comparison_item_7": "No hay olor ni residuos",
+    "comparison_item_8": "Apta para viajar",
+    "severity_chart_alt": "Tabla de severidad",
+    "alt_no_temporary_solutions": "Hem Hero"
   }
 }
