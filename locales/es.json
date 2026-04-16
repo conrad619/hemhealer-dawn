@@ -847,5 +847,18 @@
     "alt_no_temporary_solutions": "Hem Hero",
     "no_temporary_solutions_heading": "¡NO MÁS SOLUCIONES TEMPORALES!",
     "severity_heading": "¿CUÁNTAS BOTELLAS NECESITO?"
+  },
+  "custom_section_hem_easy": {
+    "cayenne_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/CAYENNE_PEPPER_-_DESKTOP_b54ccc90-7d4d-4a87-864e-a799c170453e.png?v=1776346368",
+    "oat_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/OAT_FIBER_-_DESKTOP_659bbc20-f5f7-4be0-abb6-5759774e5eb7.png?v=1776346372",
+    "wrong_supplement_1_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/WRONG_SUPPLEMENT_1_dcae0998-e944-4560-9f92-45cfad16e03b.png?v=1776346419",
+    "wrong_supplement_2_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/WRONG_SUPPLEMENT_2_be7391ce-b2c1-44c0-af47-7525b99236a5.png?v=1776346418",
+    "wrong_supplement_3_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/WRONG_SUPPLEMENT_3_f2cb4737-2163-4923-994a-d7811eee853d.png?v=1776346419",
+    "wrong_supplement_4_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/WRONG_SUPPLEMENT_4_eb81028b-f8d5-4706-b884-9e81231d7c3a.png?v=1776346419",
+    "wrong_supplement_5_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/WRONG_SUPPLEMENT_5_8d38cb49-3525-44d5-b5ca-62299fbff884.png?v=1776346418",
+    "proven_1_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Oat_Fiber_Keeps_You_Regular_22396a47-2402-4124-a735-72c3ff4b2a65.png?v=1776346507",
+    "proven_2_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Oat_Fiber_Builds_a_Healthier_Gut_9fff0bf3-2f9c-4879-846a-3e3ef233937e.png?v=1776346507",
+    "proven_3_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Cayenne_Helps_Food_Move_Smoothly_647a46b1-40a0-4864-8ba7-6baddb2de7e3.png?v=1776346506",
+    "proven_4_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Oat_and_Cayenne_is_Comfort_72aa6603-ca3d-4f9a-83d8-672e99605ec4.png?v=1776346507"
   }
 }
