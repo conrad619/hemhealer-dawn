@@ -329,7 +329,9 @@
       "taxes_at_checkout_shipping_at_checkout_without_policy": "Impuestos, descuentos y envío calculados en la pantalla de pago."
     },
     "footer": {
-      "payment": "Formas de pago"
+      "payment": "Formas de pago",
+      "statement_1": "Las declaraciones realizadas en este sitio web no han sido evaluadas por la Administración de Alimentos y Medicamentos de EE. UU. Estas declaraciones y los productos de esta empresa no tienen como objetivo diagnosticar, tratar, curar o prevenir ninguna enfermedad.",
+      "statement_2": "*Los resultados varían de una persona a otra dependiendo de la condición de salud existente, el estilo de vida físico y la dieta de cada persona. Los testimonios y resultados contenidos en ellos pueden no implicar resultados futuros y se basan en las experiencias de algunas personas, por lo que puede que no tengas resultados similares."
     },
     "featured_blog": {
       "view_all": "Ver todo",
