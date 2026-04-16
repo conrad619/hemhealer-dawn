@@ -274,7 +274,11 @@
         "send": "Enviar",
         "post_success": "Gracias por contactarnos. Te responderemos lo antes posible.",
         "error_heading": "Por favor, ajusta lo siguiente:",
-        "title": "Formulario de contacto"
+        "title": "Formulario de contacto",
+        "heading": "Suscríbete y guarda",
+        "description": "¡Suscríbete a nuestro boletín y recibe un descuento exclusivo del 10% en tu primera compra!",
+        "subdescription": "Mantente al día con ofertas especiales, consejos de salud y noticias de productos.",
+        "submit": "¡Consigue ahora un código de descuento del 10%!"
       }
     },
     "404": {
@@ -595,6 +599,10 @@
       "buy_button_html": "Comprar ahora",
       "video_title": "Banner del vídeo de introducción",
       "trustpilot_image_alt": "Trustpilot"
+    },
+    "custom_section_contact": {
+      "heading": "¿Sigues inseguro? ¡Podemos ayudarte!",
+      "subheading": "Si no tienes claro qué producto es el adecuado para ti, contacta con nuestro equipo para recibir recomendaciones personalizadas."
     }
   },
   "localization": {
