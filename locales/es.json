@@ -805,6 +805,12 @@
     "alt_hem_hero_facts": "Datos de Hem Hero",
     "trial_heading": "¡PRUEBA EL HERO™ RISK FREE!",
     "trial_subheading": "GARANTÍA 100% DE DEVOLUCIÓN DEL DINERO A 90 DÍAS",
+    "custom_section_hem_hero.trial_heading": "¡PRUEBA EL HERO™ RISK FREE!",
+    "custom_section_hem_hero.trial_subheading": "GARANTÍA 100% DE DEVOLUCIÓN DEL DINERO A 90 DÍAS",
+    "custom_section_hem_hero.guaranteed_risk_free_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/imgpsh_fullsize_anim_250xhh_en.png?v=1776261119",
+    "custom_section_hem_hero.alt_guaranteed_risk_free": "garantizado libre de riesgos",
+    "custom_section_hem_hero.guarantee_label": "¡IMPORTANTE!",
+    "custom_section_hem_hero.guarantee_text": "Si no estás 100% satisfecho POR CUALQUIER MOTIVO, simplemente llámanos, envía un mensaje o un correo electrónico y te devolveremos el dinero completo de inmediato sin preguntas.",
     "alt_guaranteed_risk_free": "garantizado libre de riesgos",
     "guarantee_heading": "Garantía de devolución de dinero completa",
     "guarantee_label": "¡IMPORTANTE!",
@@ -994,6 +1000,13 @@
       "answer_3": "Depende de lo graves que sean tus hemorroides.<br><br><strong>Sin dolor ni signos tempranos:</strong> 1–2 botellas<br><strong>Dolor leve:</strong> 2–3 botellas<br><strong>Dolor moderado:</strong> 3–4 botellas<br><strong>Dolor intenso:</strong> 4–5 botellas<br><strong>Casos muy graves o a largo plazo:</strong> 5 botellas o más<br><br>Para obtener los mejores resultados, empieza con la cantidad que se ajuste a tu nivel de dolor—y recuerda, nuestro equipo está aquí para ayudarte si no estás seguro. Llámanos o envíanos un mensaje al 863-302-8006.",
       "question_4": "4. ¿Y si no me funciona?",
       "answer_4": "Si Hem Hero® no te funciona, te recomendamos contactar con nuestro equipo de soporte para una evaluación personalizada y una posible reembolsa o solución alternativa. Tu satisfacción es nuestra prioridad: llama o envía un mensaje al 863-302-8006."
+    },
+    "guaranteed": {
+      "risk_free_src": "https://www.hemhealer.com/cdn/shop/files/imgpsh_fullsize_anim_250x.png?v=1704395061",
+      "alt_risk_free": "garantizado libre de riesgos",
+      "heading": "Garantía de devolución de dinero completa",
+      "label": "¡IMPORTANTE!",
+      "text": "Si no estás 100% satisfecho POR CUALQUIER MOTIVO, te devolveremos el dinero completo."
     },
     "faq_rescue": {
       "question_1": "1. ¿Es seguro Hem Rescue® si tengo la tensión alta o tomo anticoagulantes?",

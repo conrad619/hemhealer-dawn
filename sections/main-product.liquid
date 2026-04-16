@@ -677,11 +677,11 @@
                   <div class='faq-container' id='faq-hem-rescue'></div>
                 {% endif %}
               {%- when 'guaranteed' -%}
-                <div class='twcss-flex twcss-flex-row  twcss-gap-[1rem]'>
+                <div class='twcss-flex twcss-flex-row twcss-gap-[1rem]'>
                   <div class='twcss-w-1/3'>
                     <img
-                      src='https://www.hemhealer.com/cdn/shop/files/imgpsh_fullsize_anim_250x.png?v=1704395061'
-                      alt='guaranteed risk free'
+                      src='{{ 'custom_section_hem_hero.guaranteed.risk_free_src' | t }}'
+                      alt='{{ 'custom_section_hem_hero.guaranteed.alt_risk_free' | t }}'
                       class='twcss-mx-auto'
                       width='auto'
                       height='auto'
@@ -689,9 +689,11 @@
                   </div>
                   <div class='twcss-w-2/3 twcss-flex twcss-flex-col twcss-justify-center'>
                     <p class='twcss-text-[1.6rem]'>
-                      <span class='twcss-font-bold twcss-mb-2 twcss-block'>Full Money Back Guarantee</span>
-                      <span class='twcss-font-bold twcss-text-red-600'>IMPORTANT!</span> If you are not 100% satisfied
-                      we’ll give you a full refund.
+                      <span class='twcss-font-bold twcss-mb-2 twcss-block'>
+                        {{- 'custom_section_hem_hero.guaranteed.heading' | t -}}
+                      </span>
+                      <span class='twcss-font-bold twcss-text-red-600'>{{ 'main_product.guaranteed.label' | t }}</span>
+                      {{ 'custom_section_hem_hero.guaranteed.text' | t }}
                     </p>
                   </div>
                 </div>
