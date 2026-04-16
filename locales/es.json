@@ -872,7 +872,54 @@
     "accordion_title_5": "¿POR QUÉ DEBERÍA SUSCRIBIRME?",
     "accordion_content_5": "<p>Después de aliviar tus hemorroides, evita que vuelvan tomando Hem Hero™ Extra Strength.</p><p>Entregaremos Hem Hero™ Extra Strength mensualmente, para que nunca se te acabe. El envío siempre es gratuito y tu precio nunca aumentará, incluso cuando el coste de Hem Hero aumente. No hay obligación y puedes cancelar o modificar tu suscripción en cualquier momento.</p>",
     "accordion_title_6": "GARANTÍA DEL 100%",
-    "accordion_content_6": "<p>Prueba Hem Hero™ Extra Strength y si no sientes ningún alivio, mándanos un correo electrónico y te devolveremos el dinero. Sin preguntas.</p>"
+    "accordion_content_6": "<p>Prueba Hem Hero™ Extra Strength y si no sientes ningún alivio, mándanos un correo electrónico y te devolveremos el dinero. Sin preguntas.</p>",
+    "alt_fda_logos": "Logotipos de la FDA",
+    "heading_1": "2 ingredientes sencillos. Resultados poderosos.",
+    "alt_cayenne": "Doctor",
+    "alt_oat": "Suplemento 1",
+    "heading_2": "La mayoría de los suplementos de fibra usan el ingrediente equivocado",
+    "paragraph_1": "Metamucil y la mayoría de los polvos de \"fibra\" dependen de cáscara de psyllium, pero eso es en realidad parte del problema.",
+    "alt_wrong_supplement_1": "Doctor",
+    "alt_wrong_supplement_2": "Doctor",
+    "alt_wrong_supplement_3": "Doctor",
+    "alt_wrong_supplement_4": "Doctor",
+    "alt_wrong_supplement_5": "Doctor",
+    "paragraph_2": "Todos estos dependen de la cáscara de psyllium — y ahí es donde empiezan los problemas.",
+    "alt_problem_image": "Doctor",
+    "problem_heading": "El problema con la cáscara de psyllium",
+    "problem_item_1": "Se convierte en un gel espeso que obstruye el intestino",
+    "problem_item_2": "Puede empeorar el estreñimiento si estás aunque sea un poco deshidratado",
+    "problem_item_3": "Suele causar hinchazón, calambres y gases",
+    "problem_item_4": "Se siente pesado y ralentiza la digestión",
+    "problem_item_5": "Te deja con sensación de saciedad pero aún así con un apuro",
+    "alt_why_image": "Doctor",
+    "why_heading": "Por qué funciona mejor la fibra de flujo fácil",
+    "why_item_1": "Hecho con fibra de avena y cayena — sin cáscara de psílio",
+    "why_item_2": "Ablanda las heces y mantiene el movimiento natural",
+    "why_item_3": "No causará hinchazón ni formará gel en el intestino",
+    "why_item_4": "Funciona incluso cuando la ingesta de agua es baja",
+    "why_item_5": "Alivio suave y sin dolor que realmente puedes sentir",
+    "paragraph_3": "Si has probado la \"fibra\" antes y aún así te has sentido bloqueado, esta es la razón.",
+    "testimonials_heading": "Testimonios",
+    "alt_testimonial_1": "Testimonio de clientes de Amazon",
+    "testimonial_1_text": "\"Este producto funciona. Así de simple. Estoy más que agradecida por ello y oficialmente soy una sanadora de por vida.\"",
+    "testimonial_1_author": "Cliente de Amazon",
+    "alt_testimonial_2": "Testimonio de Joanna",
+    "testimonial_2_text": "\"¡He probado este y no me ha decepcionado!\"",
+    "proven_heading": "Ingredientes de fibra de flujo fácil: clínicamente probados para reducir el dolor, la hinchazón y mejorar la digestión",
+    "alt_proven_1": "Mejora de la digestión en 45 días",
+    "proven_1_text": "Un estudio clínico de 210 personas encontró que la fibra diaria de avena mejoraba la suavidad de las heces y hacía que las visitas al baño fueran más regulares en 45 días.",
+    "proven_1_source": "Fuente",
+    "alt_proven_2": "Aumentar las bacterias intestinales buenas",
+    "proven_2_text": "La fibra de avena alimenta bacterias saludables como Bifidobacterium y Lactobacillus, que han demostrado mejorar la digestión y reducir la hinchazón.",
+    "proven_2_source": "Fuente",
+    "alt_proven_3": "Estimula el flujo digestivo natural",
+    "proven_3_text": "El compuesto activo de Cayena, la capsaicina, aumenta la actividad enzimática digestiva y el flujo sanguíneo para mantener el flujo fluido de los alimentos.",
+    "proven_3_source": "Fuente",
+    "alt_proven_4": "OAT más Cayenne",
+    "proven_4_text": "La fibra de avena alivia el estreñimiento mientras que la cayena favorece la digestión, una combinación natural para un alivio suave y sin dolor.",
+    "proven_4_source_1": "Fuente: Fibra de avena",
+    "proven_4_source_2": "Fuente: Cayenne Pepper"
   },
   "custom_section_hem_rescue": {
     "ingredients_image_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/capsule_bottle_hem_rescue.png?v=1776347140",
@@ -923,5 +970,42 @@
     "comparison_item_7": "Cápsula diaria fácil",
     "comparison_item_8": "No requiere tocar la zona afectada",
     "comparison_item_9": "Ideal para uso a largo plazo"
+  },
+  "shopify": {
+    "checkout": {
+      "payment": {
+        "multiple_primary_payment_not_allowed": "Métodos de pago inválidos"
+      }
+    }
+  },
+  "main_product": {
+    "subscription": {
+      "bullet_1": "10% de todos los pedidos",
+      "bullet_2": "Cancela o cambia en cualquier momento",
+      "bullet_3": "Envío gratuito en todos los pedidos",
+      "pay_full_price": "Paga el precio completo."
+    },
+    "faq_hero": {
+      "question_1": "1. ¿Cómo funciona Hem Hero®?",
+      "answer_1": "Hem Hero® Extra Strength es una cápsula que funciona de dentro hacia fuera. Ayuda a reducir las venas hinchadas y a mejorar el flujo sanguíneo, lo que alivia el dolor, el picor y el sangrado, dando a tu cuerpo la oportunidad de sanar y eliminar las hemorroides para siempre.",
+      "question_2": "2. ¿Cuánto tiempo tarda?",
+      "answer_2": "La mayoría de las personas sienten alivio en 3 a 5 días, y los resultados completos suelen llegar en 2 a 4 semanas. Si llevas mucho tiempo con hemorroides, puede que notes mejorías tempranas, pero puede que tarde más en desaparecer por completo. Nuestro equipo de soporte está aquí para ayudarte en cada paso del camino: llámanos o envíanos un mensaje al 863-302-8006 para recibir orientación personalizada.",
+      "question_3": "3. ¿Cuántas botellas necesito?",
+      "answer_3": "Depende de lo graves que sean tus hemorroides.<br><br><strong>Sin dolor ni signos tempranos:</strong> 1–2 botellas<br><strong>Dolor leve:</strong> 2–3 botellas<br><strong>Dolor moderado:</strong> 3–4 botellas<br><strong>Dolor intenso:</strong> 4–5 botellas<br><strong>Casos muy graves o a largo plazo:</strong> 5 botellas o más<br><br>Para obtener los mejores resultados, empieza con la cantidad que se ajuste a tu nivel de dolor—y recuerda, nuestro equipo está aquí para ayudarte si no estás seguro. Llámanos o envíanos un mensaje al 863-302-8006.",
+      "question_4": "4. ¿Y si no me funciona?",
+      "answer_4": "Si Hem Hero® no te funciona, te recomendamos contactar con nuestro equipo de soporte para una evaluación personalizada y una posible reembolsa o solución alternativa. Tu satisfacción es nuestra prioridad: llama o envía un mensaje al 863-302-8006."
+    },
+    "faq_rescue": {
+      "question_1": "1. ¿Es seguro Hem Rescue® si tengo la tensión alta o tomo anticoagulantes?",
+      "answer_1": "Hem Rescue® fue formulado específicamente pensando en estas personas. A diferencia de algunos suplementos que pueden afectar la presión arterial o interactuar con medicamentos, Hem Rescue® contiene ingredientes aptos para el corazón como hamamelis, escoba de carnicero y vitamina C — que favorecen una circulación saludable sin afectar la presión arterial.",
+      "question_2": "2. ¿En qué se diferencia Hem Rescue® de Hem Hero®?",
+      "answer_2": "Ambos productos proporcionan un alivio potente para las hemorroides, pero están diseñados para necesidades diferentes:<ul><li><b>Hem Rescue®</b> es una <b>fórmula respetuosa para el corazón</b>, diseñada para quienes toman anticoagulantes o tienen hipertensión.</li><li><b>Hem Hero®</b> es nuestra fórmula extra fuerte y puede no ser adecuada para personas con ciertas afecciones cardiovasculares.</li></ul>Funcionan de forma diferente, pero ambos reducen la inflamación, favorecen la salud de las venas y ayudan a prevenir brotes.",
+      "question_3": "3. ¿Cómo funciona Hem Rescue®?",
+      "answer_3": "Hem Rescue® trabaja desde dentro hacia fuera para abordar las causas profundas de las hemorroides, no solo los síntomas.<br><br>Sus ingredientes ayudan:<ul><li>Reducir la inflamación</li><li>Fortalece los vasos sanguíneos</li><li>Mejorar la circulación</li></ul>Esto hace que los brotes sean menos frecuentes, menos dolorosos y más fáciles de gestionar a largo plazo.",
+      "question_4": "4. ¿Cuánto tiempo tarda en ver resultados?",
+      "answer_4": "La mayoría de las personas reportan un alivio notable en unos días o dos semanas. Los resultados varían según la gravedad, el estilo de vida y la constancia, pero tomar Hem Rescue® según las indicaciones (1 cápsula por la mañana, 2 por la noche con agua) ofrece los mejores resultados.",
+      "question_5": "5. ¿Y si no me funciona?",
+      "answer_5": "No hay problema: respaldamos nuestro producto con una garantía de devolución de dinero de 90 días. Si no notas una diferencia notable, contáctanos y te reembolsaremos la compra completa. Sin preguntas."
+    }
   }
 }
