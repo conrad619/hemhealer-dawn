@@ -34,13 +34,13 @@
           class='lg:twcss-w-3/5'
         >
           <h2 class='lg:twcss-text-[7rem] twcss-text-[4.5rem] twcss-text-white twcss-font-medium twcss-leading-none twcss-mb-[1.6rem]'>
-            Subscribe & Save
+            {{ 'templates.contact.form.heading' | t }}
           </h2>
           <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-mb-[1.6rem] twcss-text-white'>
-            Sign up for our newsletter and receive an exclusive 10% discount on your first purchase!
+            {{ 'templates.contact.form.description' | t }}
           </p>
           <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-mb-[1.6rem] twcss-text-white'>
-            Stay updated on special offers, health tips, and product news.
+            {{ 'templates.contact.form.subdescription' | t }}
           </p>
         </div>
         <div class='twcss-flex twcss-gap-[2rem] twcss-flex-col lg:twcss-w-2/5 twcss-justify-center'>
@@ -101,7 +101,7 @@
                 id='Subscribe'
                 class='button twcss-w-full twcss-uppercase twcss-font-heading lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-leading-[2rem] twcss-rounded-[.3rem] twcss-text-[#313131] twcss-text-center twcss-font-semibold twcss-px-[2.4rem] twcss-bg-[--accent-color-2] hover:twcss-scale-[.9] twcss-transition-all twcss-border-0 twcss-shadow-none after:twcss-shadow-none'
               >
-                Get 10% Discount Code Now!
+                {{ 'templates.contact.form.submit' | t }}
               </button>
               {%- if form.errors -%}
                 <small class='newsletter-form__message form__message' id='ContactFooter-error'>

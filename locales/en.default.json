@@ -258,6 +258,9 @@
     },
     "contact": {
       "form": {
+        "heading":"Subscribe & Save",
+        "description":"Sign up for our newsletter and receive an exclusive 10% discount on your first purchase!",
+        "subdescription":"Stay updated on special offers, health tips, and product news.",
         "title": "Contact form",
         "name": "Name",
         "email": "Email",
@@ -265,7 +268,8 @@
         "comment": "Comment",
         "send": "Send",
         "post_success": "Thanks for contacting us. We'll get back to you as soon as possible.",
-        "error_heading": "Please adjust the following:"
+        "error_heading": "Please adjust the following:",
+        "submit": "Get 10% Discount Code Now!"
       }
     },
     "404": {
