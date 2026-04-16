@@ -546,6 +546,10 @@
       "video_url_mobile": "https://player.vimeo.com/video/1094683543",
       "trustpilot_image_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Trustpilot_Hem_Healer_Site.png?v=1754417603",
       "trustpilot_image_alt": "trustpilot"
+    },
+    "custom_section_contact": {
+      "heading": "Still Unsure? We Can Help!",
+      "subheading": "If you’re not sure which product is right for you, reach out to our team for personalized recommendation.",
     }
   },
   "localization": {

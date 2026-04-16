@@ -22,10 +22,10 @@
       <div class='twcss-flex lg:twcss-flex-row twcss-flex-col twcss-p-[1rem] lg:twcss-pt-[1rem] twcss-pt-[5rem]'>
         <div class='twcss-flex twcss-gap-[2rem] twcss-flex-col lg:twcss-w-1/2 twcss-w-full twcss-justify-center'>
           <h2 class='lg:twcss-text-[4.5rem] twcss-text-[2.5rem] twcss-text-[--secondary-color] twcss-font-medium twcss-leading-none twcss-mb-[1.6rem]'>
-            Still Unsure? We Can Help!
+            {{ 'sections.custom_section_contact.heading' | t }}
           </h2>
           <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-mb-[1.6rem] twcss-text-black'>
-            If you’re not sure which product is right for you, reach out to our team for personalized recommendation.
+            {{ 'sections.custom_section_contact.subheading' | t }}
           </p>
           <div class=''>
             {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
