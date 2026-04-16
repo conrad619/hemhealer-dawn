@@ -9,42 +9,26 @@
         <div class='twcss-grid lg:twcss-grid-cols-2 twcss-mt-[4rem] twcss-gap-[2rem] lg:twcss-pb-[5rem]'>
           <div>
             <h2 class='lg:twcss-text-[4.5rem] twcss-text-[2.5rem] twcss-font-medium twcss-text-[--secondary-color] twcss-leading-[5.4rem]'>
-              Our Story
+              {{ 'sections.custom-section-about.story_label' | t }}
             </h2>
             <div class='twcss-mx-auto twcss-leading-[0] twcss-py-[2rem] twcss-w-full'>
-              <span class='twcss-flex twcss-border-t twcss-border-[--accent-color] twcss-w-1/2 '>&nbsp;</span>
+              <span class='twcss-flex twcss-border-t twcss-border-[--accent-color] twcss-w-1/2'>&nbsp;</span>
             </div>
             <h3 class='lg:twcss-text-[7rem] twcss-text-[4.5rem] twcss-font-medium twcss-leading-none twcss-mb-[4rem]'>
-              A Personal Journey to Lasting Relief
+              {{ 'sections.custom-section-about.main_heading' | t }}
             </h3>
             <div class='twcss-text-[1.8rem] *:twcss-mb-[1.4rem]'>
-              <p>
-                Hem Healer® was founded from a deeply personal experience. Founder Ian Gutoskie endured the pain and
-                frustration of hemorrhoids for over 15 years. After trying numerous creams and treatments that offered
-                only temporary relief, Ian set out to find a better solution.
-              </p>
-              <p>
-                Determined to make a change, Ian conducted extensive research and uncovered the natural power of diosmin
-                and hesperidin—ingredients renowned for their anti-inflammatory and vascular benefits. This discovery
-                led to the creation of Hem Hero®, a product that works from the inside out to provide long-lasting
-                relief without the mess.
-              </p>
-              <p>
-                Ian’s mission is simple: to help others reclaim their lives from the discomfort of hemorrhoids. Hem
-                Hero® doesn’t just treat the symptoms—it addresses the root cause by strengthening veins, improving
-                circulation, and delivering soothing comfort.
-              </p>
-              <p>
-                Today, Hem Healer® supports thousands of individuals seeking genuine relief. Powered by natural
-                ingredients and driven by Ian’s personal mission, we are committed to offering solutions that truly
-                work.
-              </p>
+              <p>{{ 'sections.custom-section-about.paragraph_1' | t }}</p>
+              <p>{{ 'sections.custom-section-about.paragraph_2' | t }}</p>
+              <p>{{ 'sections.custom-section-about.paragraph_3' | t }}</p>
+              <p>{{ 'sections.custom-section-about.paragraph_4' | t }}</p>
             </div>
           </div>
+
           <div class='twcss-flex twcss-justify-center twcss-items-center'>
             <img
               src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Ian_Gutoskie.jpg?v=1745360498'
-              alt='about'
+              alt='{{ "sections.custom-section-about.image_alt" | t }}'
               class='twcss-w-full'
               width='auto'
               height='auto'
@@ -64,16 +48,15 @@
       {% endif %}
     >
       <div class='twcss-border-2 twcss-border-[--accent-color] lg:twcss-p-[5rem] twcss-p-[2rem]' data-aos='zoom-in'>
-        <div class='twcss-font-serif twcss-text-[30rem] twcss-leading-none twcss-h-[11.6rem] twcss-text-[--accent-color] '>
+        <div class='twcss-font-serif twcss-text-[30rem] twcss-leading-none twcss-h-[11.6rem] twcss-text-[--accent-color]'>
           “
         </div>
         <p class='twcss-text-black lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-mt-[2rem]'>
-          1 in 20 people (50% of the population) suffer from hemorrhoids, and nearly half of all adults will experience
-          them by the age of 50.
+          {{ 'sections.custom-section-about.quote_text' | t }}
         </p>
-        <cite class='twcss-font-heading lg:twcss-text-[6rem] twcss-text-[3rem] twcss-mt-[1.2rem] twcss-font-medium'
-          >The Hemorrhoid Struggle</cite
-        >
+        <cite class='twcss-font-heading lg:twcss-text-[6rem] twcss-text-[3rem] twcss-mt-[1.2rem] twcss-font-medium'>
+          {{ 'sections.custom-section-about.quote_author' | t }}
+        </cite>
       </div>
     </div>
   </div>
@@ -81,7 +64,7 @@
 
 <div
   id='where-is-made'
-  class='color-{{ section.settings.color_scheme }} twcss-relative twcss-bg-[top_center] lg:twcss-py-[10rem]  twcss-py-[5rem]'
+  class='color-{{ section.settings.color_scheme }} twcss-relative twcss-bg-[top_center] lg:twcss-py-[10rem] twcss-py-[5rem]'
 >
   <div class='custom-section isolate{% unless section.settings.full_width %} page-width{% endunless %} section-{{ section.id }}-padding'>
     <div
@@ -90,12 +73,10 @@
       {% endif %}
     >
       <h2 class='twcss-text-black lg:twcss-text-[7rem] twcss-text-[4.5rem] twcss-font-medium twcss-mb-[2rem] twcss-text-center'>
-        Where are Hem Healer® products manufactured?
+        {{ 'sections.custom-section-about.manufactured_heading' | t }}
       </h2>
-      <p class='twcss-text-[1.8rem] lg:twcss-mb-[4rem] twcss-mb-[2rem]  twcss-text-center'>
-        Every Hem Healer® product is proudly manufactured in the USA at an FDA-registered, GMP-certified facility in
-        Georgia. We partner with NutraCap, a leading manufacturer known for its commitment to quality and safety. This
-        ensures that every capsule meets the highest standards for purity and effectiveness.
+      <p class='twcss-text-[1.8rem] lg:twcss-mb-[4rem] twcss-mb-[2rem] twcss-text-center'>
+        {{ 'sections.custom-section-about.manufactured_description' | t }}
       </p>
       <iframe
         class='twcss-aspect-video twcss-w-full'
@@ -103,7 +84,7 @@
         allowfullscreen=''
         allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
         referrerpolicy='strict-origin-when-cross-origin'
-        title='Where Hem Healer is manufactured!🇺🇸 #hemorrhoids #hemorrhoidtreatment  #naturalmedicine  #piles'
+        title='{{ "sections.custom-section-about.video_title" | t }}'
         src='https://www.youtube.com/embed/1LysFbJwHCg?controls=1&amp;rel=0&amp;playsinline=0&amp;cc_load_policy=0&amp;autoplay=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fhemhealer.co&amp;widgetid=1&amp;forigin=https%3A%2F%2Fhemhealer.co%2Fabout%2F&amp;aoriginsup=1&amp;gporigin=https%3A%2F%2Fhemhealer.co%2F&amp;vf=1'
         id='widget2'
       ></iframe>
@@ -121,78 +102,89 @@
       <div class='twcss-grid lg:twcss-grid-cols-2 twcss-gap-[4rem]'>
         <div class='twcss-p-[1rem] twcss-flex twcss-flex-col twcss-justify-center'>
           <h2 class='lg:twcss-text-[4.5rem] twcss-text-[2.5rem] twcss-font-medium lg:twcss-mb-[4rem] twcss-mb-[2rem]'>
-            Proven Results and Key Ingredients
+            {{ 'sections.custom-section-about.results_heading' | t }}
           </h2>
-          <div class=''>
+          <div>
             <ul class='twcss-list-disc twcss-pl-[2rem]'>
-              <li>95% of customers&nbsp;report success with Hem Healer®.</li>
+              <li>{{ 'sections.custom-section-about.results_point_1' | t }}</li>
               <li>
-                Diosmin&nbsp;and&nbsp;hesperidin, derived from citrus fruits, are clinically proven to reduce pain,
-                bleeding, and swelling. These compounds possess strong anti-inflammatory and vascular-protective
-                properties.&nbsp;<a
+                {{ 'sections.custom-section-about.results_point_2_prefix' | t }}
+                <a
                   class='twcss-text-[#65C9FF]'
                   href='https://pmc.ncbi.nlm.nih.gov/articles/PMC9138579/'
                   target='_new'
-                  >Studies</a
-                >&nbsp;show a&nbsp;significant reduction in symptoms&nbsp;with these&nbsp;<a
+                >
+                  {{ 'sections.custom-section-about.studies_link_label' | t }}
+                </a>
+                {{ 'sections.custom-section-about.results_point_2_middle' | t }}
+                <a
                   href='https://pmc.ncbi.nlm.nih.gov/articles/PMC8003468/'
                   target='_new'
                   class='twcss-text-[#65C9FF]'
-                  >ingredients</a
-                >.
+                >
+                  {{ 'sections.custom-section-about.ingredients_link_label' | t }}
+                </a>
+                {{ 'sections.custom-section-about.results_point_2_suffix' | t }}
               </li>
             </ul>
           </div>
         </div>
+
         <div class='twcss-pt-[2rem] twcss-pb-[5rem] twcss-bg-[--accent-color-3] twcss-flex twcss-flex-col twcss-justify-center twcss-items-center'>
           <img
             class='twcss-rounded-full twcss-w-[20rem] twcss-h-[20rem] twcss-object-cover twcss-mb-[2rem]'
             src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Hem_Rescue_Doctor_-_2.jpg?v=1707224439'
-            alt='Dr Langdon'
+            alt='{{ "sections.custom-section-about.doctor_image_alt" | t }}'
             width='200'
             height='200'
           >
           <div class='twcss-text-[1.8rem] twcss-text-center'>
-            <p><em>“I highly recommend Hem Hero for your hemorrhoids.”</em></p>
-            <p><strong>Dr Langdon</strong></p>
             <p>
-              M.D.<br>
-              Board Certified Obstetrician &amp; Gynecologist
+              <em>{{ 'sections.custom-section-about.doctor_quote' | t }}</em>
             </p>
+            <p>
+              <strong>{{ 'sections.custom-section-about.doctor_name' | t }}</strong>
+            </p>
+            <p>{{ 'sections.custom-section-about.doctor_credentials' | t }}</p>
           </div>
         </div>
       </div>
+
       <div class='twcss-grid lg:twcss-grid-cols-2 twcss-gap-[4rem] lg:twcss-py-[10rem] twcss-py-[5rem]'>
         <div class='twcss-p-[1rem] twcss-flex twcss-flex-col twcss-justify-center'>
           <h2 class='lg:twcss-text-[4.5rem] twcss-text-[2.5rem] twcss-font-medium lg:twcss-mb-[4rem] twcss-mb-[2rem]'>
-            Personalized Care and Support
+            {{ 'sections.custom-section-about.support_heading' | t }}
           </h2>
-          <div class=''>
+          <div>
             <p>
-              We value personal interaction! Our customer care team is available&nbsp;7 days a week, 9 AM to 9 PM
-              ET&nbsp;at&nbsp;863-302-8006. We offer personalized<a
-                title='video consultation'
+              {{ 'sections.custom-section-about.support_text_before_link' | t }}
+              <a
+                title='{{ "sections.custom-section-about.video_consultation_title" | t }}'
                 class='twcss-text-[#65C9FF]'
                 href='https://calendly.com/d/cm5h-mzq-g2m/hem-healer-support-session-video-call-elena-jeremy'
-                >&nbsp;video consultations</a
-              >&nbsp;for face-to-face guidance, ensuring that you’re supported every step of the way.
+              >
+                {{ 'sections.custom-section-about.video_consultation_link' | t }}
+              </a>
+              {{ 'sections.custom-section-about.support_text_after_link' | t }}
             </p>
           </div>
         </div>
+
         <div class='twcss-p-[1rem] twcss-flex twcss-flex-col twcss-justify-center'>
           <h2 class='lg:twcss-text-[4.5rem] twcss-text-[2.5rem] twcss-font-medium lg:twcss-mb-[4rem] twcss-mb-[2rem]'>
-            Join the Hem Healer&reg; Community
+            {{ 'sections.custom-section-about.community_heading' | t }}
           </h2>
-          <div class=''>
+          <div>
             <p>
-              We are proud to help thousands of people, just like Ian, who have found lasting relief through&nbsp;Hem
-              Healer®. Our products are rooted in nature and backed by our commitment to your well-being. Call us today
-              at&nbsp;863-302-8006&nbsp;or schedule a&nbsp;<a
-                title='video consultation'
+              {{ 'sections.custom-section-about.community_text_before_link' | t }}
+              <a
+                title='{{ "sections.custom-section-about.phone_consultation_title" | t }}'
                 class='twcss-text-[#65C9FF]'
                 href='https://calendly.com/d/cq6c-7wz-f79/hem-healer-support-session-phone-call-elena-jeremy'
-                >phone consultation</a
-              >&nbsp;to begin your journey to a life free from discomfort.
+              >
+                {{ 'sections.custom-section-about.phone_consultation_link' | t }}
+              </a>
+              {{ 'sections.custom-section-about.community_text_after_link' | t }}
             </p>
           </div>
         </div>
@@ -200,16 +192,11 @@
     </div>
   </div>
 </div>
+
 {% schema %}
 {
   "name": "custom section about",
-  "settings": [
-    // {
-    //   "type": "text",
-    //   "label": "Video URL",
-    //   "id": "video"
-    // }
-  ],
+  "settings": [],
   "presets": [
     {
       "name": "custom section about"
