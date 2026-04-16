@@ -326,7 +326,9 @@
       }
     },
     "footer": {
-      "payment": "Payment methods"
+      "payment": "Payment methods",
+      "statement_1":"The statements made within this website have not been evaluated by the U.S. Food and Drug Administration. These statements and the products of this company are not intended to diagnose, treat, cure or prevent any disease.",
+      "statement_2":"*Results will vary from person to person depending on the individual’s existing health condition, physical lifestyle, and diet. Testimonials and results contained within may not be an implication of future results and are based on the experiences of a few people and you may not have similar results.",
     },
     "featured_blog": {
       "view_all": "View all",
