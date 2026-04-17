@@ -641,6 +641,27 @@
       "phone_consultation_title": "Consulta por vídeo",
       "phone_consultation_link": "Consulta telefónica",
       "community_text_after_link": " Para comenzar tu camino hacia una vida libre de incomodidad."
+    },
+    "custom_collection_banner": {
+      "name": "Banner de colección personalizada",
+      "items": {
+        "natural_ingredients": {
+          "text": "Ingredientes 100% naturales",
+          "alt": "Icono de hoja"
+        },
+        "trusted_customers": {
+          "text": "Confiable por 100.000+ clientes",
+          "alt": "Icono de escudo"
+        },
+        "vein_support": {
+          "text": "Apoya la vena y el flujo sanguíneo",
+          "alt": "Icono de gota de sangre"
+        },
+        "free_shipping": {
+          "text": "Envío gratis en $79.99+",
+          "alt": "Icono del camión de reparto"
+        }
+      }
     }
   },
   "localization": {
