@@ -278,6 +278,27 @@
     }
   },
   "sections": {
+    "custom_collection_banner": {
+      "name": "Custom collection banner",
+      "items": {
+        "natural_ingredients": {
+          "text": "100% Natural Ingredients",
+          "alt": "Leaf icon"
+        },
+        "trusted_customers": {
+          "text": "Trusted by 100,000+ Customers",
+          "alt": "Shield icon"
+        },
+        "vein_support": {
+          "text": "Supports Vein & Blood Flow",
+          "alt": "Blood drop icon"
+        },
+        "free_shipping": {
+          "text": "Free Shipping on $79.99+",
+          "alt": "Delivery truck icon"
+        }
+      }
+    },
     "announcements": {
       "previous_announcement": "Previous announcement",
       "next_announcement": "Next announcement",

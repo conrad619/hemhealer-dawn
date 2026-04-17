@@ -27,52 +27,52 @@
           <div class='twcss-h-[5rem] twcss-w-[5rem]'>
             <img
               src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/leaf.png?v=1750615616'
-              alt='leaf'
+              alt='{{ "sections.custom_collection_banner.items.natural_ingredients.alt" | t }}'
               width='50'
               height='50'
             >
           </div>
           <p class='lg:twcss-text-[2.6rem] twcss-text-[1.7rem] twcss-font-bold twcss-leading-none twcss-tracking-normal twcss-font-heading twcss-uppercase'>
-            100% Natural Ingredients
+            {{ 'sections.custom_collection_banner.items.natural_ingredients.text' | t }}
           </p>
         </div>
         <div class='lg:twcss-w-1/4 twcss-w-1/2 twcss-flex twcss-gap-[1.6rem] lg:twcss-px-[.8rem] lg:twcss-py-0 twcss-p-[.8rem]'>
           <div class='twcss-h-[5rem] twcss-w-[5rem]'>
             <img
               src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/group.png?v=1750615616'
-              alt='shield'
+              alt='{{ "sections.custom_collection_banner.items.trusted_customers.alt" | t }}'
               width='50'
               height='50'
             >
           </div>
           <p class='lg:twcss-text-[2.6rem] twcss-text-[1.7rem] twcss-font-bold twcss-leading-none twcss-tracking-normal twcss-font-heading twcss-uppercase'>
-            Trusted by 100,000+ Customers
+            {{ 'sections.custom_collection_banner.items.trusted_customers.text' | t }}
           </p>
         </div>
         <div class='lg:twcss-w-1/4 twcss-w-1/2 twcss-flex twcss-gap-[1.6rem] lg:twcss-px-[.8rem] lg:twcss-py-0 twcss-p-[.8rem]'>
           <div class='twcss-h-[5rem] twcss-w-[5rem]'>
             <img
               src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/blood.png?v=1750615617'
-              alt='blood'
+              alt='{{ "sections.custom_collection_banner.items.vein_support.alt" | t }}'
               width='50'
               height='50'
             >
           </div>
           <p class='lg:twcss-text-[2.6rem] twcss-text-[1.7rem] twcss-font-bold twcss-leading-none twcss-tracking-normal twcss-font-heading twcss-uppercase'>
-            Supports Vein & Blood Flow
+            {{ 'sections.custom_collection_banner.items.vein_support.text' | t }}
           </p>
         </div>
         <div class='lg:twcss-w-1/4 twcss-w-1/2 twcss-flex twcss-gap-[1.6rem] lg:twcss-px-[.8rem] lg:twcss-py-0 twcss-p-[.8rem]'>
           <div class='twcss-h-[5rem] twcss-w-[5rem]'>
             <img
               src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/delivery.png?v=1750615616'
-              alt='truck'
+              alt='{{ "sections.custom_collection_banner.items.free_shipping.alt" | t }}'
               width='50'
               height='50'
             >
           </div>
           <p class='lg:twcss-text-[2.6rem] twcss-text-[1.7rem] twcss-font-bold twcss-leading-none twcss-tracking-normal twcss-font-heading twcss-uppercase'>
-            Free Shipping on $79.99+
+            {{ 'sections.custom_collection_banner.items.free_shipping.text' | t }}
           </p>
         </div>
       </div>
@@ -116,7 +116,7 @@
 
 {% schema %}
 {
-  "name": "custom collection banner",
+  "name": "t:sections.custom_collection_banner.name",
   "settings": [
     {
       "type": "paragraph",
@@ -144,7 +144,7 @@
   ],
   "presets": [
     {
-      "name": "custom collection banner"
+      "name": "t:sections.custom_collection_banner.name"
     }
   ]
 }
