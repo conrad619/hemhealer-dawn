@@ -246,7 +246,7 @@
           "show_only_flag": false,
           "position": "fixed",
           "fixed_position": "top_right",
-          "position_offset": "55,20,20,20",
+          "position_offset": "34,20,20,20",
           "font_size": 14,
           "text_color": "#333333",
           "bg_color": "#ffffff",
