@@ -255,7 +255,7 @@
           "border_radius": 8,
           "padding": 12,
           "z_index": 50,
-          "mobile_display": "same"
+          "mobile_display": "compact"
         }
       }
     },
