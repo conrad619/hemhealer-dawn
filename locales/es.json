@@ -187,7 +187,10 @@
       "product_variants": "Variantes de producto",
       "taxes_included": "Impuestos incluidos.",
       "duties_included": "Aranceles incluidos.",
-      "duties_and_taxes_included": "Aranceles e impuestos incluidos."
+      "duties_and_taxes_included": "Aranceles e impuestos incluidos.",
+      "money_back_guarantee": "Garantía de devolución del dinero al 100%",
+      "best_value": "La mejor relación calidad-precio",
+      "save_percent": "Salvar {{ percent }}%"
     },
     "modal": {
       "label": "Galería multimedia"
@@ -1050,7 +1053,15 @@
       "bullet_1": "10% de todos los pedidos",
       "bullet_2": "Cancela o cambia en cualquier momento",
       "bullet_3": "Envío gratuito en todos los pedidos",
-      "pay_full_price": "Paga el precio completo."
+      "pay_full_price": "Paga el precio completo.",
+      "subscribe_and_save": "Suscríbete y ahorra un 10%",
+      "ships_every": "Envíos a todos:",
+      "one_time_purchase": "Compra única",
+      "why_most_people_subscribe": "Por qué la mayoría de la gente se suscribe",
+      "selling_plan_30_days_recommended": "30 días (recomendado)",
+      "selling_plan_60_days": "60 días",
+      "selling_plan_90_days": "90 días",
+      "selling_plan_180_days": "180 días"
     },
     "faq_hero": {
       "question_1": "1. ¿Cómo funciona Hem Hero®?",
