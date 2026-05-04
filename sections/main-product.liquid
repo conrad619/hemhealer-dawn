@@ -89,11 +89,11 @@
       {% if percent_off == 0 %}
         {% assign percent_text = "Full price" %}
       {% else %}
-        {% assign percent_text = percent_off |  prepend: 'Save ' |  append: '%'  %}
+        {% assign percent_text = 'products.product.save_percent' | t: percent: percent_off %}
       {% endif %}
 
       label:nth-of-type({{ forloop.index }}) .variant-discount:after {
-        content: "{{percent_text}}";
+        content: {{ percent_text | json }};
       }
 
 
@@ -106,11 +106,11 @@
       {% if percent_off == 0 %}
         {% assign percent_text = "Full price" %}
       {% else %}
-        {% assign percent_text = percent_off |  prepend: 'Save ' |  append: '%'  %}
+        {% assign percent_text = 'products.product.save_percent' | t: percent: percent_off %}
       {% endif %}
 
       .subscribe label:nth-of-type({{ forloop.index }}) .variant-discount:after {
-        content: "{{percent_text}}";
+        content: {{ percent_text | json }};
       }
     {% endfor %}
   </style>
@@ -522,7 +522,7 @@
       }
     }
     label:nth-of-type(1) .bubble:before {
-      content: 'Best Value';
+      content: {{ 'products.product.best_value' | t | json }};
       display: flex;
     }
 
@@ -2920,10 +2920,110 @@
     //   document.querySelector('.rc-selling-plans').append(subscription_free_bottle);
   }
 
+  function decodeTranslatedText(text) {
+    const decodedText = document.createElement('textarea');
+    decodedText.innerHTML = text;
+    return decodedText.value;
+  }
+
+  function translateSubscriptionRadioLabel() {
+    const subscriptionLabels = document.querySelectorAll('.rc-radio__subscription');
+    if (!subscriptionLabels.length) return false;
+
+    const subscriptionLabelText = decodeTranslatedText({{ 'main_product.subscription.subscribe_and_save' | t | json }});
+
+    subscriptionLabels.forEach((subscriptionLabel) => {
+      subscriptionLabel.textContent = subscriptionLabelText;
+    });
+
+    return true;
+  }
+
+  function translateSellingPlansDropdownLabel() {
+    const sellingPlanLabels = document.querySelectorAll('.rc-selling-plans-dropdown__label');
+    if (!sellingPlanLabels.length) return false;
+
+    const sellingPlanLabelText = decodeTranslatedText({{ 'main_product.subscription.ships_every' | t | json }});
+
+    sellingPlanLabels.forEach((sellingPlanLabel) => {
+      sellingPlanLabel.textContent = sellingPlanLabelText;
+    });
+
+    return true;
+  }
+
+  function translateOneTimePurchaseLabelClone() {
+    const labelClones = document.querySelectorAll('.rc-radio__label-clone');
+    if (!labelClones.length) return false;
+
+    const oneTimePurchaseText = decodeTranslatedText({{ 'main_product.subscription.one_time_purchase' | t | json }});
+
+    labelClones.forEach((labelClone) => {
+      const firstTextNode = Array.from(labelClone.childNodes).find((node) => node.nodeType === 3);
+      const priceSpan = labelClone.querySelector('.rc-radio__price');
+      const translatedText = `${oneTimePurchaseText} `;
+
+      if (firstTextNode) {
+        firstTextNode.textContent = translatedText;
+      } else if (priceSpan) {
+        labelClone.insertBefore(document.createTextNode(translatedText), priceSpan);
+      } else {
+        labelClone.prepend(document.createTextNode(translatedText));
+      }
+    });
+
+    return true;
+  }
+
+  function translateSubscriptionDetailsButton() {
+    const subscriptionDetailsButtons = document.querySelectorAll('.rc-subscription-details__button');
+    if (!subscriptionDetailsButtons.length) return false;
+
+    const subscriptionDetailsButtonText = decodeTranslatedText(
+      {{ 'main_product.subscription.why_most_people_subscribe' | t | json }}
+    );
+
+    subscriptionDetailsButtons.forEach((subscriptionDetailsButton) => {
+      const label = subscriptionDetailsButton.querySelector('span');
+
+      if (label) {
+        label.textContent = subscriptionDetailsButtonText;
+      } else {
+        subscriptionDetailsButton.append(document.createTextNode(subscriptionDetailsButtonText));
+      }
+    });
+
+    return true;
+  }
+
+  function translateSellingPlanOptions() {
+    const sellingPlanSelects = document.querySelectorAll('.rc-selling-plans-dropdown__select');
+    if (!sellingPlanSelects.length) return false;
+
+    const sellingPlanOptionLabels = [
+      decodeTranslatedText({{ 'main_product.subscription.selling_plan_30_days_recommended' | t | json }}),
+      decodeTranslatedText({{ 'main_product.subscription.selling_plan_60_days' | t | json }}),
+      decodeTranslatedText({{ 'main_product.subscription.selling_plan_90_days' | t | json }}),
+      decodeTranslatedText({{ 'main_product.subscription.selling_plan_180_days' | t | json }}),
+    ];
+
+    sellingPlanSelects.forEach((sellingPlanSelect) => {
+      Array.from(sellingPlanSelect.options).forEach((option, index) => {
+        if (sellingPlanOptionLabels[index]) {
+          option.textContent = sellingPlanOptionLabels[index];
+        }
+      });
+    });
+
+    return true;
+  }
+
   //start adding span for rc label
   function insertSpanLabel() {
     // Find the element with the price text (assuming it has the class 'rc-radio__label')
     var labelOriginal = document.querySelector('.rc-radio__label');
+    if (!labelOriginal) return false;
+
     var labelElement = null;
     var labelText = null;
     if (!document.querySelector('.rc-radio__label-clone')) {
@@ -2961,8 +3061,10 @@
         labelElement.innerHTML = labelText.replace(price, priceSpan.outerHTML);
         labelOriginal.insertAdjacentElement('afterend', labelElement);
         labelElement.append(priceTextSpan);
+        translateOneTimePurchaseLabelClone();
       } else if (document.querySelector('.rc-radio__price')) {
         document.querySelector('.rc-radio__price').textContent = price;
+        translateOneTimePurchaseLabelClone();
       }
     }
   }
@@ -2978,12 +3080,22 @@
         const isSubscription = radio.value === 'subscription' && radio.checked;
         insertSubscriptionDescription();
         insertSpanLabel();
+        translateSubscriptionRadioLabel();
+        translateSellingPlansDropdownLabel();
+        translateOneTimePurchaseLabelClone();
+        translateSubscriptionDetailsButton();
+        translateSellingPlanOptions();
       });
 
       // Initial check on load
       if (radio.checked && radio.value === 'subscription') {
         insertSubscriptionDescription();
         insertSpanLabel();
+        translateSubscriptionRadioLabel();
+        translateSellingPlansDropdownLabel();
+        translateOneTimePurchaseLabelClone();
+        translateSubscriptionDetailsButton();
+        translateSellingPlanOptions();
       }
     });
 
@@ -2991,6 +3103,11 @@
       if (e.target.closest('variant-selects') || e.target.closest('.product-form')) {
         setTimeout(() => {
           insertSpanLabel();
+          translateSubscriptionRadioLabel();
+          translateSellingPlansDropdownLabel();
+          translateOneTimePurchaseLabelClone();
+          translateSubscriptionDetailsButton();
+          translateSellingPlanOptions();
         }, 100); // Slight delay to allow DOM to update
       }
     });
@@ -3022,6 +3139,11 @@
   }
 
   elementExist(handleRechargeV3, 30);
+  elementExist(translateSubscriptionRadioLabel, 30);
+  elementExist(translateSellingPlansDropdownLabel, 30);
+  elementExist(translateOneTimePurchaseLabelClone, 30);
+  elementExist(translateSubscriptionDetailsButton, 30);
+  elementExist(translateSellingPlanOptions, 30);
 
   function insertTrustPilotAfterAddToCart() {
     let trustpilot = document.createElement('div');

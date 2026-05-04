@@ -116,6 +116,9 @@
   "products": {
     "product": {
       "add_to_cart": "Add to Cart",
+      "money_back_guarantee": "100% Money-back Guarantee",
+      "best_value": "Best Value",
+      "save_percent": "Save {{ percent }}%",
       "choose_options": "Choose options",
       "choose_product_options": "Choose options for {{ product_name }}",
       "description": "Description",
@@ -893,6 +896,14 @@
       "bullet_1": "10% of all orders",
       "bullet_2": "Cancel or change anytime",
       "bullet_3": "Free shipping on all orders",
+      "subscribe_and_save": "Subscribe & Save 10%",
+      "ships_every": "Ships Every:",
+      "one_time_purchase": "One Time Purchase",
+      "why_most_people_subscribe": "Why Most People Subscribe",
+      "selling_plan_30_days_recommended": "30 Days (Recommended)",
+      "selling_plan_60_days": "60 days",
+      "selling_plan_90_days": "90 days",
+      "selling_plan_180_days": "180 days",
       "pay_full_price": "Pay full price."
     },
     "faq_hero": {
