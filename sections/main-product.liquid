@@ -3149,8 +3149,8 @@
     let trustpilot = document.createElement('div');
     let trustpilot_img = document.createElement('img');
     trustpilot_img.classList.add('trustpilot-img');
-    trustpilot_img.src =
-      'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Trustpilot_Hem_Healer_Site.png?v=1754417603';
+    trustpilot_img.src = {{ 'sections.custom-video.trustpilot_image_src' | t | json }};
+    trustpilot_img.alt = decodeTranslatedText({{ 'sections.custom-video.trustpilot_image_alt' | t | json }});
     trustpilot.appendChild(trustpilot_img);
     document.querySelector('.product-form__submit').insertAdjacentElement('afterend', trustpilot);
     return document.querySelector('.product-form__submit');
