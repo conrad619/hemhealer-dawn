@@ -506,8 +506,11 @@
     "custom-section-6": {
       "heading_1_html": "Why Choose Hem Healer®?",
       "heading_2_html": "Quality You Can Trust",
+      "title_1_html": "Made in a GMP, FDA-Registered Facility",
       "description_1_html": "Every Hem Healer® product is made in a clean, safe facility that’s inspected and registered with the FDA, so you can trust what’s inside.",
+      "title_2_html": "Proudly Manufactured in Atlanta, GA",
       "description_2_html": "Hem Healer® products are proudly made in Atlanta, Georgia, using high-quality ingredients you can trust.",
+      "title_3_html": "100% Money Back Guarantee",
       "description_3_html": "If you are not satisfied for any reason, simply contact us for a full refund.",
       "image_1_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/fda_cgmp.png?v=1750798813",
       "image_1_alt": "FDA CGMP",

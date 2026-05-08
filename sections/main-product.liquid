@@ -2845,15 +2845,18 @@
     let html = '';
 
     for (const question in faqData) {
+      const decodedQuestion = decodeTranslatedText(question);
+      const decodedAnswer = decodeTranslatedText(faqData[question]);
+
       html += `
           <div class="faq-item">
             <div class="faq-question">
-              <span>${question}</span>
+              <span>${decodedQuestion}</span>
               <svg class="chevron" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#000000">
                 <path d="M480-333 240-573l51-51 189 189 189-189 51 51-240 240Z"/>
               </svg>
             </div>
-            <div class="faq-answer">${faqData[question]}</div>
+            <div class="faq-answer">${decodedAnswer}</div>
           </div>
         `;
     }
