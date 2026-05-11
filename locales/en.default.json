@@ -351,8 +351,21 @@
     },
     "footer": {
       "payment": "Payment methods",
+      "policies": {
+        "heading": "Our Policies",
+        "links": {
+          "privacy_policy": "Privacy Policy",
+          "refund_policy": "Refund Policy",
+          "shipping_policy": "Shipping Policy",
+          "terms_of_service": "Terms of Service"
+        }
+      },
+      "products": {
+        "heading": "Our Products"
+      },
+      "copyright": "\u00a9 2026 Hem Healer\u00ae, LLC. All rights reserved.",
       "statement_1":"The statements made within this website have not been evaluated by the U.S. Food and Drug Administration. These statements and the products of this company are not intended to diagnose, treat, cure or prevent any disease.",
-      "statement_2":"*Results will vary from person to person depending on the individual’s existing health condition, physical lifestyle, and diet. Testimonials and results contained within may not be an implication of future results and are based on the experiences of a few people and you may not have similar results.",
+      "statement_2":"*Results will vary from person to person depending on the individual’s existing health condition, physical lifestyle, and diet. Testimonials and results contained within may not be an implication of future results and are based on the experiences of a few people and you may not have similar results."
     },
     "featured_blog": {
       "view_all": "View all",

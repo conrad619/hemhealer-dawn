@@ -13,7 +13,14 @@
         {{ 'sections.footer.statement_2' | t }}
       </p>
       <br>
-      <p>© 2026 Hem Healer&reg;, LLC. All rights reserved.</p>
+      {% liquid
+        assign copyright_text = 'sections.footer.copyright' | t
+
+        if copyright_text contains 'Translation missing' or copyright_text contains 'translation missing'
+          assign copyright_text = '&copy; 2026 Hem Healer&reg;, LLC. All rights reserved.'
+        endif
+      %}
+      <p>{{ copyright_text }}</p>
     </div>
   </div>
 </div>

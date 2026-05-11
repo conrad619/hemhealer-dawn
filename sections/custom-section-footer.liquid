@@ -118,19 +118,49 @@
           </ul>
         </div>
         <div class='lg:twcss-w-[30%] twcss-flex twcss-flex-col lg:twcss-gap-[2rem]'>
+          {% liquid
+            assign policies_heading = 'sections.footer.policies.heading' | t
+
+            if policies_heading contains 'Translation missing' or policies_heading contains 'translation missing'
+              assign policies_heading = 'Our Policies'
+            endif
+          %}
           <h2 class='twcss-font-body lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-font-bold twcss-mb-[1.4rem]'>
-            Our Policies
+            {{ policies_heading | escape }}
           </h2>
           {% assign menu_handle = 'policies' %}
           {% if linklists[menu_handle] %}
             <ul>
               {% for link in linklists[menu_handle].links %}
+                {% liquid
+                  assign policy_title_key = ''
+
+                  if link.url contains '/privacy-policy'
+                    assign policy_title_key = 'sections.footer.policies.links.privacy_policy'
+                  elsif link.url contains '/refund-policy'
+                    assign policy_title_key = 'sections.footer.policies.links.refund_policy'
+                  elsif link.url contains '/shipping-policy'
+                    assign policy_title_key = 'sections.footer.policies.links.shipping_policy'
+                  elsif link.url contains '/terms-of-service'
+                    assign policy_title_key = 'sections.footer.policies.links.terms_of_service'
+                  endif
+
+                  if policy_title_key != blank
+                    assign policy_title = policy_title_key | t
+                  else
+                    assign policy_title = link.title
+                  endif
+
+                  if policy_title contains 'Translation missing' or policy_title contains 'translation missing'
+                    assign policy_title = link.title
+                  endif
+                %}
                 <li>
                   <a
                     href='{{ link.url }}'
                     class='twcss-block lg:twcss-px-[2rem] twcss-px-[1rem] lg:twcss-text-[1.8rem] twcss-text-[1.5rem] lg:twcss-py-[1.3rem] twcss-py-[1rem] hover:twcss-text-[--accent-color]'
                   >
-                    {{- link.title -}}
+                    {{- policy_title | escape -}}
                   </a>
                 </li>
               {% endfor %}
@@ -138,8 +168,15 @@
           {% endif %}
         </div>
         <div class='lg:twcss-w-[30%] lg:twcss-gap-[2rem]'>
+          {% liquid
+            assign products_heading = 'sections.footer.products.heading' | t
+
+            if products_heading contains 'Translation missing' or products_heading contains 'translation missing'
+              assign products_heading = 'Our Products'
+            endif
+          %}
           <h2 class='twcss-font-body lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-font-bold twcss-mb-[1.4rem]'>
-            Our Products
+            {{ products_heading | escape }}
           </h2>
           {% assign menu_handle = 'products' %}
           {% if linklists[menu_handle] %}

@@ -333,6 +333,19 @@
     },
     "footer": {
       "payment": "Formas de pago",
+      "policies": {
+        "heading": "Nuestras Politicas",
+        "links": {
+          "privacy_policy": "Política de Privacidad",
+          "refund_policy": "Politica de Reembolsos",
+          "shipping_policy": "Politica de Envios",
+          "terms_of_service": "Términos de Servicio"
+        }
+      },
+      "products": {
+        "heading": "Nuestros Productos"
+      },
+      "copyright": "\u00a9 2026 Hem Healer\u00ae, LLC. Todos los derechos reservados.",
       "statement_1": "Las declaraciones realizadas en este sitio web no han sido evaluadas por la Administración de Alimentos y Medicamentos de los Estados Unidos (FDA). Estas declaraciones y los productos de esta empresa no están destinados a diagnosticar, tratar, curar ni prevenir ninguna enfermedad.",
       "statement_2": "*Los resultados varían de persona a persona dependiendo de la condición de salud existente del individuo, su fisiología y su nivel de compromiso en el uso constante del producto según las indicaciones."
     },
@@ -833,7 +846,7 @@
     "testimonial2_text": "\"Por favor, hazte un favor y compra esto.\"",
     "how_it_works_heading": "Cómo funciona Hem Hero®",
     "comparison_heading": "Hem Hero® vs. Cremas",
-    "comparison_description": "Creemos en tratar la causa raíz de las hemorroides, no solo en enmascarar los síntomas. Así es como se compara Hem Hero®:",
+    "comparison_description": "Creemos en tratar la causa raíz de las hemorroides, no sólo enmascarar los síntomas. Así se compara Hem Hero®:",
     "comparison_creams": "Cremas y Unguentos",
     "ingredients_heading": "Hem Hero®: Clínicamente probado para reducir los efectos de las hemorroides",
     "alt_58_reduction": "Reducción del 58%",
@@ -881,7 +894,7 @@
     "trial_subheading": "GARANTÍA 100% DE DEVOLUCIÓN DEL DINERO A 90 DÍAS",
     "alt_guaranteed_risk_free": "garantizado libre de riesgos",
     "guarantee_label": "¡IMPORTANTE!",
-    "guarantee_text": "Si no estás 100% satisfecho POR CUALQUIER MOTIVO, simplemente llámanos, envía un mensaje o un correo electrónico y te devolveremos el dinero completo de inmediato sin preguntas.",
+    "guarantee_text": "Si no estás 100% satisfecho POR CUALQUIER MOTIVO, simplemente llámanos, envíanos un mensaje de texto o un correo electrónico y te daremos un reembolso completo de inmediato, sin preguntas.",
     "guarantee_heading": "Garantia de Devolucion Total del Dinero",
     "buy_now_cta": "Haz clic aquí para comprar ahora",
     "buy_now_support": "GARANTÍA DE DEVOLUCIÓN DE DINERO DE 90 DÍAS",
@@ -913,7 +926,7 @@
     "comparison_item_1": "Actúa desde adentro hacia afuera",
     "comparison_item_2": "Ataca la causa raiz (vasos sanguineos inflamados)",
     "comparison_item_3": "Fortalece las paredes de los vasos sanguíneos",
-    "comparison_item_4": "Fácil de tomar (solo una cápsula)",
+    "comparison_item_4": "Fácil de tomar (solo 2 capsulas al dia)",
     "comparison_item_5": "Alivio a largo plazo",
     "comparison_item_6": "No tocar la zona afectada",
     "comparison_item_7": "No hay olor ni residuos",
@@ -988,7 +1001,7 @@
     "proven_2_text": "La fibra de avena alimenta bacterias saludables como Bifidobacterium y Lactobacillus, comprobadas para mejorar la digestión y reducir la hinchazón.",
     "proven_2_source": "Fuente",
     "alt_proven_3": "Estimula el flujo digestivo natural",
-    "proven_3_text": "El compuesto activo de Cayena, la capsaicina, aumenta la actividad enzimática digestiva y el flujo sanguíneo para mantener el flujo fluido de los alimentos.",
+    "proven_3_text": "El compuesto activo de la cayena, la capsaicina, aumenta el flujo sanguíneo al tracto digestivo, lo que ayuda a tu intestino a mover las cosas de manera más eficiente.",
     "proven_3_source": "Fuente",
     "alt_proven_4": "OAT más Cayenne",
     "proven_4_text": "La fibra de avena alivia el estreñimiento mientras que la cayena favorece la digestión, una combinación natural para un alivio suave y sin dolor.",
@@ -1062,10 +1075,10 @@
       "ships_every": "Se Envia Cada:",
       "one_time_purchase": "Compra Unica",
       "why_most_people_subscribe": "Por Que la Mayoría se Suscribe",
-      "selling_plan_30_days_recommended": "30 Dias (Recomendado)",
-      "selling_plan_60_days": "60 dias",
-      "selling_plan_90_days": "90 dias",
-      "selling_plan_180_days": "180 dias"
+      "selling_plan_30_days_recommended": "Entrega cada 30 dias",
+      "selling_plan_60_days": "Entrega cada 60 dias",
+      "selling_plan_90_days": "Entrega cada 90 dias",
+      "selling_plan_180_days": "Entrega cada 180 dias"
     },
     "faq_hero": {
       "question_1": "1. ¿Cómo funciona Hem Hero®?",
