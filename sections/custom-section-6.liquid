@@ -30,7 +30,7 @@
       </div>
       <div class='lg:twcss-gap-[2rem] twcss-pb-[5rem] twcss-grid lg:twcss-grid-cols-3 twcss-text-black lg:twcss-text-left twcss-text-center'>
         <div class='twcss-flex twcss-flex-col twcss-p-[1rem]'>
-          <a href='/collections/frontpage'
+          <a href='{{ routes.root_url | append: '/collections/frontpage' | replace: '//', '/' }}'
             ><img
               src='{{ 'sections.custom-section-6.image_1_src' | t }}'
               width='auto'
@@ -46,7 +46,7 @@
           </p>
         </div>
         <div class='twcss-flex twcss-flex-col twcss-p-[1rem]'>
-          <a href='/collections/frontpage'
+          <a href='{{ routes.root_url | append: '/collections/frontpage' | replace: '//', '/' }}'
             ><img
               src='{{ 'sections.custom-section-6.image_2_src' | t }}'
               width='auto'
@@ -62,7 +62,7 @@
           </p>
         </div>
         <div class='twcss-flex twcss-flex-col twcss-p-[1rem]'>
-          <a href='/collections/frontpage'
+          <a href='{{ routes.root_url | append: '/collections/frontpage' | replace: '//', '/' }}'
             ><img
               src='{{ 'sections.custom-section-6.image_3_src' | t }}'
               width='auto'

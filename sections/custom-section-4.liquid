@@ -37,7 +37,7 @@
           </p>
           <div class=''>
             <a
-              href='/pages/about'
+              href='{{ routes.root_url | append: '/pages/about' | replace: '//', '/' }}'
               class='twcss-text-[--accent-color] twcss-inline-flex twcss-font-semibold twcss-items-center lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-font-heading twcss-border-b twcss-border-[--accent-color]'
               ><span>{{ 'sections.custom-section-4.link_story_html' | t }}</span>
               <svg
@@ -54,7 +54,7 @@
           </div>
           <div>
             <a
-              href='/pages/about#where-is-made'
+              href='{{ routes.root_url | append: '/pages/about#where-is-made' | replace: '//', '/' }}'
               class='twcss-text-[--accent-color] twcss-inline-flex twcss-font-semibold twcss-items-center lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-font-heading twcss-border-b twcss-border-[--accent-color]'
               ><span>{{ 'sections.custom-section-4.link_manufactured_html' | t }}</span>
               <svg

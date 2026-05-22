@@ -19,15 +19,31 @@
   <div class="disclosure__list-wrapper language-selector" hidden>
     <ul id="{{ localPosition }}List" role="list" class="disclosure__list list-unstyled">
       {%- for language in localization.available_languages -%}
+        {%- liquid
+          assign language_url = language.root_url
+
+          if language_url == blank
+            if language.iso_code == 'es'
+              assign language_url = '/es'
+            elsif language.iso_code == 'en'
+              assign language_url = '/'
+            else
+              assign language_url = '#'
+            endif
+          endif
+        -%}
         <li class="disclosure__item" tabindex="-1">
           <a
             class="link link--text disclosure__link caption-large focus-inset"
-            href="#"
+            href="{{ language_url }}"
             hreflang="{{ language.iso_code }}"
             lang="{{ language.iso_code }}"
             {% if language.iso_code == localization.language.iso_code %}
               aria-current="true"
             {% endif %}
+            {% unless language_url == '#' %}
+              data-localization-static-url="true"
+            {% endunless %}
             data-value="{{ language.iso_code }}"
           >
             <span

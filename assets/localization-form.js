@@ -145,6 +145,10 @@ if (!customElements.get('localization-form')) {
       }
 
       onItemClick(event) {
+        if (event.currentTarget.dataset.localizationStaticUrl === 'true') {
+          return;
+        }
+
         event.preventDefault();
         const form = this.querySelector('form');
         this.elements.input.value = event.currentTarget.dataset.value;
