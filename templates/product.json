@@ -35,8 +35,9 @@
           }
         },
         "ryviu_reviews_qa_ryviu_total_k8dghb": {
-          "type": "shopify://apps/ryviu-product-reviews-app/blocks/ryviu-total/807ad6ed-1a6a-4559-abea-ed062858d9da",
+          "type": "shopify://apps/ryviu-product-reviews/blocks/ryviu-total/807ad6ed-1a6a-4559-abea-ed062858d9da",
           "settings": {
+            "layout_style": "product",
             "show_when_no_reviews": true,
             "show_average_rating": false
           }
@@ -68,6 +69,11 @@
           "settings": {
             "product": "{{product}}"
           }
+        },
+        "recharge_subscriptions_subscription_widget_v2_BBTCMq": {
+          "type": "shopify://apps/recharge-subscriptions/blocks/subscription-widget-v2/371eed76-0b44-4869-9813-730372ea378e",
+          "disabled": true,
+          "settings": {}
         },
         "quantity_selector": {
           "type": "quantity_selector",
@@ -137,8 +143,9 @@
           }
         },
         "ryviu_reviews_qa_ryviu_total_dkDizb": {
-          "type": "shopify://apps/ryviu-product-reviews-app/blocks/ryviu-total/807ad6ed-1a6a-4559-abea-ed062858d9da",
+          "type": "shopify://apps/ryviu-product-reviews/blocks/ryviu-total/807ad6ed-1a6a-4559-abea-ed062858d9da",
           "settings": {
+            "layout_style": "product",
             "show_when_no_reviews": true,
             "show_average_rating": false
           }
@@ -154,6 +161,7 @@
         "caption",
         "variant_picker",
         "recharge_subscriptions_subscription_widget_bEXGEi",
+        "recharge_subscriptions_subscription_widget_v2_BBTCMq",
         "quantity_selector",
         "buy_buttons",
         "faqs_7pba6p",
@@ -186,8 +194,9 @@
       "type": "apps",
       "blocks": {
         "ryviu_reviews_qa_ryviu_widget_EMqrmh": {
-          "type": "shopify://apps/ryviu-product-reviews-app/blocks/ryviu-widget/807ad6ed-1a6a-4559-abea-ed062858d9da",
+          "type": "shopify://apps/ryviu-product-reviews/blocks/ryviu-widget/807ad6ed-1a6a-4559-abea-ed062858d9da",
           "settings": {
+            "layout": "",
             "r_wapper_class": "",
             "r_max_width": 1920,
             "r_padding_block": 0,
