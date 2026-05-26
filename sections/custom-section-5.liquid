@@ -6,28 +6,36 @@
       {% endif %}
     >
       <h2 class='twcss-font-heading lg:twcss-text-[7rem] twcss-text-[3.8rem] twcss-font-medium twcss-text-center twcss-max-w-[100rem] twcss-mx-auto twcss-leading-none'>
-        {{ 'sections.custom-section-5.heading_html' | t }}
+        {{ section.settings.heading_text }}
       </h2>
       <div class='twcss-flex lg:twcss-flex-nowrap twcss-flex-wrap twcss-justify-center twcss-pt-[4rem] lg:twcss-gap-[4rem] twcss-pb-[5rem]'>
         <div class='twcss-flex twcss-gap-[2rem] twcss-flex-col lg:twcss-w-[60%] twcss-p-[1rem] twcss-justify-center twcss-items-center'>
+          {%- assign image_1_src = 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Diosmin_1.png?v=1750795488' -%}
+          {%- if section.settings.image_1 != blank -%}
+            {%- assign image_1_src = section.settings.image_1 | image_url: width: 453 -%}
+          {%- endif -%}
+          {%- assign image_2_src = 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Diosmin_2.png?v=1750795489' -%}
+          {%- if section.settings.image_2 != blank -%}
+            {%- assign image_2_src = section.settings.image_2 | image_url: width: 453 -%}
+          {%- endif -%}
           <div class='twcss-grid twcss-grid-cols-2 twcss-gap-[2rem] twcss-max-w-[70rem]'>
             <img
-              src='{{ 'sections.custom-section-5.image_1_src' | t }}'
+              src='{{ image_1_src }}'
               class='twcss-w-full'
-              alt='{{ 'sections.custom-section-5.image_1_alt' | t }}'
+              alt='{{ section.settings.image_1_alt }}'
               height='340'
               width='453'
             >
             <img
-              src='{{ 'sections.custom-section-5.image_2_src' | t }}'
+              src='{{ image_2_src }}'
               class='twcss-w-full'
-              alt='{{ 'sections.custom-section-5.image_2_alt' | t }}'
+              alt='{{ section.settings.image_2_alt }}'
               height='340'
               width='453'
             >
           </div>
           <h3 class='twcss-text-[2.2rem] twcss-font-body twcss-font-bold twcss-mt-[4rem]'>
-            {{ 'sections.custom-section-5.research_heading_html' | t }}
+            {{ section.settings.research_heading_text }}
           </h3>
           <ul class='twcss-flex twcss-gap-[2rem] twcss-flex-col'>
             <li class='twcss-flex'>
@@ -43,10 +51,10 @@
               </svg>
               <div>
                 <h4 class='twcss-text-[2.6rem] twcss-font-heading twcss-font-medium twcss-mb-[1rem]'>
-                  {{ 'sections.custom-section-5.point_1_title_html' | t }}
+                  {{ section.settings.point_1_title }}
                 </h4>
                 <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem]'>
-                  {{ 'sections.custom-section-5.point_1_desc_html' | t }}
+                  {{ section.settings.point_1_desc }}
                 </p>
               </div>
             </li>
@@ -64,10 +72,10 @@
               </svg>
               <div>
                 <h4 class='twcss-text-[2.6rem] twcss-font-heading twcss-font-medium twcss-mb-[1rem]'>
-                  {{ 'sections.custom-section-5.point_2_title_html' | t }}
+                  {{ section.settings.point_2_title }}
                 </h4>
                 <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem]'>
-                  {{ 'sections.custom-section-5.point_2_desc_html' | t }}
+                  {{ section.settings.point_2_desc }}
                 </p>
               </div>
             </li>
@@ -85,10 +93,10 @@
               </svg>
               <div>
                 <h4 class='twcss-text-[2.6rem] twcss-font-heading twcss-font-medium twcss-mb-[1rem]'>
-                  {{ 'sections.custom-section-5.point_3_title_html' | t }}
+                  {{ section.settings.point_3_title }}
                 </h4>
                 <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem]'>
-                  {{ 'sections.custom-section-5.point_3_desc_html' | t }}
+                  {{ section.settings.point_3_desc }}
                 </p>
               </div>
             </li>
@@ -110,15 +118,15 @@
             href='{{ routes.cart_add_url }}?id[]=40292763861151&quantity[]=1&id[]=45613637566677&quantity[]=1'
             class='twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-mb-[1.4rem] twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] lg:twcss-mt-[4rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-white twcss-bg-[--accent-color] twcss-font-semibold twcss-w-full twcss-text-center'
           >
-            {{- 'sections.custom-section-5.button_html' | t -}}
+            {{ section.settings.button_text }}
           </a>
           <p
             href='#'
             class='twcss-text-center twcss-text-[2.2rem] twcss-font-medium'
           >
-            {{ 'sections.custom-section-5.source' | t }}*
+            {{ section.settings.source_text }}*
           </p>
-          <p class='twcss-text-center twcss-mb-[1.4rem]'>*{{ 'sections.custom-section-5.source_citation' | t }}</p>
+          <p class='twcss-text-center twcss-mb-[1.4rem]'>*{{ section.settings.source_citation }}</p>
         </div>
       </div>
     </div>
@@ -128,7 +136,96 @@
 {% schema %}
 {
   "name": "custom section V",
-  "settings": [],
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Main Heading",
+      "default": "Studies Show Diosmin Quickly Reduces Hemorrhoid Pain and Bleeding"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image 1"
+    },
+    {
+      "type": "text",
+      "id": "image_1_alt",
+      "label": "Image 1 Alt Text",
+      "default": "week 1 pain 79% better"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image 2"
+    },
+    {
+      "type": "text",
+      "id": "image_2_alt",
+      "label": "Image 2 Alt Text",
+      "default": "week 2 98% better"
+    },
+    {
+      "type": "text",
+      "id": "research_heading_text",
+      "label": "Research Heading",
+      "default": "Key Research Findings"
+    },
+    {
+      "type": "text",
+      "id": "point_1_title",
+      "label": "Point 1 Title",
+      "default": "Reduces swelling & pain"
+    },
+    {
+      "type": "text",
+      "id": "point_1_desc",
+      "label": "Point 1 Description",
+      "default": "by strengthening veins"
+    },
+    {
+      "type": "text",
+      "id": "point_2_title",
+      "label": "Point 2 Title",
+      "default": "Improves circulation"
+    },
+    {
+      "type": "text",
+      "id": "point_2_desc",
+      "label": "Point 2 Description",
+      "default": "to prevent future flare-ups"
+    },
+    {
+      "type": "text",
+      "id": "point_3_title",
+      "label": "Point 3 Title",
+      "default": "Clinically proven"
+    },
+    {
+      "type": "text",
+      "id": "point_3_desc",
+      "label": "Point 3 Description",
+      "default": "to relieve hemorrhoid symptoms"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "SHOP OUR DIOSMIN SOLUTIONS NOW!"
+    },
+    {
+      "type": "text",
+      "id": "source_text",
+      "label": "Source Label",
+      "default": "Source"
+    },
+    {
+      "type": "text",
+      "id": "source_citation",
+      "label": "Source Citation",
+      "default": "Diana G, Catanzaro M, Ferrara A, et al. Activity of purified diosmin in the treatment of hemorrhoids. Clin Ter. 2000;151(5):341-4."
+    }
+  ],
   "presets": [
     {
       "name": "custom section V"
