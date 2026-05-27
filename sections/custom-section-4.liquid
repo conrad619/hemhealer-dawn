@@ -22,7 +22,7 @@
       <div class='twcss-flex lg:twcss-flex-nowrap twcss-flex-wrap twcss-gap-[4rem]'>
         <div class='lg:twcss-text-left twcss-text-center lg:twcss-order-1 twcss-order-2 twcss-flex twcss-gap-[2rem] twcss-flex-col lg:twcss-w-1/2 twcss-w-full twcss-justify-center'>
           <h2 class='lg:twcss-block twcss-hidden lg:twcss-text-[7rem] twcss-text-[4.5rem] twcss-font-medium twcss-leading-none'>
-            {{ 'sections.custom-section-4.heading_html' | t }}
+            {{ section.settings.heading_text }}
           </h2>
           {% comment %}
             <h3 class='lg:twcss-text-[4.5rem] twcss-text-[2.5rem] twcss-font-medium twcss-text-[--secondary-color] lg:twcss-leading-[5.4rem]'>
@@ -30,16 +30,16 @@
             </h3>
           {% endcomment %}
           <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem]'>
-            {{ 'sections.custom-section-4.description_1_html' | t }}
+            {{ section.settings.description_1_text }}
           </p>
           <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem]'>
-            {{ 'sections.custom-section-4.description_2_html' | t }}
+            {{ section.settings.description_2_text }}
           </p>
           <div class=''>
             <a
               href='{{ routes.root_url | append: '/pages/about' | replace: '//', '/' }}'
               class='twcss-text-[--accent-color] twcss-inline-flex twcss-font-semibold twcss-items-center lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-font-heading twcss-border-b twcss-border-[--accent-color]'
-              ><span>{{ 'sections.custom-section-4.link_story_html' | t }}</span>
+              ><span>{{ section.settings.link_story_text }}</span>
               <svg
                 class='material-symbols-outlined twcss-w-[2rem] twcss-h-[2rem] twcss-ml-[1rem]'
                 xmlns='http://www.w3.org/2000/svg'
@@ -56,7 +56,7 @@
             <a
               href='{{ routes.root_url | append: '/pages/about#where-is-made' | replace: '//', '/' }}'
               class='twcss-text-[--accent-color] twcss-inline-flex twcss-font-semibold twcss-items-center lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-font-heading twcss-border-b twcss-border-[--accent-color]'
-              ><span>{{ 'sections.custom-section-4.link_manufactured_html' | t }}</span>
+              ><span>{{ section.settings.link_manufactured_text }}</span>
               <svg
                 class='material-symbols-outlined twcss-w-[2rem] twcss-h-[2rem] twcss-ml-[1rem]'
                 xmlns='http://www.w3.org/2000/svg'
@@ -72,12 +72,17 @@
         </div>
         <div class='lg:twcss-w-1/2 twcss-w-full lg:twcss-order-2 twcss-order-1'>
           <h2 class='lg:twcss-hidden twcss-block twcss-text-center lg:twcss-text-[7rem] twcss-text-[4.5rem] twcss-font-medium twcss-leading-none  twcss-mb-[4rem]'>
-            {{ 'sections.custom-section-4.heading_html' | t }}
+            {{ section.settings.heading_text }}
           </h2>
 
+          {%- assign cs4_image_src = 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Ian_Gutoskie.jpg?v=1745360498' -%}
+          {%- if section.settings.image != blank -%}
+            {%- assign cs4_image_src = section.settings.image | image_url: width: 1200 -%}
+          {%- endif -%}
+
           <img
-            src='{{ 'sections.custom-section-4.image_src' | t }}'
-            alt='{{ 'sections.custom-section-4.image_alt' | t }}'
+            src='{{ cs4_image_src }}'
+            alt='{{ section.settings.image_alt }}'
             width='auto'
             height='auto'
           >
@@ -104,7 +109,49 @@
 {% schema %}
 {
   "name": "custom section IV",
-  "settings": [],
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "heading_text",
+      "label": "Heading",
+      "default": "We Understand Your Pain — Because We’ve Been There"
+    },
+    {
+      "type": "textarea",
+      "id": "description_1_text",
+      "label": "Description 1",
+      "default": "Hemorrhoids can be uncomfortable and embarrassing, but they don’t have to control your life. Our mission is to give you gentle, effective relief with products designed for real results."
+    },
+    {
+      "type": "textarea",
+      "id": "description_2_text",
+      "label": "Description 2",
+      "default": "Formulated with trusted ingredients and backed by clinical research, our range provides both immediate comfort and long-term support so you can get back to living your life."
+    },
+    {
+      "type": "text",
+      "id": "link_story_text",
+      "label": "Link: Our Story",
+      "default": "Read Our Story"
+    },
+    {
+      "type": "text",
+      "id": "link_manufactured_text",
+      "label": "Link: Manufactured",
+      "default": "Where It's Made"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Hero Image Alt Text",
+      "default": "doctor"
+    }
+  ],
   "presets": [
     {
       "name": "custom section IV"

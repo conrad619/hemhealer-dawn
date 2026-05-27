@@ -37,10 +37,10 @@
     >
       <div class='twcss-flex twcss-flex-col lg:twcss-pt-[10rem] twcss-pt-[5rem] twcss-gap-[2rem] lg:twcss-pb-0 twcss-pb-[5rem]'>
         <h2 class='lg:twcss-text-[4.5rem] twcss-text-[2.5rem] twcss-font-medium twcss-text-center twcss-text-[--secondary-color] twcss-leading-[5.4rem]'>
-          {{ 'sections.custom-section-7.heading_html' | t }}
+          {{ section.settings.heading_text }}
         </h2>
         <h3 class='lg:twcss-text-[7rem] twcss-text-[4.5rem] twcss-font-medium twcss-leading-none twcss-text-center twcss-mb-[5rem]'>
-          {{ 'sections.custom-section-7.subheading_html' | t }}
+          {{ section.settings.subheading_text }}
         </h3>
         {% comment %}
           <div
@@ -102,7 +102,7 @@
           href='{{ routes.root_url | append: '/pages/results' | replace: '//', '/' }}'
           class='twcss-mx-auto twcss-inline-block hover:twcss-scale-[.9] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-white twcss-bg-[--accent-color] twcss-font-semibold twcss-text-center'
         >
-          {{ 'sections.custom-section-7.cta_html' | t }}
+          {{ section.settings.cta_text }}
         </a>
       </div>
       <div></div>
@@ -142,7 +142,98 @@
 {% schema %}
 {
   "name": "custom section VII",
-  "settings": [],
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "heading_text",
+      "label": "Heading",
+      "default": "What Our Customers Are Saying"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading_text",
+      "label": "Subheading",
+      "default": "Real Relief, Real Results"
+    },
+    {
+      "type": "textarea",
+      "id": "testimonial_text",
+      "label": "Testimonial Text",
+      "default": "I have suffered for 4 yrs and tried A LOT of different things this is the only stuff that has worked."
+    },
+    {
+      "type": "textarea",
+      "id": "testimonial_author",
+      "label": "Testimonial Author",
+      "default": "-RAFAEL"
+    },
+    {
+      "type": "textarea",
+      "id": "testimonial_1_quote",
+      "label": "Testimonial 1 Quote",
+      "default": "“This is the only thing that has helped me."
+    },
+    {
+      "type": "textarea",
+      "id": "testimonial_1_author",
+      "label": "Testimonial 1 Author",
+      "default": "-Amy"
+    },
+    {
+      "type": "textarea",
+      "id": "testimonial_2_quote",
+      "label": "Testimonial 2 Quote",
+      "default": "\"It has greatly improved my well-being, and my mental health."
+    },
+    {
+      "type": "textarea",
+      "id": "testimonial_2_author",
+      "label": "Testimonial 2 Author",
+      "default": "-Joanna"
+    },
+    {
+      "type": "textarea",
+      "id": "testimonial_3_quote",
+      "label": "Testimonial 3 Quote",
+      "default": "\"It's the most amazing thing that I've ever taken, because it actually works!"
+    },
+    {
+      "type": "textarea",
+      "id": "testimonial_3_author",
+      "label": "Testimonial 3 Author",
+      "default": "-Marc"
+    },
+    {
+      "type": "textarea",
+      "id": "testimonial_4_quote",
+      "label": "Testimonial 4 Quote",
+      "default": "\"It immediately started working and helping with the symptoms"
+    },
+    {
+      "type": "textarea",
+      "id": "testimonial_4_author",
+      "label": "Testimonial 4 Author",
+      "default": "-Bob"
+    },
+    {
+      "type": "textarea",
+      "id": "testimonial_5_quote",
+      "label": "Testimonial 5 Quote",
+      "default": "\"I continue to take it, and I'm fine. Thank God, I've been fine since [taking Hem Hero®]!"
+    },
+    {
+      "type": "textarea",
+      "id": "testimonial_5_author",
+      "label": "Testimonial 5 Author",
+      "default": "-Terri"
+    },
+    {
+      "type": "textarea",
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "FIND OUT IF HEM HEALER® PRODUCTS REALLY WORK"
+    }
+  ],
   "presets": [
     {
       "name": "custom section VII"
@@ -230,32 +321,32 @@
       {
         imgSrc: 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/6.png?v=1751644982',
         videoSrc: 'https://player.vimeo.com/video/1082132281',
-        quote: {{ 'sections.custom-section-7.testimonial_1_quote_html' | t | json }},
-        author: {{ 'sections.custom-section-7.testimonial_1_author_html' | t | json }},
+        quote: {{ section.settings.testimonial_1_quote | json }},
+        author: {{ section.settings.testimonial_1_author | json }},
       },
       {
         imgSrc: 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/8.png?v=1751645168',
         videoSrc: 'https://player.vimeo.com/video/812083970?h=8c39fd2b9e&title=0&byline=0&portrait=0',
-        quote: {{ 'sections.custom-section-7.testimonial_2_quote_html' | t | json }},
-        author: {{ 'sections.custom-section-7.testimonial_2_author_html' | t | json }},
+        quote: {{ section.settings.testimonial_2_quote | json }},
+        author: {{ section.settings.testimonial_2_author | json }},
       },
       {
         imgSrc: 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/10.png?v=1751644982',
         videoSrc: 'https://player.vimeo.com/video/621266399?h=c4c04b295a&title=0&byline=0&portrait=0',
-        quote: {{ 'sections.custom-section-7.testimonial_3_quote_html' | t | json }},
-        author: {{ 'sections.custom-section-7.testimonial_3_author_html' | t | json }},
+        quote: {{ section.settings.testimonial_3_quote | json }},
+        author: {{ section.settings.testimonial_3_author | json }},
       },
       {
         imgSrc: 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/16.png?v=1751644982',
         videoSrc: 'https://player.vimeo.com/video/707945831?h=fc95207f74&title=0&byline=0&portrait=0',
-        quote: {{ 'sections.custom-section-7.testimonial_4_quote_html' | t | json }},
-        author: {{ 'sections.custom-section-7.testimonial_4_author_html' | t | json }},
+        quote: {{ section.settings.testimonial_4_quote | json }},
+        author: {{ section.settings.testimonial_4_author | json }},
       },
       {
         imgSrc: 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/18.png?v=1751644982',
         videoSrc: 'https://player.vimeo.com/video/621182922?h=529f4ad338&title=0&byline=0&portrait=0',
-        quote: {{ 'sections.custom-section-7.testimonial_5_quote_html' | t | json }},
-        author: {{ 'sections.custom-section-7.testimonial_5_author_html' | t | json }},
+        quote: {{ section.settings.testimonial_5_quote | json }},
+        author: {{ section.settings.testimonial_5_author | json }},
       },
     ];
 

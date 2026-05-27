@@ -176,6 +176,9 @@
 .quick-add-modal__content-info--bulk .quick-add__content-info__media {
   width: auto;
 }
+.onetime-radio .rc-radio__label {
+  display: block !important;
+}
 
 @media screen and (max-width: 989px) {
   .quick-add-modal__content-info--bulk .quick-add__content-info__media {

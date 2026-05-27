@@ -6,10 +6,10 @@
       {% endif %}
     >
       <h2 class='lg:twcss-text-[7rem] twcss-text-[4.5rem] twcss-font-medium twcss-leading-none twcss-text-center twcss-mb-[2rem]'>
-        {{ 'sections.custom-section-3.heading_html' | t }}
+        {{ section.settings.heading_text }}
       </h2>
       <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-mb-[1.4rem] twcss-text-center twcss-text-black'>
-        {{ 'sections.custom-section-3.description_html' | t }}
+        {{ section.settings.description_text }}
       </p>
       {% comment %}
         <div class='twcss-flex lg:twcss-flex-row twcss-flex-col lg:twcss-gap-[4rem] twcss-gap-[2rem] twcss-pt-[4rem]'>
@@ -68,16 +68,24 @@
       {% endcomment %}
 
       <div class='twcss-flex lg:twcss-flex-row twcss-flex-col twcss-justify-center twcss-gap-[2rem] twcss-py-[2rem]'>
+        {%- assign image_3_src = 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/nicolette.jpg?v=1750696482' -%}
+        {%- if section.settings.image_3 != blank -%}
+          {%- assign image_3_src = section.settings.image_3 | image_url: width: 900 -%}
+        {%- endif -%}
+        {%- assign image_4_src = '//www.hemhealer.com/cdn/shop/files/langdon_600x.jpg?v=1653736319' -%}
+        {%- if section.settings.image_4 != blank -%}
+          {%- assign image_4_src = section.settings.image_4 | image_url: width: 900 -%}
+        {%- endif -%}
         <div class='lg:twcss-w-1/2 twcss-w-full'>
           <img
-            src='{{ 'sections.custom-section-3.image_3_src' | t }}'
-            alt='{{ 'sections.custom-section-3.image_3_alt' | t }}'
+            src='{{ image_3_src }}'
+            alt='{{ section.settings.image_3_alt }}'
             width='auto'
             height='auto'
             class='w-full twcss-rounded-3xl'
           >
           <p class='lg:twcss-text-[2.4rem] twcss-text-[1.5rem] twcss-px-[1rem] lg:twcss-py-[2rem] twcss-py-[1rem] twcss-font-bold twcss-text-center'>
-            <span class='twcss-uppercase'>{{ 'sections.custom-section-3.quote_1_html' | t }}</span><br>
+            <span class='twcss-uppercase'>{{ section.settings.quote_1 }}</span><br>
             <div class='lg:twcss-text-[2.2rem] twcss-text-[2rem] twcss-flex twcss-justify-center twcss-items-center twcss-gap-[.8rem]'>
               <span class='twcss-font-semibold twcss-uppercase'>~ Dr. Nicolette, D.O.</span>
               <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'>
@@ -88,14 +96,14 @@
         </div>
         <div class='lg:twcss-w-1/2 twcss-w-full'>
           <img
-            src='{{ 'sections.custom-section-3.image_4_src' | t }}'
-            alt='{{ 'sections.custom-section-3.image_4_alt' | t }}'
+            src='{{ image_4_src }}'
+            alt='{{ section.settings.image_4_alt }}'
             width='auto'
             height='auto'
             class='w-full twcss-rounded-3xl'
           >
           <p class='lg:twcss-text-[2.4rem] twcss-text-[1.5rem] twcss-px-[1rem] lg:twcss-py-[2rem] twcss-py-[1rem] twcss-font-bold twcss-text-center'>
-            <span class='twcss-uppercase'>{{ 'sections.custom-section-3.quote_2_html' | t }}</span><br>
+            <span class='twcss-uppercase'>{{ section.settings.quote_2 }}</span><br>
             <div class='lg:twcss-text-[2.2rem] twcss-text-[2rem] twcss-flex twcss-justify-center twcss-items-center twcss-gap-[.8rem]'>
               <span class='twcss-font-semibold twcss-uppercase'>~ DR. LANGDON, M.D.</span>
               <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' viewBox='0 0 24 24'>
@@ -170,7 +178,60 @@
 {% schema %}
 {
   "name": "custom section III",
-  "settings": [],
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "heading_text",
+      "label": "Heading",
+      "default": "Doctor-Backed Relief You Can Trust"
+    },
+    {
+      "type": "textarea",
+      "id": "description_text",
+      "label": "Description",
+      "default": "At <strong>Hem Healer&reg;</strong>, we believe in science-backed solutions. That’s why our formulas are not only <strong>clinically researched</strong> but also <strong>recommended by health professionals</strong> who understand the importance of <strong>safe, effective, and natural hemorrhoid relief</strong>."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Image 3"
+    },
+    {
+      "type": "text",
+      "id": "image_3_alt",
+      "label": "Image 3 Alt Text",
+      "default": "doctor"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "Image 4"
+    },
+    {
+      "type": "text",
+      "id": "image_4_alt",
+      "label": "Image 4 Alt Text",
+      "default": "doctor"
+    },
+    {
+      "type": "textarea",
+      "id": "quote_1",
+      "label": "Quote 1",
+      "default": "I highly recommend Hem Healer's Hem Hero® to anyone struggling with hemorrhoids"
+    },
+    {
+      "type": "textarea",
+      "id": "quote_2",
+      "label": "Quote 2",
+      "default": "I highly recommend Hem Hero® for your hemorrhoids."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "EXPERIENCE DOCTOR-APPROVED RELIEF TODAY"
+    }
+  ],
   "presets": [
     {
       "name": "custom section III"

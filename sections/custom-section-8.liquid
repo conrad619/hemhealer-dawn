@@ -21,15 +21,19 @@
     >
       <div class='twcss-flex twcss-gap-[2rem] twcss-flex-col'>
         <h2 class='lg:twcss-text-[7rem] twcss-text-[4.5rem] twcss-font-medium twcss-leading-none twcss-text-center'>
-          {{ 'sections.custom-section-8.heading_html' | t }}
+          {{ section.settings.heading_text }}
         </h2>
         <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-center'>
-          {{ 'sections.custom-section-8.description_html' | t }}
+          {{ section.settings.description_text }}
         </p>
         <div class='twcss-mt-[2rem] twcss-relative lg:twcss-block twcss-hidden'>
+          {%- assign cs8_desktop_src = 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Recommended_Products_edc67273-e89c-4c4e-bf1c-248fc73309cb.png?v=1771955690' -%}
+          {%- if section.settings.desktop_image != blank -%}
+            {%- assign cs8_desktop_src = section.settings.desktop_image | image_url: width: 1400 -%}
+          {%- endif -%}
           <img
-            src='{{ 'sections.custom-section-8.desktop_image_src' | t }}'
-            alt='{{ 'sections.custom-section-8.desktop_image_alt' | t }}'
+            src='{{ cs8_desktop_src }}'
+            alt='{{ section.settings.desktop_image_alt }}'
             width='auto'
             height='auto'
             class='w-full'
@@ -68,9 +72,13 @@
           </div>
         </div>
         <div class='twcss-mt-[2rem] twcss-relative lg:twcss-hidden twcss-block'>
+          {%- assign cs8_mobile_src = 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Recommended_Products_Mobile.png?v=1771960908' -%}
+          {%- if section.settings.mobile_image != blank -%}
+            {%- assign cs8_mobile_src = section.settings.mobile_image | image_url: width: 900 -%}
+          {%- endif -%}
           <img
-            src='{{ 'sections.custom-section-8.mobile_image_src' | t }}'
-            alt='{{ 'sections.custom-section-8.mobile_image_alt' | t }}'
+            src='{{ cs8_mobile_src }}'
+            alt='{{ section.settings.mobile_image_alt }}'
             width='auto'
             height='auto'
             class='w-full'
@@ -130,7 +138,42 @@
 {% schema %}
 {
   "name": "custom section VIII",
-  "settings": [],
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "heading_text",
+      "label": "Heading",
+      "default": "Find the Right Hem Healer® Product for You"
+    },
+    {
+      "type": "textarea",
+      "id": "description_text",
+      "label": "Description",
+      "default": "Not sure which product is best for your needs? Use our quick guide to choose the right Hem Healer® solution based on your symptoms."
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "text",
+      "id": "desktop_image_alt",
+      "label": "Desktop Image Alt",
+      "default": "find the right hem healer products"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "text",
+      "id": "mobile_image_alt",
+      "label": "Mobile Image Alt",
+      "default": "find the right hem healer products"
+    }
+  ],
   "presets": [
     {
       "name": "custom section VIII"

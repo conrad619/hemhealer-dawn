@@ -22,87 +22,41 @@
     >
       <div class='twcss-flex twcss-flex-col twcss-text-center'>
         <h2 class='lg:twcss-text-[4.5rem] twcss-text-[2.5rem] twcss-font-medium lg:twcss-text-center twcss-text-[--secondary-color] twcss-mb-[2rem]  twcss-leading-normal'>
-          {{ 'sections.custom-section-2.heading_1_html' | t }}
+          {{ section.settings.heading_1_text }}
         </h2>
         <h3 class='lg:twcss-text-[7rem] twcss-text-[4.5rem] twcss-font-medium twcss-leading-none lg:twcss-text-center'>
-          {{ 'sections.custom-section-2.heading_2_html' | t }}
+          {{ section.settings.heading_2_text }}
         </h3>
       </div>
       <div class='twcss-gap-[4rem] lg:twcss-mt-[4rem] twcss-mt-[2rem] twcss-grid lg:twcss-grid-cols-3 twcss-grid-cols-1'>
         <div class='twcss-flex twcss-flex-col lg:twcss-gap-[2rem] twcss-gap-[1rem] lg:twcss-p-[1rem]'>
-          <img
-            src='{{ 'sections.custom-section-2.image_1_src' | t }}'
-            width='auto'
-            height='auto'
-            alt='{{ 'sections.custom-section-2.image_1_alt' | t }}'
-            class='twcss-w-full'
-          >
-          <h4 class='twcss-mt-2 lg:twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[3.2rem] twcss-leading-none twcss-text-[--secondary-color] twcss-font-semibold'>
-            {{ 'sections.custom-section-2.title_1_html' | t }}
-          </h4>
+          <a href='{{ routes.root_url | append: '/products/hem-healer' | replace: '//', '/' }}'>
+            <img
+              src='{{ section.settings.image_1 }}'
+              width='auto'
+              height='auto'
+              alt='{{ section.settings.image_1_alt }}'
+              class='twcss-w-full'
+            >
+            <h4 class='twcss-mt-2 lg:twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[3.2rem] twcss-leading-none twcss-text-[--secondary-color] twcss-font-semibold'>
+              {{ section.settings.title_1_text }}
+            </h4>
+          </a>
           {% comment %}
             <h5 class='twcss-mt-2 twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[2rem] twcss-leading-none twcss-font-medium'>
               Fast-Acting Hemorrhoid Relief for Chronic Cases
             </h5>
           {% endcomment %}
           <ul class='twcss-text-lg twcss-flex twcss-mb-auto twcss-gap-[1rem] twcss-flex-col *:twcss-flex *:twcss-items-start lg:*:twcss-text-[1.8rem] *:twcss-text-[1.5rem] *:twcss-text-black'>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>
-                {%- if section.settings.list_1_1 contains 'sections.custom-section-2.' -%}
-                  {{- section.settings.list_1_1 | t -}}
-                {%- else -%}
-                  {{- section.settings.list_1_1 -}}
-                {%- endif -%}
-              </span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>
-                {%- if section.settings.list_1_2 contains 'sections.custom-section-2.' -%}
-                  {{- section.settings.list_1_2 | t -}}
-                {%- else -%}
-                  {{- section.settings.list_1_2 -}}
-                {%- endif -%}
-              </span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>
-                {%- if section.settings.list_1_3 contains 'sections.custom-section-2.' -%}
-                  {{- section.settings.list_1_3 | t -}}
-                {%- else -%}
-                  {{- section.settings.list_1_3 -}}
-                {%- endif -%}
-              </span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>
-                {%- if section.settings.list_1_4 contains 'sections.custom-section-2.' -%}
-                  {{- section.settings.list_1_4 | t -}}
-                {%- else -%}
-                  {{- section.settings.list_1_4 -}}
-                {%- endif -%}
-              </span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>
-                {%- if section.settings.list_1_5 contains 'sections.custom-section-2.' -%}
-                  {{- section.settings.list_1_5 | t -}}
-                {%- else -%}
-                  {{- section.settings.list_1_5 -}}
-                {%- endif -%}
-              </span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>
-                {%- if section.settings.list_1_6 contains 'sections.custom-section-2.' -%}
-                  {{- section.settings.list_1_6 | t -}}
-                {%- else -%}
-                  {{- section.settings.list_1_6 -}}
-                {%- endif -%}
-              </span>
-            </li>
+            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_1 }}</span></li>
+            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_2 }}</span></li>
+            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_3 }}</span></li>
+            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_4 }}</span></li>
+            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_5 }}</span></li>
+            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_6 }}</span></li>
           </ul>
           <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black'>
-            {{ 'sections.custom-section-2.best_for_1_html' | t }}
+            {{ section.settings.best_for_1_text }}
           </p>
 
           {% comment %}
@@ -116,83 +70,45 @@
             href='{{ routes.root_url | append: '/products/hem-healer' | replace: '//', '/' }}'
             class='twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-[#333] twcss-bg-[--accent-color-2] twcss-font-semibold twcss-w-full twcss-text-center'
           >
-            {{- 'sections.custom-section-2.buy_now_hero_html' | t -}}
+            {{ section.settings.buy_now_hero_text }}
           </a>
+
+          {%- render 'quick-add-product',
+            product_handle: 'hem-hero',
+            section_id: section.id,
+            horizontal_quick_add: horizontal_quick_add
+          -%}
         </div>
         <div class='twcss-flex twcss-flex-col lg:twcss-gap-[2rem] twcss-gap-[1rem] lg:twcss-p-[1rem]'>
-          <img
-            src='{{ 'sections.custom-section-2.image_2_src' | t }}'
-            width='auto'
-            height='auto'
-            alt='{{ 'sections.custom-section-2.image_2_alt' | t }}'
-            class='twcss-w-full'
+          <a
+            href='{{ routes.root_url | append: '/products/easy-flow-fiber' | replace: '//', '/' }}'
           >
-          <h4 class='twcss-mt-2 lg:twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[2.2rem] twcss-leading-none twcss-text-[--secondary-color] twcss-font-semibold'>
-            {{ 'sections.custom-section-2.title_2_html' | t }}
-          </h4>
+            <img
+              src='{{ section.settings.image_2 }}'
+              width='auto'
+              height='auto'
+              alt='{{ section.settings.image_2_alt }}'
+              class='twcss-w-full'
+            >
+            <h4 class='twcss-mt-2 lg:twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[2.2rem] twcss-leading-none twcss-text-[--secondary-color] twcss-font-semibold'>
+              {{ section.settings.title_2_text }}
+            </h4>
+          </a>
           {% comment %}
             <h5 class='twcss-mt-2 twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[2.2rem] twcss-leading-none twcss-font-medium'>
               Gentle, Effective Constipation Relief Without Bloating
             </h5>
           {% endcomment %}
           <ul class='twcss-text-lg twcss-flex twcss-mb-auto twcss-gap-[1rem] twcss-flex-col *:twcss-flex *:twcss-items-start *:twcss-text-[1.8rem] *:twcss-text-black'>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>
-                {%- if section.settings.list_fiber_1 contains 'sections.custom-section-2.' -%}
-                  {{- section.settings.list_fiber_1 | t -}}
-                {%- else -%}
-                  {{- section.settings.list_fiber_1 -}}
-                {%- endif -%}
-              </span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>
-                {%- if section.settings.list_fiber_2 contains 'sections.custom-section-2.' -%}
-                  {{- section.settings.list_fiber_2 | t -}}
-                {%- else -%}
-                  {{- section.settings.list_fiber_2 -}}
-                {%- endif -%}
-              </span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>
-                {%- if section.settings.list_fiber_3 contains 'sections.custom-section-2.' -%}
-                  {{- section.settings.list_fiber_3 | t -}}
-                {%- else -%}
-                  {{- section.settings.list_fiber_3 -}}
-                {%- endif -%}
-              </span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>
-                {%- if section.settings.list_fiber_4 contains 'sections.custom-section-2.' -%}
-                  {{- section.settings.list_fiber_4 | t -}}
-                {%- else -%}
-                  {{- section.settings.list_fiber_4 -}}
-                {%- endif -%}
-              </span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>
-                {%- if section.settings.list_fiber_5 contains 'sections.custom-section-2.' -%}
-                  {{- section.settings.list_fiber_5 | t -}}
-                {%- else -%}
-                  {{- section.settings.list_fiber_5 -}}
-                {%- endif -%}
-              </span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>
-                {%- if section.settings.list_fiber_6 contains 'sections.custom-section-2.' -%}
-                  {{- section.settings.list_fiber_6 | t -}}
-                {%- else -%}
-                  {{- section.settings.list_fiber_6 -}}
-                {%- endif -%}
-              </span>
-            </li>
+            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_1 }}</span></li>
+            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_2 }}</span></li>
+            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_3 }}</span></li>
+            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_4 }}</span></li>
+            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_5 }}</span></li>
+            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_6 }}</span></li>
           </ul>
           <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black lg:twcss-mb-0 twcss-mb-[1.6rem]'>
-            {{ 'sections.custom-section-2.best_for_fiber_html' | t }}
+            {{ section.settings.best_for_fiber_text }}
           </p>
           {% comment %}
             <a
@@ -205,83 +121,44 @@
             href='{{ routes.root_url | append: '/products/easy-flow-fiber' | replace: '//', '/' }}'
             class='twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-[#333] twcss-bg-[--accent-color-2] twcss-font-semibold twcss-w-full twcss-text-center'
           >
-            {{- 'sections.custom-section-2.buy_now_fiber_html' | t -}}
+            {{ section.settings.buy_now_fiber_text }}
           </a>
+          {%- render 'quick-add-product',
+            product_handle: 'easy-flow-fiber',
+            section_id: section.id,
+            horizontal_quick_add: horizontal_quick_add
+          -%}
         </div>
         <div class='twcss-flex twcss-flex-col lg:twcss-gap-[2rem] twcss-gap-[1rem] lg:twcss-p-[1rem]'>
-          <img
-            src='{{ 'sections.custom-section-2.image_3_src' | t }}'
-            width='auto'
-            height='auto'
-            alt='{{ 'sections.custom-section-2.image_3_alt' | t }}'
-            class='twcss-w-full'
+          <a
+            href='{{ routes.root_url | append: '/products/hem-rescue' | replace: '//', '/' }}'
           >
-          <h4 class='twcss-mt-2 lg:twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[2.2rem] twcss-leading-none twcss-text-[--secondary-color] twcss-font-semibold'>
-            {{ 'sections.custom-section-2.title_3_html' | t }}
-          </h4>
+            <img
+              src='{{ section.settings.image_3 }}'
+              width='auto'
+              height='auto'
+              alt='{{ section.settings.image_3_alt }}'
+              class='twcss-w-full'
+            >
+            <h4 class='twcss-mt-2 lg:twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[2.2rem] twcss-leading-none twcss-text-[--secondary-color] twcss-font-semibold'>
+              {{ section.settings.title_3_text }}
+            </h4>
+          </a>
           {% comment %}
             <h5 class='twcss-mt-2 twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[2.2rem] twcss-leading-none twcss-font-medium'>
               Ongoing Support to Keep Hemorrhoids From Coming Back
             </h5>
           {% endcomment %}
           <ul class='twcss-text-lg twcss-flex twcss-mb-auto twcss-gap-[1rem] twcss-flex-col *:twcss-flex *:twcss-items-start *:twcss-text-[1.8rem] *:twcss-text-black'>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>
-                {%- if section.settings.list_2_1 contains 'sections.custom-section-2.' -%}
-                  {{- section.settings.list_2_1 | t -}}
-                {%- else -%}
-                  {{- section.settings.list_2_1 -}}
-                {%- endif -%}
-              </span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>
-                {%- if section.settings.list_2_2 contains 'sections.custom-section-2.' -%}
-                  {{- section.settings.list_2_2 | t -}}
-                {%- else -%}
-                  {{- section.settings.list_2_2 -}}
-                {%- endif -%}
-              </span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>
-                {%- if section.settings.list_2_3 contains 'sections.custom-section-2.' -%}
-                  {{- section.settings.list_2_3 | t -}}
-                {%- else -%}
-                  {{- section.settings.list_2_3 -}}
-                {%- endif -%}
-              </span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>
-                {%- if section.settings.list_2_4 contains 'sections.custom-section-2.' -%}
-                  {{- section.settings.list_2_4 | t -}}
-                {%- else -%}
-                  {{- section.settings.list_2_4 -}}
-                {%- endif -%}
-              </span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>
-                {%- if section.settings.list_2_5 contains 'sections.custom-section-2.' -%}
-                  {{- section.settings.list_2_5 | t -}}
-                {%- else -%}
-                  {{- section.settings.list_2_5 -}}
-                {%- endif -%}
-              </span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>
-                {%- if section.settings.list_2_6 contains 'sections.custom-section-2.' -%}
-                  {{- section.settings.list_2_6 | t -}}
-                {%- else -%}
-                  {{- section.settings.list_2_6 -}}
-                {%- endif -%}
-              </span>
-            </li>
+            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_1 }}</span></li>
+            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_2 }}</span></li>
+            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_3 }}</span></li>
+            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_4 }}</span></li>
+            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_5 }}</span></li>
+            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_6 }}</span></li>
           </ul>
           <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black'>
-            {{ 'sections.custom-section-2.best_for_2_html' | t }}
+            {{ section.settings.best_for_2_text }}
           </p>
           {% comment %}
             <a
@@ -294,8 +171,13 @@
             href='{{ routes.root_url | append: '/products/hem-rescue' | replace: '//', '/' }}'
             class='twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-[#333] twcss-bg-[--accent-color-2] twcss-font-semibold twcss-w-full twcss-text-center'
           >
-            {{- 'sections.custom-section-2.buy_now_rescue_html' | t -}}
+            {{ section.settings.buy_now_rescue_text }}
           </a>
+          {%- render 'quick-add-product',
+            product_handle: 'hem-rescue',
+            section_id: section.id,
+            horizontal_quick_add: horizontal_quick_add
+          -%}
         </div>
       </div>
     </div>
@@ -322,106 +204,230 @@
   "name": "custom section II",
   "settings": [
     {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_1_text",
+      "label": "Heading 1",
+      "default": "Natural Supplements that Help Reduce Pain, Swelling and Flare-Ups"
+    },
+    {
+      "type": "text",
+      "id": "heading_2_text",
+      "label": "Heading 2",
+      "default": "Real Relief from Hemorrhoids Without the Mess or Side Effects"
+    },
+    {
+      "type": "header",
+      "content": "Product 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Product 1 Image",
+      "default": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hem-hero-extra-strengthhem-hero-extra-strengthcapsuleshem-healer-llchem-healer-hh05000195893280834buy-3-get-2-free-5-bottles-total-676297.jpg?v=1741104720"
+    },
+    {
+      "type": "text",
+      "id": "image_1_alt",
+      "label": "Product 1 Image Alt Text",
+      "default": "Hem Hero"
+    },
+    {
+      "type": "text",
+      "id": "title_1_text",
+      "label": "Product 1 Title",
+      "default": "HEM HERO®"
+    },
+    {
       "type": "text",
       "id": "list_1_1",
-      "label": "List 1 Item 1",
-      "default": "sections.custom-section-2.list_1_1_html"
+      "label": "Product 1 List Item 1",
+      "default": "🔁 Best for Chronic Term Sufferers"
     },
     {
       "type": "text",
       "id": "list_1_2",
-      "label": "List 1 Item 2",
-      "default": "sections.custom-section-2.list_1_2_html"
+      "label": "Product 1 List Item 2",
+      "default": "🩸 Fights Bleeding, Itching, Burning, and Pain"
     },
     {
       "type": "text",
       "id": "list_1_3",
-      "label": "List 1 Item 3",
-      "default": "sections.custom-section-2.list_1_3_html"
+      "label": "Product 1 List Item 3",
+      "default": "✅ Works on Internal and External Hemorrhoids"
     },
     {
       "type": "text",
       "id": "list_1_4",
-      "label": "List 1 Item 4",
-      "default": "sections.custom-section-2.list_1_4_html"
+      "label": "Product 1 List Item 4",
+      "default": "💊 Easy-to-Swallow Capsule — No Messy Creams"
     },
     {
       "type": "text",
       "id": "list_1_5",
-      "label": "List 1 Item 5",
-      "default": "sections.custom-section-2.list_1_5_html"
+      "label": "Product 1 List Item 5",
+      "default": "💰 Full Money-Back Guarantee"
     },
     {
       "type": "text",
       "id": "list_1_6",
-      "label": "List 1 Item 6",
-      "default": "sections.custom-section-2.list_1_6_html"
+      "label": "Product 1 List Item 6",
+      "default": "🇺🇸 Proudly Made in Atlanta, Georgia"
     },
     {
       "type": "text",
-      "id": "list_2_1",
-      "label": "List 2 Item 1",
-      "default": "sections.custom-section-2.list_2_1_html"
+      "id": "best_for_1_text",
+      "label": "Product 1 Best For Text",
+      "default": "<strong>Best For</strong>: Long-term sufferers who need maximum-strength daily support to restore comfort and confidence.<br>&nbsp;"
     },
     {
       "type": "text",
-      "id": "list_2_2",
-      "label": "List 2 Item 2",
-      "default": "sections.custom-section-2.list_2_2_html"
+      "id": "buy_now_hero_text",
+      "label": "Product 1 Button Text",
+      "default": "BUY NOW"
+    },
+    {
+      "type": "header",
+      "content": "Product 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Product 2 Image",
+      "default": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Easy_Flow_Fiber_-_Ingredients.png?v=1771955690"
     },
     {
       "type": "text",
-      "id": "list_2_3",
-      "label": "List 2 Item 3",
-      "default": "sections.custom-section-2.list_2_3_html"
+      "id": "image_2_alt",
+      "label": "Product 2 Image Alt Text",
+      "default": "HEM EASY-FLOW FIBER"
     },
     {
       "type": "text",
-      "id": "list_2_4",
-      "label": "List 2 Item 4",
-      "default": "sections.custom-section-2.list_2_4_html"
-    },
-    {
-      "type": "text",
-      "id": "list_2_5",
-      "label": "List 2 Item 5",
-      "default": "sections.custom-section-2.list_2_5_html"
+      "id": "title_2_text",
+      "label": "Product 2 Title",
+      "default": "HEM EASY-FLOW FIBER™"
     },
     {
       "type": "text",
       "id": "list_fiber_1",
-      "label": "Fiber List Item 1",
-      "default": "sections.custom-section-2.list_fiber_1_html"
+      "label": "Product 2 List Item 1",
+      "default": "🚽 Makes Pooping Less Painful"
     },
     {
       "type": "text",
       "id": "list_fiber_2",
-      "label": "Fiber List Item 2",
-      "default": "sections.custom-section-2.list_fiber_2_html"
+      "label": "Product 2 List Item 2",
+      "default": "🌾 Relieves Constipation"
     },
     {
       "type": "text",
       "id": "list_fiber_3",
-      "label": "Fiber List Item 3",
-      "default": "sections.custom-section-2.list_fiber_3_html"
+      "label": "Product 2 List Item 3",
+      "default": "💨 Reduces Straining That Can Trigger Hemorrhoids"
     },
     {
       "type": "text",
       "id": "list_fiber_4",
-      "label": "Fiber List Item 4",
-      "default": "sections.custom-section-2.list_fiber_4_html"
+      "label": "Product 2 List Item 4",
+      "default": "💊 Easy-to-Take Capsules"
     },
     {
       "type": "text",
       "id": "list_fiber_5",
-      "label": "Fiber List Item 5",
-      "default": "sections.custom-section-2.list_fiber_5_html"
+      "label": "Product 2 List Item 5",
+      "default": "💰 Full Money-Back Guarantee"
     },
     {
       "type": "text",
       "id": "list_fiber_6",
-      "label": "Fiber List Item 6",
-      "default": "sections.custom-section-2.list_fiber_6_html"
+      "label": "Product 2 List Item 6",
+      "default": "🇺🇸 Proudly Made in Atlanta, Georgia"
+    },
+    {
+      "type": "text",
+      "id": "best_for_fiber_text",
+      "label": "Product 2 Best For Text",
+      "default": "<strong>Best For</strong>: Anyone struggling with constipation or irregularity—especially those managing active hemorrhoid symptoms."
+    },
+    {
+      "type": "text",
+      "id": "buy_now_fiber_text",
+      "label": "Product 2 Button Text",
+      "default": "BUY NOW"
+    },
+    {
+      "type": "header",
+      "content": "Product 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Product 3 Image",
+      "default": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hem-rescuehem-rescuecapsules.png?v=1763482328"
+    },
+    {
+      "type": "text",
+      "id": "image_3_alt",
+      "label": "Product 3 Image Alt Text",
+      "default": "HEM RESCUE"
+    },
+    {
+      "type": "text",
+      "id": "title_3_text",
+      "label": "Product 3 Title",
+      "default": "HEM RESCUE® – Heart-Friendly Formula"
+    },
+    {
+      "type": "text",
+      "id": "list_2_1",
+      "label": "Product 3 List Item 1",
+      "default": "🔥 Anti-Inflammatory Support"
+    },
+    {
+      "type": "text",
+      "id": "list_2_2",
+      "label": "Product 3 List Item 2",
+      "default": "🌿 Shrinks Swelling and Reduces Irritation"
+    },
+    {
+      "type": "text",
+      "id": "list_2_3",
+      "label": "Product 3 List Item 3",
+      "default": "🌬️ Tightens Veins to Prevent Flare-Ups"
+    },
+    {
+      "type": "text",
+      "id": "list_2_4",
+      "label": "Product 3 List Item 4",
+      "default": "🩸 Supports Healthy Circulation and Vein Strength"
+    },
+    {
+      "type": "text",
+      "id": "list_2_5",
+      "label": "Product 3 List Item 5",
+      "default": "💰 Full Money-Back Guarantee"
+    },
+    {
+      "type": "text",
+      "id": "list_2_6",
+      "label": "Product 3 List Item 6",
+      "default": "🇺🇸 Proudly Made in Atlanta, Georgia"
+    },
+    {
+      "type": "text",
+      "id": "best_for_2_text",
+      "label": "Product 3 Best For Text",
+      "default": "<strong>Best For:</strong> Staying symptom-free – provides long-term protection for those in remission.<br>&nbsp;"
+    },
+    {
+      "type": "text",
+      "id": "buy_now_rescue_text",
+      "label": "Product 3 Button Text",
+      "default": "BUY NOW"
     }
   ],
   "presets": [
@@ -431,3 +437,7 @@
   ]
 }
 {% endschema %}
+
+{{ 'quick-add.css' | asset_url | stylesheet_tag }}
+<script src='{{ 'quick-add.js' | asset_url }}' defer='defer'></script>
+<script src='{{ 'product-form.js' | asset_url }}' defer='defer'></script>

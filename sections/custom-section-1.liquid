@@ -31,7 +31,7 @@
                 <path d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z"></path>
               </svg>
             </div>
-            <span>{{ 'sections.custom-section-1.settings.column_1_html' | t }}</span>
+            <span>{{ section.settings.column_1_text }}</span>
           </li>
           <li
             id='support_healthy_circulation'
@@ -47,7 +47,7 @@
                 <path d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z"></path>
               </svg>
             </div>
-            <span>{{ 'sections.custom-section-1.settings.column_2_html' | t }}</span>
+            <span>{{ section.settings.column_2_text }}</span>
           </li>
           <li
             id='strengthen_veins_and_capillaries'
@@ -63,14 +63,14 @@
                 <path d="M485.5 0L576 160H474.9L405.7 0h79.8zm-128 0l69.2 160H149.3L218.5 0h139zm-267 0h79.8l-69.2 160H0L90.5 0zM0 192h100.7l123 251.7c1.5 3.1-2.7 5.9-5 3.3L0 192zm148.2 0h279.6l-137 318.2c-1 2.4-4.5 2.4-5.5 0L148.2 192zm204.1 251.7l123-251.7H576L357.3 446.9c-2.3 2.7-6.5-.1-5-3.2z"></path>
               </svg>
             </div>
-            <span>{{ 'sections.custom-section-1.settings.column_3_html' | t }}</span>
+            <span>{{ section.settings.column_3_text }}</span>
           </li>
         </ul>
         <div class='twcss-relative'>
           <img
             class='twcss-w-full lg:-twcss-mt-[14rem] -twcss-z-[1]'
-            src='{{ 'sections.custom-section-1.settings.image_src' | t }}'
-            alt='{{ 'sections.custom-section-1.settings.image_alt' | t }}'
+            src='{{ section.settings.image.src }}'
+            alt='{{ section.settings.image_alt }}'
             width='auto'
             height='auto'
           >
@@ -88,9 +88,9 @@
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    let fast_acting_relief = {{ 'sections.custom-section-1.settings.column_1_tooltip_html' | t | json }};
-    let support_healthy_circulation = {{ 'sections.custom-section-1.settings.column_2_tooltip_html' | t | json }};
-    let strengthen_veins_and_capillaries = {{ 'sections.custom-section-1.settings.column_3_tooltip_html' | t | json }};
+    let fast_acting_relief = {{ section.settings.column_1_tooltip | json }};
+    let support_healthy_circulation = {{ section.settings.column_2_tooltip | json }};
+    let strengthen_veins_and_capillaries = {{ section.settings.column_3_tooltip | json }};
 
     let settings = {
       allowHTML: true,
@@ -119,7 +119,77 @@
 {% schema %}
 {
   "name": "custom section I",
-  "settings": [],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Column 1"
+    },
+    {
+      "type": "text",
+      "id": "column_1_text",
+      "label": "Column 1 Text",
+      "default": "Fast Acting Relief",
+      "info": "Supports HTML elements"
+    },
+    {
+      "type": "text",
+      "id": "column_1_tooltip",
+      "label": "Column 1 Tooltip",
+      "default": "Hem Hero® uses a clinical-strength blend of Diosmin, Hesperidin, and Horse Chestnut to reduce swelling and discomfort quickly...",
+      "info": "Supports HTML elements"
+    },
+    {
+      "type": "header",
+      "content": "Column 2"
+    },
+    {
+      "type": "text",
+      "id": "column_2_text",
+      "label": "Column 2 Text",
+      "default": "Support Healthy Circulation",
+      "info": "Supports HTML elements"
+    },
+    {
+      "type": "text",
+      "id": "column_2_tooltip",
+      "label": "Column 2 Tooltip",
+      "default": "Diosmin and Hesperidin are citrus bioflavonoids proven to improve blood vessel tone and circulation...",
+      "info": "Supports HTML elements"
+    },
+    {
+      "type": "header",
+      "content": "Column 3"
+    },
+    {
+      "type": "text",
+      "id": "column_3_text",
+      "label": "Column 3 Text",
+      "default": "Strengthen Veins & Capillaries",
+      "info": "Supports HTML elements"
+    },
+    {
+      "type": "text",
+      "id": "column_3_tooltip",
+      "label": "Column 3 Tooltip",
+      "default": "Horse Chestnut Extract and Diosmin strengthen the walls of veins and capillaries...",
+      "info": "Supports HTML elements"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Section Image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image Alt Text",
+      "default": "hem healer bottles"
+    }
+  ],
   "presets": [
     {
       "name": "custom section I"
