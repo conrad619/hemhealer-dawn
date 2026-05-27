@@ -28,7 +28,8 @@
       }
     },
     "custom_section_2_tikBLM": {
-      "type": "custom-section-2"
+      "type": "custom-section-2",
+      "settings": {}
     },
     "custom_section_3_YCzyMb": {
       "type": "custom-section-3",
