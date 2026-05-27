@@ -345,7 +345,7 @@
       "products": {
         "heading": "Nuestros Productos"
       },
-      "copyright": "\u00a9 2026 Hem Healer\u00ae, LLC. Todos los derechos reservados.",
+      "copyright": "© 2026 Hem Healer®, LLC. Todos los derechos reservados.",
       "statement_1": "Las declaraciones realizadas en este sitio web no han sido evaluadas por la Administración de Alimentos y Medicamentos de los Estados Unidos (FDA). Estas declaraciones y los productos de esta empresa no están destinados a diagnosticar, tratar, curar ni prevenir ninguna enfermedad.",
       "statement_2": "*Los resultados varían de persona a persona dependiendo de la condición de salud existente del individuo, su fisiología y su nivel de compromiso en el uso constante del producto según las indicaciones."
     },
@@ -660,7 +660,9 @@
       "community_text_before_link": "Estamos orgullosos de ayudar a miles de personas, igual que Ian, que han encontrado un alivio duradero a través de Hem Healer®. Nuestros productos están arraigados en la naturaleza y respaldados por nuestro compromiso con tu bienestar. Llámanos hoy al 863-302-8006 o programa una ",
       "phone_consultation_title": "Consulta por vídeo",
       "phone_consultation_link": "Consulta telefónica",
-      "community_text_after_link": " Para comenzar tu camino hacia una vida libre de incomodidad."
+      "community_text_after_link": " Para comenzar tu camino hacia una vida libre de incomodidad.",
+      "paragraph_5": "Hoy, Hem Healer® está impulsada por un crecimiento estratégico y la misión de ofrecer un alivio genuino a los millones de estadounidenses que sufren en silencio. Cada cápsula se fabrica con orgullo en Estados Unidos en una instalación registrada por la FDA y certificada GMP, garantizando los más altos estándares de pureza y eficacia. LinkedInHem Healer",
+      "paragraph_6": "Ian construyó a Hem Healer porque vivió el problema. Y se mantiene comprometido porque sabe que hay miles de personas ahí fuera que aún buscan la respuesta que finalmente encontró."
     },
     "custom_collection_banner": {
       "name": "Banner de colección personalizada",
@@ -1005,7 +1007,8 @@
     "alt_proven_4": "OAT más Cayenne",
     "proven_4_text": "La fibra de avena alivia el estreñimiento mientras que la cayena favorece la digestión, una combinación natural para un alivio suave y sin dolor.",
     "proven_4_source_1": "Fuente: Fibra de avena",
-    "proven_4_source_2": "Fuente: Cayenne Pepper"
+    "proven_4_source_2": "Fuente: Cayenne Pepper",
+    "accordion_title_2": "¿QUÉ HAY DENTRO (Y POR QUÉ)?"
   },
   "custom_section_hem_rescue": {
     "ingredients_image_src": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/capsule_bottle_hem_rescue.png?v=1776347140",
