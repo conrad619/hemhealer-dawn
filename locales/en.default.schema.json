@@ -692,6 +692,360 @@
         "name": "Custom Liquid"
       }
     },
+    "custom-section-1": {
+      "settings": {
+        "column_1_text": {
+          "default": "Fast Acting Relief"
+        },
+        "column_1_tooltip": {
+          "default": "Hem Hero® uses a clinical-strength blend of Diosmin, Hesperidin, and Horse Chestnut to reduce swelling and discomfort quickly..."
+        },
+        "column_2_text": {
+          "default": "Support Healthy Circulation"
+        },
+        "column_2_tooltip": {
+          "default": "Diosmin and Hesperidin are citrus bioflavonoids proven to improve blood vessel tone and circulation..."
+        },
+        "column_3_text": {
+          "default": "Strengthen Veins & Capillaries"
+        },
+        "column_3_tooltip": {
+          "default": "Horse Chestnut Extract and Diosmin strengthen the walls of veins and capillaries..."
+        },
+        "image_alt": {
+          "default": "hem healer bottles"
+        }
+      }
+    },
+    "custom-section-2": {
+      "settings": {
+        "heading_1_text": {
+          "default": "Natural Supplements that Help Reduce Pain, Swelling and Flare-Ups"
+        },
+        "heading_2_text": {
+          "default": "Real Relief from Hemorrhoids Without the Mess or Side Effects"
+        },
+        "image_1_alt": {
+          "default": "Hem Hero"
+        },
+        "title_1_text": {
+          "default": "HEM HERO®"
+        },
+        "list_1_1": {
+          "default": "🔁 Best for Chronic Term Sufferers"
+        },
+        "list_1_2": {
+          "default": "🩸 Fights Bleeding, Itching, Burning, and Pain"
+        },
+        "list_1_3": {
+          "default": "✅ Works on Internal and External Hemorrhoids"
+        },
+        "list_1_4": {
+          "default": "💊 Easy-to-Swallow Capsule — No Messy Creams"
+        },
+        "list_1_5": {
+          "default": "💰 Full Money-Back Guarantee"
+        },
+        "list_1_6": {
+          "default": "🇺🇸 Proudly Made in Atlanta, Georgia"
+        },
+        "best_for_1_text": {
+          "default": "<strong>Best For</strong>: Long-term sufferers who need maximum-strength daily support to restore comfort and confidence.<br>&nbsp;"
+        },
+        "buy_now_hero_text": {
+          "default": "BUY NOW"
+        },
+        "image_2_alt": {
+          "default": "HEM EASY-FLOW FIBER"
+        },
+        "title_2_text": {
+          "default": "HEM EASY-FLOW FIBER™"
+        },
+        "list_fiber_1": {
+          "default": "🚽 Makes Pooping Less Painful"
+        },
+        "list_fiber_2": {
+          "default": "🌾 Relieves Constipation"
+        },
+        "list_fiber_3": {
+          "default": "💨 Reduces Straining That Can Trigger Hemorrhoids"
+        },
+        "list_fiber_4": {
+          "default": "💊 Easy-to-Take Capsules"
+        },
+        "list_fiber_5": {
+          "default": "💰 Full Money-Back Guarantee"
+        },
+        "list_fiber_6": {
+          "default": "🇺🇸 Proudly Made in Atlanta, Georgia"
+        },
+        "best_for_fiber_text": {
+          "default": "<strong>Best For</strong>: Anyone struggling with constipation or irregularity—especially those managing active hemorrhoid symptoms."
+        },
+        "buy_now_fiber_text": {
+          "default": "BUY NOW"
+        },
+        "image_3_alt": {
+          "default": "HEM RESCUE"
+        },
+        "title_3_text": {
+          "default": "HEM RESCUE® – Heart-Friendly Formula"
+        },
+        "list_2_1": {
+          "default": "🔥 Anti-Inflammatory Support"
+        },
+        "list_2_2": {
+          "default": "🌿 Shrinks Swelling and Reduces Irritation"
+        },
+        "list_2_3": {
+          "default": "🌬️ Tightens Veins to Prevent Flare-Ups"
+        },
+        "list_2_4": {
+          "default": "🩸 Supports Healthy Circulation and Vein Strength"
+        },
+        "list_2_5": {
+          "default": "💰 Full Money-Back Guarantee"
+        },
+        "list_2_6": {
+          "default": "🇺🇸 Proudly Made in Atlanta, Georgia"
+        },
+        "best_for_2_text": {
+          "default": "<strong>Best For:</strong> Staying symptom-free – provides long-term protection for those in remission.<br>&nbsp;"
+        },
+        "buy_now_rescue_text": {
+          "default": "BUY NOW"
+        }
+      }
+    },
+    "custom-section-3": {
+      "settings": {
+        "heading_text": {
+          "default": "Doctor-Backed Relief You Can Trust"
+        },
+        "description_text": {
+          "default": "At <strong>Hem Healer&reg;</strong>, we believe in science-backed solutions. That’s why our formulas are not only <strong>clinically researched</strong> but also <strong>recommended by health professionals</strong> who understand the importance of <strong>safe, effective, and natural hemorrhoid relief</strong>."
+        },
+        "image_3_alt": {
+          "default": "doctor"
+        },
+        "image_4_alt": {
+          "default": "doctor"
+        },
+        "quote_1": {
+          "default": "I highly recommend Hem Healer's Hem Hero® to anyone struggling with hemorrhoids"
+        },
+        "quote_2": {
+          "default": "I highly recommend Hem Hero® for your hemorrhoids."
+        },
+        "button_text": {
+          "default": "EXPERIENCE DOCTOR-APPROVED RELIEF TODAY"
+        }
+      }
+    },
+    "custom-section-4": {
+      "settings": {
+        "heading_text": {
+          "default": "We Understand Your Pain — Because We’ve Been There"
+        },
+        "description_1_text": {
+          "default": "Hemorrhoids can be uncomfortable and embarrassing, but they don’t have to control your life. Our mission is to give you gentle, effective relief with products designed for real results."
+        },
+        "description_2_text": {
+          "default": "Formulated with trusted ingredients and backed by clinical research, our range provides both immediate comfort and long-term support so you can get back to living your life."
+        },
+        "link_story_text": {
+          "default": "Read Our Story"
+        },
+        "link_manufactured_text": {
+          "default": "Where It's Made"
+        },
+        "image_alt": {
+          "default": "doctor"
+        }
+      }
+    },
+    "custom-section-5": {
+      "settings": {
+        "heading_text": {
+          "default": "Studies Show Diosmin Quickly Reduces Hemorrhoid Pain and Bleeding"
+        },
+        "image_1_alt": {
+          "default": "week 1 pain 79% better"
+        },
+        "image_2_alt": {
+          "default": "week 2 98% better"
+        },
+        "research_heading_text": {
+          "default": "Key Research Findings"
+        },
+        "point_1_title": {
+          "default": "Reduces swelling & pain"
+        },
+        "point_1_desc": {
+          "default": "by strengthening veins"
+        },
+        "point_2_title": {
+          "default": "Improves circulation"
+        },
+        "point_2_desc": {
+          "default": "to prevent future flare-ups"
+        },
+        "point_3_title": {
+          "default": "Clinically proven"
+        },
+        "point_3_desc": {
+          "default": "to relieve hemorrhoid symptoms"
+        },
+        "button_text": {
+          "default": "SHOP OUR DIOSMIN SOLUTIONS NOW!"
+        },
+        "source_text": {
+          "default": "Source"
+        },
+        "source_citation": {
+          "default": "Diana G, Catanzaro M, Ferrara A, et al. Activity of purified diosmin in the treatment of hemorrhoids. Clin Ter. 2000;151(5):341-4."
+        }
+      }
+    },
+    "custom-section-6": {
+      "settings": {
+        "heading_1_text": {
+          "default": "Why Choose Hem Healer®?"
+        },
+        "heading_2_text": {
+          "default": "Quality You Can Trust"
+        },
+        "title_1_text": {
+          "default": "Made in a GMP, FDA-Registered Facility"
+        },
+        "description_1_text": {
+          "default": "Every Hem Healer® product is made in a clean, safe facility that’s inspected and registered with the FDA, so you can trust what’s inside."
+        },
+        "title_2_text": {
+          "default": "Proudly Manufactured in Atlanta, GA"
+        },
+        "description_2_text": {
+          "default": "Hem Healer® products are proudly made in Atlanta, Georgia, using high-quality ingredients you can trust."
+        },
+        "title_3_text": {
+          "default": "100% Money Back Guarantee"
+        },
+        "description_3_text": {
+          "default": "If you are not satisfied for any reason, simply contact us for a full refund."
+        },
+        "image_1_alt": {
+          "default": "FDA CGMP"
+        },
+        "image_2_alt": {
+          "default": "Manufactured in Atlanta"
+        },
+        "image_3_alt": {
+          "default": "Money Back Guarantee"
+        }
+      }
+    },
+    "custom-section-7": {
+      "settings": {
+        "heading_text": {
+          "default": "What Our Customers Are Saying"
+        },
+        "subheading_text": {
+          "default": "Real Relief, Real Results"
+        },
+        "testimonial_text": {
+          "default": "I have suffered for 4 yrs and tried A LOT of different things this is the only stuff that has worked."
+        },
+        "testimonial_author": {
+          "default": "-RAFAEL"
+        },
+        "testimonial_1_quote": {
+          "default": "“This is the only thing that has helped me."
+        },
+        "testimonial_1_author": {
+          "default": "-Amy"
+        },
+        "testimonial_2_quote": {
+          "default": "\"It has greatly improved my well-being, and my mental health."
+        },
+        "testimonial_2_author": {
+          "default": "-Joanna"
+        },
+        "testimonial_3_quote": {
+          "default": "\"It's the most amazing thing that I've ever taken, because it actually works!"
+        },
+        "testimonial_3_author": {
+          "default": "-Marc"
+        },
+        "testimonial_4_quote": {
+          "default": "\"It immediately started working and helping with the symptoms"
+        },
+        "testimonial_4_author": {
+          "default": "-Bob"
+        },
+        "testimonial_5_quote": {
+          "default": "\"I continue to take it, and I'm fine. Thank God, I've been fine since [taking Hem Hero®]!"
+        },
+        "testimonial_5_author": {
+          "default": "-Terri"
+        },
+        "cta_text": {
+          "default": "FIND OUT IF HEM HEALER® PRODUCTS REALLY WORK"
+        }
+      }
+    },
+    "custom-section-8": {
+      "settings": {
+        "heading_text": {
+          "default": "Find the Right Hem Healer® Product for You"
+        },
+        "description_text": {
+          "default": "Not sure which product is best for your needs? Use our quick guide to choose the right Hem Healer® solution based on your symptoms."
+        },
+        "desktop_image_alt": {
+          "default": "find the right hem healer products"
+        },
+        "mobile_image_alt": {
+          "default": "find the right hem healer products"
+        }
+      }
+    },
+    "custom-section-9": {
+      "settings": {
+        "heading_text": {
+          "default": "Bundle & Save"
+        },
+        "card_1_title": {
+          "default": "Heroic Combo Pack"
+        },
+        "card_1_subtitle": {
+          "default": "HEM HERO™ + HEM EASY-FLOW FIBER™"
+        },
+        "card_1_image_alt": {
+          "default": "hem hero easy flow"
+        },
+        "card_1_copy": {
+          "default": "For maximum hemorrhoid relief and long-term prevention, combining Hem Hero™ with Hem Easy-Flow Fiber™ delivers powerful, inside-out support for your veins and digestion. Pair these two for all-around hemorrhoid relief and prevention!"
+        },
+        "card_1_cta": {
+          "default": "SHOP NOW"
+        },
+        "card_2_title": {
+          "default": "Prevention Power Pack"
+        },
+        "card_2_subtitle": {
+          "default": "HEM RESCUE® – Heart-Friendly Formula + HEM EASY-FLOW FIBER™"
+        },
+        "card_2_image_alt": {
+          "default": "hem hero easy flow"
+        },
+        "card_2_copy": {
+          "default": "The best way to deal with hemorrhoids? Stop them before they start! Combining Hem Rescue® – Heart-Friendly Formula with Hem Easy-Flow Fiber™ provides daily support for healthy veins and digestion, reducing your risk of future flare-ups."
+        },
+        "card_2_cta": {
+          "default": "SHOP NOW"
+        }
+      }
+    },
     "featured-blog": {
       "name": "Blog posts",
       "settings": {
@@ -1183,6 +1537,16 @@
         "enable_customer_avatar": {
           "label": "Show avatar",
           "info": "Customers will only see their avatar when they're signed in with Shop"
+        }
+      }
+    },
+    "header-bar": {
+      "settings": {
+        "phone_number": {
+          "default": "+1-863-302-8006"
+        },
+        "email": {
+          "default": "support@hemhealer.com"
         }
       }
     },
