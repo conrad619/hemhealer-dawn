@@ -30,9 +30,13 @@
       </div>
       <div class='twcss-gap-[4rem] lg:twcss-mt-[4rem] twcss-mt-[2rem] twcss-grid lg:twcss-grid-cols-3 twcss-grid-cols-1'>
         <div class='twcss-flex twcss-flex-col lg:twcss-gap-[2rem] twcss-gap-[1rem] lg:twcss-p-[1rem]'>
+          {%- assign cs2_image_1_src = 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hem-hero-extra-strengthhem-hero-extra-strengthcapsuleshem-healer-llchem-healer-hh05000195893280834buy-3-get-2-free-5-bottles-total-676297.jpg?v=1741104720' -%}
+          {%- if section.settings.image_1 != blank -%}
+            {%- assign cs2_image_1_src = section.settings.image_1 | image_url: width: 800 -%}
+          {%- endif -%}
           <a href='{{ routes.root_url | append: '/products/hem-healer' | replace: '//', '/' }}'>
             <img
-              src='{{ section.settings.image_1 }}'
+              src='{{ cs2_image_1_src }}'
               width='auto'
               height='auto'
               alt='{{ section.settings.image_1_alt }}'
@@ -48,12 +52,24 @@
             </h5>
           {% endcomment %}
           <ul class='twcss-text-lg twcss-flex twcss-mb-auto twcss-gap-[1rem] twcss-flex-col *:twcss-flex *:twcss-items-start lg:*:twcss-text-[1.8rem] *:twcss-text-[1.5rem] *:twcss-text-black'>
-            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_1 }}</span></li>
-            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_2 }}</span></li>
-            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_3 }}</span></li>
-            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_4 }}</span></li>
-            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_5 }}</span></li>
-            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_6 }}</span></li>
+            <li>
+              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_1 }}</span>
+            </li>
+            <li>
+              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_2 }}</span>
+            </li>
+            <li>
+              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_3 }}</span>
+            </li>
+            <li>
+              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_4 }}</span>
+            </li>
+            <li>
+              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_5 }}</span>
+            </li>
+            <li>
+              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_6 }}</span>
+            </li>
           </ul>
           <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black'>
             {{ section.settings.best_for_1_text }}
@@ -80,11 +96,15 @@
           -%}
         </div>
         <div class='twcss-flex twcss-flex-col lg:twcss-gap-[2rem] twcss-gap-[1rem] lg:twcss-p-[1rem]'>
+          {%- assign cs2_image_2_src = 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Easy_Flow_Fiber_-_Ingredients.png?v=1771955690' -%}
+          {%- if section.settings.image_2 != blank -%}
+            {%- assign cs2_image_2_src = section.settings.image_2 | image_url: width: 800 -%}
+          {%- endif -%}
           <a
             href='{{ routes.root_url | append: '/products/easy-flow-fiber' | replace: '//', '/' }}'
           >
             <img
-              src='{{ section.settings.image_2 }}'
+              src='{{ cs2_image_2_src }}'
               width='auto'
               height='auto'
               alt='{{ section.settings.image_2_alt }}'
@@ -100,12 +120,24 @@
             </h5>
           {% endcomment %}
           <ul class='twcss-text-lg twcss-flex twcss-mb-auto twcss-gap-[1rem] twcss-flex-col *:twcss-flex *:twcss-items-start *:twcss-text-[1.8rem] *:twcss-text-black'>
-            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_1 }}</span></li>
-            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_2 }}</span></li>
-            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_3 }}</span></li>
-            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_4 }}</span></li>
-            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_5 }}</span></li>
-            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_6 }}</span></li>
+            <li>
+              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_1 }}</span>
+            </li>
+            <li>
+              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_2 }}</span>
+            </li>
+            <li>
+              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_3 }}</span>
+            </li>
+            <li>
+              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_4 }}</span>
+            </li>
+            <li>
+              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_5 }}</span>
+            </li>
+            <li>
+              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_6 }}</span>
+            </li>
           </ul>
           <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black lg:twcss-mb-0 twcss-mb-[1.6rem]'>
             {{ section.settings.best_for_fiber_text }}
@@ -130,11 +162,15 @@
           -%}
         </div>
         <div class='twcss-flex twcss-flex-col lg:twcss-gap-[2rem] twcss-gap-[1rem] lg:twcss-p-[1rem]'>
+          {%- assign cs2_image_3_src = 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hem-rescuehem-rescuecapsules.png?v=1763482328' -%}
+          {%- if section.settings.image_3 != blank -%}
+            {%- assign cs2_image_3_src = section.settings.image_3 | image_url: width: 800 -%}
+          {%- endif -%}
           <a
             href='{{ routes.root_url | append: '/products/hem-rescue' | replace: '//', '/' }}'
           >
             <img
-              src='{{ section.settings.image_3 }}'
+              src='{{ cs2_image_3_src }}'
               width='auto'
               height='auto'
               alt='{{ section.settings.image_3_alt }}'
@@ -150,12 +186,24 @@
             </h5>
           {% endcomment %}
           <ul class='twcss-text-lg twcss-flex twcss-mb-auto twcss-gap-[1rem] twcss-flex-col *:twcss-flex *:twcss-items-start *:twcss-text-[1.8rem] *:twcss-text-black'>
-            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_1 }}</span></li>
-            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_2 }}</span></li>
-            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_3 }}</span></li>
-            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_4 }}</span></li>
-            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_5 }}</span></li>
-            <li><span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_6 }}</span></li>
+            <li>
+              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_1 }}</span>
+            </li>
+            <li>
+              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_2 }}</span>
+            </li>
+            <li>
+              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_3 }}</span>
+            </li>
+            <li>
+              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_4 }}</span>
+            </li>
+            <li>
+              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_5 }}</span>
+            </li>
+            <li>
+              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_6 }}</span>
+            </li>
           </ul>
           <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black'>
             {{ section.settings.best_for_2_text }}
@@ -226,8 +274,7 @@
     {
       "type": "image_picker",
       "id": "image_1",
-      "label": "Product 1 Image",
-      "default": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hem-hero-extra-strengthhem-hero-extra-strengthcapsuleshem-healer-llchem-healer-hh05000195893280834buy-3-get-2-free-5-bottles-total-676297.jpg?v=1741104720"
+      "label": "Product 1 Image"
     },
     {
       "type": "text",
@@ -296,8 +343,7 @@
     {
       "type": "image_picker",
       "id": "image_2",
-      "label": "Product 2 Image",
-      "default": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Easy_Flow_Fiber_-_Ingredients.png?v=1771955690"
+      "label": "Product 2 Image"
     },
     {
       "type": "text",
@@ -366,8 +412,7 @@
     {
       "type": "image_picker",
       "id": "image_3",
-      "label": "Product 3 Image",
-      "default": "https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hem-rescuehem-rescuecapsules.png?v=1763482328"
+      "label": "Product 3 Image"
     },
     {
       "type": "text",

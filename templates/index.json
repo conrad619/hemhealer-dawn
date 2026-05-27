@@ -28,26 +28,7 @@
       }
     },
     "custom_section_2_tikBLM": {
-      "type": "custom-section-2",
-      "settings": {
-        "list_1_1": "sections.custom-section-2.list_1_1_html",
-        "list_1_2": "sections.custom-section-2.list_1_2_html",
-        "list_1_3": "sections.custom-section-2.list_1_3_html",
-        "list_1_4": "sections.custom-section-2.list_1_4_html",
-        "list_1_5": "sections.custom-section-2.list_1_5_html",
-        "list_1_6": "sections.custom-section-2.list_1_6_html",
-        "list_2_1": "sections.custom-section-2.list_2_1_html",
-        "list_2_2": "sections.custom-section-2.list_2_2_html",
-        "list_2_3": "sections.custom-section-2.list_2_3_html",
-        "list_2_4": "sections.custom-section-2.list_2_4_html",
-        "list_2_5": "sections.custom-section-2.list_2_5_html",
-        "list_fiber_1": "sections.custom-section-2.list_fiber_1_html",
-        "list_fiber_2": "sections.custom-section-2.list_fiber_2_html",
-        "list_fiber_3": "sections.custom-section-2.list_fiber_3_html",
-        "list_fiber_4": "sections.custom-section-2.list_fiber_4_html",
-        "list_fiber_5": "sections.custom-section-2.list_fiber_5_html",
-        "list_fiber_6": "sections.custom-section-2.list_fiber_6_html"
-      }
+      "type": "custom-section-2"
     },
     "custom_section_3_YCzyMb": {
       "type": "custom-section-3",
