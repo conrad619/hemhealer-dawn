@@ -138,191 +138,290 @@
 {% endunless %}
 
 <script>
-  /////////////////////////////////
+  if (!window.hemhealerRechargePriceInitialized) {
+    window.hemhealerRechargePriceInitialized = true;
 
-  document.addEventListener('DOMContentLoaded', function () {
-    function extractPrice(text) {
-      return parseFloat(text.replace(/[^0-9.]/g, '')) || 0;
-    }
+    document.addEventListener('DOMContentLoaded', function () {
+      const RECHARGE_WIDGET_HOST_SELECTOR = 'recharge-subscription-widget';
+      const RECHARGE_WIDGET_SELECTOR = '.rc-widget__root';
+      const RECHARGE_INPUT_SELECTOR =
+        '.rc-purchase-option__input[name="purchaseOption"]';
 
-    function updateSavings(priceWrapper) {
-      const comparePriceEl = priceWrapper.querySelector('.price__compare');
-      const salePriceEl = priceWrapper.querySelector('.price-item--regular');
-      if (!comparePriceEl || !salePriceEl) return;
-
-      let savingsEl = priceWrapper.querySelector('.price__savings');
-      if (!savingsEl) {
-        savingsEl = document.createElement('span');
-        savingsEl.className = 'badge price__badge-sale color-scheme-5 price__savings';
-        priceWrapper.appendChild(savingsEl);
+      function extractPrice(text) {
+        return parseFloat((text || '').replace(/[^0-9.]/g, '')) || 0;
       }
 
-      const comparePrice = extractPrice(comparePriceEl.textContent);
-      const salePrice = extractPrice(salePriceEl.textContent);
+      function formatMoney(amount, template = '$0.00') {
+        const formattedAmount = amount.toFixed(2);
+        const numberMatch = template.match(/[0-9][0-9,]*(?:\.[0-9]+)?/);
 
-      if (comparePrice > salePrice) {
-        const difference = (comparePrice - salePrice).toFixed(2);
-        savingsEl.textContent = `Save $${difference}`;
-        savingsEl.style.display = 'inline-block';
-      } else {
-        savingsEl.style.display = 'none';
-      }
-    }
+        if (numberMatch) {
+          return template.replace(numberMatch[0], formattedAmount);
+        }
 
-    // Initial run
-    const priceWrapper = document.querySelector('.price');
-    if (priceWrapper) {
-      updateSavings(priceWrapper);
-    }
-
-    // Also re-check on subscription dropdown or variant change
-    document.addEventListener('change', function (e) {
-      if (e.target.closest('variant-selects') || e.target.closest('.product-form')) {
-        setTimeout(() => {
-          const updatedPriceWrapper = document.querySelector('.price');
-          if (updatedPriceWrapper) {
-            updateSavings(updatedPriceWrapper);
-          }
-        }, 500); // Slight delay to allow DOM to update
-      }
-    });
-  });
-
-  // //////////////////////////////////////////////////////////////////////////////////////
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const DISCOUNT_RATE = 0.1;
-
-    function extractPrice(text) {
-      return parseFloat(text.replace(/[^0-9.]/g, '')) || 0;
-    }
-
-    function formatMoney(amount) {
-      return `$${amount.toFixed(2)}`;
-    }
-
-    function updateDisplayedPrice({ isSubscription }) {
-      const priceWrapper = document.querySelector('.price');
-      if (!priceWrapper) return;
-
-      const compareEl = priceWrapper.querySelector('.price__compare');
-      const saleEl = priceWrapper.querySelector('.price-item--regular');
-      const saleElLast = priceWrapper.querySelector('.price-item--last');
-      if (!saleEl) return;
-
-      // Store original price for reset
-      let basePrice = saleEl.getAttribute('data-original-price');
-      if (!basePrice) {
-        basePrice = extractPrice(saleEl.textContent);
-        saleEl.setAttribute('data-original-price', basePrice);
-      } else {
-        basePrice = parseFloat(basePrice);
-      }
-      console.log('base price', basePrice);
-      // Calculate new price
-      const newPrice = isSubscription ? basePrice * (1 - DISCOUNT_RATE) : basePrice;
-
-      saleEl.textContent = formatMoney(newPrice);
-      saleElLast.textContent = formatMoney(newPrice);
-      // Update savings
-      let savingsEl = priceWrapper.querySelector('.price__savings');
-      if (!savingsEl) {
-        savingsEl = document.createElement('span');
-        savingsEl.className = 'price__savings';
-        priceWrapper.appendChild(savingsEl);
+        return `$${formattedAmount}`;
       }
 
-      if (compareEl) {
-        const comparePrice = extractPrice(compareEl.textContent);
-        const savings = comparePrice - newPrice;
+      function getPriceWrapper() {
+        return (
+          document.querySelector('product-info[id^="MainProduct"] [id^="price-"] .price') ||
+          document.querySelector('.product__info-container [id^="price-"] .price') ||
+          document.querySelector('.product__info-container .price')
+        );
+      }
+
+      function getRechargeHost() {
+        return document.querySelector(RECHARGE_WIDGET_HOST_SELECTOR);
+      }
+
+      function getRechargeQueryRoot() {
+        return getRechargeHost()?.shadowRoot || document;
+      }
+
+      function queryRecharge(selector) {
+        const root = getRechargeQueryRoot();
+        const result = root.querySelector(selector);
+
+        if (result || root === document) return result;
+
+        return document.querySelector(selector);
+      }
+
+      function getRechargeWidget() {
+        return queryRecharge(RECHARGE_WIDGET_SELECTOR);
+      }
+
+      function getCurrentPriceElements(priceWrapper) {
+        return [
+          priceWrapper.querySelector(
+            '.price__regular .price-item--regular:not(.price__compare):not(.variant-item__old-price)',
+          ),
+          priceWrapper.querySelector('.price__sale .price-item--sale'),
+        ].filter(Boolean);
+      }
+
+      function getBasePrice(priceWrapper) {
+        const rechargeOneTimePrice = getRechargeOptionPrice('onetime');
+
+        if (rechargeOneTimePrice > 0) {
+          priceWrapper.dataset.originalPrice = rechargeOneTimePrice;
+          return rechargeOneTimePrice;
+        }
+
+        const storedPrice = parseFloat(priceWrapper.dataset.originalPrice);
+        if (storedPrice > 0) return storedPrice;
+
+        const priceEl =
+          priceWrapper.querySelector(
+            '.price__regular .price-item--regular:not(.price__compare):not(.variant-item__old-price)',
+          ) || priceWrapper.querySelector('.price__sale .price-item--sale');
+        const basePrice = extractPrice(priceEl?.textContent);
+
+        if (basePrice > 0) {
+          priceWrapper.dataset.originalPrice = basePrice;
+        }
+
+        return basePrice;
+      }
+
+      function getRechargeOptionRoot(option) {
+        if (option === 'subscription') {
+          return queryRecharge(
+            `${RECHARGE_WIDGET_SELECTOR} .rc-purchase-option__subscription`,
+          );
+        }
+
+        return queryRecharge(
+          `${RECHARGE_WIDGET_SELECTOR} .rc-selection__onetime, ${RECHARGE_WIDGET_SELECTOR} [part~="rc-purchase-option__onetime"]`,
+        );
+      }
+
+      function getRechargeOptionPrice(option) {
+        const optionRoot = getRechargeOptionRoot(option);
+        if (!optionRoot) return 0;
+
+        const selectors =
+          option === 'subscription'
+            ? [
+                '[part~="rc-purchase-option__discounted-price"]',
+                '.rc-purchase-option__prices .rc-price:not(.strike-through):not(.text-muted)',
+              ]
+            : [
+                '[part~="rc-purchase-option__price"]',
+                '.rc-purchase-option__prices .rc-price:not(.strike-through):not(.text-muted)',
+              ];
+
+        for (const selector of selectors) {
+          const priceEl = optionRoot.querySelector(selector);
+          const price = extractPrice(priceEl?.textContent);
+          if (price > 0) return price;
+        }
+
+        return 0;
+      }
+
+      function getRechargeOriginalSubscriptionPrice() {
+        const optionRoot = getRechargeOptionRoot('subscription');
+        if (!optionRoot) return 0;
+
+        return extractPrice(
+          optionRoot.querySelector(
+            '[part~="rc-purchase-option__original-price"], .rc-price.strike-through',
+          )?.textContent,
+        );
+      }
+
+      function getSelectedRechargeOption() {
+        const checkedInput = queryRecharge(
+          `${RECHARGE_WIDGET_SELECTOR} ${RECHARGE_INPUT_SELECTOR}:checked`,
+        );
+        if (checkedInput) return checkedInput.value;
+
+        const selectedOption = queryRecharge(
+          `${RECHARGE_WIDGET_SELECTOR} .rc-purchase-option[rc-selected]`,
+        );
+        if (selectedOption?.matches('.rc-purchase-option__subscription')) return 'subscription';
+        if (selectedOption?.matches('.rc-selection__onetime, [part~="rc-purchase-option__onetime"]')) {
+          return 'onetime';
+        }
+
+        return 'onetime';
+      }
+
+      function setSavings(priceWrapper, referencePrice, currentPrice) {
+        let savingsEl = priceWrapper.querySelector('.price__savings');
+
+        if (!savingsEl) {
+          savingsEl = document.createElement('span');
+          savingsEl.className = 'badge price__badge-sale color-scheme-5 price__savings';
+          priceWrapper.appendChild(savingsEl);
+        }
+
+        const savings = referencePrice - currentPrice;
         if (savings > 0) {
           savingsEl.textContent = `Save $${savings.toFixed(2)}`;
           savingsEl.style.display = 'inline-block';
         } else {
           savingsEl.style.display = 'none';
         }
-      } else {
-        // savingsEl.style.display = 'none';
-        const savings = basePrice - newPrice;
-        if (savings > 0) {
-          savingsEl.textContent = `Save $${savings.toFixed(2)}`;
-          savingsEl.style.display = 'inline-block';
-        } else {
-          savingsEl.style.display = 'none';
-        }
       }
 
-      //add subscribe class
-      if (isSubscription) {
-        document.querySelector('.product').classList.add('subscribe');
-      } else {
-        document.querySelector('.product').classList.remove('subscribe');
-      }
-    }
+      function updateDisplayedPrice(isSubscription) {
+        const priceWrapper = getPriceWrapper();
+        if (!priceWrapper) return false;
 
-    function handleRechargeV3(callback = null) {
-      console.log('vcharge');
-      const radioButtons = document.querySelectorAll('[name="purchaseOption"]');
-      if (!radioButtons.length) return false;
+        const currentPriceEls = getCurrentPriceElements(priceWrapper);
+        if (!currentPriceEls.length) return false;
 
-      radioButtons.forEach((radio) => {
-        radio.addEventListener('change', () => {
-          const isSubscription = radio.value === 'subscription' && radio.checked;
-          updateDisplayedPrice({ isSubscription });
+        const basePrice = getBasePrice(priceWrapper);
+        const rechargeSubscriptionPrice = getRechargeOptionPrice('subscription');
+        const currentPrice =
+          isSubscription && rechargeSubscriptionPrice > 0 ? rechargeSubscriptionPrice : basePrice;
+        const moneyTemplate = currentPriceEls[0].textContent.trim() || '$0.00';
+        const formattedPrice = formatMoney(currentPrice, moneyTemplate);
+
+        currentPriceEls.forEach((priceEl) => {
+          priceEl.textContent = formattedPrice;
         });
 
-        // Initial check on load
-        if (radio.checked && radio.value === 'subscription') {
-          updateDisplayedPrice({ isSubscription: true });
+        const comparePrice = extractPrice(priceWrapper.querySelector('.price__compare')?.textContent);
+        const subscriptionOriginalPrice = getRechargeOriginalSubscriptionPrice();
+        const savingsReferencePrice =
+          comparePrice || (isSubscription ? subscriptionOriginalPrice || basePrice : basePrice);
+
+        setSavings(priceWrapper, savingsReferencePrice, currentPrice);
+        document.querySelector('.product')?.classList.toggle('subscribe', isSubscription);
+
+        return true;
+      }
+
+      function syncRechargePrice() {
+        const widget = getRechargeWidget();
+        if (!widget) {
+          updateDisplayedPrice(false);
+          return false;
+        }
+
+        updateDisplayedPrice(getSelectedRechargeOption() === 'subscription');
+        observeRechargeWidget(widget);
+
+        return true;
+      }
+
+      function queueRechargePriceSync() {
+        [0, 150, 700].forEach((delay) => {
+          window.setTimeout(syncRechargePrice, delay);
+        });
+      }
+
+      function isRechargeTarget(target) {
+        return (
+          target.matches(RECHARGE_INPUT_SELECTOR) ||
+          target.matches(RECHARGE_WIDGET_HOST_SELECTOR) ||
+          target.closest(`${RECHARGE_WIDGET_SELECTOR} .rc-purchase-option__label`) ||
+          target.closest(RECHARGE_WIDGET_HOST_SELECTOR)
+        );
+      }
+
+      function handleRechargeInteraction(event) {
+        const target = event.target;
+        if (!(target instanceof Element)) return;
+
+        if (isRechargeTarget(target)) {
+          queueRechargePriceSync();
+        }
+      }
+
+      function observeRechargeWidget(widget) {
+        if (widget.dataset.hemhealerPriceObserved === 'true') return;
+
+        widget.dataset.hemhealerPriceObserved = 'true';
+        const widgetRoot = widget.getRootNode();
+
+        if (widgetRoot && widgetRoot !== document && widgetRoot.addEventListener) {
+          widgetRoot.addEventListener('change', handleRechargeInteraction);
+          widgetRoot.addEventListener('click', handleRechargeInteraction);
+        }
+
+        new MutationObserver(queueRechargePriceSync).observe(widget, {
+          attributes: true,
+          attributeFilter: ['checked', 'rc-selected'],
+          childList: true,
+          characterData: true,
+          subtree: true,
+        });
+      }
+
+      document.addEventListener('change', function (event) {
+        const target = event.target;
+        if (!(target instanceof Element)) return;
+
+        if (
+          isRechargeTarget(target) ||
+          target.closest('variant-selects') ||
+          target.closest('.product-form')
+        ) {
+          queueRechargePriceSync();
         }
       });
 
-      if (callback != null) {
-        callback();
-      }
+      document.addEventListener('click', function (event) {
+        const target = event.target;
+        if (!(target instanceof Element)) return;
 
-      return true;
-    }
-    // setTimeout(() => {
-    //   // Run on page load
-    //   handleRechargeV3(function(){
-    //     document.addEventListener('change', function (e) {
-    //       if (e.target.closest('variant-selects') || e.target.closest('.product-form')) {
-    //         setTimeout(() => {
-    //           handleRechargeV3();
-    //         }, 300); // Slight delay to allow DOM to update
-    //       }
-    //     });
-    //   });
-
-    // }, 1000);
-
-    let attempts = 0;
-    const maxAttempts = 10;
-    const intervalTime = 500; // milliseconds
-
-    const intervalId = setInterval(() => {
-      const elementExist = handleRechargeV3(function () {
-        document.addEventListener('change', function (e) {
-          if (e.target.closest('variant-selects') || e.target.closest('.product-form')) {
-            setTimeout(() => {
-              handleRechargeV3();
-            }, 500); // Slight delay to allow DOM to update
-          }
-        });
-      }); // Replace with your actual selector
-
-      if (elementExist) {
-        // console.log('Element found:', element);
-
-        clearInterval(intervalId); // Stop further attempts
-      } else {
-        attempts++;
-        if (attempts >= maxAttempts) {
-          // console.warn('Element not found after max attempts.');
-          clearInterval(intervalId); // Stop after 10 tries
+        if (isRechargeTarget(target)) {
+          queueRechargePriceSync();
         }
-      }
-    }, intervalTime);
-  });
+      });
+
+      let attempts = 0;
+      const intervalId = window.setInterval(() => {
+        attempts += 1;
+
+        if (syncRechargePrice() || attempts >= 80) {
+          window.clearInterval(intervalId);
+        }
+      }, 250);
+    });
+  }
 </script>
