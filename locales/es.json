@@ -1064,6 +1064,11 @@
     "checkout": {
       "payment": {
         "multiple_primary_payment_not_allowed": "Métodos de pago inválidos"
+      },
+      "marketing": {
+        "disclaimer": {
+          "terms_of_service": "Términos de Servicio"
+        }
       }
     }
   },
