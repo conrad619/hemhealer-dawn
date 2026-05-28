@@ -100,8 +100,8 @@ if (!customElements.get('product-info')) {
 
       resetProductFormState() {
         const productForm = this.productForm;
-        productForm?.toggleSubmitButton(true);
-        productForm?.handleErrorMessage();
+        productForm?.toggleSubmitButton?.(true);
+        productForm?.handleErrorMessage?.();
       }
 
       handleSwapProduct(productUrl, updateFullPage) {
@@ -247,7 +247,7 @@ if (!customElements.get('product-info')) {
             `#Volume-Note-${this.dataset.section}`,
           )?.classList.remove('hidden');
 
-          this.productForm?.toggleSubmitButton(
+          this.productForm?.toggleSubmitButton?.(
             html
               .getElementById(`ProductSubmitButton-${this.sectionId}`)
               ?.hasAttribute('disabled') ?? true,
@@ -269,6 +269,8 @@ if (!customElements.get('product-info')) {
           `#product-form-${this.dataset.section}, #product-form-installment-${this.dataset.section}`,
         ).forEach((productForm) => {
           const input = productForm.querySelector('input[name="id"]');
+          if (!input) return;
+
           input.value = variantId ?? '';
           input.dispatchEvent(new Event('change', { bubbles: true }));
         });
@@ -288,7 +290,7 @@ if (!customElements.get('product-info')) {
       }
 
       setUnavailable() {
-        this.productForm?.toggleSubmitButton(
+        this.productForm?.toggleSubmitButton?.(
           true,
           window.variantStrings.unavailable,
         );
@@ -501,7 +503,14 @@ if (!customElements.get('product-info')) {
       }
 
       get productForm() {
-        return this.querySelector(`product-form`);
+        const productForm = this.querySelector(
+          `product-form[data-section-id="${this.dataset.section}"]`,
+        );
+        const form = this.querySelector(
+          `#product-form-${this.dataset.section}`,
+        );
+
+        return productForm || form?.closest('product-form');
       }
 
       get productModal() {
