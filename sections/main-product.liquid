@@ -2903,4 +2903,179 @@
     return document.querySelector('.product-form__submit');
   }
   elementExist(insertTrustPilotAfterAddToCart, 30);
+
+  function decodeTranslatedText(text) {
+    const decodedText = document.createElement('textarea');
+    decodedText.innerHTML = text;
+    return decodedText.value;
+  }
+  function elementExist(element, maxAttempts = 10, intervalTime = 500) {
+    let attempts = 0;
+
+    const intervalId = setInterval(() => {
+      const elementExist = element();
+
+      if (elementExist) {
+        // console.log('Element found:', element);
+        clearInterval(intervalId); // Stop further attempts
+      } else {
+        attempts++;
+        if (attempts >= maxAttempts) {
+          // console.warn('Element not found after max attempts.');
+          clearInterval(intervalId); // Stop after 10 tries
+        }
+      }
+    }, intervalTime);
+  }
+</script>
+<style id='hemhealer-recharge-widget-style'>
+  recharge-subscription-widget {
+    display: block;
+    max-width: 100%;
+  }
+
+  recharge-subscription-widget::part(rc-widget__root) {
+    max-width: 100%;
+  }
+
+  recharge-subscription-widget::part(rc-purchase-option),
+  recharge-subscription-widget::part(rc-purchase-option__onetime),
+  recharge-subscription-widget::part(rc-purchase-option__subscription) {
+    border-color: #12121287 !important;
+  }
+
+  recharge-subscription-widget::part(rc-purchase-option__selected) {
+    border-color: #73c15d !important;
+  }
+
+  recharge-subscription-widget::part(rc-purchase-option__checked-indicator) {
+    border-color: #73c15d !important;
+    color: #73c15d !important;
+  }
+</style>
+<script>
+  (function () {
+    const RECHARGE_WIDGET_SELECTOR = 'recharge-subscription-widget';
+
+    function rechargeStyle() {
+      document.querySelectorAll(RECHARGE_WIDGET_SELECTOR).forEach((host) => {
+        if (!host.shadowRoot || host.dataset.hemhealerRechargeStyled === 'true') return;
+
+        host.dataset.hemhealerRechargeStyled = 'true';
+
+        addShadowStyle(
+          host.shadowRoot,
+          'hemhealer-recharge-purchase-option-style',
+          `
+            :host {
+              display: block;
+              max-width: 100%;
+            }
+
+            .rc-purchase-option {
+              border-color: #12121287 !important;
+            }
+
+            .rc-purchase-option[rc-selected] {
+              border-color: #73c15d !important;
+            }
+          `,
+        );
+
+        styleRechargeRadioIcons(host.shadowRoot);
+
+        new MutationObserver(() => {
+          styleRechargeRadioIcons(host.shadowRoot);
+        }).observe(host.shadowRoot, {
+          childList: true,
+          subtree: true,
+        });
+      });
+    }
+
+    function styleRechargeRadioIcons(root) {
+      root.querySelectorAll('.rc-purchase-option rc-radio-icon').forEach((radio) => {
+        waitForShadowRoot(radio)
+          .then((radioShadowRoot) => {
+            addShadowStyle(
+              radioShadowRoot,
+              'hemhealer-recharge-radio-icon-style',
+              `
+                .rc-checked-icon rect {
+                  stroke: #73c15d !important;
+                }
+
+                circle {
+                  fill: #73c15d !important;
+                }
+              `,
+            );
+          })
+          .catch(() => {});
+      });
+    }
+
+    function addShadowStyle(shadowRoot, id, css) {
+      if (shadowRoot.getElementById(id)) return;
+
+      const style = document.createElement('style');
+      style.id = id;
+      style.textContent = css;
+      shadowRoot.appendChild(style);
+    }
+
+    function waitForShadowRoot(host, timeout = 10000) {
+      return new Promise((resolve, reject) => {
+        if (!host) {
+          reject(new Error('Cannot wait for shadowRoot on an empty host'));
+          return;
+        }
+
+        if (host.shadowRoot) {
+          resolve(host.shadowRoot);
+          return;
+        }
+
+        const intervalId = setInterval(() => {
+          if (host.shadowRoot) {
+            clearInterval(intervalId);
+            clearTimeout(timeoutId);
+            resolve(host.shadowRoot);
+          }
+        }, 50);
+
+        const timeoutId = setTimeout(() => {
+          clearInterval(intervalId);
+          reject(new Error('Timed out waiting for shadowRoot'));
+        }, timeout);
+      });
+    }
+
+    rechargeStyle();
+
+    new MutationObserver(rechargeStyle).observe(document.documentElement, {
+      childList: true,
+      subtree: true,
+    });
+
+    if (window.customElements) {
+      customElements
+        .whenDefined('recharge-subscription-widget')
+        .then(rechargeStyle)
+        .catch(() => {});
+    }
+
+    let attempts = 0;
+    const intervalId = window.setInterval(() => {
+      attempts += 1;
+      rechargeStyle();
+
+      if (
+        attempts >= 80 ||
+        document.querySelector(`${RECHARGE_WIDGET_SELECTOR}[data-hemhealer-recharge-styled="true"]`)
+      ) {
+        window.clearInterval(intervalId);
+      }
+    }, 250);
+  })();
 </script>
