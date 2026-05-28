@@ -161,6 +161,9 @@
 
             <li>
               <a href="{{ product_url }}" class="ai-custom-product-grid__card-{{ ai_gen_id }} card-wrapper product-card-wrapper underline-links-hover twcss-p-[1.6rem] twcss-shadow-[0_1px_2px_0_#0000000d] twcss-rounded-[.8rem]  twcss-border-[#eaecf0] twcss-border">
+                <h2 class='twcss-text-[2rem] twcss-text-center twcss-font-bold'>
+                  {{ product.metafields.custom.product_headline }}
+                </h2>
                 <div class="ai-custom-product-grid__image-wrapper-{{ ai_gen_id }}">
                   {% if product.featured_image %}
                     <img
