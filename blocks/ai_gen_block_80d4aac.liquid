@@ -178,7 +178,21 @@
                   {% endif %}
                 </div>
                 <div class="ai-custom-product-grid__info-{{ ai_gen_id }}">
+                
+                  <!-- RYVIU APP :: COLLECTION-WIDGET-TOTAL -->
+                  <div class='ryviu-collection'>
+                    <ryviu-widget-total
+                      collection='1'
+                      reviews_data='{{ product.metafields.ryviu.product_reviews_info  | escape  }}'
+                      product_id='{{ product.id }}'
+                      handle='{{ product.handle }}'
+                    ></ryviu-widget-total>
+                  </div>
+                  <!-- RYVIU APP -->
                   <h3 class="ai-custom-product-grid__product-title-{{ ai_gen_id }}">{{ product.title }}</h3>
+                  <h4 class='twcss-text-[1.4rem] twcss-font-body twcss-py-[1rem]'>
+                    {{ product.metafields.custom.product_subheadline }}
+                  </h4>
                   {% if block.settings.show_price %}
                     <div class="ai-custom-product-grid__price-{{ ai_gen_id }}">
                       {{ product.price | money }}
