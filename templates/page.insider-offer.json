@@ -54,11 +54,59 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "17800024365ca3aa3a": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_80d4aac_nAKwqN": {
+          "type": "ai_gen_block_80d4aac",
+          "settings": {
+            "title": "",
+            "heading_size": 38,
+            "heading_color": "#121212",
+            "columns_desktop": 3,
+            "columns_mobile": "2",
+            "spacing": 20,
+            "show_price": true,
+            "card_background": "#ffffff",
+            "card_border_radius": 8,
+            "card_padding": 16,
+            "product_title_size": 24,
+            "price_size": 16,
+            "text_color": "#121212",
+            "price_color": "#121212",
+            "padding_top": 36,
+            "padding_bottom": 36,
+            "product_1": "hem-hero",
+            "product_1_link": "",
+            "product_2": "easy-flow-fiber",
+            "product_2_link": "",
+            "product_3": "hem-rescue",
+            "product_3_link": "",
+            "product_4": "",
+            "product_4_link": "",
+            "product_5": "",
+            "product_5_link": "",
+            "product_6": "",
+            "product_6_link": "",
+            "product_7": "",
+            "product_7_link": "",
+            "product_8": "",
+            "product_8_link": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_80d4aac_nAKwqN"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "custom_collection_banner_LJ4jLn",
     "main",
-    "featured_collection_86hMRW"
+    "featured_collection_86hMRW",
+    "17800024365ca3aa3a"
   ]
 }
