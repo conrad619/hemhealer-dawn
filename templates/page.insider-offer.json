@@ -28,6 +28,7 @@
     },
     "featured_collection_86hMRW": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "title": "",
