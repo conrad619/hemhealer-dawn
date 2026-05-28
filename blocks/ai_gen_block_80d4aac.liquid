@@ -197,8 +197,8 @@
                     {{ product.metafields.custom.product_subheadline }}
                   </h4>
                   {% if block.settings.show_price %}
-                    <div class="ai-custom-product-grid__price-{{ ai_gen_id }}">
-                      {{ product.price | money }}
+                    <div class='card-information'>
+                      {% render 'price', product: product, price_class: '', show_compare_at_price: true %}
                     </div>
                   {% endif %}
                 </div>
