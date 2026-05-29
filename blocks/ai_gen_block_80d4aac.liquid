@@ -122,21 +122,21 @@
   }
 {% endstyle %}
 
-<div class="ai-custom-product-grid-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
-  <div class="ai-custom-product-grid__inner-{{ ai_gen_id }} page-width">
+<div class='ai-custom-product-grid-{{ ai_gen_id }}' {{ block.shopify_attributes }}>
+  <div class='ai-custom-product-grid__inner-{{ ai_gen_id }} page-width'>
     {% if block.settings.title != blank %}
-      <div class="ai-custom-product-grid__header-{{ ai_gen_id }}">
-        <h2 class="ai-custom-product-grid__title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+      <div class='ai-custom-product-grid__header-{{ ai_gen_id }}'>
+        <h2 class='ai-custom-product-grid__title-{{ ai_gen_id }}'>{{ block.settings.title }}</h2>
       </div>
     {% endif %}
 
-    <ul class="ai-custom-product-grid__grid-{{ ai_gen_id }}">
+    <ul class='ai-custom-product-grid__grid-{{ ai_gen_id }}'>
       {% liquid
         assign has_products = false
         for i in (1..8)
           assign product_key = 'product_' | append: i
           assign product = block.settings[product_key]
-          
+
           if product != blank
             assign has_products = true
           endif
@@ -150,6 +150,9 @@
             assign link_key = 'product_' | append: i | append: '_link'
             assign product = block.settings[product_key]
             assign custom_link = block.settings[link_key]
+            assign selling_plan_group = product.selling_plan_groups | first
+            assign selling_plan = selling_plan_group.selling_plans | first
+            assign selling_plan_id = selling_plan.id
           %}
 
           {% if product != blank %}
@@ -160,28 +163,34 @@
             {% endif %}
 
             <li>
-              <a href="{{ product_url }}" class="ai-custom-product-grid__card-{{ ai_gen_id }} card-wrapper product-card-wrapper underline-links-hover twcss-p-[1.6rem] twcss-shadow-[0_1px_2px_0_#0000000d] twcss-rounded-[.8rem]  twcss-border-[#eaecf0] twcss-border">
+              <a
+                href='{{ product_url }}'
+                class='ai-custom-product-grid__card-{{ ai_gen_id }} card-wrapper product-card-wrapper underline-links-hover twcss-p-[1.6rem] twcss-shadow-[0_1px_2px_0_#0000000d] twcss-rounded-[.8rem]  twcss-border-[#eaecf0] twcss-border'
+                data-insider-product-handle='{{ product.handle }}'
+                {% if selling_plan_id != blank %}
+                  data-insider-selling-plan-id='{{ selling_plan_id }}'
+                {% endif %}
+              >
                 <h2 class='twcss-text-[2rem] twcss-text-center twcss-font-bold'>
                   {{ product.metafields.custom.product_headline }}
                 </h2>
-                <div class="ai-custom-product-grid__image-wrapper-{{ ai_gen_id }}">
+                <div class='ai-custom-product-grid__image-wrapper-{{ ai_gen_id }}'>
                   {% if product.featured_image %}
                     <img
-                      src="{{ product.featured_image | image_url: width: 600 }}"
-                      alt="{{ product.featured_image.alt | escape }}"
-                      class="ai-custom-product-grid__image-{{ ai_gen_id }}"
-                      loading="lazy"
-                      width="{{ product.featured_image.width }}"
-                      height="{{ product.featured_image.height }}"
+                      src='{{ product.featured_image | image_url: width: 600 }}'
+                      alt='{{ product.featured_image.alt | escape }}'
+                      class='ai-custom-product-grid__image-{{ ai_gen_id }}'
+                      loading='lazy'
+                      width='{{ product.featured_image.width }}'
+                      height='{{ product.featured_image.height }}'
                     >
                   {% else %}
-                    <div class="ai-custom-product-grid__placeholder-{{ ai_gen_id }}">
+                    <div class='ai-custom-product-grid__placeholder-{{ ai_gen_id }}'>
                       {{ 'product-1' | placeholder_svg_tag }}
                     </div>
                   {% endif %}
                 </div>
-                <div class="ai-custom-product-grid__info-{{ ai_gen_id }}">
-                
+                <div class='ai-custom-product-grid__info-{{ ai_gen_id }}'>
                   <!-- RYVIU APP :: COLLECTION-WIDGET-TOTAL -->
                   <div class='ryviu-collection'>
                     <ryviu-widget-total
@@ -192,13 +201,12 @@
                     ></ryviu-widget-total>
                   </div>
                   <!-- RYVIU APP -->
-                  <h3 class="ai-custom-product-grid__product-title-{{ ai_gen_id }}">{{ product.title }}</h3>
+                  <h3 class='ai-custom-product-grid__product-title-{{ ai_gen_id }}'>{{ product.title }}</h3>
                   <h4 class='twcss-text-[1.4rem] twcss-font-body twcss-py-[1rem]'>
                     {{ product.metafields.custom.product_subheadline }}
                   </h4>
                   {% if block.settings.show_price %}
-                    
-                      {% render 'price', product: product, price_class: '', show_compare_at_price: true %}
+                    {% render 'price', product: product, price_class: '', show_compare_at_price: true %}
                   {% endif %}
                 </div>
               </a>
@@ -206,7 +214,7 @@
           {% endif %}
         {% endfor %}
       {% else %}
-        <div class="ai-custom-product-grid__empty-state-{{ ai_gen_id }}">
+        <div class='ai-custom-product-grid__empty-state-{{ ai_gen_id }}'>
           Next, select products to display in this collection
         </div>
       {% endif %}

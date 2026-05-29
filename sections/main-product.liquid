@@ -2983,6 +2983,7 @@
         );
 
         styleRechargeRadioIcons(host.shadowRoot);
+        selectionDefault(host.shadowRoot);
 
         new MutationObserver(() => {
           styleRechargeRadioIcons(host.shadowRoot);
@@ -3012,6 +3013,43 @@
             );
           })
           .catch(() => {});
+      });
+    }
+
+    function selectionDefault(root) {
+      console.log('clicking root');
+      waitForElementExist(root, '.rc-purchase-option .rc-purchase-option__label')
+        .then(() => {
+          if (localStorage.getItem('selection') === 'subscription') {
+            console.log('clicking subscription');
+            root.querySelectorAll('.rc-purchase-option')[0].querySelector('.rc-purchase-option__label').click();
+          } else if (localStorage.getItem('selection') === 'onetime') {
+            root.querySelectorAll('.rc-purchase-option')[1].querySelector('.rc-purchase-option__label').click();
+          }
+          localStorage.removeItem('selection');
+        })
+        .catch(() => {});
+    }
+
+    function waitForElementExist(root, selector = '.rc-purchase-option', timeout = 10000) {
+      return new Promise((resolve, reject) => {
+        if (root.querySelector(selector)) {
+          resolve();
+          return;
+        }
+
+        const intervalId = setInterval(() => {
+          if (root.querySelector(selector)) {
+            clearInterval(intervalId);
+            clearTimeout(timeoutId);
+            resolve();
+          }
+        }, 50);
+
+        const timeoutId = setTimeout(() => {
+          clearInterval(intervalId);
+          reject(new Error('Timed out waiting for element to exist: ' + selector));
+        }, timeout);
       });
     }
 

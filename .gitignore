@@ -10,5 +10,6 @@ ehthumbs.db
 Thumbs.db
 node_modules
 images
+temp/
 *.py
 *.csv
