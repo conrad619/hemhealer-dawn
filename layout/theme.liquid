@@ -504,3 +504,23 @@
     {%- render 'page-footer.zipifypages', renderctx: 'thm', ocuapp: oneclickupsellapp -%}
   </body>
 </html>
+<!-- Begin Relo code -->
+<script>
+  window.Relo = {};
+  window.Relo.__data = {
+      storeDomain: {{ shop.domain | json}},
+      customerId: {{ customer.id | json }},
+      customerName: {{ customer.first_name | json }},
+      customerTags: {{ customer.tags | json }},
+      lastOrderId: {{ customer.last_order.id | json }},
+      lastOrderTotalPrice: {{ customer.last_order.total_price | json }},
+      lastOrderCurrency: {{ customer.last_order.currency | json }},
+      lastOrderLineItems: {{ customer.last_order.line_items | json }},
+      orderId: {{ order.id | json }},
+      orderTotalPrice: {{ order.total_price | json }},
+      orderCurrency: {{ order.currency | json }},
+      orderLineItems: {{ order.line_items | json }},
+  };
+</script>
+<script async src="https://onsite.reloapp.co/relo-onsite.js"></script>
+<!-- End Relo code -->
