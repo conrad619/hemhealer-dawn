@@ -4,5 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (window.location.pathname === targetPath) {
     localStorage.setItem(key, 'subscription');
+    localStorage.setItem('referrer', 'insider-offer');
   }
 });

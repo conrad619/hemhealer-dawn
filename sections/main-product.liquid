@@ -3027,6 +3027,11 @@
             root.querySelectorAll('.rc-purchase-option')[1].querySelector('.rc-purchase-option__label').click();
           }
           localStorage.removeItem('selection');
+          if (localStorage.getItem('referrer') === 'insider-offer') {
+            root.querySelector('.rc-purchase-option__badge').style.display = 'none';
+            localStorage.removeItem('selection');
+            localStorage.removeItem('referrer');
+          }
         })
         .catch(() => {});
     }
