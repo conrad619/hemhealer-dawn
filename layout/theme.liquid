@@ -334,7 +334,7 @@
     </script>
 
     <link href='https://unpkg.com/aos@2.3.1/dist/aos.css' rel='stylesheet'>
-    {% include 'pagefly-app-header' %}
+    
 
     <!-- Reddit Pixel -->
     <script>
@@ -358,7 +358,7 @@
     <!-- Disable Shopify Best-Sellers Sales Shield code start -->
     {% include 'sales_shield_best_selling_product_sorting_disabler' %}
     <!-- Disable Shopify Best-Sellers Sales Shield code End -->
-  </head>
+  {% include 'pagefly-app-header' %}</head>
 
   <body class='gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}'>
     <a class='skip-to-content-link button visually-hidden' href='#MainContent'>

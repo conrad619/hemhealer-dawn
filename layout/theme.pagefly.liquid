@@ -5,6 +5,17 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 <!doctype html>
 <html class='js' lang='{{ request.locale.iso_code }}'>
   <head>
+    <meta name='google-site-verification' content='DwCbpe70uUsRPiwCfrx-b5zoTGzb5PS6WCTUPYyAvII'>
+
+    <script>
+      var head = document.head;
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src =
+        'https://211261.t.hyros.com/v1/lst/universal-script?ph=e2000046ed5d217bf056c79bb4c8f07d48dd3ac450eed371b8f70c1f50870073&tag=!clicked&origin=SHOPIFY&ref_url=' +
+        encodeURI(document.URL);
+      head.appendChild(script);
+    </script>
     {% render 'shogun-optimizer' %}
 
     <meta charset='utf-8'>
@@ -44,11 +55,13 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     <script src='{{ 'details-disclosure.js' | asset_url }}' defer='defer'></script>
     <script src='{{ 'details-modal.js' | asset_url }}' defer='defer'></script>
     <script src='{{ 'search-form.js' | asset_url }}' defer='defer'></script>
+    <script src='{{ 'custom.js' | asset_url }}' defer='defer'></script>
 
     {%- if settings.animations_reveal_on_scroll -%}
       <script src='{{ 'animations.js' | asset_url }}' defer='defer'></script>
     {%- endif -%}
 
+    {%- render 'header-scripts.zipifypages', renderctx: 'thm', apprxhbl: zp_apprxhbl -%}
     {{ content_for_header }}
 
     {%- liquid
@@ -240,7 +253,7 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
         --variant-pills-shadow-vertical-offset: {{ settings.variant_pills_shadow_vertical_offset }}px;
         --variant-pills-shadow-blur-radius: {{ settings.variant_pills_shadow_blur }}px;
 
-        --secondary-color: #6B6B6B;
+        --secondary-color: #505050;
         --accent-color: #3D8124;
         --accent-color-2: #C6E123;
         --accent-color-3: #C6E1231F;
@@ -325,9 +338,53 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
     </script>
 
     <link href='https://unpkg.com/aos@2.3.1/dist/aos.css' rel='stylesheet'>
+    
+
+    <!-- Reddit Pixel -->
+    <script>
+      !(function (w, d) {
+        w.rdt =
+          w.rdt ||
+          function () {
+            (w.rdt.q = w.rdt.q || []).push(arguments);
+          };
+        var s = d.createElement('script');
+        s.src = 'https://www.redditstatic.com/ads/pixel.js';
+        s.async = true;
+        var r = d.getElementsByTagName('script')[0];
+        r.parentNode.insertBefore(s, r);
+      })(window, document);
+      rdt('init', 'a2_hfl9ndp47bjq');
+      rdt('track', 'PageVisit');
+    </script>
+    <!-- End Reddit Pixel -->
+
+    <!-- Disable Shopify Best-Sellers Sales Shield code start -->
+    {% include 'sales_shield_best_selling_product_sorting_disabler' %}
+    <!-- Disable Shopify Best-Sellers Sales Shield code End -->
   {% include 'pagefly-app-header' %}</head>
 
   <body class='gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}'><div class="pagefly-container">
               {{ content_for_layout }}
             </div></body>
 </html>
+<!-- Begin Relo code -->
+<script>
+  window.Relo = {};
+  window.Relo.__data = {
+      storeDomain: {{ shop.domain | json}},
+      customerId: {{ customer.id | json }},
+      customerName: {{ customer.first_name | json }},
+      customerTags: {{ customer.tags | json }},
+      lastOrderId: {{ customer.last_order.id | json }},
+      lastOrderTotalPrice: {{ customer.last_order.total_price | json }},
+      lastOrderCurrency: {{ customer.last_order.currency | json }},
+      lastOrderLineItems: {{ customer.last_order.line_items | json }},
+      orderId: {{ order.id | json }},
+      orderTotalPrice: {{ order.total_price | json }},
+      orderCurrency: {{ order.currency | json }},
+      orderLineItems: {{ order.line_items | json }},
+  };
+</script>
+<script async src="https://onsite.reloapp.co/relo-onsite.js"></script>
+<!-- End Relo code -->
