@@ -1,6 +1,201 @@
+{% doc %}
+  @prompt
+    sticky banner for discount and can adjust the color the text, the font, and style and can still show in above even when they scroll down , put option for adjusting the size of the text and make it in the center
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-sticky-banner-{{ ai_gen_id }} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background-color: {{ block.settings.background_color }};
+    color: {{ block.settings.text_color }};
+    padding: {{ block.settings.padding_vertical }}px {{ block.settings.padding_horizontal }}px;
+    text-align: center;
+    font-family: {{ block.settings.font_family.family }}, {{ block.settings.font_family.fallback_families }};
+    font-weight: {{ block.settings.font_family.weight }};
+    font-style: {{ block.settings.font_family.style }};
+    font-size: {{ block.settings.font_size }}px;
+    display: block;
+  }
+
+  .ai-sticky-banner-content-{{ ai_gen_id }} {
+    max-width: {{ settings.page_width }}px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .ai-sticky-banner-text-{{ ai_gen_id }} {
+    margin: 0;
+  }
+
+  .ai-sticky-banner-close-{{ ai_gen_id }} {
+    background: none;
+    border: none;
+    color: {{ block.settings.text_color }};
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    margin-left: auto;
+  }
+
+  .ai-sticky-banner-close-{{ ai_gen_id }}:hover {
+    opacity: 1;
+  }
+
+  .ai-sticky-banner-close-{{ ai_gen_id }} svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .ai-sticky-banner-{{ ai_gen_id }}.hidden {
+    display: none;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-sticky-banner-{{ ai_gen_id }} {
+      font-size: {{ block.settings.font_size | times: 0.9 }}px;
+      padding: {{ block.settings.padding_vertical | times: 0.8 }}px {{ block.settings.padding_horizontal | times: 0.8 }}px;
+    }
+  }
+{% endstyle %}
+
+<sticky-banner-{{ ai_gen_id }} class="ai-sticky-banner-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-sticky-banner-content-{{ ai_gen_id }}">
+    <div class="ai-sticky-banner-text-{{ ai_gen_id }}">
+      {{ block.settings.banner_text }}
+    </div>
+    {% if block.settings.show_close_button %}
+      <button
+        class="ai-sticky-banner-close-{{ ai_gen_id }}"
+        aria-label="Close banner"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    {% endif %}
+  </div>
+</sticky-banner-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class StickyBanner{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.closeButton = this.querySelector('.ai-sticky-banner-close-{{ ai_gen_id }}');
+        
+        if (this.closeButton) {
+          this.closeButton.addEventListener('click', () => {
+            this.classList.add('hidden');
+            sessionStorage.setItem('ai-sticky-banner-{{ ai_gen_id }}-closed', 'true');
+          });
+        }
+
+        if (sessionStorage.getItem('ai-sticky-banner-{{ ai_gen_id }}-closed') === 'true') {
+          this.classList.add('hidden');
+        }
+      }
+    }
+
+    customElements.define('sticky-banner-{{ ai_gen_id }}', StickyBanner{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Sticky discount banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "banner_text",
+      "label": "Banner text",
+      "default": "Get 20% off your first order! Use code: WELCOME20"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_close_button",
+      "label": "Show close button",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#334fb4"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "font_picker",
+      "id": "font_family",
+      "label": "Font",
+      "default": "assistant_n4"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Text size",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_vertical",
+      "label": "Vertical padding",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sticky discount banner"
+    }
+  ]
+}
 {% endschema %}
