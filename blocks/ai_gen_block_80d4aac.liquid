@@ -120,6 +120,26 @@
     color: #999;
     font-style: italic;
   }
+  .badge-text {
+    background-color: #47a61e;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    z-index: 1;
+    display: block;
+    margin: 0 auto;
+    width: max-content;
+    margin-bottom: -10px;
+    position: relative;
+  }
+  .deal-text {
+    color: #333;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 8px;
+  }
 {% endstyle %}
 
 <div class='ai-custom-product-grid-{{ ai_gen_id }}' {{ block.shopify_attributes }}>
@@ -163,6 +183,7 @@
             {% endif %}
 
             <li>
+              <div class='badge-text'>Subscribe & Save 25% Today</div>
               <a
                 href='{{ product_url }}'
                 class='ai-custom-product-grid__card-{{ ai_gen_id }} card-wrapper product-card-wrapper underline-links-hover twcss-p-[1.6rem] twcss-shadow-[0_1px_2px_0_#0000000d] twcss-rounded-[.8rem]  twcss-border-[#eaecf0] twcss-border'
@@ -202,6 +223,7 @@
                   </div>
                   <!-- RYVIU APP -->
                   <h3 class='ai-custom-product-grid__product-title-{{ ai_gen_id }}'>{{ product.title }}</h3>
+                  <div class='deal-text'>Best results when used as part of the full Hem Healer 3-product system</div>
                   <h4 class='twcss-text-[1.4rem] twcss-font-body twcss-py-[1rem]'>
                     {{ product.metafields.custom.product_subheadline }}
                   </h4>
