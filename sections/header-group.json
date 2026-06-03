@@ -63,11 +63,37 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "1780418042905e9c25": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_10994cd_MDiBNg": {
+          "type": "ai_gen_block_10994cd",
+          "settings": {
+            "banner_text": "<strong>\"Your exclusive offer is still active—25% off your first autoship, then 15% off every order after.\"</strong>",
+            "show_close_button": true,
+            "show_on_specific_page": true,
+            "specific_page": "insider-offer",
+            "background_color": "#47a61e",
+            "text_color": "#ffffff",
+            "font_family": "assistant_n4",
+            "font_size": 20,
+            "padding_vertical": 12,
+            "padding_horizontal": 20
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_10994cd_MDiBNg"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "announcement-bar",
     "header_bar_JbVeqU",
-    "header"
+    "header",
+    "1780418042905e9c25"
   ]
 }

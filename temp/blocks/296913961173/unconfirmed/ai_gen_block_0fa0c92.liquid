@@ -1,0 +1,207 @@
+{% doc %}
+  @prompt
+    can you add a box that can put a discount announcement above the variant picker and can put text and font and color and size 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-discount-announcement-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .ai-discount-announcement__box-{{ ai_gen_id }} {
+    background-color: {{ block.settings.background_color }};
+    border: {{ block.settings.border_thickness }}px solid {{ block.settings.border_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    padding: {{ block.settings.padding_vertical }}px {{ block.settings.padding_horizontal }}px;
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .ai-discount-announcement__text-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.font_size }}px;
+    font-weight: {{ block.settings.font_weight }};
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-discount-announcement-{{ ai_gen_id }} {
+      width: 100%;
+    }
+
+    .ai-discount-announcement__text-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.font_size }}px * 0.9);
+    }
+  }
+{% endstyle %}
+
+<div class="ai-discount-announcement-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-discount-announcement__box-{{ ai_gen_id }}">
+    {% if block.settings.announcement_text != blank %}
+      <p class="ai-discount-announcement__text-{{ ai_gen_id }}">
+        {{ block.settings.announcement_text }}
+      </p>
+    {% else %}
+      <p class="ai-discount-announcement__text-{{ ai_gen_id }}" style="opacity: 0.6;">
+        Add your discount announcement here
+      </p>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Discount announcement",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "textarea",
+      "id": "announcement_text",
+      "label": "Announcement text",
+      "default": "Limited time offer: Save 20% on your purchase!"
+    },
+    {
+      "type": "header",
+      "content": "Text style"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Box style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#334fb4"
+    },
+    {
+      "type": "range",
+      "id": "padding_vertical",
+      "label": "Vertical padding",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "border_thickness",
+      "label": "Border thickness",
+      "min": 0,
+      "max": 8,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#334fb4"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Discount announcement"
+    }
+  ]
+}
+{% endschema %}
