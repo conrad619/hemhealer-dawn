@@ -57,6 +57,12 @@
             "text_style": "subtitle"
           }
         },
+        "custom_liquid_xVpMnJ": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"special-offer\">Special Offer: 25% off your first autoship order, then 15% off every order after</div>\n<style>\n.special-offer{\ndisplay:none;\nbackground:#0F866A;\npadding:5px 10px;\nborder-radius:5px;\ncolor:white;\nfont-size:18px;\n}\n</style>\n<script>\nif(localStorage.getItem('referrer','insider-offer')){\n  document.querySelector('.special-offer').style.display = 'block';\n}\n</script>"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -152,6 +158,7 @@
         "price",
         "description",
         "caption",
+        "custom_liquid_xVpMnJ",
         "variant_picker",
         "recharge_subscriptions_subscription_widget_v2_BBTCMq",
         "quantity_selector",
