@@ -112,6 +112,19 @@
       .subscribe label:nth-of-type({{ forloop.index }}) .variant-discount:after {
         content: {{ percent_text | json }};
       }
+
+      {% if compare_at > price %}
+        {% assign insider_subscription_price = price | times: 0.9 | times: 0.75 %}
+        {% assign insider_subscription_discount = compare_at | minus: insider_subscription_price %}
+        {% assign percent_off = insider_subscription_discount | times: 100 | divided_by: compare_at | round %}
+      {% else %}
+        {% assign percent_off = 33 %}
+      {% endif %}
+      {% assign percent_text = 'products.product.save_percent' | t: percent: percent_off %}
+
+      .insider-offer.subscribe label:nth-of-type({{ forloop.index }}) .variant-discount:after {
+        content: {{ percent_text | json }};
+      }
     {% endfor %}
   </style>
   <style>

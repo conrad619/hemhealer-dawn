@@ -140,12 +140,13 @@
 <script>
   if (!window.hemhealerRechargePriceInitialized) {
     window.hemhealerRechargePriceInitialized = true;
+    const hasInsiderOfferReferrer = localStorage.getItem('referrer') === 'insider-offer';
 
     document.addEventListener('DOMContentLoaded', function () {
       const RECHARGE_WIDGET_HOST_SELECTOR = 'recharge-subscription-widget';
       const RECHARGE_WIDGET_SELECTOR = '.rc-widget__root';
-      const RECHARGE_INPUT_SELECTOR =
-        '.rc-purchase-option__input[name="purchaseOption"]';
+      const RECHARGE_INPUT_SELECTOR = '.rc-purchase-option__input[name="purchaseOption"]';
+      const INSIDER_OFFER_DISCOUNT_RATE = 0.25;
 
       function extractPrice(text) {
         return parseFloat((text || '').replace(/[^0-9.]/g, '')) || 0;
@@ -226,9 +227,7 @@
 
       function getRechargeOptionRoot(option) {
         if (option === 'subscription') {
-          return queryRecharge(
-            `${RECHARGE_WIDGET_SELECTOR} .rc-purchase-option__subscription`,
-          );
+          return queryRecharge(`${RECHARGE_WIDGET_SELECTOR} .rc-purchase-option__subscription`);
         }
 
         return queryRecharge(
@@ -265,21 +264,16 @@
         if (!optionRoot) return 0;
 
         return extractPrice(
-          optionRoot.querySelector(
-            '[part~="rc-purchase-option__original-price"], .rc-price.strike-through',
-          )?.textContent,
+          optionRoot.querySelector('[part~="rc-purchase-option__original-price"], .rc-price.strike-through')
+            ?.textContent,
         );
       }
 
       function getSelectedRechargeOption() {
-        const checkedInput = queryRecharge(
-          `${RECHARGE_WIDGET_SELECTOR} ${RECHARGE_INPUT_SELECTOR}:checked`,
-        );
+        const checkedInput = queryRecharge(`${RECHARGE_WIDGET_SELECTOR} ${RECHARGE_INPUT_SELECTOR}:checked`);
         if (checkedInput) return checkedInput.value;
 
-        const selectedOption = queryRecharge(
-          `${RECHARGE_WIDGET_SELECTOR} .rc-purchase-option[rc-selected]`,
-        );
+        const selectedOption = queryRecharge(`${RECHARGE_WIDGET_SELECTOR} .rc-purchase-option[rc-selected]`);
         if (selectedOption?.matches('.rc-purchase-option__subscription')) return 'subscription';
         if (selectedOption?.matches('.rc-selection__onetime, [part~="rc-purchase-option__onetime"]')) {
           return 'onetime';
@@ -315,8 +309,15 @@
 
         const basePrice = getBasePrice(priceWrapper);
         const rechargeSubscriptionPrice = getRechargeOptionPrice('subscription');
-        const currentPrice =
-          isSubscription && rechargeSubscriptionPrice > 0 ? rechargeSubscriptionPrice : basePrice;
+        const standardSubscriptionPrice = rechargeSubscriptionPrice > 0 ? rechargeSubscriptionPrice : basePrice;
+        const insiderSubscriptionBasePrice =
+          rechargeSubscriptionPrice > 0 ? rechargeSubscriptionPrice : basePrice * 0.9;
+        const insiderSubscriptionPrice =
+          hasInsiderOfferReferrer && isSubscription && insiderSubscriptionBasePrice > 0
+            ? insiderSubscriptionBasePrice * (1 - INSIDER_OFFER_DISCOUNT_RATE)
+            : 0;
+        const subscriptionPrice = insiderSubscriptionPrice || standardSubscriptionPrice;
+        const currentPrice = isSubscription ? subscriptionPrice : basePrice;
         const moneyTemplate = currentPriceEls[0].textContent.trim() || '$0.00';
         const formattedPrice = formatMoney(currentPrice, moneyTemplate);
 
@@ -330,7 +331,9 @@
           comparePrice || (isSubscription ? subscriptionOriginalPrice || basePrice : basePrice);
 
         setSavings(priceWrapper, savingsReferencePrice, currentPrice);
-        document.querySelector('.product')?.classList.toggle('subscribe', isSubscription);
+        const productEl = document.querySelector('.product');
+        productEl?.classList.toggle('subscribe', isSubscription);
+        productEl?.classList.toggle('insider-offer', hasInsiderOfferReferrer);
 
         return true;
       }
@@ -396,11 +399,7 @@
         const target = event.target;
         if (!(target instanceof Element)) return;
 
-        if (
-          isRechargeTarget(target) ||
-          target.closest('variant-selects') ||
-          target.closest('.product-form')
-        ) {
+        if (isRechargeTarget(target) || target.closest('variant-selects') || target.closest('.product-form')) {
           queueRechargePriceSync();
         }
       });
