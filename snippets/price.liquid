@@ -146,6 +146,7 @@
       const RECHARGE_WIDGET_HOST_SELECTOR = 'recharge-subscription-widget';
       const RECHARGE_WIDGET_SELECTOR = '.rc-widget__root';
       const RECHARGE_INPUT_SELECTOR = '.rc-purchase-option__input[name="purchaseOption"]';
+      const SUBSCRIPTION_DISCOUNT_RATE = 0.1;
       const INSIDER_OFFER_DISCOUNT_RATE = 0.25;
 
       function extractPrice(text) {
@@ -163,12 +164,38 @@
         return `$${formattedAmount}`;
       }
 
+      function pricesAreEqual(firstPrice, secondPrice) {
+        return Math.abs(firstPrice - secondPrice) < 0.01;
+      }
+
       function getPriceWrapper() {
         return (
           document.querySelector('product-info[id^="MainProduct"] [id^="price-"] .price') ||
           document.querySelector('.product__info-container [id^="price-"] .price') ||
           document.querySelector('.product__info-container .price')
         );
+      }
+
+      function getSelectedVariant() {
+        const selectedVariantJson = document.querySelector('variant-selects [data-selected-variant]')?.textContent;
+
+        if (!selectedVariantJson) return null;
+
+        try {
+          return JSON.parse(selectedVariantJson);
+        } catch (error) {
+          return null;
+        }
+      }
+
+      function getSelectedVariantPrice() {
+        const priceCents = Number(getSelectedVariant()?.price);
+        return priceCents > 0 ? priceCents / 100 : 0;
+      }
+
+      function getSelectedVariantSubscriptionPrice() {
+        const selectedVariantPrice = getSelectedVariantPrice();
+        return selectedVariantPrice > 0 ? selectedVariantPrice * (1 - SUBSCRIPTION_DISCOUNT_RATE) : 0;
       }
 
       function getRechargeHost() {
@@ -202,6 +229,13 @@
       }
 
       function getBasePrice(priceWrapper) {
+        const selectedVariantPrice = getSelectedVariantPrice();
+
+        if (selectedVariantPrice > 0) {
+          priceWrapper.dataset.originalPrice = selectedVariantPrice;
+          return selectedVariantPrice;
+        }
+
         const rechargeOneTimePrice = getRechargeOptionPrice('onetime');
 
         if (rechargeOneTimePrice > 0) {
@@ -235,9 +269,9 @@
         );
       }
 
-      function getRechargeOptionPrice(option) {
+      function getRechargeOptionPriceElements(option) {
         const optionRoot = getRechargeOptionRoot(option);
-        if (!optionRoot) return 0;
+        if (!optionRoot) return [];
 
         const selectors =
           option === 'subscription'
@@ -250,13 +284,100 @@
                 '.rc-purchase-option__prices .rc-price:not(.strike-through):not(.text-muted)',
               ];
 
-        for (const selector of selectors) {
-          const priceEl = optionRoot.querySelector(selector);
+        return [...new Set(selectors.flatMap((selector) => Array.from(optionRoot.querySelectorAll(selector))))];
+      }
+
+      function getRechargeOptionPrice(option) {
+        const priceEls = getRechargeOptionPriceElements(option);
+
+        for (const priceEl of priceEls) {
           const price = extractPrice(priceEl?.textContent);
+
+          if (option === 'subscription') {
+            const originalPrice = parseFloat(priceEl.dataset.hemhealerOriginalPrice);
+            const overridePrice = parseFloat(priceEl.dataset.hemhealerOverridePrice);
+
+            if (originalPrice > 0 && overridePrice > 0 && pricesAreEqual(price, overridePrice)) {
+              return originalPrice;
+            }
+
+            if (price > 0) {
+              priceEl.dataset.hemhealerOriginalPrice = price;
+              priceEl.removeAttribute('data-hemhealer-override-price');
+              return price;
+            }
+
+            if (originalPrice > 0) return originalPrice;
+          }
+
           if (price > 0) return price;
         }
 
         return 0;
+      }
+
+      function setRechargePriceElement(priceEl, price) {
+        if (!priceEl || price <= 0) return;
+
+        if (!priceEl.dataset.hemhealerOriginalTemplate) {
+          priceEl.dataset.hemhealerOriginalTemplate = priceEl.textContent.trim();
+        }
+
+        const formattedPrice = formatMoney(
+          price,
+          priceEl.dataset.hemhealerOriginalTemplate || priceEl.textContent.trim() || '$0.00',
+        );
+
+        priceEl.dataset.hemhealerOverridePrice = price.toFixed(2);
+
+        if (priceEl.textContent.trim() !== formattedPrice) {
+          priceEl.textContent = formattedPrice;
+        }
+      }
+
+      function updateRechargeSubscriptionWidgetPrice(standardSubscriptionPrice, insiderSubscriptionPrice) {
+        if (!hasInsiderOfferReferrer || insiderSubscriptionPrice <= 0) return;
+
+        getRechargeOptionPriceElements('subscription').forEach((priceEl) => {
+          priceEl.dataset.hemhealerOriginalPrice = standardSubscriptionPrice.toFixed(2);
+          setRechargePriceElement(priceEl, insiderSubscriptionPrice);
+        });
+
+        const optionRoot = getRechargeOptionRoot('subscription');
+        if (!optionRoot || standardSubscriptionPrice <= 0) return;
+
+        [
+          ...new Set(
+            [
+              '[part~="rc-purchase-option__original-price"]',
+              '.rc-price.strike-through',
+            ].flatMap((selector) => Array.from(optionRoot.querySelectorAll(selector))),
+          ),
+        ].forEach((priceEl) => {
+          setRechargePriceElement(priceEl, standardSubscriptionPrice);
+        });
+      }
+
+      function clearRechargePriceCache() {
+        getPriceWrapper()?.removeAttribute('data-original-price');
+
+        const optionRoot = getRechargeOptionRoot('subscription');
+        if (!optionRoot) return;
+
+        [
+          ...new Set(
+            [
+              '[part~="rc-purchase-option__discounted-price"]',
+              '[part~="rc-purchase-option__original-price"]',
+              '.rc-purchase-option__prices .rc-price',
+              '.rc-price.strike-through',
+            ].flatMap((selector) => Array.from(optionRoot.querySelectorAll(selector))),
+          ),
+        ].forEach((priceEl) => {
+          delete priceEl.dataset.hemhealerOriginalPrice;
+          delete priceEl.dataset.hemhealerOverridePrice;
+          delete priceEl.dataset.hemhealerOriginalTemplate;
+        });
       }
 
       function getRechargeOriginalSubscriptionPrice() {
@@ -309,17 +430,22 @@
 
         const basePrice = getBasePrice(priceWrapper);
         const rechargeSubscriptionPrice = getRechargeOptionPrice('subscription');
-        const standardSubscriptionPrice = rechargeSubscriptionPrice > 0 ? rechargeSubscriptionPrice : basePrice;
-        const insiderSubscriptionBasePrice =
-          rechargeSubscriptionPrice > 0 ? rechargeSubscriptionPrice : basePrice * 0.9;
+        const selectedVariantSubscriptionPrice = getSelectedVariantSubscriptionPrice();
+        const standardSubscriptionPrice = hasInsiderOfferReferrer
+          ? selectedVariantSubscriptionPrice || rechargeSubscriptionPrice || basePrice * (1 - SUBSCRIPTION_DISCOUNT_RATE)
+          : rechargeSubscriptionPrice > 0
+            ? rechargeSubscriptionPrice
+            : basePrice;
         const insiderSubscriptionPrice =
-          hasInsiderOfferReferrer && isSubscription && insiderSubscriptionBasePrice > 0
-            ? insiderSubscriptionBasePrice * (1 - INSIDER_OFFER_DISCOUNT_RATE)
+          hasInsiderOfferReferrer && standardSubscriptionPrice > 0
+            ? standardSubscriptionPrice * (1 - INSIDER_OFFER_DISCOUNT_RATE)
             : 0;
         const subscriptionPrice = insiderSubscriptionPrice || standardSubscriptionPrice;
         const currentPrice = isSubscription ? subscriptionPrice : basePrice;
         const moneyTemplate = currentPriceEls[0].textContent.trim() || '$0.00';
         const formattedPrice = formatMoney(currentPrice, moneyTemplate);
+
+        updateRechargeSubscriptionWidgetPrice(standardSubscriptionPrice, insiderSubscriptionPrice);
 
         currentPriceEls.forEach((priceEl) => {
           priceEl.textContent = formattedPrice;
@@ -355,6 +481,11 @@
         [0, 150, 700].forEach((delay) => {
           window.setTimeout(syncRechargePrice, delay);
         });
+      }
+
+      function queueVariantPriceSync() {
+        clearRechargePriceCache();
+        queueRechargePriceSync();
       }
 
       function isRechargeTarget(target) {
@@ -399,7 +530,12 @@
         const target = event.target;
         if (!(target instanceof Element)) return;
 
-        if (isRechargeTarget(target) || target.closest('variant-selects') || target.closest('.product-form')) {
+        if (target.closest('variant-selects')) {
+          queueVariantPriceSync();
+          return;
+        }
+
+        if (isRechargeTarget(target) || target.closest('.product-form')) {
           queueRechargePriceSync();
         }
       });
@@ -412,6 +548,11 @@
           queueRechargePriceSync();
         }
       });
+
+      if (typeof subscribe === 'function' && typeof PUB_SUB_EVENTS !== 'undefined') {
+        subscribe(PUB_SUB_EVENTS.optionValueSelectionChange, queueVariantPriceSync);
+        subscribe(PUB_SUB_EVENTS.variantChange, queueVariantPriceSync);
+      }
 
       let attempts = 0;
       const intervalId = window.setInterval(() => {
