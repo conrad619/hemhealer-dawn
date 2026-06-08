@@ -60,7 +60,7 @@
         "custom_liquid_xVpMnJ": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div class=\"special-offer\">Special Offer: 25% off your first autoship order, then 15% off every order after</div>\n<style>\n.special-offer{\ndisplay:none;\nbackground:#0F866A;\npadding:5px 10px;\nborder-radius:5px;\ncolor:white;\nfont-size:18px;\n}\n@keyframes pulseScale {\n  0%, 100% { transform: scale(1); }\n  50%       { transform: scale(1.1); }\n}\n.special-offer { animation: pulseScale 1.5s ease-in-out infinite; }\n\n</style>\n<script>\nif(localStorage.getItem('referrer') === 'insider-offer'){\n  document.addEventListener('DOMContentLoaded', function () {document.querySelector('.special-offer').style.display = 'block';\ndocument.querySelector('#shopify-section-sections--21878947152085__custom_section_subscribe_re8Kjr').style.display = 'none';\n\n}\n});\n</script>"
+            "custom_liquid": "<div class=\"special-offer\">Special Offer: 25% off your first autoship order, then 15% off every order after</div>\n<style>\n.special-offer{\ndisplay:none;\nbackground:#0F866A;\npadding:5px 10px;\nborder-radius:5px;\ncolor:white;\nfont-size:18px;\n}\n@keyframes pulseScale {\n  0%, 100% { transform: scale(1); }\n  50%       { transform: scale(1.1); }\n}\n.special-offer { animation: pulseScale 1.5s ease-in-out infinite; }\n\n</style>\n<script>\ndocument.addEventListener('DOMContentLoaded', function () {\nif(localStorage.getItem('referrer') === 'insider-offer'){\n  document.querySelector('.special-offer').style.display = 'block';\ndocument.querySelector('#shopify-section-sections--21878947152085__custom_section_subscribe_re8Kjr').style.display = 'none';\n\n}\n});\n</script>"
           }
         },
         "variant_picker": {
