@@ -53,7 +53,7 @@
     text-decoration: none;
     color: inherit;
     border-radius: {{ block.settings.card_border_radius }}px;
-    overflow: hidden;
+    overflow: visible;
     background-color: {{ block.settings.card_background }};
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
@@ -121,7 +121,7 @@
     font-style: italic;
   }
   .badge-text {
-    background-color: #47a61e;
+    background-color: #ffb100;
     color: #fff;
     padding: 5px 10px;
     font-size: 12px;
@@ -131,9 +131,15 @@
     display: block;
     margin: 0 auto;
     width: max-content;
-    margin-bottom: -10px;
+    margin-top: -30px;
+    margin-bottom: 20px;
     position: relative;
   }
+  @keyframes pulseScale {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.2); }
+  }
+  .badge-text { animation: pulseScale 1.5s ease-in-out infinite; }
   .deal-text {
     color: #333;
     font-size: 12px;
@@ -168,8 +174,12 @@
           {% liquid
             assign product_key = 'product_' | append: i
             assign link_key = 'product_' | append: i | append: '_link'
+            assign price_key = 'product_' | append: i | append: '_price'
+            assign compare_price_key = 'product_' | append: i | append: '_compare_price'
             assign product = block.settings[product_key]
             assign custom_link = block.settings[link_key]
+            assign custom_price = block.settings[price_key]
+            assign custom_compare_price = block.settings[compare_price_key]
             assign selling_plan_group = product.selling_plan_groups | first
             assign selling_plan = selling_plan_group.selling_plans | first
             assign selling_plan_id = selling_plan.id
@@ -183,7 +193,6 @@
             {% endif %}
 
             <li>
-              <div class='badge-text'>Subscribe & Save 25% Today</div>
               <a
                 href='{{ product_url }}'
                 class='ai-custom-product-grid__card-{{ ai_gen_id }} card-wrapper product-card-wrapper underline-links-hover twcss-p-[1.6rem] twcss-shadow-[0_1px_2px_0_#0000000d] twcss-rounded-[.8rem]  twcss-border-[#eaecf0] twcss-border'
@@ -192,6 +201,7 @@
                   data-insider-selling-plan-id='{{ selling_plan_id }}'
                 {% endif %}
               >
+                <div class='badge-text'>Subscribe & Save 25% Today</div>
                 <h2 class='twcss-text-[2rem] twcss-text-center twcss-font-bold'>
                   {{ product.metafields.custom.product_headline }}
                 </h2>
@@ -228,7 +238,13 @@
                     {{ product.metafields.custom.product_subheadline }}
                   </h4>
                   {% if block.settings.show_price %}
-                    {% render 'price', product: product, price_class: '', show_compare_at_price: true %}
+                    {% render 'price',
+                      product: product,
+                      price_class: '',
+                      show_compare_at_price: true,
+                      custom_price: custom_price,
+                      custom_compare_price: custom_compare_price
+                    %}
                   {% endif %}
                 </div>
               </a>
@@ -421,6 +437,16 @@
       "label": "Custom link"
     },
     {
+      "type": "text",
+      "id": "product_1_price",
+      "label": "Custom price"
+    },
+    {
+      "type": "text",
+      "id": "product_1_compare_price",
+      "label": "Custom compare price"
+    },
+    {
       "type": "header",
       "content": "Product 2"
     },
@@ -433,6 +459,16 @@
       "type": "url",
       "id": "product_2_link",
       "label": "Custom link"
+    },
+    {
+      "type": "text",
+      "id": "product_2_price",
+      "label": "Custom price"
+    },
+    {
+      "type": "text",
+      "id": "product_2_compare_price",
+      "label": "Custom compare price"
     },
     {
       "type": "header",
@@ -449,6 +485,16 @@
       "label": "Custom link"
     },
     {
+      "type": "text",
+      "id": "product_3_price",
+      "label": "Custom price"
+    },
+    {
+      "type": "text",
+      "id": "product_3_compare_price",
+      "label": "Custom compare price"
+    },
+    {
       "type": "header",
       "content": "Product 4"
     },
@@ -461,6 +507,16 @@
       "type": "url",
       "id": "product_4_link",
       "label": "Custom link"
+    },
+    {
+      "type": "text",
+      "id": "product_4_price",
+      "label": "Custom price"
+    },
+    {
+      "type": "text",
+      "id": "product_4_compare_price",
+      "label": "Custom compare price"
     },
     {
       "type": "header",

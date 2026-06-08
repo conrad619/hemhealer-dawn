@@ -23,6 +23,12 @@
 
   assign compare_at_price = target.compare_at_price
   assign price = target.price | default: 1999
+  if custom_price != blank
+    assign price = custom_price
+  endif
+  if custom_compare_price != blank
+    assign compare_at_price = custom_compare_price
+  endif
   assign price_min = product.price_min
   assign price_max = product.price_max
   assign available = target.available | default: false
@@ -348,10 +354,9 @@
 
         [
           ...new Set(
-            [
-              '[part~="rc-purchase-option__original-price"]',
-              '.rc-price.strike-through',
-            ].flatMap((selector) => Array.from(optionRoot.querySelectorAll(selector))),
+            ['[part~="rc-purchase-option__original-price"]', '.rc-price.strike-through'].flatMap((selector) =>
+              Array.from(optionRoot.querySelectorAll(selector)),
+            ),
           ),
         ].forEach((priceEl) => {
           setRechargePriceElement(priceEl, standardSubscriptionPrice);
@@ -432,10 +437,12 @@
         const rechargeSubscriptionPrice = getRechargeOptionPrice('subscription');
         const selectedVariantSubscriptionPrice = getSelectedVariantSubscriptionPrice();
         const standardSubscriptionPrice = hasInsiderOfferReferrer
-          ? selectedVariantSubscriptionPrice || rechargeSubscriptionPrice || basePrice * (1 - SUBSCRIPTION_DISCOUNT_RATE)
+          ? selectedVariantSubscriptionPrice ||
+            rechargeSubscriptionPrice ||
+            basePrice * (1 - SUBSCRIPTION_DISCOUNT_RATE)
           : rechargeSubscriptionPrice > 0
-            ? rechargeSubscriptionPrice
-            : basePrice;
+          ? rechargeSubscriptionPrice
+          : basePrice;
         const insiderSubscriptionPrice =
           hasInsiderOfferReferrer && standardSubscriptionPrice > 0
             ? standardSubscriptionPrice * (1 - INSIDER_OFFER_DISCOUNT_RATE)
