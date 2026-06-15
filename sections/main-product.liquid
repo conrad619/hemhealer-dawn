@@ -2915,7 +2915,7 @@
     document.querySelector('.product-form__submit').insertAdjacentElement('afterend', trustpilot);
     return document.querySelector('.product-form__submit');
   }
-  elementExist(insertTrustPilotAfterAddToCart, 30);
+  {% comment %} elementExist(insertTrustPilotAfterAddToCart, 30); {% endcomment %}
 
   function decodeTranslatedText(text) {
     const decodedText = document.createElement('textarea');
