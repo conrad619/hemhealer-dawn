@@ -19,7 +19,7 @@
           "settings": {
             "announcement_text_1": "<p><strong>Free USA Shipping on Orders $74.99+</strong></p>",
             "enable_rotation": true,
-            "announcement_text_2": "<p>Subscribers Always Get Free Shipping + Save 10%</p>",
+            "announcement_text_2": "<p><strong>Subscribers Always Get Free Shipping + Save 10%</strong></p>",
             "announcement_text_3": "",
             "rotation_interval": 5,
             "text_size": 18,
