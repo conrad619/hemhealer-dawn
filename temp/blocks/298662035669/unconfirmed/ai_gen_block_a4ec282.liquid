@@ -1,6 +1,229 @@
+{% doc %}
+  @prompt
+    sticky announcement bar that can adjust size of the text and can rotate text adjusting time
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-sticky-announcement-{{ ai_gen_id }} {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: {{ block.settings.background_color }};
+    color: {{ block.settings.text_color }};
+    z-index: 1000;
+    overflow: hidden;
+    display: block;
+  }
+
+  .ai-sticky-announcement-wrapper-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: {{ block.settings.vertical_padding }}px 20px;
+    min-height: 40px;
+  }
+
+  .ai-sticky-announcement-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.text_size }}px;
+    text-align: center;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .ai-sticky-announcement-text-{{ ai_gen_id }} a {
+    color: {{ block.settings.link_color }};
+    text-decoration: underline;
+  }
+
+  .ai-sticky-announcement-text-{{ ai_gen_id }} a:hover {
+    opacity: 0.8;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-sticky-announcement-text-{{ ai_gen_id }} {
+      font-size: calc({{ block.settings.text_size }}px * 0.9);
+    }
+  }
+{% endstyle %}
+
+<sticky-announcement-{{ ai_gen_id }}
+  class="ai-sticky-announcement-{{ ai_gen_id }}"
+  data-rotation-enabled="{{ block.settings.enable_rotation }}"
+  data-rotation-interval="{{ block.settings.rotation_interval }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-sticky-announcement-wrapper-{{ ai_gen_id }}">
+    {% if block.settings.enable_rotation %}
+      <div
+        class="ai-sticky-announcement-text-{{ ai_gen_id }}"
+        data-announcement-index="0"
+      >
+        {{ block.settings.announcement_text_1 }}
+      </div>
+    {% else %}
+      <div class="ai-sticky-announcement-text-{{ ai_gen_id }}">
+        {{ block.settings.announcement_text_1 }}
+      </div>
+    {% endif %}
+  </div>
+</sticky-announcement-{{ ai_gen_id }}>
+
+{% if block.settings.enable_rotation %}
+  <script>
+    (function() {
+      class StickyAnnouncement{{ ai_gen_id }} extends HTMLElement {
+        constructor() {
+          super();
+          this.currentIndex = 0;
+          this.announcements = [
+            {{ block.settings.announcement_text_1 | json }},
+            {{ block.settings.announcement_text_2 | json }},
+            {{ block.settings.announcement_text_3 | json }}
+          ].filter(text => text && text.trim() !== '');
+          this.rotationEnabled = this.dataset.rotationEnabled === 'true';
+          this.rotationInterval = parseInt(this.dataset.rotationInterval) * 1000;
+        }
+
+        connectedCallback() {
+          if (this.rotationEnabled && this.announcements.length > 1) {
+            this.startRotation();
+          }
+        }
+
+        disconnectedCallback() {
+          if (this.intervalId) {
+            clearInterval(this.intervalId);
+          }
+        }
+
+        startRotation() {
+          this.intervalId = setInterval(() => {
+            this.rotateAnnouncement();
+          }, this.rotationInterval);
+        }
+
+        rotateAnnouncement() {
+          const textElement = this.querySelector('.ai-sticky-announcement-text-{{ ai_gen_id }}');
+          if (!textElement) return;
+
+          textElement.style.opacity = '0';
+          textElement.style.transition = 'opacity 0.3s ease';
+
+          setTimeout(() => {
+            this.currentIndex = (this.currentIndex + 1) % this.announcements.length;
+            textElement.innerHTML = this.announcements[this.currentIndex];
+            textElement.style.opacity = '1';
+          }, 300);
+        }
+      }
+
+      customElements.define('sticky-announcement-{{ ai_gen_id }}', StickyAnnouncement{{ ai_gen_id }});
+    })();
+  </script>
+{% endif %}
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Sticky announcement bar",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "announcement_text_1",
+      "label": "Announcement 1",
+      "default": "<p>Welcome to our store!</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_rotation",
+      "label": "Enable text rotation",
+      "default": false
+    },
+    {
+      "type": "richtext",
+      "id": "announcement_text_2",
+      "label": "Announcement 2",
+      "info": "Only shown when rotation is enabled"
+    },
+    {
+      "type": "richtext",
+      "id": "announcement_text_3",
+      "label": "Announcement 3",
+      "info": "Only shown when rotation is enabled"
+    },
+    {
+      "type": "range",
+      "id": "rotation_interval",
+      "min": 2,
+      "max": 20,
+      "step": 1,
+      "unit": "s",
+      "label": "Rotation interval",
+      "default": 5,
+      "info": "Time between text changes"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 10,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "vertical_padding",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Vertical padding",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Link color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sticky announcement bar"
+    }
+  ]
+}
 {% endschema %}
