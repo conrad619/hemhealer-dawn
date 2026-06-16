@@ -11,30 +11,60 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
+    "1781622546e73f42c2": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a4ec282_z7TeFc": {
+          "type": "ai_gen_block_a4ec282",
+          "settings": {
+            "announcement_text_1": "<p><strong>Free USA Shipping on Orders $74.99+</strong></p>",
+            "enable_rotation": true,
+            "announcement_text_2": "<p>Subscribers Always Get Free Shipping + Save 10%</p>",
+            "announcement_text_3": "",
+            "rotation_interval": 5,
+            "text_size": 18,
+            "vertical_padding": 12,
+            "background_color": "#31C5DF",
+            "text_color": "#000000",
+            "link_color": "#ffffff",
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a4ec282_z7TeFc"
+      ],
+      "settings": {}
+    },
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement_jeNjNi": {
-          "type": "announcement",
-          "settings": {
-            "text": "Subscribers Always Get Free Shipping + Save 10%",
-            "link": ""
-          }
-        },
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
             "text": "Free USA Shipping on Orders $74.99+",
             "link": ""
           }
+        },
+        "announcement_jeNjNi": {
+          "type": "announcement",
+          "settings": {
+            "text": "Subscribers Always Get Free Shipping + Save 10%",
+            "link": ""
+          }
         }
       },
       "block_order": [
-        "announcement_jeNjNi",
-        "announcement-bar-0"
+        "announcement-bar-0",
+        "announcement_jeNjNi"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "h2 {font-size-adjust: 55;}"
       ],
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-2",
         "show_line_separator": true,
         "show_social": false,
         "auto_rotate": true,
@@ -100,6 +130,7 @@
     }
   },
   "order": [
+    "1781622546e73f42c2",
     "announcement-bar",
     "header_bar_JbVeqU",
     "header",
