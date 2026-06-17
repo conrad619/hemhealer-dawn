@@ -24,7 +24,7 @@
             "rotation_interval": 5,
             "text_size": 18,
             "vertical_padding": 12,
-            "background_color": "#31C5DF",
+            "background_color": "#31c5df",
             "text_color": "#000000",
             "link_color": "#ffffff",
             "desktop_width_percent": 100
@@ -85,7 +85,10 @@
     },
     "header": {
       "type": "header",
-      "custom_css": [],
+      "custom_css": [
+        "/* Change the main background color */#cart-icon-bubble.header__icon--cart {background-color: #437c35 !important;}",
+        "/* Change the background color when someone hovers over it */#cart-icon-bubble.header__icon--cart:hover {background-color: #437c35!important;}"
+      ],
       "settings": {
         "logo_position": "middle-left",
         "menu": "dev-menu-only",
