@@ -41,6 +41,12 @@
             "custom_liquid": "<img src=\"https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Trustpilot_Hem_Healer_Site.png?v=1754417603\">"
           }
         },
+        "custom_liquid_NPgNtD": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<!-- TrustBox widget - Micro Star -->\n<div class=\"trustpilot-widget\" data-locale=\"en-US\" data-template-id=\"5419b732fbfb950b10de65e5\" data-businessunit-id=\"68584b7dfbdd6383950293e7\" data-style-height=\"24px\" data-style-width=\"100%\" data-token=\"2042d7cc-93d3-4921-818d-6a2ac5071a5b\">\n  <a href=\"https://www.trustpilot.com/review/hemhealer.com\" target=\"_blank\" rel=\"noopener\">Trustpilot</a>\n</div>\n<!-- End TrustBox widget -->"
+          }
+        },
         "ryviu_reviews_qa_ryviu_total_k8dghb": {
           "type": "shopify://apps/ryviu-product-reviews/blocks/ryviu-total/807ad6ed-1a6a-4559-abea-ed062858d9da",
           "settings": {
@@ -162,6 +168,7 @@
         "title",
         "multiline_text_KUTF9N",
         "custom_liquid_VJRDeq",
+        "custom_liquid_NPgNtD",
         "ryviu_reviews_qa_ryviu_total_k8dghb",
         "price",
         "description",
