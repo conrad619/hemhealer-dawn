@@ -952,6 +952,10 @@ video {
   height: 2.4rem;
 }
 
+.twcss-h-\[20px\] {
+  height: 20px;
+}
+
 .twcss-h-\[20rem\] {
   height: 20rem;
 }
@@ -1078,6 +1082,10 @@ video {
 
 .twcss-w-\[2\.5rem\] {
   width: 2.5rem;
+}
+
+.twcss-w-\[20px\] {
+  width: 20px;
 }
 
 .twcss-w-\[20rem\] {
@@ -1351,6 +1359,10 @@ video {
 
 .twcss-rounded-full {
   border-radius: 9999px;
+}
+
+.twcss-rounded-lg {
+  border-radius: 0.5rem;
 }
 
 .twcss-rounded-b-3xl {
@@ -1632,6 +1644,11 @@ video {
 .twcss-px-\[2rem\] {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.twcss-px-\[4rem\] {
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 .twcss-px-\[5rem\] {
@@ -1944,6 +1961,11 @@ video {
   letter-spacing: 0.1em;
 }
 
+.\!twcss-text-white {
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+}
+
 .twcss-text-\[\#012161\] {
   --tw-text-opacity: 1;
   color: rgb(1 33 97 / var(--tw-text-opacity));
@@ -2007,6 +2029,11 @@ video {
 .twcss-underline {
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
+}
+
+.\!twcss-no-underline {
+  -webkit-text-decoration-line: none !important;
+  text-decoration-line: none !important;
 }
 
 .twcss-no-underline {
@@ -2280,6 +2307,11 @@ shop-pay-wallet-button {
     margin-bottom: 0px;
   }
 
+  .lg\:twcss-my-\[10rem\] {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+  }
+
   .lg\:-twcss-mt-\[14rem\] {
     margin-top: -14rem;
   }
@@ -2408,6 +2440,10 @@ shop-pay-wallet-button {
     height: 2rem;
   }
 
+  .lg\:twcss-h-\[40px\] {
+    height: 40px;
+  }
+
   .lg\:twcss-h-\[4rem\] {
     height: 4rem;
   }
@@ -2462,6 +2498,10 @@ shop-pay-wallet-button {
 
   .lg\:twcss-w-\[40\%\] {
     width: 40%;
+  }
+
+  .lg\:twcss-w-\[40px\] {
+    width: 40px;
   }
 
   .lg\:twcss-w-\[4rem\] {
