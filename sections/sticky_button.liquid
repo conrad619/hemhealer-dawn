@@ -1,0 +1,169 @@
+{% comment %}
+  Sticky Pulsating Buy Now Button Block
+  - Appears in top right corner after configurable delay (30-50 seconds)
+  - Pulsating animation effect
+  - Customizable button color and link
+{% endcomment %}
+
+<style>
+  .sticky-buy-now-button {
+    position: fixed;
+    top: {{ section.settings.top_offset }}px;
+    right: {{ section.settings.right_offset }}px;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  }
+
+  .sticky-buy-now-button.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .sticky-buy-now-button__link {
+    display: inline-block;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: {{ section.settings.button_radius }}px;
+    background-color: {{ section.settings.button_color }};
+    color: {{ section.settings.button_text_color }};
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: pulse 2s infinite;
+  }
+
+  .sticky-buy-now-button__link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    animation: none;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .sticky-buy-now-button {
+      top: 10px;
+      right: 10px;
+    }
+
+    .sticky-buy-now-button__link {
+      padding: 12px 20px;
+      font-size: 14px;
+    }
+  }
+</style>
+
+<div class='sticky-buy-now-button' id='sticky-buy-now-{{ section.id }}'>
+  <a href='{{ section.settings.button_link }}' class='sticky-buy-now-button__link'>
+    {{ section.settings.button_text }}
+  </a>
+</div>
+
+<script>
+  (function() {
+    const button = document.getElementById('sticky-buy-now-{{ section.id }}');
+    const delaySeconds = {{ section.settings.delay_seconds }};
+
+    if (button && delaySeconds > 0) {
+      setTimeout(function() {
+        button.classList.add('visible');
+      }, delaySeconds * 1000);
+    } else if (button) {
+      button.classList.add('visible');
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Sticky Pulsating Button",
+  "settings": [
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Buy Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "info": "Enter the URL where the button should link to"
+    },
+    {
+      "type": "range",
+      "id": "delay_seconds",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "s",
+      "label": "Delay Before Showing",
+      "default": 30,
+      "info": "Time in seconds before the button appears (0-60 seconds)"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button Background Color",
+      "default": "#334fb4"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Button Corner Radius",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "top_offset",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Top Offset",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "right_offset",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Right Offset",
+      "default": 20
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sticky Pulsating Button"
+    }
+  ]
+}
+{% endschema %}
