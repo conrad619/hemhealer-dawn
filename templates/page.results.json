@@ -20,10 +20,25 @@
     "custom_section_hem_hero_GaGcgD": {
       "type": "custom-section-hem-hero",
       "settings": {}
+    },
+    "sticky_button_G7r8Ck": {
+      "type": "sticky_button",
+      "name": "Sticky Pulsating Button",
+      "settings": {
+        "button_text": "Buy Now",
+        "button_link": "shopify://products/hem-hero",
+        "delay_seconds": 30,
+        "button_color": "#3D8124",
+        "button_text_color": "#ffffff",
+        "button_radius": 4,
+        "top_offset": 100,
+        "right_offset": 20
+      }
     }
   },
   "order": [
     "main",
-    "custom_section_hem_hero_GaGcgD"
+    "custom_section_hem_hero_GaGcgD",
+    "sticky_button_G7r8Ck"
   ]
 }
