@@ -19,6 +19,145 @@
     },
     "custom_section_hem_hero_GaGcgD": {
       "type": "custom-section-hem-hero",
+      "blocks": {
+        "testimonial_marco": {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/1053016994",
+            "quote": "&ldquo;Until I found Hem Hero&reg;, living with this was unbearable.",
+            "author": "-Marco"
+          }
+        },
+        "testimonial_greg": {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/1082131139",
+            "quote": "&ldquo;This is a product that actually does what it says.",
+            "author": "-Greg"
+          }
+        },
+        "testimonial_amy": {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/1082132281",
+            "quote": "&ldquo;This is the only thing that has helped me.",
+            "author": "-Amy"
+          }
+        },
+        "testimonial_joanna": {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/812083970?h=8c39fd2b9e&title=0&byline=0&portrait=0",
+            "quote": "\"It has greatly improved my well-being, and my mental health.",
+            "author": "-Joanna"
+          }
+        },
+        "testimonial_marc": {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/621266399?h=c4c04b295a&title=0&byline=0&portrait=0",
+            "quote": "\"It's the most amazing thing that I've ever taken, because it actually works!",
+            "author": "-Marc"
+          }
+        },
+        "testimonial_dave": {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/621170719?h=697c4595ab&title=0&byline=0&portrait=0",
+            "quote": "\"Once I started taking Hem Hero&reg;, all the pain went away...Try it! Get your life back!",
+            "author": "-Dave"
+          }
+        },
+        "testimonial_keon": {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/621175911?h=a3879340ca&title=0&byline=0&portrait=0",
+            "quote": "\"Hem Hero&reg; totally changed my entire lifestyle and totally changed my mood.",
+            "author": "-Keon"
+          }
+        },
+        "testimonial_healed": {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/621204720?h=033f28bae1&title=0&byline=0&portrait=0",
+            "quote": "\"I'm healed, I'm not having pain!\"",
+            "author": ""
+          }
+        },
+        "testimonial_pain_free": {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/621194349?h=b483946db3&title=0&byline=0&portrait=0",
+            "quote": "\"I've been pain free, and the discomfort has not come back.\"",
+            "author": ""
+          }
+        },
+        "testimonial_bob": {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/707945831?h=fc95207f74&title=0&byline=0&portrait=0",
+            "quote": "\"It immediately started working and helping with the symptoms",
+            "author": "-Bob"
+          }
+        },
+        "testimonial_life": {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/877100287?h=0fa476d455&title=0&byline=0&portrait=0",
+            "quote": "\"I'm so glad that I chose Hem Hero. It has really changed my life.\"",
+            "author": ""
+          }
+        },
+        "testimonial_terri": {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/621182922?h=529f4ad338&title=0&byline=0&portrait=0",
+            "quote": "\"I continue to take it, and I'm fine. Thank God, I've been fine since [taking Hem Hero&reg;]!",
+            "author": "-Terri"
+          }
+        },
+        "testimonial_bleeding": {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/725624934?fbclid=IwAR2pw8ovolWHt90hw-j6uuwaRWBeIKc6sj3jHGY-8Ozx7c4uimZ7Cjly3F0",
+            "quote": "\"So far so good! The result since I've taken Hem Hero&reg;, I absolutely have no more bleeding\"",
+            "author": ""
+          }
+        },
+        "testimonial_nathaniel": {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/823127020?h=030112d661&title=0&byline=0&portrait=0",
+            "quote": "\"Since I've been taking it the pain started to go away, the bleeding has went away almost completely",
+            "author": "-Nathaniel"
+          }
+        },
+        "testimonial_confidence": {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/877100343?h=301a2aefc5&title=0&byline=0&portrait=0",
+            "quote": "\"It's really changed my day-to-day life. I'm able to go out with confidence.\"",
+            "author": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_marco",
+        "testimonial_greg",
+        "testimonial_amy",
+        "testimonial_joanna",
+        "testimonial_marc",
+        "testimonial_dave",
+        "testimonial_keon",
+        "testimonial_healed",
+        "testimonial_pain_free",
+        "testimonial_bob",
+        "testimonial_life",
+        "testimonial_terri",
+        "testimonial_bleeding",
+        "testimonial_nathaniel",
+        "testimonial_confidence"
+      ],
       "settings": {}
     },
     "sticky_button_G7r8Ck": {

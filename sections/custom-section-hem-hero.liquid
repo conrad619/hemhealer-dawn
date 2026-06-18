@@ -1,3 +1,9 @@
+{% liquid
+  assign default_cta_link = routes.root_url | append: '/collections/frontpage' | replace: '//', '/'
+  assign secondary_button_link = section.settings.secondary_button_link | default: default_cta_link
+  assign bottom_button_link = section.settings.bottom_button_link | default: default_cta_link
+%}
+
 <div class='color-{{ section.settings.color_scheme }} twcss-overflow-hidden gradient'>
   <div class='custom-section isolate{% unless section.settings.full_width %} page-width{% endunless %} section-{{ section.id }}-padding'>
     <div
@@ -7,331 +13,431 @@
     >
       <div class='twcss-w-full twcss-pb-[5rem]'>
         <div class='twcss-pt-[5rem]'>
-          <h2 class='lg:twcss-text-[4.5rem] twcss-text-[2.5rem] twcss-font-bold twcss-text-center'>
-            {{ 'sections.custom-section-hem-hero.heading_1_html' | t }}
-          </h2>
-          <h3 class='lg:twcss-text-[7rem] twcss-text-[3rem] twcss-text-center twcss-mb-[4rem]'>
-            {{ 'sections.custom-section-hem-hero.heading_2_html' | t }}
-          </h3>
+          {% if section.settings.heading_1 != blank %}
+            <h2 class='lg:twcss-text-[4.5rem] twcss-text-[2.5rem] twcss-font-bold twcss-text-center'>
+              {{ section.settings.heading_1 }}
+            </h2>
+          {% endif %}
+          {% if section.settings.heading_2 != blank %}
+            <h3 class='lg:twcss-text-[7rem] twcss-text-[3rem] twcss-text-center twcss-mb-[4rem]'>
+              {{ section.settings.heading_2 }}
+            </h3>
+          {% endif %}
+
+          <div class='hem-hero-testimonials twcss-grid lg:twcss-grid-cols-2 lg:twcss-gap-[3rem] twcss-gap-[2rem]'>
+            {% for block in section.blocks %}
+              {% liquid
+                assign video_url = block.settings.video_url
+                assign quote = block.settings.quote
+                assign author = block.settings.author
+              %}
+              {% if video_url != blank or quote != blank or author != blank %}
+                <div class='hem-hero-testimonial' {{ block.shopify_attributes }}>
+                  {% if video_url != blank %}
+                    <iframe
+                      class='video-testimonial-iframe twcss-aspect-video'
+                      src='{{ video_url }}'
+                      width='100%'
+                      style='aspect-ratio: 16/9;'
+                      title='{{ author | default: "Customer testimonial" | escape }}'
+                      loading='lazy'
+                      allow='autoplay; fullscreen; picture-in-picture'
+                      allowfullscreen
+                    ></iframe>
+                  {% endif %}
+                  {% if quote != blank or author != blank %}
+                    <p>
+                      {% if quote != blank %}
+                        {{ quote | newline_to_br }}
+                      {% endif %}
+                      {% if author != blank %}
+                        <br>
+                        {{ author }}
+                      {% endif %}
+                    </p>
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- TrustBox widget - List -->
+<div
+  class='trustpilot-widget'
+  data-locale='en-US'
+  data-template-id='539ad60defb9600b94d7df2c'
+  data-businessunit-id='68584b7dfbdd6383950293e7'
+  data-style-height='900px'
+  data-style-width='100%'
+  data-token='fa1a9326-e551-461e-bf04-6ad6daa7b88c'
+  data-stars='4,5'
+  data-review-languages='en'
+>
+  <a href='https://www.trustpilot.com/review/hemhealer.com' target='_blank' rel='noopener'>Trustpilot</a>
+</div>
+<!-- End TrustBox widget -->
+{% if section.settings.show_secondary_cta %}
+  <div class='twcss-bg-[#4182a6]'>
+    <div class='custom-section isolate{% unless section.settings.full_width %} page-width{% endunless %} section-{{ section.id }}-padding'>
+      <div
+        {% if section.settings.full_width %}
+          class='page-width'
+        {% endif %}
+      >
+        <div class='twcss-w-full twcss-py-[5rem]'>
+          {% if section.settings.secondary_heading != blank %}
+            <h2 class='lg:twcss-text-[4.5rem] twcss-text-[2.5rem] twcss-text-center twcss-mb-[3rem] twcss-text-white twcss-font-body'>
+              {{ section.settings.secondary_heading }}
+            </h2>
+          {% endif %}
           <div
-            id='testimonial-container'
+            id='testimonial-images-{{ section.id }}'
             class='twcss-grid lg:twcss-grid-cols-2 lg:twcss-gap-[3rem] twcss-gap-[2rem]'
-          ></div>
-          {% comment %} <div id='customer-testimonial'></div> {% endcomment %}
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class='twcss-bg-[#4182a6] hidden'>
-  <div class='custom-section isolate{% unless section.settings.full_width %} page-width{% endunless %} section-{{ section.id }}-padding'>
-    <div
-      {% if section.settings.full_width %}
-        class='page-width'
-      {% endif %}
-    >
-      <div class='twcss-w-full twcss-py-[5rem]'>
-        <h2 class='lg:twcss-text-[4.5rem] twcss-text-[2.5rem] twcss-text-center twcss-mb-[3rem] twcss-text-white twcss-font-body'>
-          {{ 'sections.custom-section-hem-hero.heading_3_html' | t }}
-        </h2>
-        <div
-          id='testimonial-images'
-          class='twcss-grid lg:twcss-grid-cols-2 lg:twcss-gap-[3rem] twcss-gap-[2rem]'
-        >
-          <div id='testimonial-images-left'></div>
-          <div id='testimonial-images-right'></div>
-        </div>
-        <div class='twcss-text-center twcss-mt-[5rem]'>
-          <a
-            href='{{ routes.root_url | append: '/collections/frontpage' | replace: '//', '/' }}'
-            class='twcss-text-white twcss-inline-block twcss-bg-[--accent-color] twcss-px-[2rem] twcss-py-[1.5rem] twcss-text-[2rem] twcss-leading-none'
           >
-            <span class='twcss-flex'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                height='24px'
-                viewBox='0 -960 960 960'
-                width='24px'
-                fill='#ffffff'
-              >
-                <path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM208-800h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Z"/>
-              </svg>
-              <span class='twcss-font-bold'>{{ 'sections.custom-section-hem-hero.button_1_html' | t }}</span>
-            </span>
-            <span class='twcss-text-[1.4rem]'>{{ 'sections.custom-section-hem-hero.guarantee_html' | t }}</span>
-          </a>
+            <div id='testimonial-images-left-{{ section.id }}'></div>
+            <div id='testimonial-images-right-{{ section.id }}'></div>
+          </div>
+          <div class='twcss-text-center twcss-mt-[5rem]'>
+            <a
+              href='{{ secondary_button_link }}'
+              class='twcss-text-white twcss-inline-block twcss-bg-[--accent-color] twcss-px-[2rem] twcss-py-[1.5rem] twcss-text-[2rem] twcss-leading-none'
+            >
+              <span class='twcss-flex'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  height='24px'
+                  viewBox='0 -960 960 960'
+                  width='24px'
+                  fill='#ffffff'
+                >
+                  <path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM208-800h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Z"/>
+                </svg>
+                <span class='twcss-font-bold'>{{ section.settings.secondary_button_text }}</span>
+              </span>
+              {% if section.settings.guarantee_text != blank %}
+                <span class='twcss-text-[1.4rem]'>{{ section.settings.guarantee_text }}</span>
+              {% endif %}
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class='custom-section isolate{% unless section.settings.full_width %} page-width{% endunless %} section-{{ section.id }}-padding'>
-  <style>
-    @keyframes pulseShadow {
-      0% {
-        box-shadow: 0 0 0 0 rgba(0, 255, 38, 0.8);
-      }
-      70% {
-        box-shadow: 0 0 0 30px rgba(216, 90, 48, 0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(216, 90, 48, 0);
-      }
-    }
-    .el {
-      animation: pulseShadow 1.5s ease-out infinite;
-    }
-  </style>
-  <div class='twcss-text-center lg:twcss-my-[10rem] twcss-my-[5rem]'>
-    <a
-      href='{{ routes.root_url | append: '/collections/frontpage' | replace: '//', '/' }}'
-      class='el twcss-text-white twcss-inline-block twcss-bg-[--accent-color] twcss-px-[4rem] twcss-py-[2rem] lg:twcss-text-[4rem] twcss-text-[2rem] twcss-leading-none twcss-rounded-lg'
-    >
-      <span class='twcss-flex'>
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          viewBox='0 -960 960 960'
-          fill='#ffffff'
-          class='lg:twcss-w-[40px] lg:twcss-h-[40px] twcss-w-[20px] twcss-h-[20px]'
-        >
-          <path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM208-800h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Z"/>
-        </svg>
-        <span class='twcss-font-bold'>{{ 'sections.custom-section-hem-hero.button_2_html' | t }}</span>
-      </span>
-      <span class='lg:twcss-text-[2.5rem] twcss-text-[1.5rem]'>
-        {{- 'sections.custom-section-hem-hero.guarantee_html' | t -}}
-      </span>
-    </a>
-  </div>
-</div>
-<div class='twcss-bg-white hidden'>
+{% endif %}
+
+{% if section.settings.show_bottom_cta %}
   <div class='custom-section isolate{% unless section.settings.full_width %} page-width{% endunless %} section-{{ section.id }}-padding'>
-    <div
-      {% if section.settings.full_width %}
-        class='page-width'
-      {% endif %}
-    >
-      <div class='twcss-w-full twcss-py-[5rem]'>
-        <h2 class='lg:twcss-text-[4.5rem] twcss-text-[2.5rem] twcss-text-center twcss-mb-[3rem] twcss-text-white twcss-font-body'>
-          {{ 'sections.custom-section-hem-hero.heading_4_html' | t }}
-        </h2>
-        <div
-          id='amazon-reviews'
-          class=''
-        ></div>
-        <div class='twcss-text-center twcss-mt-[5rem]'></div>
-      </div>
+    <style>
+      .trustpilot-widget iframe{
+        height:100vh !important;
+      }
+      @keyframes hemHeroPulseShadow-{{ section.id }} {
+        0% {
+          box-shadow: 0 0 0 0 rgba(0, 255, 38, 0.8);
+        }
+        70% {
+          box-shadow: 0 0 0 30px rgba(216, 90, 48, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(216, 90, 48, 0);
+        }
+      }
+      .hem-hero-cta-{{ section.id }} {
+        animation: hemHeroPulseShadow-{{ section.id }} 1.5s ease-out infinite;
+      }
+    </style>
+    <div class='twcss-text-center lg:twcss-my-[10rem] twcss-my-[5rem]'>
+      <a
+        href='{{ bottom_button_link }}'
+        class='hem-hero-cta-{{ section.id }} twcss-text-white twcss-inline-block twcss-bg-[--accent-color] twcss-px-[4rem] twcss-py-[2rem] lg:twcss-text-[4rem] twcss-text-[2rem] twcss-leading-none twcss-rounded-lg'
+      >
+        <span class='twcss-flex'>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            viewBox='0 -960 960 960'
+            fill='#ffffff'
+            class='lg:twcss-w-[40px] lg:twcss-h-[40px] twcss-w-[20px] twcss-h-[20px]'
+          >
+            <path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM208-800h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Z"/>
+          </svg>
+          <span class='twcss-font-bold'>{{ section.settings.bottom_button_text }}</span>
+        </span>
+        {% if section.settings.guarantee_text != blank %}
+          <span class='lg:twcss-text-[2.5rem] twcss-text-[1.5rem]'>
+            {{- section.settings.guarantee_text -}}
+          </span>
+        {% endif %}
+      </a>
     </div>
   </div>
-</div>
+{% endif %}
+
 {% schema %}
 {
   "name": "custom section hem hero",
-  "settings": [],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Intro"
+    },
+    {
+      "type": "text",
+      "id": "heading_1",
+      "label": "Heading",
+      "default": "Hem Hero®"
+    },
+    {
+      "type": "text",
+      "id": "heading_2",
+      "label": "Subheading",
+      "default": "Extra Strength"
+    },
+    {
+      "type": "header",
+      "content": "Secondary CTA"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_cta",
+      "label": "Show secondary CTA section",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "secondary_heading",
+      "label": "Heading",
+      "default": "Hem Hero® Extra Strength"
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_text",
+      "label": "Button text",
+      "default": "BUY HEM HERO® NOW"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Bottom CTA"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_bottom_cta",
+      "label": "Show bottom CTA",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "bottom_button_text",
+      "label": "Button text",
+      "default": "BUY HEM HERO® NOW"
+    },
+    {
+      "type": "url",
+      "id": "bottom_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "guarantee_text",
+      "label": "Guarantee text",
+      "default": "30-Day Money Back Guarantee"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Video testimonial",
+      "settings": [
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "Vimeo embed URL"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "custom section hem hero"
+      "name": "custom section hem hero",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/1053016994",
+            "quote": "&ldquo;Until I found Hem Hero&reg;, living with this was unbearable.",
+            "author": "-Marco"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/1082131139",
+            "quote": "&ldquo;This is a product that actually does what it says.",
+            "author": "-Greg"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/1082132281",
+            "quote": "&ldquo;This is the only thing that has helped me.",
+            "author": "-Amy"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/812083970?h=8c39fd2b9e&title=0&byline=0&portrait=0",
+            "quote": "\"It has greatly improved my well-being, and my mental health.",
+            "author": "-Joanna"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/621266399?h=c4c04b295a&title=0&byline=0&portrait=0",
+            "quote": "\"It's the most amazing thing that I've ever taken, because it actually works!",
+            "author": "-Marc"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/621170719?h=697c4595ab&title=0&byline=0&portrait=0",
+            "quote": "\"Once I started taking Hem Hero&reg;, all the pain went away...Try it! Get your life back!",
+            "author": "-Dave"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/621175911?h=a3879340ca&title=0&byline=0&portrait=0",
+            "quote": "\"Hem Hero&reg; totally changed my entire lifestyle and totally changed my mood.",
+            "author": "-Keon"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/621204720?h=033f28bae1&title=0&byline=0&portrait=0",
+            "quote": "\"I'm healed, I'm not having pain!\"",
+            "author": ""
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/621194349?h=b483946db3&title=0&byline=0&portrait=0",
+            "quote": "\"I've been pain free, and the discomfort has not come back.\"",
+            "author": ""
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/707945831?h=fc95207f74&title=0&byline=0&portrait=0",
+            "quote": "\"It immediately started working and helping with the symptoms",
+            "author": "-Bob"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/877100287?h=0fa476d455&title=0&byline=0&portrait=0",
+            "quote": "\"I'm so glad that I chose Hem Hero. It has really changed my life.\"",
+            "author": ""
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/621182922?h=529f4ad338&title=0&byline=0&portrait=0",
+            "quote": "\"I continue to take it, and I'm fine. Thank God, I've been fine since [taking Hem Hero&reg;]!",
+            "author": "-Terri"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/725624934?fbclid=IwAR2pw8ovolWHt90hw-j6uuwaRWBeIKc6sj3jHGY-8Ozx7c4uimZ7Cjly3F0",
+            "quote": "\"So far so good! The result since I've taken Hem Hero&reg;, I absolutely have no more bleeding\"",
+            "author": ""
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/823127020?h=030112d661&title=0&byline=0&portrait=0",
+            "quote": "\"Since I've been taking it the pain started to go away, the bleeding has went away almost completely",
+            "author": "-Nathaniel"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "video_url": "https://player.vimeo.com/video/877100343?h=301a2aefc5&title=0&byline=0&portrait=0",
+            "quote": "\"It's really changed my day-to-day life. I'm able to go out with confidence.\"",
+            "author": ""
+          }
+        }
+      ]
     }
   ]
 }
 {% endschema %}
+
 <style>
-  #testimonial-container p {
+  .hem-hero-testimonials p {
     font-size: 2.4rem;
     font-style: italic;
     text-align: center;
     padding-top: 2rem;
   }
-  #testimonial-images img {
+  #testimonial-images-{{ section.id }} img {
     margin-bottom: 3rem;
     width: 100%;
-  }
-  #amazon-reviews img {
-    margin-bottom: 3rem;
-    width: 100%;
-    box-shadow: 0px 0px 10px 1px #ccc;
   }
 
   @media (max-width: 990px) {
-    #testimonial-container p {
+    .hem-hero-testimonials p {
       font-size: 1.6rem;
     }
-    #testimonial-images img {
-      margin-bottom: 2rem;
-    }
-    #amazon-reviews img {
+    #testimonial-images-{{ section.id }} img {
       margin-bottom: 2rem;
     }
   }
 </style>
-<script>
-  const testimonials = [
-    {
-      videoSrc: 'https://player.vimeo.com/video/1053016994',
-      quote: '“Until I found Hem Hero®, living with this was unbearable.',
-      author: '-Marco',
-    },
-    {
-      videoSrc: 'https://player.vimeo.com/video/1082131139',
-      quote: '“This is a product that actually does what it says.',
-      author: '-Greg',
-    },
-    {
-      videoSrc: 'https://player.vimeo.com/video/1082132281',
-      quote: '“This is the only thing that has helped me.',
-      author: '-Amy',
-    },
-    {
-      videoSrc: 'https://player.vimeo.com/video/812083970?h=8c39fd2b9e&title=0&byline=0&portrait=0',
-      quote: '"It has greatly improved my well-being, and my mental health.',
-      author: '-Joanna',
-    },
-    {
-      videoSrc: 'https://player.vimeo.com/video/621266399?h=c4c04b295a&title=0&byline=0&portrait=0',
-      quote: "\"It's the most amazing thing that I've ever taken, because it actually works!",
-      author: '-Marc',
-    },
-    {
-      videoSrc: 'https://player.vimeo.com/video/621170719?h=697c4595ab&title=0&byline=0&portrait=0',
-      quote: '"Once I started taking Hem Hero®, all the pain went away...Try it! Get your life back!',
-      author: '-Dave',
-    },
-    {
-      videoSrc: 'https://player.vimeo.com/video/621175911?h=a3879340ca&title=0&byline=0&portrait=0',
-      quote: '"Hem Hero® totally changed my entire lifestyle and totally changed my mood.',
-      author: '-Keon',
-    },
-    {
-      videoSrc: 'https://player.vimeo.com/video/621204720?h=033f28bae1&title=0&byline=0&portrait=0',
-      quote: '"I\'m healed, I\'m not having pain!"',
-      author: '',
-    },
-    {
-      videoSrc: 'https://player.vimeo.com/video/621194349?h=b483946db3&title=0&byline=0&portrait=0',
-      quote: '"I\'ve been pain free, and the discomfort has not come back."',
-      author: '',
-    },
-    {
-      videoSrc: 'https://player.vimeo.com/video/707945831?h=fc95207f74&title=0&byline=0&portrait=0',
-      quote: '"It immediately started working and helping with the symptoms',
-      author: '-Bob',
-    },
-    {
-      videoSrc: 'https://player.vimeo.com/video/877100287?h=0fa476d455&title=0&byline=0&portrait=0',
-      quote: '"I’m so glad that I chose Hem Hero. It has really changed my life."',
-      author: '',
-    },
-    {
-      videoSrc: 'https://player.vimeo.com/video/621182922?h=529f4ad338&title=0&byline=0&portrait=0',
-      quote: "\"I continue to take it, and I'm fine. Thank God, I've been fine since [taking Hem Hero®]!",
-      author: '-Terri',
-    },
-    {
-      videoSrc:
-        'https://player.vimeo.com/video/725624934?fbclid=IwAR2pw8ovolWHt90hw-j6uuwaRWBeIKc6sj3jHGY-8Ozx7c4uimZ7Cjly3F0',
-      quote: '"So far so good! The result since I\'ve taken Hem Hero®, I absolutely have no more bleeding"',
-      author: '',
-    },
-    {
-      videoSrc: 'https://player.vimeo.com/video/823127020?h=030112d661&title=0&byline=0&portrait=0',
-      quote: '"Since I\'ve been taking it the pain started to go away, the bleeding has went away almost completely',
-      author: '-Nathaniel',
-    },
-    {
-      videoSrc: 'https://player.vimeo.com/video/877100343?h=301a2aefc5&title=0&byline=0&portrait=0',
-      quote: '"It’s really changed my day-to-day life. I’m able to go out with confidence."',
-      author: '',
-    },
-  ];
-
-  const container = document.getElementById('testimonial-container'); // Make sure your HTML has this container
-
-  testimonials.forEach(({ videoSrc, quote, author }) => {
-    const wrapper = document.createElement('div');
-
-    const iframe = document.createElement('iframe');
-    iframe.className = 'video-testimonial-iframe twcss-aspect-video';
-    iframe.src = videoSrc;
-    iframe.width = '100%';
-    iframe.style.aspectRatio = '16/9';
-
-    const paragraph = document.createElement('p');
-    paragraph.innerHTML = `${quote} <br> ${author}`;
-
-    wrapper.appendChild(iframe);
-    wrapper.appendChild(paragraph);
-    container.appendChild(wrapper);
-  });
-
-  function customer_testimonials() {
-    let customer_testimonials = [
-      'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/com3.png?v=1652167884',
-      '\nhttps://cdn.shopify.com/s/files/1/0550/1560/4383/files/com6.png?v=1652167884',
-      '\nhttps://cdn.shopify.com/s/files/1/0550/1560/4383/files/com7.png?v=1652167884',
-      '\nhttps://cdn.shopify.com/s/files/1/0550/1560/4383/files/com8.png?v=1652167884',
-      '\nhttps://cdn.shopify.com/s/files/1/0550/1560/4383/files/dan_testimonial_057096d1-df7d-466c-bfb7-daa749046648.png?v=1652167884',
-      '\nhttps://cdn.shopify.com/s/files/1/0550/1560/4383/files/Screen_Shot_2022-05-09_at_3.56.21_PM.png?v=1652167885',
-      '\nhttps://cdn.shopify.com/s/files/1/0550/1560/4383/files/steveg.png?v=1652167884',
-      '\nhttps://cdn.shopify.com/s/files/1/0550/1560/4383/files/tycomment.png?v=1652167884',
-      '\nhttps://cdn.shopify.com/s/files/1/0550/1560/4383/files/dan_testimonial_057096d1-df7d-466c-bfb7-daa749046648.png?v=1652167884',
-      '\nhttps://cdn.shopify.com/s/files/1/0550/1560/4383/files/Screen_Shot_2022-05-09_at_3.56.15_PM.png?v=1652167884',
-      'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/davefb.png?v=1652167884',
-      '\nhttps://cdn.shopify.com/s/files/1/0550/1560/4383/files/facebook_comments_b5157f87-1835-4f69-aaab-dffd6b3e30de.png?v=1652167885',
-      '\nhttps://cdn.shopify.com/s/files/1/0550/1560/4383/files/IMG_0066.jpg?v=1652167884',
-      '\nhttps://cdn.shopify.com/s/files/1/0550/1560/4383/files/IMG_2150-jpeg.jpg?v=1652167884',
-      '\nhttps://cdn.shopify.com/s/files/1/0550/1560/4383/files/IMG_2151-jpeg.jpg?v=1652167884',
-      '\nhttps://cdn.shopify.com/s/files/1/0550/1560/4383/files/IMG_2378.png?v=1652167884',
-      '\nhttps://cdn.shopify.com/s/files/1/0550/1560/4383/files/recommended.png?v=1652167884',
-      '\nhttps://cdn.shopify.com/s/files/1/0550/1560/4383/files/ryan_d03dc4aa-a3cc-4efd-900e-901ab89a7af5.png?v=1652167885',
-      '\nhttps://cdn.shopify.com/s/files/1/0550/1560/4383/files/Screen_Shot_2022-05-09_at_3.41.17_PM.png?v=1652167884',
-      '\nhttps://cdn.shopify.com/s/files/1/0550/1560/4383/files/Screen_Shot_2022-05-09_at_3.43.31_PM.png?v=1652167884',
-      '\nhttps://cdn.shopify.com/s/files/1/0550/1560/4383/files/Screen_Shot_2022-05-09_at_3.56.08_PM.png?v=1652167885',
-    ];
-    const imageContainerLeft = document.getElementById('testimonial-images-left'); // Ensure this exists in your HTML
-    const imageContainerRight = document.getElementById('testimonial-images-right'); // Ensure this exists in your HTML
-
-    customer_testimonials.forEach((url, i) => {
-      const img = document.createElement('img');
-      img.src = url.trim(); // Trim any accidental whitespace
-      img.alt = 'Customer Testimonial';
-      if (customer_testimonials.length / 2 > i) {
-        imageContainerLeft.appendChild(img);
-      } else {
-        imageContainerRight.appendChild(img);
-      }
-    });
-
-    let amazon_reviews = [
-      'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Amazon_Review_21v2.png?v=1745511706',
-      'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Amazon_Review_22v2.png?v=1745511707',
-      '//www.hemhealer.com/cdn/shop/files/Amazon_Review.webp?v=1702703006',
-      '//www.hemhealer.com/cdn/shop/files/Amazon_Review_2.webp?v=1702703051',
-      '//www.hemhealer.com/cdn/shop/files/Amazon_Review_3.webp?v=1702703051',
-      '//www.hemhealer.com/cdn/shop/files/Amazon_Review_4.webp?v=1702703051',
-      '//www.hemhealer.com/cdn/shop/files/Amazon_Review_5.webp?v=1702703051',
-      '//www.hemhealer.com/cdn/shop/files/Amazon_Review_6.webp?v=1702703051',
-      '//www.hemhealer.com/cdn/shop/files/Amazon_Review_7.webp?v=1702703051',
-      '//www.hemhealer.com/cdn/shop/files/Amazon_Review_8.webp?v=1702703051',
-      '//www.hemhealer.com/cdn/shop/files/Amazon_Review_9.webp?v=1702703051',
-      '//www.hemhealer.com/cdn/shop/files/Amazon_Review_10.webp?v=1702703480',
-      '//www.hemhealer.com/cdn/shop/files/Amazon_Review_11.webp?v=1702703051',
-      '//www.hemhealer.com/cdn/shop/files/Amazon_Review_12.webp?v=1702703050',
-      '//www.hemhealer.com/cdn/shop/files/Amazon_Review_13.webp?v=1702703051',
-      '//www.hemhealer.com/cdn/shop/files/Amazon_Review_14.webp?v=1702703051',
-      '//www.hemhealer.com/cdn/shop/files/Amazon_Review_15.webp?v=1702703051',
-      '//www.hemhealer.com/cdn/shop/files/Amazon_Review_16.webp?v=1702703051',
-      '//www.hemhealer.com/cdn/shop/files/Amazon_Review_17.webp?v=1702703050',
-      '//www.hemhealer.com/cdn/shop/files/Amazon_Review_18.webp?v=1702703051',
-      '//www.hemhealer.com/cdn/shop/files/Amazon_Review_19.webp?v=1702703050',
-      '//www.hemhealer.com/cdn/shop/files/Amazon_Review_20.webp?v=1702703050',
-    ];
-    const imageReviews = document.getElementById('amazon-reviews'); // Ensure this exists in your HTML
-
-    amazon_reviews.forEach((url, i) => {
-      const img = document.createElement('img');
-      img.src = url.trim(); // Trim any accidental whitespace
-      img.alt = 'Amazon Review';
-      imageReviews.appendChild(img);
-    });
-  }
-</script>

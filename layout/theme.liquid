@@ -334,7 +334,6 @@
     </script>
 
     <link href='https://unpkg.com/aos@2.3.1/dist/aos.css' rel='stylesheet'>
-    
 
     <!-- Reddit Pixel -->
     <script>
@@ -358,7 +357,7 @@
     <!-- Disable Shopify Best-Sellers Sales Shield code start -->
     {% include 'sales_shield_best_selling_product_sorting_disabler' %}
     <!-- Disable Shopify Best-Sellers Sales Shield code End -->
-  {% include 'pagefly-app-header' %}
+    {% include 'pagefly-app-header' %}
   </head>
 
   <body class='gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}'>
@@ -523,5 +522,8 @@
       orderLineItems: {{ order.line_items | json }},
   };
 </script>
-<script async src="https://onsite.reloapp.co/relo-onsite.js"></script>
+<script async src='https://onsite.reloapp.co/relo-onsite.js'></script>
 <!-- End Relo code -->
+<!-- TrustBox script -->
+<script type='text/javascript' src='//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js' async></script>
+<!-- End TrustBox script -->
