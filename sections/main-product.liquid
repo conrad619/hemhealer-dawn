@@ -223,7 +223,7 @@
       margin-bottom: 3rem;
       font-weight: 600;
     }
-    .bubble:before {
+    .bubble {
       content: '';
       font-weight: 600;
       position: absolute;
@@ -508,7 +508,7 @@
       fieldset.product-form__input {
         flex-direction: row;
       }
-      .bubble:before {
+      .bubble {
         font-size: 0.7rem;
         width: 4rem;
         height: 4rem;
@@ -534,8 +534,8 @@
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23000'%3E%3Cpath d='M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z'/%3E%3C/svg%3E");
       }
     }
-    label:nth-of-type(1) .bubble:before {
-      content: {{ 'products.product.best_value' | t | json }};
+    .bubble {
+      /* content: {{ 'products.product.best_value' | t | json }}; */
       display: flex;
     }
 

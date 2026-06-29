@@ -92,7 +92,15 @@
       {{ input_dataset }}
     >
     <label for='{{ input_id }}'>
-      <span class='variant-discount bubble'></span>
+      <span class='variant-discount'
+        {% assign badge_text = product.variants[forloop.index0].metafields.custom.badge.value %}
+        {% if badge_text != blank %}
+        >
+          <span class='bubble'>
+            {{ badge_text }}
+          </span>
+        {% endif %}
+      </span>
       {{ value -}}
       {{ label_unavailable }}
     </label>
