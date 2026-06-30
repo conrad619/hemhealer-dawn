@@ -161,11 +161,6 @@
           "allowed_templates": ""
         }
       },
-      "17312514163804441323": {
-        "type": "shopify://apps/stord/blocks/header-block/dc46ead6-f20b-4a93-a4db-54fb67ef081f",
-        "disabled": true,
-        "settings": {}
-      },
       "7924418359578431505": {
         "type": "shopify://apps/seoant-ai-seo/blocks/seoant-core/8e57283b-dcb0-4f7b-a947-fb5c57a0d59d",
         "disabled": false,
@@ -231,11 +226,6 @@
         "disabled": false,
         "settings": {}
       },
-      "12439146293631897289": {
-        "type": "shopify://apps/blockify-fraud-filter/blocks/app_embed/2e3e0ba5-0e70-447a-9ec5-3bf76b5ef12e",
-        "disabled": false,
-        "settings": {}
-      },
       "2720991090819015727": {
         "type": "shopify://apps/lokalize/blocks/language_selector/250c1a82-6748-457d-a707-e25cb75f4dc7",
         "disabled": false,
@@ -257,6 +247,11 @@
           "z_index": 50,
           "mobile_display": "compact"
         }
+      },
+      "15685250022964305326": {
+        "type": "shopify://apps/elevar-conversion-tracking/blocks/dataLayerEmbed/bc30ab68-b15c-4311-811f-8ef485877ad6",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
