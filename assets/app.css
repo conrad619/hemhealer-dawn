@@ -1716,6 +1716,11 @@ video {
   padding-bottom: 5rem;
 }
 
+.twcss-px-\[1\.4rem\] {
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+}
+
 .twcss-pb-\[15rem\] {
   padding-bottom: 15rem;
 }
