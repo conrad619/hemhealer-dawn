@@ -23,58 +23,78 @@
         {%- endif -%}
       {% endcomment %}
       <div class='twcss-flex twcss-flex-wrap twcss-text-white lg:twcss-pt-[4rem] lg:twcss-pb-[3.5rem] twcss-pt-[3rem] twcss-pb-[2.5rem] twcss-max-w-[120rem] twcss-mx-auto'>
-        <div class='lg:twcss-w-1/4 twcss-w-1/2 twcss-flex twcss-gap-[1.6rem] lg:twcss-px-[.8rem] lg:twcss-py-0 twcss-p-[.8rem]'>
-          <div class='twcss-h-[5rem] twcss-w-[5rem]'>
-            <img
-              src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/leaf.png?v=1750615616'
-              alt='{{ "sections.custom_collection_banner.items.natural_ingredients.alt" | t }}'
-              width='50'
-              height='50'
-            >
+        {%- if section.blocks.size > 0 -%}
+          {%- for block in section.blocks -%}
+            <div class='lg:twcss-w-1/4 twcss-w-1/2 twcss-flex twcss-gap-[1.6rem] lg:twcss-px-[.8rem] lg:twcss-py-0 twcss-p-[.8rem]'>
+              <div class='twcss-h-[5rem] twcss-w-[5rem]'>
+                {%- if block.settings.image != blank -%}
+                  <img
+                    src='{{ block.settings.image | image_url: width: 50 }}'
+                    alt='{{ block.settings.image_alt | default: block.settings.heading | escape }}'
+                    width='50'
+                    height='50'
+                  >
+                {%- endif -%}
+              </div>
+              <p class='lg:twcss-text-[2.6rem] twcss-text-[1.7rem] twcss-font-bold twcss-leading-none twcss-tracking-normal twcss-font-heading twcss-uppercase'>
+                {{ block.settings.heading | escape }}
+              </p>
+            </div>
+          {%- endfor -%}
+        {%- else -%}
+          <div class='lg:twcss-w-1/4 twcss-w-1/2 twcss-flex twcss-gap-[1.6rem] lg:twcss-px-[.8rem] lg:twcss-py-0 twcss-p-[.8rem]'>
+            <div class='twcss-h-[5rem] twcss-w-[5rem]'>
+              <img
+                src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/leaf.png?v=1750615616'
+                alt='{{ "sections.custom_collection_banner.items.natural_ingredients.alt" | t }}'
+                width='50'
+                height='50'
+              >
+            </div>
+            <p class='lg:twcss-text-[2.6rem] twcss-text-[1.7rem] twcss-font-bold twcss-leading-none twcss-tracking-normal twcss-font-heading twcss-uppercase'>
+              {{ 'sections.custom_collection_banner.items.natural_ingredients.text' | t }}
+            </p>
           </div>
-          <p class='lg:twcss-text-[2.6rem] twcss-text-[1.7rem] twcss-font-bold twcss-leading-none twcss-tracking-normal twcss-font-heading twcss-uppercase'>
-            {{ 'sections.custom_collection_banner.items.natural_ingredients.text' | t }}
-          </p>
-        </div>
-        <div class='lg:twcss-w-1/4 twcss-w-1/2 twcss-flex twcss-gap-[1.6rem] lg:twcss-px-[.8rem] lg:twcss-py-0 twcss-p-[.8rem]'>
-          <div class='twcss-h-[5rem] twcss-w-[5rem]'>
-            <img
-              src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/group.png?v=1750615616'
-              alt='{{ "sections.custom_collection_banner.items.trusted_customers.alt" | t }}'
-              width='50'
-              height='50'
-            >
+          <div class='lg:twcss-w-1/4 twcss-w-1/2 twcss-flex twcss-gap-[1.6rem] lg:twcss-px-[.8rem] lg:twcss-py-0 twcss-p-[.8rem]'>
+            <div class='twcss-h-[5rem] twcss-w-[5rem]'>
+              <img
+                src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/group.png?v=1750615616'
+                alt='{{ "sections.custom_collection_banner.items.trusted_customers.alt" | t }}'
+                width='50'
+                height='50'
+              >
+            </div>
+            <p class='lg:twcss-text-[2.6rem] twcss-text-[1.7rem] twcss-font-bold twcss-leading-none twcss-tracking-normal twcss-font-heading twcss-uppercase'>
+              {{ 'sections.custom_collection_banner.items.trusted_customers.text' | t }}
+            </p>
           </div>
-          <p class='lg:twcss-text-[2.6rem] twcss-text-[1.7rem] twcss-font-bold twcss-leading-none twcss-tracking-normal twcss-font-heading twcss-uppercase'>
-            {{ 'sections.custom_collection_banner.items.trusted_customers.text' | t }}
-          </p>
-        </div>
-        <div class='lg:twcss-w-1/4 twcss-w-1/2 twcss-flex twcss-gap-[1.6rem] lg:twcss-px-[.8rem] lg:twcss-py-0 twcss-p-[.8rem]'>
-          <div class='twcss-h-[5rem] twcss-w-[5rem]'>
-            <img
-              src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/blood.png?v=1750615617'
-              alt='{{ "sections.custom_collection_banner.items.vein_support.alt" | t }}'
-              width='50'
-              height='50'
-            >
+          <div class='lg:twcss-w-1/4 twcss-w-1/2 twcss-flex twcss-gap-[1.6rem] lg:twcss-px-[.8rem] lg:twcss-py-0 twcss-p-[.8rem]'>
+            <div class='twcss-h-[5rem] twcss-w-[5rem]'>
+              <img
+                src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/blood.png?v=1750615617'
+                alt='{{ "sections.custom_collection_banner.items.vein_support.alt" | t }}'
+                width='50'
+                height='50'
+              >
+            </div>
+            <p class='lg:twcss-text-[2.6rem] twcss-text-[1.7rem] twcss-font-bold twcss-leading-none twcss-tracking-normal twcss-font-heading twcss-uppercase'>
+              {{ 'sections.custom_collection_banner.items.vein_support.text' | t }}
+            </p>
           </div>
-          <p class='lg:twcss-text-[2.6rem] twcss-text-[1.7rem] twcss-font-bold twcss-leading-none twcss-tracking-normal twcss-font-heading twcss-uppercase'>
-            {{ 'sections.custom_collection_banner.items.vein_support.text' | t }}
-          </p>
-        </div>
-        <div class='lg:twcss-w-1/4 twcss-w-1/2 twcss-flex twcss-gap-[1.6rem] lg:twcss-px-[.8rem] lg:twcss-py-0 twcss-p-[.8rem]'>
-          <div class='twcss-h-[5rem] twcss-w-[5rem]'>
-            <img
-              src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/delivery.png?v=1750615616'
-              alt='{{ "sections.custom_collection_banner.items.free_shipping.alt" | t }}'
-              width='50'
-              height='50'
-            >
+          <div class='lg:twcss-w-1/4 twcss-w-1/2 twcss-flex twcss-gap-[1.6rem] lg:twcss-px-[.8rem] lg:twcss-py-0 twcss-p-[.8rem]'>
+            <div class='twcss-h-[5rem] twcss-w-[5rem]'>
+              <img
+                src='https://cdn.shopify.com/s/files/1/0550/1560/4383/files/delivery.png?v=1750615616'
+                alt='{{ "sections.custom_collection_banner.items.free_shipping.alt" | t }}'
+                width='50'
+                height='50'
+              >
+            </div>
+            <p class='lg:twcss-text-[2.6rem] twcss-text-[1.7rem] twcss-font-bold twcss-leading-none twcss-tracking-normal twcss-font-heading twcss-uppercase'>
+              {{ 'sections.custom_collection_banner.items.free_shipping.text' | t }}
+            </p>
           </div>
-          <p class='lg:twcss-text-[2.6rem] twcss-text-[1.7rem] twcss-font-bold twcss-leading-none twcss-tracking-normal twcss-font-heading twcss-uppercase'>
-            {{ 'sections.custom_collection_banner.items.free_shipping.text' | t }}
-          </p>
-        </div>
+        {%- endif -%}
       </div>
     </div>
 
@@ -142,9 +162,65 @@
       "default": "scheme-1"
     }
   ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Banner item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Text",
+          "default": "100% Natural Ingredients"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image alt text",
+          "default": "Leaf icon"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
   "presets": [
     {
-      "name": "t:sections.custom_collection_banner.name"
+      "name": "t:sections.custom_collection_banner.name",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "heading": "100% Natural Ingredients",
+            "image_alt": "Leaf icon"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "heading": "Trusted by 100,000+ Customers",
+            "image_alt": "Shield icon"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "heading": "Supports Vein & Blood Flow",
+            "image_alt": "Blood drop icon"
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "heading": "Free Shipping on $74.99+",
+            "image_alt": "Delivery truck icon"
+          }
+        }
+      ]
     }
   ]
 }
