@@ -1,0 +1,100 @@
+{{ 'section-sticky-cta.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.enable_cta %}
+  <div
+    class="sticky-cta"
+    id="stickyCta"
+    style="--cta-bg: {{ section.settings.button_color }}; --cta-text: {{ section.settings.text_color }};"
+  >
+    {% if section.settings.n7_is_live %}
+      <a
+        href="{{ section.settings.n7_link }}"
+        class="sticky-cta__button sticky-cta__button--active"
+      >
+        {{ section.settings.cta_text }}
+      </a>
+    {% else %}
+      <span class="sticky-cta__button sticky-cta__button--disabled">
+        {{ section.settings.cta_text }}
+      </span>
+    {% endif %}
+  </div>
+
+  <script>
+    (function () {
+      var cta = document.getElementById('stickyCta');
+      if (!cta) return;
+
+      var showAfter = {{ section.settings.show_after_scroll | default: 300 }};
+
+      function toggleCta() {
+        if (window.scrollY > showAfter) {
+          cta.classList.add('sticky-cta--visible');
+        } else {
+          cta.classList.remove('sticky-cta--visible');
+        }
+      }
+
+      window.addEventListener('scroll', toggleCta, { passive: true });
+      toggleCta();
+    })();
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Sticky pulsating CTA",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_cta",
+      "label": "Enable sticky CTA",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button text",
+      "default": "Get All 3 — Complete Healing System"
+    },
+    {
+      "type": "url",
+      "id": "n7_link",
+      "label": "N7 bundle page link"
+    },
+    {
+      "type": "checkbox",
+      "id": "n7_is_live",
+      "label": "N7 bundle is live (activate link)",
+      "info": "Leave unchecked until the N7 bundle page is ready. The button will show but won't be clickable until this is checked.",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button color",
+      "default": "#2f6f4f"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "show_after_scroll",
+      "label": "Show button after scrolling (px)",
+      "min": 0,
+      "max": 2000,
+      "step": 50,
+      "default": 300
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sticky pulsating CTA"
+    }
+  ]
+}
+{% endschema %}
