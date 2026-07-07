@@ -20,6 +20,46 @@
     },
     "custom_collection_banner_LatGic": {
       "type": "custom-collection-banner",
+      "blocks": {
+        "item_gCj7cL": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/leaf.webp",
+            "heading": "100% Natural Ingredients",
+            "image_alt": "Leaf icon"
+          }
+        },
+        "item_wNLiqp": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/group.webp",
+            "heading": "Trusted by 100,000+ Customers",
+            "image_alt": "people icon"
+          }
+        },
+        "item_QwDTJH": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/money-back.png",
+            "heading": "Money-Back Guarantee",
+            "image_alt": "money-back icon"
+          }
+        },
+        "item_rCLidR": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/delivery.webp",
+            "heading": "Free Shipping on $74.99+",
+            "image_alt": "truck icon"
+          }
+        }
+      },
+      "block_order": [
+        "item_gCj7cL",
+        "item_wNLiqp",
+        "item_QwDTJH",
+        "item_rCLidR"
+      ],
       "name": "custom collection banner",
       "settings": {
         "show_collection_description": true,
