@@ -86,11 +86,25 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "sticky_cta_MVpb7c": {
+      "type": "sticky-cta",
+      "name": "Sticky pulsating CTA",
+      "settings": {
+        "enable_cta": true,
+        "cta_text": "Get All 3 — Complete Healing System",
+        "n7_link": "shopify://products/complete-relief-system",
+        "n7_is_live": true,
+        "button_color": "#2f6f4f",
+        "text_color": "#ffffff",
+        "show_after_scroll": 300
+      }
     }
   },
   "order": [
     "banner",
     "custom_collection_banner_LatGic",
-    "product-grid"
+    "product-grid",
+    "sticky_cta_MVpb7c"
   ]
 }
