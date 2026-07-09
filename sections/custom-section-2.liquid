@@ -12,6 +12,7 @@
     border-radius: 1rem;
     background: #fff;
     padding: 2rem;
+    margin-top: 1.5rem;
     animation: chsPulseGlow 2.5s ease-in-out infinite;
   }
 
@@ -33,8 +34,8 @@
 
   .chs-featured-badge {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: -1.3rem;
+    right: -0.8rem;
     background: #e3f5df;
     border: 2px solid #ffffff;
     color: #2f6d1f;
@@ -44,7 +45,7 @@
     padding: 0.6rem 1.5rem;
     border-radius: 999px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    z-index: 2;
+    z-index: 3;
     display: inline-flex;
     align-items: center;
     white-space: nowrap;
@@ -100,13 +101,13 @@
       {%- comment -%} ===== FEATURED CARD: Complete Relief System (above the 3-card grid) ===== {%- endcomment -%}
       <div class='chs-featured-wrap lg:twcss-mt-[4rem] twcss-mt-[3rem]'>
         <div class='chs-featured-card twcss-flex twcss-flex-col twcss-gap-[1rem]'>
+          <span class='chs-featured-badge'>{{ section.settings.badge_4_text }}</span>
           {%- assign cs2_image_4_src = 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hem-hero-extra-strengthhem-hero-extra-strengthcapsuleshem-healer-llchem-healer-hh05000195893280834buy-3-get-2-free-5-bottles-total-676297.jpg?v=1741104720' -%}
           {%- if section.settings.image_4 != blank -%}
             {%- assign cs2_image_4_src = section.settings.image_4 | image_url: width: 800 -%}
           {%- endif -%}
 
           <div class='chs-featured-image-wrap'>
-            <span class='chs-featured-badge'>{{ section.settings.badge_4_text }}</span>
             <img
               src='{{ cs2_image_4_src }}'
               width='auto'
@@ -153,7 +154,7 @@
 
           <a
             href='{{ section.settings.bundle_4_link | default: routes.root_url }}'
-            class='chs-featured-cta twcss-block hover:twcss-scale-[.97] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-mt-[1rem] twcss-py-[1.9rem] twcss-px-[2.8rem] lg:twcss-text-[2.3rem] twcss-text-[1.9rem] twcss-text-white twcss-font-bold twcss-w-full twcss-text-center'
+            class='chs-featured-cta twcss-block hover:twcss-scale-[.97] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.5rem] twcss-mt-[1.5rem] twcss-py-[2.4rem] twcss-px-[3rem] lg:twcss-text-[2.6rem] twcss-text-[2.2rem] twcss-text-white twcss-font-bold twcss-w-full twcss-text-center'
           >
             {{ section.settings.buy_now_bundle_text }}
           </a>
