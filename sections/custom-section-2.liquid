@@ -1,9 +1,17 @@
 <style>
+  .chs-featured-wrap {
+    display: flex;
+    justify-content: center;
+  }
+
   .chs-featured-card {
     position: relative;
+    max-width: 40rem;
+    width: 100%;
     border: 2px solid #6b9b37;
     border-radius: 1rem;
     background: #fff;
+    padding: 2rem;
     animation: chsPulseGlow 2.5s ease-in-out infinite;
   }
 
@@ -12,28 +20,37 @@
       box-shadow: 0 0 6px 0 rgba(107, 155, 55, 0.35);
     }
     50% {
-      box-shadow: 0 0 22px 6px rgba(107, 155, 55, 0.55);
+      box-shadow: 0 0 24px 8px rgba(107, 155, 55, 0.55);
     }
     100% {
       box-shadow: 0 0 6px 0 rgba(107, 155, 55, 0.35);
     }
   }
 
+  .chs-featured-image-wrap {
+    position: relative;
+  }
+
   .chs-featured-badge {
     position: absolute;
-    top: -1.4rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #6b9b37;
+    top: 1rem;
+    right: 0.5rem;
+    background: #b91c1c;
     color: #fff;
     font-weight: 700;
-    font-size: 1.4rem;
-    letter-spacing: 0.02em;
-    padding: 0.6rem 1.8rem;
-    border-radius: 999px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    white-space: nowrap;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    padding: 0.7rem 1rem;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
     z-index: 2;
+    width: 6.5rem;
+    height: 6.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .chs-featured-list li {
@@ -47,10 +64,8 @@
     line-height: 1;
   }
 
-  @media (min-width: 990px) {
-    .chs-featured-card {
-      padding: 3rem 3rem 2.5rem;
-    }
+  .chs-featured-cta {
+    background: linear-gradient(90deg, #6b9b37, #4f7a26);
   }
 </style>
 
@@ -86,16 +101,15 @@
       </div>
 
       {%- comment -%} ===== FEATURED CARD: Complete Relief System (above the 3-card grid) ===== {%- endcomment -%}
-      <div class='lg:twcss-mt-[4rem] twcss-mt-[3rem]'>
-        <div class='chs-featured-card twcss-p-[2rem] twcss-flex twcss-flex-col lg:twcss-flex-row twcss-gap-[2rem] lg:twcss-gap-[3rem] twcss-items-center'>
-          <span class='chs-featured-badge'>{{ section.settings.badge_4_text }}</span>
-
+      <div class='chs-featured-wrap lg:twcss-mt-[4rem] twcss-mt-[3rem]'>
+        <div class='chs-featured-card twcss-flex twcss-flex-col twcss-gap-[1rem]'>
           {%- assign cs2_image_4_src = 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hem-hero-extra-strengthhem-hero-extra-strengthcapsuleshem-healer-llchem-healer-hh05000195893280834buy-3-get-2-free-5-bottles-total-676297.jpg?v=1741104720' -%}
           {%- if section.settings.image_4 != blank -%}
             {%- assign cs2_image_4_src = section.settings.image_4 | image_url: width: 800 -%}
           {%- endif -%}
 
-          <div class='twcss-w-full lg:twcss-w-[30%] twcss-flex-shrink-0'>
+          <div class='chs-featured-image-wrap'>
+            <span class='chs-featured-badge'>{{ section.settings.badge_4_text }}</span>
             <img
               src='{{ cs2_image_4_src }}'
               width='auto'
@@ -105,49 +119,47 @@
             >
           </div>
 
-          <div class='twcss-flex twcss-flex-col twcss-gap-[1rem] twcss-w-full'>
-            <h4 class='lg:twcss-text-[2.8rem] twcss-text-[2.2rem] twcss-leading-none twcss-text-[--secondary-color] twcss-font-semibold'>
-              {{ section.settings.title_4_text }}
-            </h4>
+          <h4 class='twcss-mt-2 lg:twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[2.2rem] twcss-leading-none twcss-text-[--secondary-color] twcss-font-semibold'>
+            {{ section.settings.title_4_text }}
+          </h4>
 
-            <ul class='chs-featured-list twcss-text-lg twcss-flex twcss-gap-[1rem] twcss-flex-col lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black'>
-              <li>
-                <span class='chs-icon'>⚡</span>
-                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_1 }}</span>
-              </li>
-              <li>
-                <span class='chs-icon'>🛡️</span>
-                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_2 }}</span>
-              </li>
-              <li>
-                <span class='chs-icon'>🔄</span>
-                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_3 }}</span>
-              </li>
-              <li>
-                <span class='chs-icon'>🌿</span>
-                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_4 }}</span>
-              </li>
-              <li>
-                <span class='chs-icon'>💰</span>
-                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_5 }}</span>
-              </li>
-              <li>
-                <span class='chs-icon'>🇺🇸</span>
-                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_6 }}</span>
-              </li>
-            </ul>
+          <ul class='chs-featured-list twcss-text-lg twcss-flex twcss-mb-auto twcss-gap-[1rem] twcss-flex-col lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black'>
+            <li>
+              <span class='chs-icon'>⚡</span>
+              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_1 }}</span>
+            </li>
+            <li>
+              <span class='chs-icon'>🛡️</span>
+              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_2 }}</span>
+            </li>
+            <li>
+              <span class='chs-icon'>🔄</span>
+              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_3 }}</span>
+            </li>
+            <li>
+              <span class='chs-icon'>🌿</span>
+              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_4 }}</span>
+            </li>
+            <li>
+              <span class='chs-icon'>💰</span>
+              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_5 }}</span>
+            </li>
+            <li>
+              <span class='chs-icon'>🇺🇸</span>
+              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_6 }}</span>
+            </li>
+          </ul>
 
-            <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black'>
-              {{ section.settings.best_for_4_text }}
-            </p>
+          <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black'>
+            <strong>Best For:</strong> {{ section.settings.best_for_4_text }}
+          </p>
 
-            <a
-              href='{{ section.settings.bundle_4_link | default: routes.root_url }}'
-              class='twcss-block hover:twcss-scale-[.97] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-mt-[1rem] twcss-py-[1.4rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-white twcss-bg-[--secondary-color] twcss-font-bold twcss-w-full twcss-text-center'
-            >
-              {{ section.settings.buy_now_bundle_text }}
-            </a>
-          </div>
+          <a
+            href='{{ section.settings.bundle_4_link | default: routes.root_url }}'
+            class='chs-featured-cta twcss-block hover:twcss-scale-[.97] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-mt-[1rem] twcss-py-[1.4rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-white twcss-font-bold twcss-w-full twcss-text-center'
+          >
+            {{ section.settings.buy_now_bundle_text }}
+          </a>
         </div>
       </div>
       {%- comment -%} ===== END FEATURED CARD ===== {%- endcomment -%}
@@ -419,8 +431,8 @@
     {
       "type": "text",
       "id": "best_for_4_text",
-      "label": "Featured Card Best For Text",
-      "default": "Best for: Anyone who wants the complete protocol — calm symptoms now, prevent flare-ups, and stay regular long term."
+      "label": "Featured Card Best For Text (without 'Best For:' prefix)",
+      "default": "Anyone who wants the complete protocol — calm symptoms now, prevent flare-ups, and stay regular long term."
     },
     {
       "type": "url",
