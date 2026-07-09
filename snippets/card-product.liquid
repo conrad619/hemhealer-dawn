@@ -39,47 +39,8 @@
     if ratio == 0 or ratio == null
       assign ratio = 1
     endif
-    assign is_featured_card = false
-    if card_product.handle == 'complete-relief-system'
-      assign is_featured_card = true
-    endif
   -%}
-  {%- if is_featured_card -%}
-    <style>
-      @keyframes featuredCardGlow {
-        0%, 100% {
-          box-shadow: 0 0 6px 0 rgba(115, 193, 93, 0.35), 0 1px 2px 0 #0000000d;
-        }
-        50% {
-          box-shadow: 0 0 18px 4px rgba(115, 193, 93, 0.65), 0 1px 2px 0 #0000000d;
-        }
-      }
-      .featured-card-wrapper {
-        position: relative;
-        border-color: #73c15d !important;
-        animation: featuredCardGlow 2.5s ease-in-out infinite;
-      }
-      .featured-card-badge {
-        position: absolute;
-        top: -12px;
-        right: 16px;
-        z-index: 2;
-        background: #73c15d;
-        color: #fff;
-        font-size: 1.2rem;
-        font-weight: 700;
-        letter-spacing: 0.02em;
-        padding: 0.5rem 1.2rem;
-        border-radius: 999px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-        white-space: nowrap;
-      }
-    </style>
-  {%- endif -%}
-  <div class='card-wrapper product-card-wrapper underline-links-hover twcss-p-[1.6rem] twcss-shadow-[0_1px_2px_0_#0000000d] twcss-rounded-[.8rem]  twcss-border-[#eaecf0] twcss-border{% if is_featured_card %} featured-card-wrapper{% endif %}'>
-    {%- if is_featured_card -%}
-      <span class='featured-card-badge'>★ MOST POPULAR</span>
-    {%- endif -%}
+  <div class='card-wrapper product-card-wrapper underline-links-hover twcss-p-[1.6rem] twcss-shadow-[0_1px_2px_0_#0000000d] twcss-rounded-[.8rem]  twcss-border-[#eaecf0] twcss-border'>
     <div
       class='
         card card--{{ settings.card_style }}
@@ -234,11 +195,7 @@
               class='full-unstyled-link'
               aria-labelledby='CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}'
             >
-              {%- if is_featured_card -%}
-                The Complete Protocol — Calm, Prevent, Stay Regular
-              {%- else -%}
-                {{ card_product.title | escape }}
-              {%- endif -%}
+              {{ card_product.title | escape }}
             </a>
           </h3>
           <h4 class='twcss-text-[1.4rem] twcss-font-body twcss-py-[1rem]'>
@@ -375,11 +332,7 @@
               href='{{ card_product.url }}'
               class='!twcss-no-underline button button--full-width twcss-bg-[#73c15d] !twcss-text-white twcss-font-medium twcss-border-0 button--secondary'
             >
-              {%- if is_featured_card -%}
-                Get All 3 & Save
-              {%- else -%}
-                Buy Now
-              {%- endif -%}
+              Buy Now
             </a>
           </div>
         </div>
@@ -730,4 +683,3 @@
     </div>
   </div>
 {%- endif -%}
-
