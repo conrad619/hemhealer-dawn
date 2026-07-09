@@ -34,23 +34,20 @@
   .chs-featured-badge {
     position: absolute;
     top: 1rem;
-    right: 0.5rem;
-    background: #b91c1c;
-    color: #fff;
+    right: 1rem;
+    background: #e3f5df;
+    border: 2px solid #ffffff;
+    color: #2f6d1f;
     font-weight: 700;
-    font-size: 1.2rem;
-    line-height: 1.2;
+    font-size: 1.3rem;
     letter-spacing: 0.01em;
-    padding: 0.7rem 1rem;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
+    padding: 0.6rem 1.5rem;
+    border-radius: 999px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     z-index: 2;
-    width: 6.5rem;
-    height: 6.5rem;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
+    white-space: nowrap;
   }
 
   .chs-featured-list li {
@@ -156,7 +153,7 @@
 
           <a
             href='{{ section.settings.bundle_4_link | default: routes.root_url }}'
-            class='chs-featured-cta twcss-block hover:twcss-scale-[.97] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-mt-[1rem] twcss-py-[1.4rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-white twcss-font-bold twcss-w-full twcss-text-center'
+            class='chs-featured-cta twcss-block hover:twcss-scale-[.97] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-mt-[1rem] twcss-py-[1.9rem] twcss-px-[2.8rem] lg:twcss-text-[2.3rem] twcss-text-[1.9rem] twcss-text-white twcss-font-bold twcss-w-full twcss-text-center'
           >
             {{ section.settings.buy_now_bundle_text }}
           </a>
