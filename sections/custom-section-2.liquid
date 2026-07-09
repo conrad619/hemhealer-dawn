@@ -1,3 +1,59 @@
+<style>
+  .chs-featured-card {
+    position: relative;
+    border: 2px solid #6b9b37;
+    border-radius: 1rem;
+    background: #fff;
+    animation: chsPulseGlow 2.5s ease-in-out infinite;
+  }
+
+  @keyframes chsPulseGlow {
+    0% {
+      box-shadow: 0 0 6px 0 rgba(107, 155, 55, 0.35);
+    }
+    50% {
+      box-shadow: 0 0 22px 6px rgba(107, 155, 55, 0.55);
+    }
+    100% {
+      box-shadow: 0 0 6px 0 rgba(107, 155, 55, 0.35);
+    }
+  }
+
+  .chs-featured-badge {
+    position: absolute;
+    top: -1.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #6b9b37;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 0.02em;
+    padding: 0.6rem 1.8rem;
+    border-radius: 999px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    white-space: nowrap;
+    z-index: 2;
+  }
+
+  .chs-featured-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .chs-featured-list li .chs-icon {
+    flex: 0 0 auto;
+    line-height: 1;
+  }
+
+  @media (min-width: 990px) {
+    .chs-featured-card {
+      padding: 3rem 3rem 2.5rem;
+    }
+  }
+</style>
+
 <div class='color-{{ section.settings.color_scheme }} twcss-overflow-hidden twcss-relative lg:twcss-pt-[15rem] twcss-pt-[5rem] twcss-bg-[url(https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hemhealer-leaves-bg-png_2.png?v=1742323161)] twcss-bg-no-repeat lg:twcss-bg-contain twcss-bg-[77.6rem_auto] twcss-bg-[top_center] twcss-pb-[5rem]'>
   <div
     class='twcss-left-0 twcss-overflow-hidden twcss-absolute twcss-w-full twcss-leading-none twcss-top-0'
@@ -28,6 +84,74 @@
           {{ section.settings.heading_2_text }}
         </h3>
       </div>
+
+      {%- comment -%} ===== FEATURED CARD: Complete Relief System (above the 3-card grid) ===== {%- endcomment -%}
+      <div class='lg:twcss-mt-[4rem] twcss-mt-[3rem]'>
+        <div class='chs-featured-card twcss-p-[2rem] twcss-flex twcss-flex-col lg:twcss-flex-row twcss-gap-[2rem] lg:twcss-gap-[3rem] twcss-items-center'>
+          <span class='chs-featured-badge'>{{ section.settings.badge_4_text }}</span>
+
+          {%- assign cs2_image_4_src = 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hem-hero-extra-strengthhem-hero-extra-strengthcapsuleshem-healer-llchem-healer-hh05000195893280834buy-3-get-2-free-5-bottles-total-676297.jpg?v=1741104720' -%}
+          {%- if section.settings.image_4 != blank -%}
+            {%- assign cs2_image_4_src = section.settings.image_4 | image_url: width: 800 -%}
+          {%- endif -%}
+
+          <div class='twcss-w-full lg:twcss-w-[30%] twcss-flex-shrink-0'>
+            <img
+              src='{{ cs2_image_4_src }}'
+              width='auto'
+              height='auto'
+              alt='{{ section.settings.image_4_alt }}'
+              class='twcss-w-full'
+            >
+          </div>
+
+          <div class='twcss-flex twcss-flex-col twcss-gap-[1rem] twcss-w-full'>
+            <h4 class='lg:twcss-text-[2.8rem] twcss-text-[2.2rem] twcss-leading-none twcss-text-[--secondary-color] twcss-font-semibold'>
+              {{ section.settings.title_4_text }}
+            </h4>
+
+            <ul class='chs-featured-list twcss-text-lg twcss-flex twcss-gap-[1rem] twcss-flex-col lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black'>
+              <li>
+                <span class='chs-icon'>⚡</span>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_1 }}</span>
+              </li>
+              <li>
+                <span class='chs-icon'>🛡️</span>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_2 }}</span>
+              </li>
+              <li>
+                <span class='chs-icon'>🔄</span>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_3 }}</span>
+              </li>
+              <li>
+                <span class='chs-icon'>🌿</span>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_4 }}</span>
+              </li>
+              <li>
+                <span class='chs-icon'>💰</span>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_5 }}</span>
+              </li>
+              <li>
+                <span class='chs-icon'>🇺🇸</span>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_6 }}</span>
+              </li>
+            </ul>
+
+            <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black'>
+              {{ section.settings.best_for_4_text }}
+            </p>
+
+            <a
+              href='{{ section.settings.bundle_4_link | default: routes.root_url }}'
+              class='twcss-block hover:twcss-scale-[.97] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-mt-[1rem] twcss-py-[1.4rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-white twcss-bg-[--secondary-color] twcss-font-bold twcss-w-full twcss-text-center'
+            >
+              {{ section.settings.buy_now_bundle_text }}
+            </a>
+          </div>
+        </div>
+      </div>
+      {%- comment -%} ===== END FEATURED CARD ===== {%- endcomment -%}
+
       <div class='twcss-gap-[4rem] lg:twcss-mt-[4rem] twcss-mt-[2rem] twcss-grid lg:twcss-grid-cols-3 twcss-grid-cols-1'>
         <div class='twcss-flex twcss-flex-col lg:twcss-gap-[2rem] twcss-gap-[1rem] lg:twcss-p-[1rem]'>
           {%- assign cs2_image_1_src = 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hem-hero-extra-strengthhem-hero-extra-strengthcapsuleshem-healer-llchem-healer-hh05000195893280834buy-3-get-2-free-5-bottles-total-676297.jpg?v=1741104720' -%}
@@ -46,11 +170,6 @@
               {{ section.settings.title_1_text }}
             </h4>
           </a>
-          {% comment %}
-            <h5 class='twcss-mt-2 twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[2rem] twcss-leading-none twcss-font-medium'>
-              Fast-Acting Hemorrhoid Relief for Chronic Cases
-            </h5>
-          {% endcomment %}
           <ul class='twcss-text-lg twcss-flex twcss-mb-auto twcss-gap-[1rem] twcss-flex-col *:twcss-flex *:twcss-items-start lg:*:twcss-text-[1.8rem] *:twcss-text-[1.5rem] *:twcss-text-black'>
             <li>
               <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_1 }}</span>
@@ -74,21 +193,12 @@
           <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black'>
             {{ section.settings.best_for_1_text }}
           </p>
-
-          {% comment %}
-            <a
-              href='{{ routes.root_url | append: '/pages/hem-hero™' | replace: '//', '/' }}'
-              class='twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-mt-[2rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-white twcss-bg-[--accent-color] twcss-font-semibold twcss-w-full twcss-text-center'
-              >LEARN MORE</a
-            >
-          {% endcomment %}
           <a
             href='{{ routes.root_url | append: '/products/hem-healer' | replace: '//', '/' }}'
             class='twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-[#333] twcss-bg-[--accent-color-2] twcss-font-semibold twcss-w-full twcss-text-center'
           >
             {{ section.settings.buy_now_hero_text }}
           </a>
-
           {%- render 'quick-add-product',
             product_handle: 'hem-hero',
             section_id: section.id,
@@ -114,11 +224,6 @@
               {{ section.settings.title_2_text }}
             </h4>
           </a>
-          {% comment %}
-            <h5 class='twcss-mt-2 twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[2.2rem] twcss-leading-none twcss-font-medium'>
-              Gentle, Effective Constipation Relief Without Bloating
-            </h5>
-          {% endcomment %}
           <ul class='twcss-text-lg twcss-flex twcss-mb-auto twcss-gap-[1rem] twcss-flex-col *:twcss-flex *:twcss-items-start *:twcss-text-[1.8rem] *:twcss-text-black'>
             <li>
               <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_1 }}</span>
@@ -142,13 +247,6 @@
           <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black lg:twcss-mb-0 twcss-mb-[1.6rem]'>
             {{ section.settings.best_for_fiber_text }}
           </p>
-          {% comment %}
-            <a
-              href='{{ routes.root_url | append: '/pages/hem-easy-flow-fiber™' | replace: '//', '/' }}'
-              class='twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-mt-[2rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-white twcss-bg-[--accent-color] twcss-font-semibold twcss-w-full twcss-text-center'
-              >LEARN MORE</a
-            >
-          {% endcomment %}
           <a
             href='{{ routes.root_url | append: '/products/easy-flow-fiber' | replace: '//', '/' }}'
             class='twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-[#333] twcss-bg-[--accent-color-2] twcss-font-semibold twcss-w-full twcss-text-center'
@@ -180,11 +278,6 @@
               {{ section.settings.title_3_text }}
             </h4>
           </a>
-          {% comment %}
-            <h5 class='twcss-mt-2 twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[2.2rem] twcss-leading-none twcss-font-medium'>
-              Ongoing Support to Keep Hemorrhoids From Coming Back
-            </h5>
-          {% endcomment %}
           <ul class='twcss-text-lg twcss-flex twcss-mb-auto twcss-gap-[1rem] twcss-flex-col *:twcss-flex *:twcss-items-start *:twcss-text-[1.8rem] *:twcss-text-black'>
             <li>
               <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_1 }}</span>
@@ -208,13 +301,6 @@
           <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black'>
             {{ section.settings.best_for_2_text }}
           </p>
-          {% comment %}
-            <a
-              href='{{ routes.root_url | append: '/pages/hem-rescue' | replace: '//', '/' }}'
-              class='twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-mt-[2rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-white twcss-bg-[--accent-color] twcss-font-semibold twcss-w-full twcss-text-center'
-              >LEARN MORE</a
-            >
-          {% endcomment %}
           <a
             href='{{ routes.root_url | append: '/products/hem-rescue' | replace: '//', '/' }}'
             class='twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-[#333] twcss-bg-[--accent-color-2] twcss-font-semibold twcss-w-full twcss-text-center'
@@ -266,6 +352,86 @@
       "id": "heading_2_text",
       "label": "Heading 2",
       "default": "t:sections.custom-section-2.settings.heading_2_text.default"
+    },
+    {
+      "type": "header",
+      "content": "Featured Card - Complete Relief System"
+    },
+    {
+      "type": "text",
+      "id": "badge_4_text",
+      "label": "Featured Card Badge Text",
+      "default": "🏆 BEST VALUE"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "Featured Card Image"
+    },
+    {
+      "type": "text",
+      "id": "image_4_alt",
+      "label": "Featured Card Image Alt Text",
+      "default": "Complete Relief System"
+    },
+    {
+      "type": "text",
+      "id": "title_4_text",
+      "label": "Featured Card Title",
+      "default": "Complete Relief System"
+    },
+    {
+      "type": "text",
+      "id": "list_4_1",
+      "label": "Featured Card List Item 1",
+      "default": "Fast-Acting Relief from Pain, Bleeding & Itching"
+    },
+    {
+      "type": "text",
+      "id": "list_4_2",
+      "label": "Featured Card List Item 2",
+      "default": "Strengthens & Repairs Vein Walls from the Inside Out"
+    },
+    {
+      "type": "text",
+      "id": "list_4_3",
+      "label": "Featured Card List Item 3",
+      "default": "Prevents Future Flare-Ups with Daily Support"
+    },
+    {
+      "type": "text",
+      "id": "list_4_4",
+      "label": "Featured Card List Item 4",
+      "default": "Promotes Smooth, Strain-Free Digestion"
+    },
+    {
+      "type": "text",
+      "id": "list_4_5",
+      "label": "Featured Card List Item 5",
+      "default": "Full Money-Back Guarantee"
+    },
+    {
+      "type": "text",
+      "id": "list_4_6",
+      "label": "Featured Card List Item 6",
+      "default": "Proudly Made in the USA"
+    },
+    {
+      "type": "text",
+      "id": "best_for_4_text",
+      "label": "Featured Card Best For Text",
+      "default": "Best for: Anyone who wants the complete protocol — calm symptoms now, prevent flare-ups, and stay regular long term."
+    },
+    {
+      "type": "url",
+      "id": "bundle_4_link",
+      "label": "Featured Card CTA Link (bundle / cart / landing page)"
+    },
+    {
+      "type": "text",
+      "id": "buy_now_bundle_text",
+      "label": "Featured Card Button Text",
+      "default": "Get All 3 & Save"
     },
     {
       "type": "header",
