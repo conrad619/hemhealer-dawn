@@ -6,7 +6,7 @@
 
   .chs-featured-card {
     position: relative;
-    max-width: 40rem;
+    max-width: 42.4rem;
     width: 100%;
     border: 2px solid #6b9b37;
     border-radius: 1rem;
@@ -69,6 +69,9 @@
 </style>
 
 <div class='color-{{ section.settings.color_scheme }} twcss-overflow-hidden twcss-relative lg:twcss-pt-[15rem] twcss-pt-[5rem] twcss-bg-[url(https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hemhealer-leaves-bg-png_2.png?v=1742323161)] twcss-bg-no-repeat lg:twcss-bg-contain twcss-bg-[77.6rem_auto] twcss-bg-[top_center] twcss-pb-[5rem]'>
+  {%- assign featured_block = section.blocks | where: 'type', 'featured_card' | first -%}
+  {%- assign product_card_blocks = section.blocks | where: 'type', 'product_card' -%}
+  {%- assign horizontal_quick_add = false -%}
   <div
     class='twcss-left-0 twcss-overflow-hidden twcss-absolute twcss-w-full twcss-leading-none twcss-top-0'
     data-negative='false'
@@ -102,228 +105,399 @@
       {%- comment -%} ===== FEATURED CARD: Complete Relief System (above the 3-card grid) ===== {%- endcomment -%}
       <div class='chs-featured-wrap lg:twcss-mt-[4rem] twcss-mt-[3rem]'>
         <div class='chs-featured-card twcss-flex twcss-flex-col twcss-gap-[1rem]'>
-          <span class='chs-featured-badge'>{{ section.settings.badge_4_text }}</span>
-          {%- assign cs2_image_4_src = 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hem-hero-extra-strengthhem-hero-extra-strengthcapsuleshem-healer-llchem-healer-hh05000195893280834buy-3-get-2-free-5-bottles-total-676297.jpg?v=1741104720' -%}
-          {%- if section.settings.image_4 != blank -%}
-            {%- assign cs2_image_4_src = section.settings.image_4 | image_url: width: 800 -%}
-          {%- endif -%}
+          {%- if featured_block != null -%}
+            <span class='chs-featured-badge'>
+              {{- featured_block.settings.badge_text | default: section.settings.badge_4_text -}}
+            </span>
+            {%- assign cs2_image_4_src = 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hem-hero-extra-strengthhem-hero-extra-strengthcapsuleshem-healer-llchem-healer-hh05000195893280834buy-3-get-2-free-5-bottles-total-676297.jpg?v=1741104720' -%}
+            {%- if featured_block.settings.image != blank -%}
+              {%- assign cs2_image_4_src = featured_block.settings.image | image_url: width: 800 -%}
+            {%- elsif section.settings.image_4 != blank -%}
+              {%- assign cs2_image_4_src = section.settings.image_4 | image_url: width: 800 -%}
+            {%- endif -%}
 
-          <div class='chs-featured-image-wrap'>
-            <img
-              src='{{ cs2_image_4_src }}'
-              width='auto'
-              height='auto'
-              alt='{{ section.settings.image_4_alt }}'
-              class='twcss-w-full'
+            <div class='chs-featured-image-wrap'>
+              <img
+                src='{{ cs2_image_4_src }}'
+                width='auto'
+                height='auto'
+                alt='{{ featured_block.settings.image_alt | default: section.settings.image_4_alt }}'
+                class='twcss-w-full'
+              >
+            </div>
+
+            <h4 class='twcss-mt-2 lg:twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[2.2rem] twcss-leading-none twcss-text-[--secondary-color] twcss-font-semibold'>
+              {{ featured_block.settings.title | default: section.settings.title_4_text }}
+            </h4>
+
+            <ul class='chs-featured-list twcss-text-lg twcss-flex twcss-gap-[1rem] twcss-flex-col twcss-mb-[2rem] lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black'>
+              <li>
+                <span class='chs-icon'>⚡</span>
+                <span class='twcss-leading-[2.2rem]'>
+                  {{- featured_block.settings.list_item_1 | default: section.settings.list_4_1 -}}
+                </span>
+              </li>
+              <li>
+                <span class='chs-icon'>🛡️</span>
+                <span class='twcss-leading-[2.2rem]'>
+                  {{- featured_block.settings.list_item_2 | default: section.settings.list_4_2 -}}
+                </span>
+              </li>
+              <li>
+                <span class='chs-icon'>🔄</span>
+                <span class='twcss-leading-[2.2rem]'>
+                  {{- featured_block.settings.list_item_3 | default: section.settings.list_4_3 -}}
+                </span>
+              </li>
+              <li>
+                <span class='chs-icon'>🌿</span>
+                <span class='twcss-leading-[2.2rem]'>
+                  {{- featured_block.settings.list_item_4 | default: section.settings.list_4_4 -}}
+                </span>
+              </li>
+              <li>
+                <span class='chs-icon'>💰</span>
+                <span class='twcss-leading-[2.2rem]'>
+                  {{- featured_block.settings.list_item_5 | default: section.settings.list_4_5 -}}
+                </span>
+              </li>
+              <li>
+                <span class='chs-icon'>🇺🇸</span>
+                <span class='twcss-leading-[2.2rem]'>
+                  {{- featured_block.settings.list_item_6 | default: section.settings.list_4_6 -}}
+                </span>
+              </li>
+            </ul>
+
+            <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black twcss-mt-0 twcss-mb-[1.8rem]'>
+              <strong>Best For:</strong>
+              {{ featured_block.settings.best_for_text | default: section.settings.best_for_4_text }}
+            </p>
+
+            <a
+              href='{{ featured_block.settings.button_link | default: section.settings.bundle_4_link | default: routes.root_url }}'
+              class='chs-featured-cta twcss-block hover:twcss-scale-[.97] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.5rem] twcss-mt-0 twcss-py-[2.2rem] twcss-px-[3.2rem] lg:twcss-text-[2.1rem] twcss-text-[1.8rem] twcss-font-bold twcss-w-full twcss-text-center'
             >
-          </div>
+              {{ featured_block.settings.button_text | default: section.settings.buy_now_bundle_text }}
+            </a>
+          {%- else -%}
+            <span class='chs-featured-badge'>{{ section.settings.badge_4_text }}</span>
+            {%- assign cs2_image_4_src = 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hem-hero-extra-strengthhem-hero-extra-strengthcapsuleshem-healer-llchem-healer-hh05000195893280834buy-3-get-2-free-5-bottles-total-676297.jpg?v=1741104720' -%}
+            {%- if section.settings.image_4 != blank -%}
+              {%- assign cs2_image_4_src = section.settings.image_4 | image_url: width: 800 -%}
+            {%- endif -%}
 
-          <h4 class='twcss-mt-2 lg:twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[2.2rem] twcss-leading-none twcss-text-[--secondary-color] twcss-font-semibold'>
-            {{ section.settings.title_4_text }}
-          </h4>
+            <div class='chs-featured-image-wrap'>
+              <img
+                src='{{ cs2_image_4_src }}'
+                width='auto'
+                height='auto'
+                alt='{{ section.settings.image_4_alt }}'
+                class='twcss-w-full'
+              >
+            </div>
 
-          <ul class='chs-featured-list twcss-text-lg twcss-flex twcss-mb-auto twcss-gap-[1rem] twcss-flex-col twcss-mb-[2rem] lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black'>
-            <li>
-              <span class='chs-icon'>⚡</span>
-              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_1 }}</span>
-            </li>
-            <li>
-              <span class='chs-icon'>🛡️</span>
-              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_2 }}</span>
-            </li>
-            <li>
-              <span class='chs-icon'>🔄</span>
-              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_3 }}</span>
-            </li>
-            <li>
-              <span class='chs-icon'>🌿</span>
-              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_4 }}</span>
-            </li>
-            <li>
-              <span class='chs-icon'>💰</span>
-              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_5 }}</span>
-            </li>
-            <li>
-              <span class='chs-icon'>🇺🇸</span>
-              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_6 }}</span>
-            </li>
-          </ul>
+            <h4 class='twcss-mt-2 lg:twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[2.2rem] twcss-leading-none twcss-text-[--secondary-color] twcss-font-semibold'>
+              {{ section.settings.title_4_text }}
+            </h4>
 
-          <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black twcss-mt-0 twcss-mb-[1.8rem]'>
-            <strong>Best For:</strong> {{ section.settings.best_for_4_text }}
-          </p>
+            <ul class='chs-featured-list twcss-text-lg twcss-flex twcss-gap-[1rem] twcss-flex-col twcss-mb-[2rem] lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black'>
+              <li>
+                <span class='chs-icon'>⚡</span>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_1 }}</span>
+              </li>
+              <li>
+                <span class='chs-icon'>🛡️</span>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_2 }}</span>
+              </li>
+              <li>
+                <span class='chs-icon'>🔄</span>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_3 }}</span>
+              </li>
+              <li>
+                <span class='chs-icon'>🌿</span>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_4 }}</span>
+              </li>
+              <li>
+                <span class='chs-icon'>💰</span>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_5 }}</span>
+              </li>
+              <li>
+                <span class='chs-icon'>🇺🇸</span>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_4_6 }}</span>
+              </li>
+            </ul>
 
-          <a
-            href='{{ section.settings.bundle_4_link | default: routes.root_url }}'
-            class='chs-featured-cta twcss-block hover:twcss-scale-[.97] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.5rem] twcss-mt-0 twcss-py-[2.2rem] twcss-px-[3.2rem] lg:twcss-text-[2.1rem] twcss-text-[1.8rem] twcss-font-bold twcss-w-full twcss-text-center'
-          >
-            {{ section.settings.buy_now_bundle_text }}
-          </a>
+            <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black twcss-mt-0 twcss-mb-[1.8rem]'>
+              <strong>Best For:</strong> {{ section.settings.best_for_4_text }}
+            </p>
+
+            <a
+              href='{{ section.settings.bundle_4_link | default: routes.root_url }}'
+              class='twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-[#333] twcss-bg-[--accent-color-2] twcss-font-semibold twcss-w-full twcss-text-center'
+            >
+              {{ section.settings.buy_now_bundle_text }}
+            </a>
+
+            {% comment %}
+              <a
+                href='{{ card_link | default: routes.root_url }}'
+                class='twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-[#333] twcss-bg-[--accent-color-2] twcss-font-semibold twcss-w-full twcss-text-center'
+              >
+                {{ block.settings.button_text | default: section.settings.buy_now_hero_text }}
+              </a>
+            {% endcomment %}
+            {%- render 'quick-add-product',
+              product_handle: 'complete-relief-system',
+              section_id: section.id,
+              horizontal_quick_add: horizontal_quick_add
+            -%}
+          {%- endif -%}
         </div>
       </div>
       {%- comment -%} ===== END FEATURED CARD ===== {%- endcomment -%}
 
       <div class='twcss-gap-[4rem] lg:twcss-mt-[4rem] twcss-mt-[2rem] twcss-grid lg:twcss-grid-cols-3 twcss-grid-cols-1'>
-        <div class='twcss-flex twcss-flex-col lg:twcss-gap-[2rem] twcss-gap-[1rem] lg:twcss-p-[1rem]'>
-          {%- assign cs2_image_1_src = 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hem-hero-extra-strengthhem-hero-extra-strengthcapsuleshem-healer-llchem-healer-hh05000195893280834buy-3-get-2-free-5-bottles-total-676297.jpg?v=1741104720' -%}
-          {%- if section.settings.image_1 != blank -%}
-            {%- assign cs2_image_1_src = section.settings.image_1 | image_url: width: 800 -%}
-          {%- endif -%}
-          <a href='{{ routes.root_url | append: '/products/hem-healer' | replace: '//', '/' }}'>
-            <img
-              src='{{ cs2_image_1_src }}'
-              width='auto'
-              height='auto'
-              alt='{{ section.settings.image_1_alt }}'
-              class='twcss-w-full'
+        {%- if product_card_blocks.size > 0 -%}
+          {%- for block in product_card_blocks -%}
+            <div class='twcss-flex twcss-flex-col lg:twcss-gap-[2rem] twcss-gap-[1rem] lg:twcss-p-[1rem]'>
+              {%- assign card_image_src = 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hem-hero-extra-strengthhem-hero-extra-strengthcapsuleshem-healer-llchem-healer-hh05000195893280834buy-3-get-2-free-5-bottles-total-676297.jpg?v=1741104720' -%}
+              {%- if block.settings.image != blank -%}
+                {%- assign card_image_src = block.settings.image | image_url: width: 800 -%}
+              {%- endif -%}
+              {%- assign card_link = block.settings.link -%}
+              {%- if card_link == blank and block.settings.product_handle != blank -%}
+                {%- assign card_link = routes.root_url
+                  | append: '/products/'
+                  | append: block.settings.product_handle
+                  | replace: '//', '/'
+                -%}
+              {%- endif -%}
+
+              <a href='{{ card_link | default: routes.root_url }}'>
+                <img
+                  src='{{ card_image_src }}'
+                  width='auto'
+                  height='auto'
+                  alt='{{ block.settings.image_alt | default: section.settings.image_1_alt }}'
+                  class='twcss-w-full'
+                >
+                <h4 class='twcss-mt-2 lg:twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[3.2rem] twcss-leading-none twcss-text-[--secondary-color] twcss-font-semibold'>
+                  {{ block.settings.title | default: section.settings.title_1_text }}
+                </h4>
+              </a>
+              <ul class='twcss-text-lg twcss-flex twcss-mb-auto twcss-gap-[1rem] twcss-flex-col *:twcss-flex *:twcss-items-start lg:*:twcss-text-[1.8rem] *:twcss-text-[1.5rem] *:twcss-text-black'>
+                <li>
+                  <span class='twcss-leading-[2.2rem]'>
+                    {{- block.settings.list_item_1 | default: section.settings.list_1_1 -}}
+                  </span>
+                </li>
+                <li>
+                  <span class='twcss-leading-[2.2rem]'>
+                    {{- block.settings.list_item_2 | default: section.settings.list_1_2 -}}
+                  </span>
+                </li>
+                <li>
+                  <span class='twcss-leading-[2.2rem]'>
+                    {{- block.settings.list_item_3 | default: section.settings.list_1_3 -}}
+                  </span>
+                </li>
+                <li>
+                  <span class='twcss-leading-[2.2rem]'>
+                    {{- block.settings.list_item_4 | default: section.settings.list_1_4 -}}
+                  </span>
+                </li>
+                <li>
+                  <span class='twcss-leading-[2.2rem]'>
+                    {{- block.settings.list_item_5 | default: section.settings.list_1_5 -}}
+                  </span>
+                </li>
+                <li>
+                  <span class='twcss-leading-[2.2rem]'>
+                    {{- block.settings.list_item_6 | default: section.settings.list_1_6 -}}
+                  </span>
+                </li>
+              </ul>
+              <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black'>
+                {{ block.settings.best_for_text | default: section.settings.best_for_1_text }}
+              </p>
+              <a
+                href='{{ card_link | default: routes.root_url }}'
+                class='twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-[#333] twcss-bg-[--accent-color-2] twcss-font-semibold twcss-w-full twcss-text-center'
+              >
+                {{ block.settings.button_text | default: section.settings.buy_now_hero_text }}
+              </a>
+              {%- if block.settings.product_handle != blank -%}
+                {%- render 'quick-add-product',
+                  product_handle: block.settings.product_handle,
+                  section_id: section.id,
+                  horizontal_quick_add: horizontal_quick_add
+                -%}
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+        {%- else -%}
+          <div class='twcss-flex twcss-flex-col lg:twcss-gap-[2rem] twcss-gap-[1rem] lg:twcss-p-[1rem]'>
+            {%- assign cs2_image_1_src = 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hem-hero-extra-strengthhem-hero-extra-strengthcapsuleshem-healer-llchem-healer-hh05000195893280834buy-3-get-2-free-5-bottles-total-676297.jpg?v=1741104720' -%}
+            {%- if section.settings.image_1 != blank -%}
+              {%- assign cs2_image_1_src = section.settings.image_1 | image_url: width: 800 -%}
+            {%- endif -%}
+            <a href='{{ routes.root_url | append: '/products/hem-healer' | replace: '//', '/' }}'>
+              <img
+                src='{{ cs2_image_1_src }}'
+                width='auto'
+                height='auto'
+                alt='{{ section.settings.image_1_alt }}'
+                class='twcss-w-full'
+              >
+              <h4 class='twcss-mt-2 lg:twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[3.2rem] twcss-leading-none twcss-text-[--secondary-color] twcss-font-semibold'>
+                {{ section.settings.title_1_text }}
+              </h4>
+            </a>
+            <ul class='twcss-text-lg twcss-flex twcss-mb-auto twcss-gap-[1rem] twcss-flex-col *:twcss-flex *:twcss-items-start lg:*:twcss-text-[1.8rem] *:twcss-text-[1.5rem] *:twcss-text-black'>
+              <li>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_1 }}</span>
+              </li>
+              <li>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_2 }}</span>
+              </li>
+              <li>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_3 }}</span>
+              </li>
+              <li>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_4 }}</span>
+              </li>
+              <li>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_5 }}</span>
+              </li>
+              <li>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_6 }}</span>
+              </li>
+            </ul>
+            <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black'>
+              {{ section.settings.best_for_1_text }}
+            </p>
+            <a
+              href='{{ routes.root_url | append: '/products/hem-healer' | replace: '//', '/' }}'
+              class='twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-[#333] twcss-bg-[--accent-color-2] twcss-font-semibold twcss-w-full twcss-text-center'
             >
-            <h4 class='twcss-mt-2 lg:twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[3.2rem] twcss-leading-none twcss-text-[--secondary-color] twcss-font-semibold'>
-              {{ section.settings.title_1_text }}
-            </h4>
-          </a>
-          <ul class='twcss-text-lg twcss-flex twcss-mb-auto twcss-gap-[1rem] twcss-flex-col *:twcss-flex *:twcss-items-start lg:*:twcss-text-[1.8rem] *:twcss-text-[1.5rem] *:twcss-text-black'>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_1 }}</span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_2 }}</span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_3 }}</span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_4 }}</span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_5 }}</span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_1_6 }}</span>
-            </li>
-          </ul>
-          <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black'>
-            {{ section.settings.best_for_1_text }}
-          </p>
-          <a
-            href='{{ routes.root_url | append: '/products/hem-healer' | replace: '//', '/' }}'
-            class='twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-[#333] twcss-bg-[--accent-color-2] twcss-font-semibold twcss-w-full twcss-text-center'
-          >
-            {{ section.settings.buy_now_hero_text }}
-          </a>
-          {%- render 'quick-add-product',
-            product_handle: 'hem-hero',
-            section_id: section.id,
-            horizontal_quick_add: horizontal_quick_add
-          -%}
-        </div>
-        <div class='twcss-flex twcss-flex-col lg:twcss-gap-[2rem] twcss-gap-[1rem] lg:twcss-p-[1rem]'>
-          {%- assign cs2_image_2_src = 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Easy_Flow_Fiber_-_Ingredients.png?v=1771955690' -%}
-          {%- if section.settings.image_2 != blank -%}
-            {%- assign cs2_image_2_src = section.settings.image_2 | image_url: width: 800 -%}
-          {%- endif -%}
-          <a
-            href='{{ routes.root_url | append: '/products/easy-flow-fiber' | replace: '//', '/' }}'
-          >
-            <img
-              src='{{ cs2_image_2_src }}'
-              width='auto'
-              height='auto'
-              alt='{{ section.settings.image_2_alt }}'
-              class='twcss-w-full'
+              {{ section.settings.buy_now_hero_text }}
+            </a>
+            {%- render 'quick-add-product',
+              product_handle: 'hem-hero',
+              section_id: section.id,
+              horizontal_quick_add: horizontal_quick_add
+            -%}
+          </div>
+          <div class='twcss-flex twcss-flex-col lg:twcss-gap-[2rem] twcss-gap-[1rem] lg:twcss-p-[1rem]'>
+            {%- assign cs2_image_2_src = 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/Easy_Flow_Fiber_-_Ingredients.png?v=1771955690' -%}
+            {%- if section.settings.image_2 != blank -%}
+              {%- assign cs2_image_2_src = section.settings.image_2 | image_url: width: 800 -%}
+            {%- endif -%}
+            <a
+              href='{{ routes.root_url | append: '/products/easy-flow-fiber' | replace: '//', '/' }}'
             >
-            <h4 class='twcss-mt-2 lg:twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[2.2rem] twcss-leading-none twcss-text-[--secondary-color] twcss-font-semibold'>
-              {{ section.settings.title_2_text }}
-            </h4>
-          </a>
-          <ul class='twcss-text-lg twcss-flex twcss-mb-auto twcss-gap-[1rem] twcss-flex-col *:twcss-flex *:twcss-items-start *:twcss-text-[1.8rem] *:twcss-text-black'>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_1 }}</span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_2 }}</span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_3 }}</span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_4 }}</span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_5 }}</span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_6 }}</span>
-            </li>
-          </ul>
-          <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black lg:twcss-mb-0 twcss-mb-[1.6rem]'>
-            {{ section.settings.best_for_fiber_text }}
-          </p>
-          <a
-            href='{{ routes.root_url | append: '/products/easy-flow-fiber' | replace: '//', '/' }}'
-            class='twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-[#333] twcss-bg-[--accent-color-2] twcss-font-semibold twcss-w-full twcss-text-center'
-          >
-            {{ section.settings.buy_now_fiber_text }}
-          </a>
-          {%- render 'quick-add-product',
-            product_handle: 'easy-flow-fiber',
-            section_id: section.id,
-            horizontal_quick_add: horizontal_quick_add
-          -%}
-        </div>
-        <div class='twcss-flex twcss-flex-col lg:twcss-gap-[2rem] twcss-gap-[1rem] lg:twcss-p-[1rem]'>
-          {%- assign cs2_image_3_src = 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hem-rescuehem-rescuecapsules.png?v=1763482328' -%}
-          {%- if section.settings.image_3 != blank -%}
-            {%- assign cs2_image_3_src = section.settings.image_3 | image_url: width: 800 -%}
-          {%- endif -%}
-          <a
-            href='{{ routes.root_url | append: '/products/hem-rescue' | replace: '//', '/' }}'
-          >
-            <img
-              src='{{ cs2_image_3_src }}'
-              width='auto'
-              height='auto'
-              alt='{{ section.settings.image_3_alt }}'
-              class='twcss-w-full'
+              <img
+                src='{{ cs2_image_2_src }}'
+                width='auto'
+                height='auto'
+                alt='{{ section.settings.image_2_alt }}'
+                class='twcss-w-full'
+              >
+              <h4 class='twcss-mt-2 lg:twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[2.2rem] twcss-leading-none twcss-text-[--secondary-color] twcss-font-semibold'>
+                {{ section.settings.title_2_text }}
+              </h4>
+            </a>
+            <ul class='twcss-text-lg twcss-flex twcss-mb-auto twcss-gap-[1rem] twcss-flex-col *:twcss-flex *:twcss-items-start *:twcss-text-[1.8rem] *:twcss-text-black'>
+              <li>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_1 }}</span>
+              </li>
+              <li>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_2 }}</span>
+              </li>
+              <li>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_3 }}</span>
+              </li>
+              <li>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_4 }}</span>
+              </li>
+              <li>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_5 }}</span>
+              </li>
+              <li>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_fiber_6 }}</span>
+              </li>
+            </ul>
+            <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black lg:twcss-mb-0 twcss-mb-[1.6rem]'>
+              {{ section.settings.best_for_fiber_text }}
+            </p>
+            <a
+              href='{{ routes.root_url | append: '/products/easy-flow-fiber' | replace: '//', '/' }}'
+              class='twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-[#333] twcss-bg-[--accent-color-2] twcss-font-semibold twcss-w-full twcss-text-center'
             >
-            <h4 class='twcss-mt-2 lg:twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[2.2rem] twcss-leading-none twcss-text-[--secondary-color] twcss-font-semibold'>
-              {{ section.settings.title_3_text }}
-            </h4>
-          </a>
-          <ul class='twcss-text-lg twcss-flex twcss-mb-auto twcss-gap-[1rem] twcss-flex-col *:twcss-flex *:twcss-items-start *:twcss-text-[1.8rem] *:twcss-text-black'>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_1 }}</span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_2 }}</span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_3 }}</span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_4 }}</span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_5 }}</span>
-            </li>
-            <li>
-              <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_6 }}</span>
-            </li>
-          </ul>
-          <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black'>
-            {{ section.settings.best_for_2_text }}
-          </p>
-          <a
-            href='{{ routes.root_url | append: '/products/hem-rescue' | replace: '//', '/' }}'
-            class='twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-[#333] twcss-bg-[--accent-color-2] twcss-font-semibold twcss-w-full twcss-text-center'
-          >
-            {{ section.settings.buy_now_rescue_text }}
-          </a>
-          {%- render 'quick-add-product',
-            product_handle: 'hem-rescue',
-            section_id: section.id,
-            horizontal_quick_add: horizontal_quick_add
-          -%}
-        </div>
+              {{ section.settings.buy_now_fiber_text }}
+            </a>
+            {%- render 'quick-add-product',
+              product_handle: 'easy-flow-fiber',
+              section_id: section.id,
+              horizontal_quick_add: horizontal_quick_add
+            -%}
+          </div>
+          <div class='twcss-flex twcss-flex-col lg:twcss-gap-[2rem] twcss-gap-[1rem] lg:twcss-p-[1rem]'>
+            {%- assign cs2_image_3_src = 'https://cdn.shopify.com/s/files/1/0550/1560/4383/files/hem-rescuehem-rescuecapsules.png?v=1763482328' -%}
+            {%- if section.settings.image_3 != blank -%}
+              {%- assign cs2_image_3_src = section.settings.image_3 | image_url: width: 800 -%}
+            {%- endif -%}
+            <a
+              href='{{ routes.root_url | append: '/products/hem-rescue' | replace: '//', '/' }}'
+            >
+              <img
+                src='{{ cs2_image_3_src }}'
+                width='auto'
+                height='auto'
+                alt='{{ section.settings.image_3_alt }}'
+                class='twcss-w-full'
+              >
+              <h4 class='twcss-mt-2 lg:twcss-mb-4 lg:twcss-text-[2.8rem] twcss-text-[2.2rem] twcss-leading-none twcss-text-[--secondary-color] twcss-font-semibold'>
+                {{ section.settings.title_3_text }}
+              </h4>
+            </a>
+            <ul class='twcss-text-lg twcss-flex twcss-mb-auto twcss-gap-[1rem] twcss-flex-col *:twcss-flex *:twcss-items-start *:twcss-text-[1.8rem] *:twcss-text-black'>
+              <li>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_1 }}</span>
+              </li>
+              <li>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_2 }}</span>
+              </li>
+              <li>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_3 }}</span>
+              </li>
+              <li>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_4 }}</span>
+              </li>
+              <li>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_5 }}</span>
+              </li>
+              <li>
+                <span class='twcss-leading-[2.2rem]'>{{ section.settings.list_2_6 }}</span>
+              </li>
+            </ul>
+            <p class='lg:twcss-text-[1.8rem] twcss-text-[1.5rem] twcss-text-black'>
+              {{ section.settings.best_for_2_text }}
+            </p>
+            <a
+              href='{{ routes.root_url | append: '/products/hem-rescue' | replace: '//', '/' }}'
+              class='twcss-block hover:twcss-scale-[.9] twcss-transition-all twcss-duration-100 twcss-font-heading twcss-leading-none twcss-rounded-[.3rem] twcss-py-[1.2rem] twcss-px-[2.4rem] lg:twcss-text-[2rem] twcss-text-[1.6rem] twcss-text-[#333] twcss-bg-[--accent-color-2] twcss-font-semibold twcss-w-full twcss-text-center'
+            >
+              {{ section.settings.buy_now_rescue_text }}
+            </a>
+            {%- render 'quick-add-product',
+              product_handle: 'hem-rescue',
+              section_id: section.id,
+              horizontal_quick_add: horizontal_quick_add
+            -%}
+          </div>
+        {%- endif -%}
       </div>
     </div>
   </div>
@@ -652,6 +826,173 @@
       "default": "t:sections.custom-section-2.settings.buy_now_rescue_text.default"
     }
   ],
+  "blocks": [
+    {
+      "type": "featured_card",
+      "name": "Featured card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge text",
+          "default": "🏆 BEST VALUE"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Featured image"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Featured image alt text",
+          "default": "Complete Relief System"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Featured title",
+          "default": "Complete Relief System - Hem Hero + Hem Rescue + Easy-Flow Fiber"
+        },
+        {
+          "type": "text",
+          "id": "list_item_1",
+          "label": "Featured list item 1",
+          "default": "Fast-Acting Relief from Pain, Bleeding & Itching"
+        },
+        {
+          "type": "text",
+          "id": "list_item_2",
+          "label": "Featured list item 2",
+          "default": "Strengthens & Repairs Vein Walls from the Inside Out"
+        },
+        {
+          "type": "text",
+          "id": "list_item_3",
+          "label": "Featured list item 3",
+          "default": "Prevents Future Flare-Ups with Daily Support"
+        },
+        {
+          "type": "text",
+          "id": "list_item_4",
+          "label": "Featured list item 4",
+          "default": "Promotes Smooth, Strain-Free Digestion"
+        },
+        {
+          "type": "text",
+          "id": "list_item_5",
+          "label": "Featured list item 5",
+          "default": "Full Money-Back Guarantee"
+        },
+        {
+          "type": "text",
+          "id": "list_item_6",
+          "label": "Featured list item 6",
+          "default": "Proudly Made in the USA"
+        },
+        {
+          "type": "text",
+          "id": "best_for_text",
+          "label": "Featured best for text",
+          "default": "Anyone who wants the complete protocol — calm symptoms now, prevent flare-ups, and stay regular long term."
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Featured button text",
+          "default": "Get All 3 & Save"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Featured button link"
+        }
+      ]
+    },
+    {
+      "type": "product_card",
+      "name": "Product card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Product image"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Product image alt text",
+          "default": "Product image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Product title",
+          "default": "Product title"
+        },
+        {
+          "type": "text",
+          "id": "product_handle",
+          "label": "Product handle",
+          "default": "hem-healer"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Product link"
+        },
+        {
+          "type": "text",
+          "id": "list_item_1",
+          "label": "Product list item 1",
+          "default": "Feature 1"
+        },
+        {
+          "type": "text",
+          "id": "list_item_2",
+          "label": "Product list item 2",
+          "default": "Feature 2"
+        },
+        {
+          "type": "text",
+          "id": "list_item_3",
+          "label": "Product list item 3",
+          "default": "Feature 3"
+        },
+        {
+          "type": "text",
+          "id": "list_item_4",
+          "label": "Product list item 4",
+          "default": "Feature 4"
+        },
+        {
+          "type": "text",
+          "id": "list_item_5",
+          "label": "Product list item 5",
+          "default": "Feature 5"
+        },
+        {
+          "type": "text",
+          "id": "list_item_6",
+          "label": "Product list item 6",
+          "default": "Feature 6"
+        },
+        {
+          "type": "text",
+          "id": "best_for_text",
+          "label": "Product best for text",
+          "default": "Best for this product."
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Product button text",
+          "default": "Buy now"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
   "presets": [
     {
       "name": "custom section II"
