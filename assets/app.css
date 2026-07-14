@@ -643,8 +643,8 @@ video {
   left: 50%;
 }
 
-.twcss-left-\[28\%\] {
-  left: 28%;
+.twcss-left-\[36\%\] {
+  left: 36%;
 }
 
 .twcss-left-\[auto\] {
@@ -671,12 +671,12 @@ video {
   top: 0.2rem;
 }
 
-.twcss-top-\[100\%\] {
-  top: 100%;
+.twcss-top-\[10\%\] {
+  top: 10%;
 }
 
-.twcss-top-\[14\%\] {
-  top: 14%;
+.twcss-top-\[100\%\] {
+  top: 100%;
 }
 
 .twcss-top-\[37\.5\%\] {
@@ -784,6 +784,10 @@ video {
   margin-bottom: 1.6rem;
 }
 
+.twcss-mb-\[1\.8rem\] {
+  margin-bottom: 1.8rem;
+}
+
 .twcss-mb-\[1rem\] {
   margin-bottom: 1rem;
 }
@@ -848,6 +852,10 @@ video {
   margin-right: 2rem;
 }
 
+.twcss-mt-0 {
+  margin-top: 0px;
+}
+
 .twcss-mt-2 {
   margin-top: 0.5rem;
 }
@@ -866,6 +874,10 @@ video {
 
 .twcss-mt-\[2rem\] {
   margin-top: 2rem;
+}
+
+.twcss-mt-\[3rem\] {
+  margin-top: 3rem;
 }
 
 .twcss-mt-\[4rem\] {
@@ -960,8 +972,8 @@ video {
   height: 20rem;
 }
 
-.twcss-h-\[27\.5\%\] {
-  height: 27.5%;
+.twcss-h-\[28\.5\%\] {
+  height: 28.5%;
 }
 
 .twcss-h-\[2rem\] {
@@ -1012,12 +1024,12 @@ video {
   height: 7rem;
 }
 
-.twcss-h-\[80\%\] {
-  height: 80%;
-}
-
 .twcss-h-\[8rem\] {
   height: 8rem;
+}
+
+.twcss-h-\[91\%\] {
+  height: 91%;
 }
 
 .twcss-h-auto {
@@ -1353,6 +1365,10 @@ video {
   border-radius: 0.3rem;
 }
 
+.twcss-rounded-\[\.5rem\] {
+  border-radius: 0.5rem;
+}
+
 .twcss-rounded-\[\.8rem\] {
   border-radius: 0.8rem;
 }
@@ -1621,6 +1637,11 @@ video {
   padding-right: 0.5rem;
 }
 
+.twcss-px-\[1\.4rem\] {
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+}
+
 .twcss-px-\[1\.6rem\] {
   padding-left: 1.6rem;
   padding-right: 1.6rem;
@@ -1644,6 +1665,11 @@ video {
 .twcss-px-\[2rem\] {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.twcss-px-\[3\.2rem\] {
+  padding-left: 3.2rem;
+  padding-right: 3.2rem;
 }
 
 .twcss-px-\[4rem\] {
@@ -1691,6 +1717,11 @@ video {
   padding-bottom: 1rem;
 }
 
+.twcss-py-\[2\.2rem\] {
+  padding-top: 2.2rem;
+  padding-bottom: 2.2rem;
+}
+
 .twcss-py-\[2\.5rem\] {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
@@ -1714,11 +1745,6 @@ video {
 .twcss-py-\[5rem\] {
   padding-top: 5rem;
   padding-bottom: 5rem;
-}
-
-.twcss-px-\[1\.4rem\] {
-  padding-left: 1.4rem;
-  padding-right: 1.4rem;
 }
 
 .twcss-pb-\[15rem\] {
@@ -2219,12 +2245,12 @@ shop-pay-wallet-button {
   display: flex;
 }
 
-.\*\:twcss-h-\[20\%\] > * {
-  height: 20%;
+.\*\:twcss-h-\[16\.5\%\] > * {
+  height: 16.5%;
 }
 
-.\*\:twcss-h-\[20\.7\%\] > * {
-  height: 20.7%;
+.\*\:twcss-h-\[16\.7\%\] > * {
+  height: 16.7%;
 }
 
 .\*\:twcss-items-start > * {
@@ -2250,6 +2276,14 @@ shop-pay-wallet-button {
   --tw-shadow-colored: 0 0 #0000;
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.hover\:twcss-scale-\[\.97\]:hover {
+  --tw-scale-x: 0.97;
+  --tw-scale-y: 0.97;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .hover\:twcss-scale-\[\.9\]:hover {
@@ -2785,6 +2819,10 @@ shop-pay-wallet-button {
 
   .lg\:twcss-text-\[10rem\] {
     font-size: 10rem;
+  }
+
+  .lg\:twcss-text-\[2\.1rem\] {
+    font-size: 2.1rem;
   }
 
   .lg\:twcss-text-\[2\.2rem\] {
