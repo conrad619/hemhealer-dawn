@@ -163,10 +163,34 @@
             "link": "shopify://products/complete-relief-system",
             "label": "Complete Relief System"
           }
+        },
+        "link_DWcRMP": {
+          "type": "link",
+          "settings": {
+            "link": "shopify://products/hem-rescue",
+            "label": "Mild to Moderate Hemorrhoids"
+          }
+        },
+        "link_r7JRcy": {
+          "type": "link",
+          "settings": {
+            "link": "",
+            "label": "Link"
+          }
+        },
+        "link_gKwHGE": {
+          "type": "link",
+          "settings": {
+            "link": "",
+            "label": "Link"
+          }
         }
       },
       "block_order": [
-        "link_mqTTHW"
+        "link_mqTTHW",
+        "link_DWcRMP",
+        "link_r7JRcy",
+        "link_gKwHGE"
       ],
       "settings": {
         "heading_text": "Find the Right Hem Healer® Product for You",
