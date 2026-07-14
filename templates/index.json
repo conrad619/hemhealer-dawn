@@ -195,8 +195,8 @@
         "link_HAVgJd": {
           "type": "link",
           "settings": {
-            "link": "",
-            "label": "Link"
+            "link": "shopify://products/heroic-combo-pack",
+            "label": "Relief & Preventative Combo"
           }
         }
       },
