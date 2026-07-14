@@ -161,6 +161,7 @@
         "description_text": "Not sure which product is best for your needs? Use our quick guide to choose the right Hem Healer® solution based on your symptoms.",
         "desktop_image": "shopify://shop_images/Recommended_Products_Desktop_Size_1.png",
         "desktop_image_alt": "find the right hem healer products",
+        "mobile_image": "shopify://shop_images/Recommended_Products_Mobile_Size.png",
         "mobile_image_alt": "find the right hem healer products"
       }
     },
