@@ -188,6 +188,13 @@
         "link_gKwHGE": {
           "type": "link",
           "settings": {
+            "link": "shopify://products/prevention-power-pack",
+            "label": "Preventative Care"
+          }
+        },
+        "link_HAVgJd": {
+          "type": "link",
+          "settings": {
             "link": "",
             "label": "Link"
           }
@@ -198,7 +205,8 @@
         "link_DWcRMP",
         "link_r7JRcy",
         "link_MyndWf",
-        "link_gKwHGE"
+        "link_gKwHGE",
+        "link_HAVgJd"
       ],
       "settings": {
         "heading_text": "Find the Right Hem Healer® Product for You",
