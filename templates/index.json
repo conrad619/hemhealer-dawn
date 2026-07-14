@@ -178,6 +178,13 @@
             "label": "Severe or Chronic Hemorrhoids"
           }
         },
+        "link_MyndWf": {
+          "type": "link",
+          "settings": {
+            "link": "shopify://products/easy-flow-fiber",
+            "label": "Straining & Constipation"
+          }
+        },
         "link_gKwHGE": {
           "type": "link",
           "settings": {
@@ -190,6 +197,7 @@
         "link_mqTTHW",
         "link_DWcRMP",
         "link_r7JRcy",
+        "link_MyndWf",
         "link_gKwHGE"
       ],
       "settings": {
