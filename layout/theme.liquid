@@ -2,16 +2,18 @@
 <html class='js' lang='{{ request.locale.iso_code }}'>
   <head>
     {% comment %} <meta name='google-site-verification' content='DwCbpe70uUsRPiwCfrx-b5zoTGzb5PS6WCTUPYyAvII'> {% endcomment %}
-<meta name="google-site-verification" content="yiHlV7c-ETFQAqGCp-1vUu1-TbagvwiWqqNYwmMUOvc" />
-    <script>
-      var head = document.head;
-      var script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.src =
-        'https://211261.t.hyros.com/v1/lst/universal-script?ph=e2000046ed5d217bf056c79bb4c8f07d48dd3ac450eed371b8f70c1f50870073&tag=!clicked&origin=SHOPIFY&ref_url=' +
-        encodeURI(document.URL);
-      head.appendChild(script);
-    </script>
+    <meta name='google-site-verification' content='yiHlV7c-ETFQAqGCp-1vUu1-TbagvwiWqqNYwmMUOvc' />
+    {% comment %}
+      <script>
+        var head = document.head;
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src =
+          'https://211261.t.hyros.com/v1/lst/universal-script?ph=e2000046ed5d217bf056c79bb4c8f07d48dd3ac450eed371b8f70c1f50870073&tag=!clicked&origin=SHOPIFY&ref_url=' +
+          encodeURI(document.URL);
+        head.appendChild(script);
+      </script>
+    {% endcomment %}
     {% render 'shogun-optimizer' %}
 
     <meta charset='utf-8'>
@@ -336,22 +338,24 @@
     <link href='https://unpkg.com/aos@2.3.1/dist/aos.css' rel='stylesheet'>
 
     <!-- Reddit Pixel -->
-    <script>
-      !(function (w, d) {
-        w.rdt =
-          w.rdt ||
-          function () {
-            (w.rdt.q = w.rdt.q || []).push(arguments);
-          };
-        var s = d.createElement('script');
-        s.src = 'https://www.redditstatic.com/ads/pixel.js';
-        s.async = true;
-        var r = d.getElementsByTagName('script')[0];
-        r.parentNode.insertBefore(s, r);
-      })(window, document);
-      rdt('init', 'a2_hfl9ndp47bjq');
-      rdt('track', 'PageVisit');
-    </script>
+    {% comment %}
+      <script>
+        !(function (w, d) {
+          w.rdt =
+            w.rdt ||
+            function () {
+              (w.rdt.q = w.rdt.q || []).push(arguments);
+            };
+          var s = d.createElement('script');
+          s.src = 'https://www.redditstatic.com/ads/pixel.js';
+          s.async = true;
+          var r = d.getElementsByTagName('script')[0];
+          r.parentNode.insertBefore(s, r);
+        })(window, document);
+        rdt('init', 'a2_hfl9ndp47bjq');
+        rdt('track', 'PageVisit');
+      </script>
+    {% endcomment %}
     <!-- End Reddit Pixel -->
 
     <!-- Disable Shopify Best-Sellers Sales Shield code start -->
