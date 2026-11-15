@@ -20,7 +20,7 @@
             "announcement_text_1": "<p><strong>Free USA Shipping on Orders $74.99+</strong></p>",
             "enable_rotation": true,
             "announcement_text_2": "<p><strong>Subscribers Always Get Free Shipping + Save 10%</strong></p>",
-            "announcement_text_3": "",
+            "announcement_text_3": "<p><strong>Subscriptions always ship free. One-time orders ship free over $99.</strong></p>",
             "rotation_interval": 5,
             "text_size": 18,
             "vertical_padding": 12,
@@ -87,7 +87,7 @@
       "type": "header",
       "custom_css": [
         "/* Change the main background color */#cart-icon-bubble.header__icon--cart {background-color: #437c35 !important;}",
-        "/* Change the background color when someone hovers over it */#cart-icon-bubble.header__icon--cart:hover {background-color: #437c35!important;}"
+        " /* Change the background color when someone hovers over it */#cart-icon-bubble.header__icon--cart:hover {background-color: #437c35 !important;}"
       ],
       "settings": {
         "logo_position": "middle-left",

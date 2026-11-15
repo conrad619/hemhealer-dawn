@@ -158,7 +158,20 @@
         "testimonial_nathaniel",
         "testimonial_confidence"
       ],
-      "settings": {}
+      "settings": {
+        "color_scheme": "",
+        "full_width": false,
+        "heading_1": "Hem Hero®",
+        "heading_2": "Extra Strength",
+        "show_secondary_cta": false,
+        "secondary_heading": "Hem Hero® Extra Strength",
+        "secondary_button_text": "BUY HEM HERO® NOW",
+        "secondary_button_link": "",
+        "show_bottom_cta": true,
+        "bottom_button_text": "BUY HEM HERO® NOW",
+        "bottom_button_link": "",
+        "guarantee_text": "30-Day Money Back Guarantee"
+      }
     },
     "sticky_button_G7r8Ck": {
       "type": "sticky_button",
@@ -167,7 +180,7 @@
         "button_text": "Buy Now",
         "button_link": "shopify://products/hem-hero",
         "delay_seconds": 30,
-        "button_color": "#3D8124",
+        "button_color": "#3d8124",
         "button_text_color": "#ffffff",
         "button_radius": 4,
         "top_offset": 100,
